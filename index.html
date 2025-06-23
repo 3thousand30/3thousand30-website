@@ -24,51 +24,154 @@
         }
     </script>
 </head>
-<body class="bg-white text-black font-mono antialiased">
+<body class="bg-black text-white font-mono antialiased">
     <div class="min-h-screen flex flex-col">
         <!-- Header Section -->
-        <header class="py-16 md:py-24 lg:py-32">
+        <header class="py-12 md:py-16 lg:py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-mono tracking-tight">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-mono tracking-tight text-white">
                         3thousand30
                     </h1>
-                    <div class="mt-6 w-24 h-px bg-black mx-auto"></div>
+                    <div class="mt-4 w-20 h-px bg-gray-500 mx-auto"></div>
                 </div>
             </div>
         </header>
 
         <!-- Main Content -->
         <main class="flex-1">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+                <!-- Services Overview Boxes -->
+                <section class="mb-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                        <!-- Product Development -->
+                        <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg hover:border-gray-600 transition-colors duration-300">
+                            <div class="h-12 w-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+                                <div class="w-6 h-6 bg-white rounded-sm"></div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Product Development</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Custom software solutions and innovative products built with modern technologies</p>
+                        </div>
+
+                        <!-- Workflow Optimization -->
+                        <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg hover:border-gray-600 transition-colors duration-300">
+                            <div class="h-12 w-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Workflow Optimization</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Streamline operations and eliminate bottlenecks through intelligent process design</p>
+                        </div>
+
+                        <!-- AI Automation -->
+                        <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg hover:border-gray-600 transition-colors duration-300">
+                            <div class="h-12 w-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+                                <div class="w-6 h-6 border-2 border-white rounded-full flex items-center justify-center">
+                                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">AI Automation</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Intelligent agents that handle complex tasks automatically, like our 
+                                <a href="https://github.com/3thousand30/simple_twitter_ai_agent" 
+                                   class="text-gray-300 underline hover:text-white transition-colors"
+                                   target="_blank" 
+                                   rel="noopener noreferrer">Twitter AI agent</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Description Section -->
-                <section class="mb-20">
-                    <div class="prose prose-lg max-w-none">
-                        <p class="text-lg md:text-xl leading-relaxed text-gray-800 font-light">
-                            We create innovative products and optimize workflows through intelligent automation and strategic project management. Our expertise spans custom software development, workflow optimization, and AI-powered solutions that streamline business operations. We build sophisticated AI agents that automate complex tasks—like our 
-                            <a href="https://github.com/3thousand30/simple_twitter_ai_agent" 
-                               class="underline hover:no-underline transition-all duration-200 font-medium"
-                               target="_blank" 
-                               rel="noopener noreferrer">
-                                Twitter AI agent
-                            </a> 
-                            that intelligently manages social media interactions. Through comprehensive consulting and cutting-edge automation, we transform how organizations operate, enabling them to focus on what matters most while technology handles the rest.
+                <section class="mb-16">
+                    <div class="bg-gray-900 border border-gray-700 p-8 rounded-lg">
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center">What We Do</h2>
+                        <p class="text-lg leading-relaxed text-gray-300 text-center max-w-4xl mx-auto">
+                            We create innovative products and optimize workflows through intelligent automation and strategic project management. Our expertise spans custom software development, workflow optimization, and AI-powered solutions that streamline business operations. Through comprehensive consulting and cutting-edge automation, we transform how organizations operate, enabling them to focus on what matters most while technology handles the rest.
                         </p>
                     </div>
                 </section>
 
+                <!-- Process Flow Diagram -->
+                <section class="mb-16">
+                    <h2 class="text-xl font-bold text-white mb-8 text-center">Our Process</h2>
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
+                                <span class="text-xl font-bold text-white">1</span>
+                            </div>
+                            <h3 class="font-semibold text-white mb-2">Analyze</h3>
+                            <p class="text-gray-400 text-sm text-center max-w-32">Understand your current workflows</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden md:block">
+                            <div class="w-8 h-px bg-gray-600"></div>
+                        </div>
+                        <div class="md:hidden">
+                            <div class="h-8 w-px bg-gray-600"></div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
+                                <span class="text-xl font-bold text-white">2</span>
+                            </div>
+                            <h3 class="font-semibold text-white mb-2">Design</h3>
+                            <p class="text-gray-400 text-sm text-center max-w-32">Create optimized solutions</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden md:block">
+                            <div class="w-8 h-px bg-gray-600"></div>
+                        </div>
+                        <div class="md:hidden">
+                            <div class="h-8 w-px bg-gray-600"></div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
+                                <span class="text-xl font-bold text-white">3</span>
+                            </div>
+                            <h3 class="font-semibold text-white mb-2">Automate</h3>
+                            <p class="text-gray-400 text-sm text-center max-w-32">Implement intelligent systems</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden md:block">
+                            <div class="w-8 h-px bg-gray-600"></div>
+                        </div>
+                        <div class="md:hidden">
+                            <div class="h-8 w-px bg-gray-600"></div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
+                                <span class="text-xl font-bold text-white">4</span>
+                            </div>
+                            <h3 class="font-semibold text-white mb-2">Scale</h3>
+                            <p class="text-gray-400 text-sm text-center max-w-32">Optimize and expand</p>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Contact Section -->
-                <section class="border-t border-gray-300 pt-16">
+                <section class="border-t border-gray-700 pt-12">
                     <div class="text-center">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-8 tracking-wide">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 tracking-wide text-white">
                             Let's Work Together
                         </h2>
                         <div class="space-y-4">
-                            <p class="text-lg md:text-xl text-gray-700">
+                            <p class="text-lg text-gray-400">
                                 Contact us at:
                             </p>
                             <a href="mailto:hello@devyo.life" 
-                               class="inline-block text-xl md:text-2xl font-mono font-semibold hover:bg-black hover:text-white transition-all duration-300 px-4 py-2 border-2 border-black">
+                               class="inline-block text-xl md:text-2xl font-mono font-semibold hover:bg-white hover:text-black transition-all duration-300 px-6 py-3 border-2 border-gray-500 text-white hover:border-white rounded-lg">
                                 hello@devyo.life
                             </a>
                         </div>
@@ -78,9 +181,9 @@
         </main>
 
         <!-- Minimal Footer -->
-        <footer class="py-8 border-t border-gray-200">
+        <footer class="py-6 border-t border-gray-800">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center text-sm text-gray-600">
+                <div class="text-center text-sm text-gray-500">
                     <p>&copy; 2025 3thousand30. Building the future, one enhancement at a time.</p>
                 </div>
             </div>
