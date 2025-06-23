@@ -6,188 +6,152 @@
     <title>3thousand30</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for serif monospace -->
+    <!-- Google Fonts for retro monospace -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'mono-serif': ['JetBrains Mono', 'Crimson Text', 'serif'],
-                        'mono': ['JetBrains Mono', 'monospace'],
+                        'mono': ['JetBrains Mono', 'Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'retro-green': '#00ff41',
+                        'retro-amber': '#ffb000',
+                        'warm-gray': '#a8a8a8'
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-black text-white font-mono antialiased">
-    <div class="min-h-screen flex flex-col">
-        <!-- Header Section -->
-        <header class="py-12 md:py-16 lg:py-20">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+    <!-- Retro scan lines effect -->
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-10">
+        <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px);"></div>
+    </div>
+    
+    <div class="min-h-screen flex flex-col relative z-20">
+        <!-- Header -->
+        <header class="py-8 md:py-12">
+            <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-mono tracking-tight text-white">
-                        3thousand30
-                    </h1>
-                    <div class="mt-4 w-20 h-px bg-gray-500 mx-auto"></div>
+                    <!-- ASCII-style logo with retro glow -->
+                    <div class="mb-4">
+                        <h1 class="text-3xl md:text-5xl lg:text-6xl font-mono font-light tracking-wider text-retro-green" 
+                            style="text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;">
+                            3thousand30
+                        </h1>
+                        <!-- Retro underline with dots -->
+                        <div class="flex justify-center items-center mt-3 space-x-1">
+                            <div class="w-8 h-px bg-warm-gray"></div>
+                            <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
+                            <div class="w-12 h-px bg-warm-gray"></div>
+                            <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
+                            <div class="w-8 h-px bg-warm-gray"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
 
         <!-- Main Content -->
-        <main class="flex-1">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-                <!-- Services Overview Boxes -->
-                <section class="mb-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                        <!-- Product Development -->
-                        <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg hover:border-gray-600 transition-colors duration-300">
-                            <div class="h-12 w-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
-                                <div class="w-6 h-6 bg-white rounded-sm"></div>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Product Development</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Custom software solutions and innovative products built with modern technologies</p>
+        <main class="flex-1 flex items-center">
+            <div class="max-w-4xl mx-auto px-6 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                    
+                    <!-- Who We Are -->
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <!-- Retro terminal prompt -->
+                            <span class="text-retro-green text-lg">></span>
+                            <h2 class="text-xl md:text-2xl font-mono font-normal text-retro-amber">who_we_are</h2>
                         </div>
-
-                        <!-- Workflow Optimization -->
-                        <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg hover:border-gray-600 transition-colors duration-300">
-                            <div class="h-12 w-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
-                                <div class="flex space-x-1">
-                                    <div class="w-2 h-2 bg-white rounded-full"></div>
-                                    <div class="w-2 h-2 bg-white rounded-full"></div>
-                                    <div class="w-2 h-2 bg-white rounded-full"></div>
-                                </div>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Workflow Optimization</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Streamline operations and eliminate bottlenecks through intelligent process design</p>
-                        </div>
-
-                        <!-- AI Automation -->
-                        <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg hover:border-gray-600 transition-colors duration-300">
-                            <div class="h-12 w-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4">
-                                <div class="w-6 h-6 border-2 border-white rounded-full flex items-center justify-center">
-                                    <div class="w-2 h-2 bg-white rounded-full"></div>
-                                </div>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">AI Automation</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Intelligent agents that handle complex tasks automatically, like our 
-                                <a href="https://github.com/3thousand30/simple_twitter_ai_agent" 
-                                   class="text-gray-300 underline hover:text-white transition-colors"
-                                   target="_blank" 
-                                   rel="noopener noreferrer">Twitter AI agent</a>
+                        
+                        <div class="pl-6 border-l-2 border-warm-gray border-opacity-30">
+                            <p class="text-warm-gray leading-relaxed text-sm md:text-base font-light">
+                                A group of freelancers based in Berlin with extensive experience in end-to-end tech and product development.
                             </p>
+                            <div class="mt-3 space-x-2 text-xs text-gray-500">
+                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">product mgmt</span>
+                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">design</span>
+                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">full-stack</span>
+                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">devsecops</span>
+                            </div>
                         </div>
                     </div>
-                </section>
 
-                <!-- Description Section -->
-                <section class="mb-16">
-                    <div class="bg-gray-900 border border-gray-700 p-8 rounded-lg">
-                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center">What We Do</h2>
-                        <p class="text-lg leading-relaxed text-gray-300 text-center max-w-4xl mx-auto">
-                            We create innovative products and optimize workflows through intelligent automation and strategic project management. Our expertise spans custom software development, workflow optimization, and AI-powered solutions that streamline business operations. Through comprehensive consulting and cutting-edge automation, we transform how organizations operate, enabling them to focus on what matters most while technology handles the rest.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Process Flow Diagram -->
-                <section class="mb-16">
-                    <h2 class="text-xl font-bold text-white mb-8 text-center">Our Process</h2>
-                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
-                        <!-- Step 1 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
-                                <span class="text-xl font-bold text-white">1</span>
-                            </div>
-                            <h3 class="font-semibold text-white mb-2">Analyze</h3>
-                            <p class="text-gray-400 text-sm text-center max-w-32">Understand your current workflows</p>
+                    <!-- What We Do -->
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-retro-green text-lg">></span>
+                            <h2 class="text-xl md:text-2xl font-mono font-normal text-retro-amber">what_we_do</h2>
                         </div>
-
-                        <!-- Arrow -->
-                        <div class="hidden md:block">
-                            <div class="w-8 h-px bg-gray-600"></div>
-                        </div>
-                        <div class="md:hidden">
-                            <div class="h-8 w-px bg-gray-600"></div>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
-                                <span class="text-xl font-bold text-white">2</span>
-                            </div>
-                            <h3 class="font-semibold text-white mb-2">Design</h3>
-                            <p class="text-gray-400 text-sm text-center max-w-32">Create optimized solutions</p>
-                        </div>
-
-                        <!-- Arrow -->
-                        <div class="hidden md:block">
-                            <div class="w-8 h-px bg-gray-600"></div>
-                        </div>
-                        <div class="md:hidden">
-                            <div class="h-8 w-px bg-gray-600"></div>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
-                                <span class="text-xl font-bold text-white">3</span>
-                            </div>
-                            <h3 class="font-semibold text-white mb-2">Automate</h3>
-                            <p class="text-gray-400 text-sm text-center max-w-32">Implement intelligent systems</p>
-                        </div>
-
-                        <!-- Arrow -->
-                        <div class="hidden md:block">
-                            <div class="w-8 h-px bg-gray-600"></div>
-                        </div>
-                        <div class="md:hidden">
-                            <div class="h-8 w-px bg-gray-600"></div>
-                        </div>
-
-                        <!-- Step 4 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center mb-3">
-                                <span class="text-xl font-bold text-white">4</span>
-                            </div>
-                            <h3 class="font-semibold text-white mb-2">Scale</h3>
-                            <p class="text-gray-400 text-sm text-center max-w-32">Optimize and expand</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Contact Section -->
-                <section class="border-t border-gray-700 pt-12">
-                    <div class="text-center">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-6 tracking-wide text-white">
-                            Let's Work Together
-                        </h2>
-                        <div class="space-y-4">
-                            <p class="text-lg text-gray-400">
-                                Contact us at:
+                        
+                        <div class="pl-6 border-l-2 border-warm-gray border-opacity-30">
+                            <p class="text-warm-gray leading-relaxed text-sm md:text-base font-light">
+                                Everything from market research to product analysis. We specialize in creating dashboards, automating tasks, and optimizing workflows.
                             </p>
-                            <a href="mailto:hello@devyo.life" 
-                               class="inline-block text-xl md:text-2xl font-mono font-semibold hover:bg-white hover:text-black transition-all duration-300 px-6 py-3 border-2 border-gray-500 text-white hover:border-white rounded-lg">
-                                hello@devyo.life
-                            </a>
+                            <div class="mt-3 space-x-2 text-xs text-gray-500">
+                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">dashboards</span>
+                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">automation</span>
+                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">workflows</span>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
+
+                <!-- Decorative retro element -->
+                <div class="flex justify-center mt-12 lg:mt-16">
+                    <div class="flex items-center space-x-2 opacity-30">
+                        <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
+                        <div class="w-16 h-px bg-warm-gray"></div>
+                        <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                        <div class="w-16 h-px bg-warm-gray"></div>
+                        <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                    </div>
+                </div>
             </div>
         </main>
 
-        <!-- Minimal Footer -->
-        <footer class="py-6 border-t border-gray-800">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center text-sm text-gray-500">
-                    <p>&copy; 2025 3thousand30. Building the future, one enhancement at a time.</p>
+        <!-- Footer -->
+        <footer class="py-6 border-t border-gray-800 border-opacity-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center">
+                    <div class="flex items-center justify-center space-x-3">
+                        <span class="text-retro-green text-sm">></span>
+                        <span class="text-warm-gray text-sm font-mono">get_in_touch:</span>
+                        <a href="mailto:hello@devyo.life" 
+                           class="text-retro-amber hover:text-white transition-colors duration-300 text-sm font-mono underline decoration-dotted underline-offset-4">
+                            hello@devyo.life
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
     </div>
+
+    <style>
+        /* Custom retro glow animation */
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41; }
+            50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41; }
+        }
+        
+        h1 {
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        /* Ensure no scrolling on desktop */
+        @media (min-width: 1024px) {
+            body {
+                height: 100vh;
+                overflow: hidden;
+            }
+        }
+    </style>
 </body>
 </html>
