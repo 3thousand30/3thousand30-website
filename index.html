@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3thousand30</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for serif monospace -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono-serif': ['JetBrains Mono', 'Crimson Text', 'serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-black font-mono antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header Section -->
+        <header class="py-16 md:py-24 lg:py-32">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-mono tracking-tight">
+                        3thousand30
+                    </h1>
+                    <div class="mt-6 w-24 h-px bg-black mx-auto"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+                <!-- Description Section -->
+                <section class="mb-20">
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-lg md:text-xl leading-relaxed text-gray-800 font-light">
+                            We create innovative products and optimize workflows through intelligent automation and strategic project management. Our expertise spans custom software development, workflow optimization, and AI-powered solutions that streamline business operations. We build sophisticated AI agents that automate complex tasks—like our 
+                            <a href="https://github.com/3thousand30/simple_twitter_ai_agent" 
+                               class="underline hover:no-underline transition-all duration-200 font-medium"
+                               target="_blank" 
+                               rel="noopener noreferrer">
+                                Twitter AI agent
+                            </a> 
+                            that intelligently manages social media interactions. Through comprehensive consulting and cutting-edge automation, we transform how organizations operate, enabling them to focus on what matters most while technology handles the rest.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="border-t border-gray-300 pt-16">
+                    <div class="text-center">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-8 tracking-wide">
+                            Let's Work Together
+                        </h2>
+                        <div class="space-y-4">
+                            <p class="text-lg md:text-xl text-gray-700">
+                                Contact us at:
+                            </p>
+                            <a href="mailto:hello@devyo.life" 
+                               class="inline-block text-xl md:text-2xl font-mono font-semibold hover:bg-black hover:text-white transition-all duration-300 px-4 py-2 border-2 border-black">
+                                hello@devyo.life
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Minimal Footer -->
+        <footer class="py-8 border-t border-gray-200">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-sm text-gray-600">
+                    <p>&copy; 2025 3thousand30. Building the future, one enhancement at a time.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
