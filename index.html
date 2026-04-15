@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3thousand30</title>
-    <!-- Tailwind CDN -->
+    <link rel="icon" type="image/png" href="3030.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for retro monospace -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -29,140 +28,211 @@
     </script>
 </head>
 <body class="bg-black text-white font-mono antialiased overflow-x-hidden">
-    <!-- Retro scan lines effect -->
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10">
+
+    <!-- Retro scan lines -->
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true">
         <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px);"></div>
     </div>
-    
-    <div class="min-h-screen flex flex-col relative z-20">
+
+    <div class="relative z-20 max-w-4xl mx-auto px-6 py-12 md:py-16">
+
         <!-- Header -->
-        <header class="py-8 md:py-12">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="text-center">
-                    <!-- ASCII-style logo with retro glow -->
-                    <div class="mb-4">
-                        <h1 class="text-3xl md:text-5xl lg:text-6xl font-mono font-light tracking-wider text-retro-green" 
-                            style="text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;">
-                            3thousand30
-                        </h1>
-                        <!-- Retro underline with dots -->
-                        <div class="flex justify-center items-center mt-3 space-x-1">
-                            <div class="w-8 h-px bg-warm-gray"></div>
-                            <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
-                            <div class="w-12 h-px bg-warm-gray"></div>
-                            <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
-                            <div class="w-8 h-px bg-warm-gray"></div>
-                        </div>
-                    </div>
-                </div>
+        <header class="text-center mb-16">
+            <div class="flex justify-center mb-6">
+                <img src="3030.png" alt="3thousand30" class="h-20 md:h-24 w-auto">
+            </div>
+            <h1 class="text-3xl md:text-5xl font-mono font-light tracking-wider text-retro-green mb-4" style="animation: glow 3s ease-in-out infinite;">
+                3thousand30
+            </h1>
+            <p class="text-warm-gray text-sm md:text-base font-light tracking-widest">
+                build for 3030 — not for next quarter
+            </p>
+            <div class="flex justify-center items-center mt-5 space-x-1">
+                <div class="w-8 h-px bg-warm-gray opacity-40"></div>
+                <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
+                <div class="w-12 h-px bg-warm-gray opacity-40"></div>
+                <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
+                <div class="w-8 h-px bg-warm-gray opacity-40"></div>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="flex-1 flex items-center">
-            <div class="max-w-4xl mx-auto px-6 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-                    
-                    <!-- Who We Are -->
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <!-- Retro terminal prompt -->
-                            <span class="text-retro-green text-lg">></span>
-                            <h2 class="text-xl md:text-2xl font-mono font-normal text-retro-amber">who_we_are</h2>
-                        </div>
-                        
-                        <div class="pl-6 border-l-2 border-warm-gray border-opacity-30">
-                            <p class="text-warm-gray leading-relaxed text-sm md:text-base font-light">
-                                A group of Berlin-based techies with extensive experience in end-to-end AI and Data product management & development.
-                            </p>
-                            <div class="mt-3 space-x-2 text-xs text-gray-500">
-                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">agile</span>
-                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">ai/ml</span>
-                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">data management</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- What We Do -->
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <span class="text-retro-green text-lg">></span>
-                            <h2 class="text-xl md:text-2xl font-mono font-normal text-retro-amber">what_we_do</h2>
-                        </div>
-                        
-                        <div class="pl-6 border-l-2 border-warm-gray border-opacity-30">
-                            <p class="text-warm-gray leading-relaxed text-sm md:text-base font-light">
-                                Everything from research to development. We specialise in creating dashboards, automating tasks, and optimising workflows.
-                            </p>
-                            <div class="mt-3 space-x-2 text-xs text-gray-500">
-                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">dashboards</span>
-                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">automation</span>
-                                <span class="inline-block px-2 py-1 bg-gray-800 rounded">workflows</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience Section -->
-                <div class="flex justify-center mt-12 lg:mt-16">
-                    <div class="text-center max-w-3xl">
-                        <div class="flex items-center justify-center space-x-3 mb-3">
-                            <span class="text-retro-green text-sm">></span>
-                            <span class="text-warm-gray text-sm font-mono">experience_at:</span>
-                        </div>
-                        <p class="text-gray-500 text-xs md:text-sm font-mono leading-relaxed">
-                            Amazon • Adobe • Moody's • S&P • Twilio • Rocket Internet
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Decorative retro element -->
-                <div class="flex justify-center mt-8 lg:mt-12">
-                    <div class="flex items-center space-x-2 opacity-30">
-                        <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
-                        <div class="w-16 h-px bg-warm-gray"></div>
-                        <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-                        <div class="w-16 h-px bg-warm-gray"></div>
-                        <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-                    </div>
+        <!-- Philosophy -->
+        <section class="mb-16">
+            <div class="border p-6 md:p-8" style="border-color: rgba(0,255,65,0.15);">
+                <p class="text-warm-gray text-sm md:text-base leading-relaxed mb-4">
+                    Too many companies make users dependent, confused, tracked, and locked into subscriptions. We reject that model.
+                </p>
+                <p class="text-warm-gray text-sm md:text-base leading-relaxed mb-6">
+                    3thousand30 builds affordable, privacy-first, buy-once tools — and creates real artifacts with them — helping ordinary people become more capable, creative, and independent.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+                    <span class="text-retro-green opacity-70">// buy once</span>
+                    <span class="text-retro-green opacity-70">// local-first</span>
+                    <span class="text-retro-green opacity-70">// no subscriptions</span>
+                    <span class="text-retro-green opacity-70">// your data stays yours</span>
                 </div>
             </div>
-        </main>
+        </section>
+
+        <!-- Software Products -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-lg md:text-xl font-normal">software</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">generative · windows</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchGen Text with AI</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk AI writing. BYOKey — no word limits, no subscription, no mystery models. Your content stays on your machine.</p>
+                    <a href="https://apps.microsoft.com/detail/9n3b1b8dt39f?hl=en-US&gl=US" target="_blank" rel="noopener"
+                       class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
+                </div>
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">generative · windows</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchGen Image with AI</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk AI image generation. BYOKey — you choose the provider and pay them directly. Your files stay on your machine.</p>
+                    <a href="https://apps.microsoft.com/detail/9pfr4v6827xq?hl=en-US&gl=US" target="_blank" rel="noopener"
+                       class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
+                </div>
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchEnhance Image</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Upscale and prepare image batches for high-quality print. Fully local. No cloud, no account, no telemetry. Nothing leaves your machine.</p>
+                    <a href="https://apps.microsoft.com/detail/9n2vhg38ss00?hl=en-US&gl=US" target="_blank" rel="noopener"
+                       class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Platform -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-lg md:text-xl font-normal">platform</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                <div class="text-retro-green text-xs mb-3 opacity-60">web platform</div>
+                <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">devyo Life</h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-4">AI-guided personal growth and productivity platform. Develop your knowledge, habits, and judgment — on your own terms. Not just another productivity app: a life operating system built around the people using it.</p>
+                <a href="https://devyo.life/" target="_blank" rel="noopener"
+                   class="text-retro-amber text-xs hover:text-white transition-colors">visit devyo.life →</a>
+            </div>
+        </section>
+
+        <!-- Artifacts -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-lg md:text-xl font-normal">artifacts</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <p class="text-gray-600 text-xs mb-5">Created using our own tools. Proof that AI output quality follows taste — not hype.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">book</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">People, Places &amp; Perspective</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">A visual book by Proyogi Baba. Made end-to-end with BatchGen Image and BatchEnhance Image.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.amazon.com/dp/B0GWVL1D6R" target="_blank" rel="noopener"
+                           class="text-retro-amber text-xs hover:text-white transition-colors">Amazon →</a>
+                        <a href="https://www.lulu.com/shop/proyogi-baba/people-places-perspective/paperback/product-yvr56g6.html" target="_blank" rel="noopener"
+                           class="text-retro-amber text-xs hover:text-white transition-colors">Lulu →</a>
+                    </div>
+                </div>
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">posters &amp; prints</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">3thousand30 on Etsy</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Digital downloads and print-ready posters made with our own tools. Simple visuals that carry depth, mood, and presence.</p>
+                    <a href="https://www.etsy.com/shop/3thousand30" target="_blank" rel="noopener"
+                       class="text-retro-amber text-xs hover:text-white transition-colors">browse the shop →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Free Tools -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-lg md:text-xl font-normal">free_tools</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <p class="text-gray-600 text-xs mb-5">Open source X / Twitter automation tools. Free, customizable, no paywalls.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Thread AI Automation</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Automate X thread creation with AI. Fully customizable and free to run.</p>
+                    <a href="https://github.com/3thousand30/simple_twitter_thread_ai_automation" target="_blank" rel="noopener"
+                       class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
+                </div>
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Twitter AI Agent</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">A simple X AI agent that works and is highly customizable. Free and open source.</p>
+                    <a href="https://github.com/3thousand30/simple_twitter_ai_agent" target="_blank" rel="noopener"
+                       class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
+                </div>
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Repost AI Agent</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Automate smart X reposting with AI. Highly customizable and free to run.</p>
+                    <a href="https://github.com/3thousand30/simple_twitter_repost_ai_agent" target="_blank" rel="noopener"
+                       class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <div class="flex justify-center mb-10">
+            <div class="flex items-center space-x-2 opacity-30">
+                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
+                <div class="w-16 h-px bg-warm-gray"></div>
+                <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                <div class="w-16 h-px bg-warm-gray"></div>
+                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            </div>
+        </div>
 
         <!-- Footer -->
-        <footer class="py-6 border-t border-gray-800 border-opacity-50">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="text-center">
-                    <div class="flex items-center justify-center space-x-3">
-                        <span class="text-retro-green text-sm">></span>
-                        <span class="text-warm-gray text-sm font-mono">get_in_touch:</span>
-                        <a href="https://github.com/3thousand30/3thousand30-website/issues/1" 
-                           class="text-retro-amber hover:text-white transition-colors duration-300 text-sm font-mono underline decoration-dotted underline-offset-4">
-                            here
-                        </a>
-                    </div>
-                </div>
+        <footer class="border-t border-gray-800 pt-8 text-center space-y-3">
+            <div class="flex items-center justify-center space-x-3">
+                <span class="text-retro-green text-sm">></span>
+                <span class="text-warm-gray text-sm">get_in_touch:</span>
+                <a href="mailto:hello@3thousand30.com"
+                   class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">
+                    hello@3thousand30.com
+                </a>
+            </div>
+            <div class="flex items-center justify-center space-x-3">
+                <span class="text-retro-green text-sm">></span>
+                <span class="text-warm-gray text-sm">follow:</span>
+                <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener"
+                   class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">
+                    @3thousand30HQ on X
+                </a>
             </div>
         </footer>
+
     </div>
 
     <style>
-        /* Custom retro glow animation */
         @keyframes glow {
             0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41; }
             50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41; }
-        }
-        
-        h1 {
-            animation: glow 3s ease-in-out infinite;
-        }
-        
-        /* Ensure no scrolling on desktop */
-        @media (min-width: 1024px) {
-            body {
-                height: 100vh;
-                overflow: hidden;
-            }
         }
     </style>
 </body>
