@@ -15,6 +15,7 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied' });
       gtag('js', new Date());
       gtag('config', 'G-8N64KW0ELL');
     </script>
@@ -256,5 +257,45 @@
             50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41; }
         }
     </style>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pointer-events-none" style="display:none;">
+        <div class="max-w-4xl mx-auto pointer-events-auto">
+            <div class="border bg-black p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4" style="border-color: rgba(0,255,65,0.3);">
+                <div class="flex-1">
+                    <span class="text-retro-green text-xs opacity-60 block mb-1">> analytics_consent.prompt</span>
+                    <p class="text-gray-400 text-xs leading-relaxed">We use Google Analytics to understand how visitors use this site. No personal data is sold or shared. You can decline and nothing will be tracked.</p>
+                </div>
+                <div class="flex gap-3 shrink-0">
+                    <button id="cookie-accept" class="border border-retro-green text-retro-green text-xs px-4 py-2 hover:bg-retro-green hover:text-black transition-colors duration-200">accept</button>
+                    <button id="cookie-decline" class="border text-gray-500 text-xs px-4 py-2 hover:border-gray-400 hover:text-gray-300 transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var banner = document.getElementById('cookie-banner');
+            var consent = localStorage.getItem('cookie_consent');
+
+            if (consent === 'granted') {
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+            } else if (!consent) {
+                banner.style.display = 'block';
+            }
+
+            document.getElementById('cookie-accept').addEventListener('click', function () {
+                localStorage.setItem('cookie_consent', 'granted');
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+                banner.style.display = 'none';
+            });
+
+            document.getElementById('cookie-decline').addEventListener('click', function () {
+                localStorage.setItem('cookie_consent', 'denied');
+                banner.style.display = 'none';
+            });
+        })();
+    </script>
 </body>
 </html>
