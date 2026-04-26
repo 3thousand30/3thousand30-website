@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BatchGen Text with AI — 3thousand30</title>
+    <link rel="icon" type="image/png" href="3030.png">
+
+    <link rel="canonical" href="https://3thousand30.com/batchgen-text.html">
+
+    <meta name="description" content="Bulk AI writing with your own key. No subscription, no word limits, no mystery models. Choose your AI provider, generate batches of content, keep everything on your PC.">
+    <meta name="keywords" content="batch AI writing, bulk content generator, BYOKey AI, AI writing tool Windows, no subscription AI writer">
+    <meta name="author" content="3thousand30">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://3thousand30.com/batchgen-text.html">
+    <meta property="og:title" content="BatchGen Text with AI — 3thousand30">
+    <meta property="og:description" content="Bulk AI writing with your own key. No subscription, no word limits, no mystery models.">
+    <meta property="og:image" content="https://3thousand30.com/screenshots/bgt/1.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@3thousand30HQ">
+    <meta name="twitter:title" content="BatchGen Text with AI — 3thousand30">
+    <meta name="twitter:description" content="Bulk AI writing with your own key. No subscription, no word limits, no mystery models.">
+    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bgt/1.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8N64KW0ELL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied' });
+      gtag('js', new Date());
+      gtag('config', 'G-8N64KW0ELL');
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'mono': ['JetBrains Mono', 'Space Mono', 'monospace'] },
+                    colors: {
+                        'retro-green': '#00ff41',
+                        'retro-amber': '#ffb000',
+                        'warm-gray': '#a8a8a8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true">
+        <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px);"></div>
+    </div>
+
+    <!-- Sticky nav -->
+    <div class="sticky top-0 z-30 bg-black border-b" style="border-color: rgba(0,255,65,0.15);">
+        <div class="max-w-4xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+            <a href="index.html" class="text-warm-gray text-xs hover:text-retro-green transition-colors whitespace-nowrap">← 3thousand30</a>
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <a href="https://apps.microsoft.com/detail/9n3b1b8dt39f?hl=en-US&gl=US" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 border border-retro-amber text-retro-amber text-xs px-3 py-2 hover:bg-retro-amber hover:text-black transition-colors duration-200">
+                    <svg viewBox="0 0 12 12" width="12" height="12" fill="currentColor" aria-hidden="true">
+                        <rect x="0" y="0" width="5.5" height="5.5"/><rect x="6.5" y="0" width="5.5" height="5.5"/>
+                        <rect x="0" y="6.5" width="5.5" height="5.5"/><rect x="6.5" y="6.5" width="5.5" height="5.5"/>
+                    </svg>
+                    <span class="hidden sm:inline">Microsoft Store</span>
+                </a>
+                <a href="https://3thousand30.github.io/batchgentext-docs" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 border text-warm-gray text-xs px-3 py-2 hover:border-warm-gray hover:text-white transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">
+                    <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
+                        <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V2.5zm2.5-1A1.5 1.5 0 0 0 3 3v10.5h8V1H4.5zM5 4h5v1H5V4zm0 2.5h5v1H5v-1zm0 2.5h3v1H5V9z"/>
+                    </svg>
+                    <span class="hidden sm:inline">docs</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative z-20 max-w-4xl mx-auto px-6 py-10 md:py-14">
+
+        <!-- App header -->
+        <header class="flex items-start space-x-5 mb-8">
+            <img src="Logos/BGT.jpg" alt="BatchGen Text with AI" class="w-16 h-16 rounded object-cover flex-shrink-0">
+            <div>
+                <div class="text-retro-green text-xs mb-2 opacity-60">generative · windows</div>
+                <h1 class="text-white text-2xl md:text-3xl font-light mb-3">BatchGen Text with AI</h1>
+                <p class="text-retro-green text-sm md:text-base leading-relaxed" style="text-shadow: 0 0 8px #00ff41;">
+                    Bulk AI writing. BYOKey — no word limits, no subscription, no mystery models.
+                </p>
+            </div>
+        </header>
+
+        <!-- Description -->
+        <div class="border p-6 mb-10" style="border-color: rgba(0,255,65,0.15);">
+            <p class="text-warm-gray text-sm leading-relaxed">
+                Generate batches of content — LinkedIn posts, X threads, blog drafts, product descriptions, short stories, technical docs — with your own AI key. You choose the provider and model based on budget and quality needs. API keys are encrypted locally on your machine using Windows DPAPI. Every output saves to your PC, not a cloud.
+            </p>
+        </div>
+
+        <!-- Screenshots -->
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">screenshots</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="relative">
+                <div class="overflow-hidden border" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="flex transition-transform duration-300 ease-in-out" id="carousel-track">
+                        <img src="screenshots/bgt/1.png" alt="Persona editor showing identity, voice, and goal configuration" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
+                        <img src="screenshots/bgt/2.png" alt="Writing Samples and Quotes step with sample files and quote library" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
+                        <img src="screenshots/bgt/3.png" alt="Content Templates list showing Blog Article, LinkedIn Post, X Post, Facebook Post, Short Story" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
+                        <img src="screenshots/bgt/4.png" alt="Article preview showing a generated blog post before full batch generation" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
+                        <img src="screenshots/bgt/5.png" alt="Generate screen showing completed batch of 8 articles with token usage" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
+                    </div>
+                </div>
+                <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">←</button>
+                <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">→</button>
+                <div class="flex justify-center gap-2 mt-3" id="carousel-dots"></div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">what_it_does</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
+                <span class="text-warm-gray text-xs opacity-80">// bulk content generation from topic lists</span>
+                <span class="text-warm-gray text-xs opacity-80">// 6 built-in templates: blog, LinkedIn, X, Facebook, short story, technical</span>
+                <span class="text-warm-gray text-xs opacity-80">// custom template builder — structure, sections, word count, rules</span>
+                <span class="text-warm-gray text-xs opacity-80">// persona system for repeatable voice, beliefs, and tone</span>
+                <span class="text-warm-gray text-xs opacity-80">// writing style DNA — guide output with your own patterns</span>
+                <span class="text-warm-gray text-xs opacity-80">// thread mode for X posts</span>
+                <span class="text-warm-gray text-xs opacity-80">// 9 AI provider presets + custom endpoints</span>
+                <span class="text-warm-gray text-xs opacity-80">// BYOKey — you pay the provider directly, costs stay low</span>
+                <span class="text-warm-gray text-xs opacity-80">// API keys encrypted locally (Windows DPAPI)</span>
+                <span class="text-warm-gray text-xs opacity-80">// multi-language output (13 languages)</span>
+                <span class="text-warm-gray text-xs opacity-80">// flexible input via CSV or YAML</span>
+                <span class="text-warm-gray text-xs opacity-80">// outputs saved to your PC — Markdown or plain text</span>
+            </div>
+        </section>
+
+        <!-- Other apps -->
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">other_apps</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <a href="batchgen-image.html" class="border p-4 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <img src="Logos/BGI.jpg" alt="BatchGen Image with AI" class="w-8 h-8 rounded mb-2 object-cover">
+                    <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchGen Image</p>
+                    <p class="text-gray-600 text-xs mt-1">generative · windows</p>
+                </a>
+                <a href="batchenhance-image.html" class="border p-4 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <img src="Logos/BEI.jpg" alt="BatchEnhance Image" class="w-8 h-8 rounded mb-2 object-cover">
+                    <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchEnhance Image</p>
+                    <p class="text-gray-600 text-xs mt-1">utility · windows</p>
+                </a>
+                <a href="batchfile-organiser.html" class="border p-4 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <img src="Logos/BFO.jpg" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover">
+                    <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchFile Organiser</p>
+                    <p class="text-gray-600 text-xs mt-1">utility · windows</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <div class="flex justify-center mb-10">
+            <div class="flex items-center space-x-2 opacity-30">
+                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
+                <div class="w-16 h-px bg-warm-gray"></div>
+                <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                <div class="w-16 h-px bg-warm-gray"></div>
+                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-800 pt-8 text-center space-y-3">
+            <div class="flex items-center justify-center space-x-3">
+                <span class="text-retro-green text-sm">></span>
+                <span class="text-warm-gray text-sm">get_in_touch:</span>
+                <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
+            </div>
+            <div class="flex items-center justify-center space-x-3">
+                <span class="text-retro-green text-sm">></span>
+                <span class="text-warm-gray text-sm">follow:</span>
+                <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <style>
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41; }
+            50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41; }
+        }
+    </style>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pointer-events-none" style="display:none;">
+        <div class="max-w-4xl mx-auto pointer-events-auto">
+            <div class="border bg-black p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4" style="border-color: rgba(0,255,65,0.3);">
+                <div class="flex-1">
+                    <span class="text-retro-green text-xs opacity-60 block mb-1">> analytics_consent.prompt</span>
+                    <p class="text-gray-400 text-xs leading-relaxed">We use Google Analytics to understand how visitors use this site. No personal data is sold or shared. You can decline and nothing will be tracked.</p>
+                </div>
+                <div class="flex gap-3 shrink-0">
+                    <button id="cookie-accept" class="border border-retro-green text-retro-green text-xs px-4 py-2 hover:bg-retro-green hover:text-black transition-colors duration-200">accept</button>
+                    <button id="cookie-decline" class="border text-gray-500 text-xs px-4 py-2 hover:border-gray-400 hover:text-gray-300 transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var track = document.getElementById('carousel-track');
+            var dotsEl = document.getElementById('carousel-dots');
+            var total = track.children.length;
+            var current = 0;
+            var touchStartX = 0;
+            for (var i = 0; i < total; i++) {
+                var dot = document.createElement('button');
+                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
+                dot.setAttribute('data-i', i);
+                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
+                dotsEl.appendChild(dot);
+            }
+            function go(n) {
+                current = (n + total) % total;
+                track.style.transform = 'translateX(-' + current * 100 + '%)';
+                Array.from(dotsEl.children).forEach(function (d, i) {
+                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
+                });
+            }
+            document.getElementById('carousel-prev').addEventListener('click', function () { go(current - 1); });
+            document.getElementById('carousel-next').addEventListener('click', function () { go(current + 1); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') go(current - 1);
+                if (e.key === 'ArrowRight') go(current + 1);
+            });
+            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', function (e) {
+                var diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
+            }, { passive: true });
+        })();
+    </script>
+
+    <script>
+        (function () {
+            var banner = document.getElementById('cookie-banner');
+            var consent = localStorage.getItem('cookie_consent');
+            if (consent === 'granted') {
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+            } else if (!consent) {
+                banner.style.display = 'block';
+            }
+            document.getElementById('cookie-accept').addEventListener('click', function () {
+                localStorage.setItem('cookie_consent', 'granted');
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+                banner.style.display = 'none';
+            });
+            document.getElementById('cookie-decline').addEventListener('click', function () {
+                localStorage.setItem('cookie_consent', 'denied');
+                banner.style.display = 'none';
+            });
+        })();
+    </script>
+</body>
+</html>
