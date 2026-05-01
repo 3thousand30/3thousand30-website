@@ -93,7 +93,7 @@
                 <div class="text-retro-green text-xs mb-2 opacity-60">generative · windows</div>
                 <h1 class="text-white text-2xl md:text-3xl font-light mb-3">BatchGen Image with AI</h1>
                 <p class="text-retro-green text-sm md:text-base leading-relaxed" style="text-shadow: 0 0 8px #00ff41;">
-                    Bulk AI image generation. BYOKey — you choose the provider and pay them directly. Your files stay on your machine.
+                    Bulk AI image generation. Choose your provider, pay directly, keep files local.
                 </p>
             </div>
         </header>
@@ -158,22 +158,38 @@
                 <h2 class="text-retro-amber text-base font-normal">other_apps</h2>
                 <div class="flex-1 h-px bg-gray-800"></div>
             </div>
-            <div class="grid grid-cols-3 gap-3">
-                <a href="batchgen-text.html" class="border p-4 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <img src="Logos/BGT.jpg" alt="BatchGen Text with AI" class="w-8 h-8 rounded mb-2 object-cover">
-                    <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchGen Text</p>
-                    <p class="text-gray-600 text-xs mt-1">generative · windows</p>
-                </a>
-                <a href="batchenhance-image.html" class="border p-4 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <img src="Logos/BEI.jpg" alt="BatchEnhance Image" class="w-8 h-8 rounded mb-2 object-cover">
-                    <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchEnhance Image</p>
-                    <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                </a>
-                <a href="batchfile-organiser.html" class="border p-4 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <img src="Logos/BFO.jpg" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover">
-                    <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchFile Organiser</p>
-                    <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                </a>
+            <style>#other-carousel-track > a { width: 100%; } @media (min-width: 768px) { #other-carousel-track > a { width: calc(100% / 3); } }</style>
+            <div class="relative overflow-hidden border px-16 py-6" style="border-color: rgba(168,168,168,0.15);">
+                <div class="flex gap-3 transition-transform duration-300 ease-in-out" id="other-carousel-track">
+                    <a href="batchgen-text.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
+                        <img src="Logos/BGT.jpg" alt="BatchGen Text with AI" class="w-8 h-8 rounded mb-2 object-cover">
+                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchGen Text</p>
+                        <p class="text-gray-600 text-xs mt-1">generative · windows</p>
+                    </a>
+                    <a href="batchenhance-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
+                        <img src="Logos/BEI.jpg" alt="BatchEnhance Image" class="w-8 h-8 rounded mb-2 object-cover">
+                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchEnhance Image</p>
+                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
+                    </a>
+                    <a href="batchfile-organiser.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
+                        <img src="Logos/BFO.jpg" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover">
+                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchFile Organiser</p>
+                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
+                    </a>
+                    <a href="batchwatermark-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
+                        <img src="Logos/BWI.jpg" alt="BatchWatermark Image" class="w-8 h-8 rounded mb-2 object-cover">
+                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchWatermark Image</p>
+                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
+                    </a>
+                    <a href="batchcompress-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
+                        <img src="Logos/BCI.jpg" alt="BatchCompress Image" class="w-8 h-8 rounded mb-2 object-cover">
+                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchCompress Image</p>
+                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
+                    </a>
+                </div>
+                <button id="other-carousel-prev" class="absolute left-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">←</button>
+                <button id="other-carousel-next" class="absolute right-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">→</button>
+                <div class="flex justify-center gap-2 mt-3" id="other-carousel-dots"></div>
             </div>
         </section>
 
@@ -189,16 +205,21 @@
         </div>
 
         <!-- Footer -->
-        <footer class="border-t border-gray-800 pt-8 text-center space-y-3">
-            <div class="flex items-center justify-center space-x-3">
-                <span class="text-retro-green text-sm">></span>
-                <span class="text-warm-gray text-sm">get_in_touch:</span>
-                <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
+        <footer class="border-t border-gray-800 pt-8 text-center">
+            <div class="flex flex-col md:flex-row md:justify-center md:gap-8 space-y-3 md:space-y-0 mb-4">
+                <div class="flex items-center justify-center space-x-3">
+                    <span class="text-retro-green text-sm">></span>
+                    <span class="text-warm-gray text-sm">get_in_touch:</span>
+                    <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
+                </div>
+                <div class="flex items-center justify-center space-x-3">
+                    <span class="text-retro-green text-sm">></span>
+                    <span class="text-warm-gray text-sm">follow:</span>
+                    <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
+                </div>
             </div>
-            <div class="flex items-center justify-center space-x-3">
-                <span class="text-retro-green text-sm">></span>
-                <span class="text-warm-gray text-sm">follow:</span>
-                <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
+            <div>
+                <a href="privacy.html" class="text-gray-600 text-xs hover:text-warm-gray transition-colors">privacy policy</a>
             </div>
         </footer>
 
@@ -210,22 +231,6 @@
             50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41; }
         }
     </style>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pointer-events-none" style="display:none;">
-        <div class="max-w-4xl mx-auto pointer-events-auto">
-            <div class="border bg-black p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4" style="border-color: rgba(0,255,65,0.3);">
-                <div class="flex-1">
-                    <span class="text-retro-green text-xs opacity-60 block mb-1">> analytics_consent.prompt</span>
-                    <p class="text-gray-400 text-xs leading-relaxed">We use Google Analytics to understand how visitors use this site. No personal data is sold or shared. You can decline and nothing will be tracked.</p>
-                </div>
-                <div class="flex gap-3 shrink-0">
-                    <button id="cookie-accept" class="border border-retro-green text-retro-green text-xs px-4 py-2 hover:bg-retro-green hover:text-black transition-colors duration-200">accept</button>
-                    <button id="cookie-decline" class="border text-gray-500 text-xs px-4 py-2 hover:border-gray-400 hover:text-gray-300 transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">decline</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
         (function () {
@@ -264,23 +269,50 @@
 
     <script>
         (function () {
-            var banner = document.getElementById('cookie-banner');
-            var consent = localStorage.getItem('cookie_consent');
-            if (consent === 'granted') {
-                gtag('consent', 'update', { analytics_storage: 'granted' });
-            } else if (!consent) {
-                banner.style.display = 'block';
-            }
-            document.getElementById('cookie-accept').addEventListener('click', function () {
-                localStorage.setItem('cookie_consent', 'granted');
-                gtag('consent', 'update', { analytics_storage: 'granted' });
-                banner.style.display = 'none';
+            var track = document.getElementById('other-carousel-track');
+            var dotsEl = document.getElementById('other-carousel-dots');
+            if (!track || !dotsEl) return;
+            
+            // Clone first 3 cards and append for seamless wrap
+            var origCards = Array.from(track.children);
+            origCards.slice(0, 3).forEach(function (card) {
+                track.appendChild(card.cloneNode(true));
             });
-            document.getElementById('cookie-decline').addEventListener('click', function () {
-                localStorage.setItem('cookie_consent', 'denied');
-                banner.style.display = 'none';
+            var total = origCards.length;
+            var current = 0;
+            var touchStartX = 0;
+            for (var i = 0; i < total; i++) {
+                var dot = document.createElement('button');
+                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
+                dot.setAttribute('data-i', i);
+                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
+                dotsEl.appendChild(dot);
+            }
+            function go(n) {
+                current = (n + total) % total;
+                var itemWidth = track.children[0] ? track.children[0].getBoundingClientRect().width : 0;
+                track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
+                Array.from(dotsEl.children).forEach(function (d, i) {
+                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
+                });
+            }
+
+            document.getElementById('other-carousel-prev').addEventListener('click', function () { go(current - 1); });
+            document.getElementById('other-carousel-next').addEventListener('click', function () { go(current + 1); });
+            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', function (e) {
+                var diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
+            }, { passive: true });
+            window.addEventListener('resize', function () {
+                if (track.children.length) {
+                    var itemWidth = track.children[0].getBoundingClientRect().width;
+                    track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
+                }
             });
         })();
     </script>
+
+<script src="cookie-banner.js"></script>
 </body>
 </html>

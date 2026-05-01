@@ -166,6 +166,30 @@
                     </div>
                 </div>
 
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <img src="Logos/BWI.jpg" alt="BatchWatermark Image" class="w-12 h-12 rounded mb-3 object-cover">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchWatermark Image</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Add text and logo watermarks to full image folders. Preview result, tune placement and opacity — fully local, no cloud, no account required.</p>
+                    <div class="flex items-center space-x-4">
+                        <a href="batchwatermark-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
+                        <a href="https://apps.microsoft.com/detail/9n3s7zrpxgph?hl=en-US&gl=US" target="_blank" rel="noopener"
+                           class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
+                    </div>
+                </div>
+
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                    <img src="Logos/BCI.jpg" alt="BatchCompress Image" class="w-12 h-12 rounded mb-3 object-cover">
+                    <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
+                    <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchCompress Image</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Compress full image folders locally. Set quality, compare before and after, and export in one run — no cloud, no account, no subscription.</p>
+                    <div class="flex items-center space-x-4">
+                        <a href="batchcompress-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
+                        <a href="https://apps.microsoft.com/detail/9n1dbc2g87ht?hl=en-US&gl=US" target="_blank" rel="noopener"
+                           class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -267,22 +291,21 @@
         </div>
 
         <!-- Footer -->
-        <footer class="border-t border-gray-800 pt-8 text-center space-y-3">
-            <div class="flex items-center justify-center space-x-3">
-                <span class="text-retro-green text-sm">></span>
-                <span class="text-warm-gray text-sm">get_in_touch:</span>
-                <a href="mailto:hello@3thousand30.com"
-                   class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">
-                    hello@3thousand30.com
-                </a>
+        <footer class="border-t border-gray-800 pt-8 text-center">
+            <div class="flex flex-col md:flex-row md:justify-center md:gap-8 space-y-3 md:space-y-0 mb-4">
+                <div class="flex items-center justify-center space-x-3">
+                    <span class="text-retro-green text-sm">></span>
+                    <span class="text-warm-gray text-sm">get_in_touch:</span>
+                    <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
+                </div>
+                <div class="flex items-center justify-center space-x-3">
+                    <span class="text-retro-green text-sm">></span>
+                    <span class="text-warm-gray text-sm">follow:</span>
+                    <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
+                </div>
             </div>
-            <div class="flex items-center justify-center space-x-3">
-                <span class="text-retro-green text-sm">></span>
-                <span class="text-warm-gray text-sm">follow:</span>
-                <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener"
-                   class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">
-                    @3thousand30HQ on X
-                </a>
+            <div>
+                <a href="privacy.html" class="text-gray-600 text-xs hover:text-warm-gray transition-colors">privacy policy</a>
             </div>
         </footer>
 
@@ -295,44 +318,6 @@
         }
     </style>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pointer-events-none" style="display:none;">
-        <div class="max-w-4xl mx-auto pointer-events-auto">
-            <div class="border bg-black p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4" style="border-color: rgba(0,255,65,0.3);">
-                <div class="flex-1">
-                    <span class="text-retro-green text-xs opacity-60 block mb-1">> analytics_consent.prompt</span>
-                    <p class="text-gray-400 text-xs leading-relaxed">We use Google Analytics to understand how visitors use this site. No personal data is sold or shared. You can decline and nothing will be tracked.</p>
-                </div>
-                <div class="flex gap-3 shrink-0">
-                    <button id="cookie-accept" class="border border-retro-green text-retro-green text-xs px-4 py-2 hover:bg-retro-green hover:text-black transition-colors duration-200">accept</button>
-                    <button id="cookie-decline" class="border text-gray-500 text-xs px-4 py-2 hover:border-gray-400 hover:text-gray-300 transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">decline</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function () {
-            var banner = document.getElementById('cookie-banner');
-            var consent = localStorage.getItem('cookie_consent');
-
-            if (consent === 'granted') {
-                gtag('consent', 'update', { analytics_storage: 'granted' });
-            } else if (!consent) {
-                banner.style.display = 'block';
-            }
-
-            document.getElementById('cookie-accept').addEventListener('click', function () {
-                localStorage.setItem('cookie_consent', 'granted');
-                gtag('consent', 'update', { analytics_storage: 'granted' });
-                banner.style.display = 'none';
-            });
-
-            document.getElementById('cookie-decline').addEventListener('click', function () {
-                localStorage.setItem('cookie_consent', 'denied');
-                banner.style.display = 'none';
-            });
-        })();
-    </script>
+    <script src="cookie-banner.js"></script>
 </body>
 </html>
