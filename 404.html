@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00ff41">
+    <title>404 — Lost in 3thousand30</title>
+    <link rel="icon" type="image/png" href="3030.png">
+    <link rel="apple-touch-icon" href="3030.png">
+
+    <meta name="description" content="Page not found on 3thousand30.">
+    <meta name="robots" content="noindex, follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'mono': ['JetBrains Mono', 'Space Mono', 'monospace'] },
+                    colors: {
+                        'retro-green': '#00ff41',
+                        'retro-amber': '#ffb000',
+                        'warm-gray': '#a8a8a8'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8N64KW0ELL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied' });
+      gtag('js', new Date());
+      gtag('config', 'G-8N64KW0ELL');
+    </script>
+
+</head>
+<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true">
+        <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px);"></div>
+    </div>
+
+    <div class="relative z-20 min-h-screen flex flex-col">
+
+        <main class="flex-1 flex flex-col items-center justify-center text-center px-6 py-16">
+            <img src="3030.png" alt="3thousand30" class="h-28 md:h-40 w-auto mb-6">
+
+            <div class="text-retro-green text-6xl md:text-8xl font-light tracking-widest mb-4" style="text-shadow: 0 0 12px #00ff41;">404</div>
+            <h1 class="text-white text-3xl md:text-5xl font-light tracking-wider mb-4">Oops, looks like you are lost.</h1>
+            <p class="text-warm-gray text-sm md:text-base leading-relaxed max-w-md mb-8">
+                The page you were looking for isn't here — it may have moved, or never existed.
+            </p>
+
+            <a href="index.html"
+               class="inline-flex items-center gap-2 border border-retro-amber text-retro-amber text-xs px-4 py-2 hover:bg-retro-amber hover:text-black transition-colors duration-200">
+                ← back to 3thousand30
+            </a>
+        </main>
+
+        <footer class="border-t border-gray-800 py-6 text-center px-6">
+            <p class="text-warm-gray text-xs leading-relaxed">
+                If a broken link got you here, please report it to
+                <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="cookie-banner.js"></script>
+</body>
+</html>

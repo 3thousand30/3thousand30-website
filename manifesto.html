@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00ff41">
     <title>Manifesto — 3thousand30</title>
     <link rel="icon" type="image/png" href="3030.png">
+    <link rel="apple-touch-icon" href="3030.png">
 
     <link rel="canonical" href="https://3thousand30.com/manifesto">
 
@@ -16,6 +18,8 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="3thousand30">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://3thousand30.com/manifesto">
     <meta property="og:title" content="Manifesto — 3thousand30">
     <meta property="og:description" content="Our philosophy: empowering ordinary people with privacy-first, buy-once tools. No subscriptions, no tracking.">
@@ -24,11 +28,26 @@
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@3thousand30HQ">
+    <meta name="twitter:creator" content="@3thousand30HQ">
     <meta name="twitter:title" content="Manifesto — 3thousand30">
     <meta name="twitter:description" content="Our philosophy: empowering ordinary people with privacy-first, buy-once tools. No subscriptions, no tracking.">
     <meta name="twitter:image" content="https://3thousand30.com/3030.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'mono': ['JetBrains Mono', 'Space Mono', 'monospace'] },
+                    colors: {
+                        'retro-green': '#00ff41',
+                        'retro-amber': '#ffb000',
+                        'warm-gray': '#a8a8a8'
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -42,23 +61,7 @@
       gtag('js', new Date());
       gtag('config', 'G-8N64KW0ELL');
     </script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'mono': ['JetBrains Mono', 'Space Mono', 'monospace'],
-                    },
-                    colors: {
-                        'retro-green': '#00ff41',
-                        'retro-amber': '#ffb000',
-                        'warm-gray': '#a8a8a8'
-                    }
-                }
-            }
-        }
-    </script>
+
 </head>
 <body class="bg-black text-white font-mono antialiased overflow-x-hidden">
 

@@ -3,31 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3thousand30</title>
+    <meta name="theme-color" content="#00ff41">
+    <title>3thousand30 — Buy-Once, Privacy-First Windows Tools</title>
     <link rel="icon" type="image/png" href="3030.png">
+    <link rel="apple-touch-icon" href="3030.png">
 
     <link rel="canonical" href="https://3thousand30.com/">
 
     <!-- SEO -->
-    <meta name="description" content="Affordable, privacy-first, buy-once Windows tools. No subscriptions. No tracking. Your data stays yours.">
-    <meta name="keywords" content="batch AI tools, Windows apps, buy once software, privacy-first, BatchGen, BatchEnhance, BatchFile, BatchResize">
+    <meta name="description" content="Buy-once Windows tools for batch AI writing, image generation, upscaling, watermarking, compression, resizing and file organising. No subscriptions. No tracking. Your data stays yours.">
+    <meta name="keywords" content="buy once Windows software, no subscription apps, privacy-first tools, batch AI writing, batch AI image generation, image upscaler, batch image compressor, batch image resizer, file organiser Windows">
     <meta name="author" content="3thousand30">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="3thousand30">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://3thousand30.com/">
-    <meta property="og:title" content="3thousand30">
-    <meta property="og:description" content="Affordable, privacy-first, buy-once tools. No subscriptions. No tracking. Your data stays yours.">
+    <meta property="og:title" content="3thousand30 — Buy-Once, Privacy-First Windows Tools">
+    <meta property="og:description" content="Buy-once Windows tools for batch AI writing, image generation, upscaling, compression and file organising. No subscriptions. No tracking. Your data stays yours.">
     <meta property="og:image" content="https://3thousand30.com/3030.png">
+    <meta property="og:image:alt" content="3thousand30 — buy-once, privacy-first Windows tools">
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@3thousand30HQ">
-    <meta name="twitter:title" content="3thousand30">
-    <meta name="twitter:description" content="Affordable, privacy-first, buy-once tools. No subscriptions. No tracking. Your data stays yours.">
+    <meta name="twitter:creator" content="@3thousand30HQ">
+    <meta name="twitter:title" content="3thousand30 — Buy-Once, Privacy-First Windows Tools">
+    <meta name="twitter:description" content="Buy-once Windows tools for batch AI writing, image generation, upscaling, compression and file organising. No subscriptions. No tracking. Your data stays yours.">
     <meta name="twitter:image" content="https://3thousand30.com/3030.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "3thousand30",
+      "url": "https://3thousand30.com/",
+      "logo": "https://3thousand30.com/3030.png",
+      "description": "Buy-once, privacy-first Windows tools. No subscriptions, no tracking — your data stays on your machine.",
+      "sameAs": ["https://x.com/3thousand30HQ"]
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'mono': ['JetBrains Mono', 'Space Mono', 'monospace'] },
+                    colors: {
+                        'retro-green': '#00ff41',
+                        'retro-amber': '#ffb000',
+                        'warm-gray': '#a8a8a8'
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -42,22 +73,6 @@
       gtag('config', 'G-8N64KW0ELL');
     </script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'mono': ['JetBrains Mono', 'Space Mono', 'monospace'],
-                    },
-                    colors: {
-                        'retro-green': '#00ff41',
-                        'retro-amber': '#ffb000',
-                        'warm-gray': '#a8a8a8'
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-black text-white font-mono antialiased overflow-x-hidden">
 
@@ -118,21 +133,21 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <a href="batchgen-text.html" class="inline-block"><img src="Logos/BGT.jpg" alt="BatchGen Text with AI" class="w-12 h-12 rounded mb-3 object-cover"></a>
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
+                    <a href="batchgen-text.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BGT.jpg" alt="BatchGen Text with AI" class="w-12 h-12 rounded mb-3 object-cover"></a>
                     <div class="text-retro-green text-xs mb-3 opacity-60">generative · windows</div>
                     <a href="batchgen-text.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchGen Text with AI</h3></a>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk AI writing. BYOKey — no word limits, no subscription, no mystery models. Your content stays on your machine.</p>
                     <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$14.99</div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-10">
                         <a href="batchgen-text.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
                         <a href="https://apps.microsoft.com/detail/9n3b1b8dt39f?hl=en-US&gl=US" target="_blank" rel="noopener"
                            class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
                     </div>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <a href="batchgen-image.html" class="inline-block"><img src="Logos/BGI.jpg" alt="BatchGen Image with AI" class="w-12 h-12 rounded mb-3 object-cover"></a>
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
+                    <a href="batchgen-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BGI.jpg" alt="BatchGen Image with AI" class="w-12 h-12 rounded mb-3 object-cover"></a>
                     <div class="text-retro-green text-xs mb-3 opacity-60">generative · windows</div>
                     <a href="batchgen-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchGen Image with AI</h3></a>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk AI image generation. BYOKey — you choose the provider and pay them directly. Your files stay on your machine.</p>
@@ -140,74 +155,74 @@
                         <span class="text-retro-amber text-sm font-medium">$13.99</span>
                         <span class="text-gray-600 text-xs line-through">$19.99</span>
                         <span class="bg-retro-amber text-black text-[10px] font-bold px-1 py-0.5">-30%</span>
-                        <span class="text-retro-green text-[10px] uppercase tracking-wide">limited time</span>
+                        <span class="text-retro-green text-[10px] uppercase tracking-wide">limited time · ends Jun 9</span>
                     </div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-10">
                         <a href="batchgen-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
                         <a href="https://apps.microsoft.com/detail/9pfr4v6827xq?hl=en-US&gl=US" target="_blank" rel="noopener"
                            class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
                     </div>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <a href="batchenhance-image.html" class="inline-block"><img src="Logos/BEI.jpg" alt="BatchEnhance Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
+                    <a href="batchenhance-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BEI.jpg" alt="BatchEnhance Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
                     <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
                     <a href="batchenhance-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchEnhance Image</h3></a>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Upscale and prepare image batches for high-quality print. Fully local. No cloud, no account, no telemetry. Nothing leaves your machine.</p>
                     <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$4.99</div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-10">
                         <a href="batchenhance-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
                         <a href="https://apps.microsoft.com/detail/9n2vhg38ss00?hl=en-US&gl=US" target="_blank" rel="noopener"
                            class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
                     </div>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <a href="batchfile-organiser.html" class="inline-block"><img src="Logos/BFO.jpg" alt="BatchFile Organiser" class="w-12 h-12 rounded mb-3 object-cover"></a>
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
+                    <a href="batchfile-organiser.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BFO.jpg" alt="BatchFile Organiser" class="w-12 h-12 rounded mb-3 object-cover"></a>
                     <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
                     <a href="batchfile-organiser.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchFile Organiser</h3></a>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk file organisation for Windows. Sort, rename, and arrange files in batches — fully local, no cloud, no account required.</p>
                     <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$9.99</div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-10">
                         <a href="batchfile-organiser.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
                         <a href="https://apps.microsoft.com/detail/9pb3q7k9fvzq?hl=en-US&gl=US" target="_blank" rel="noopener"
                            class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
                     </div>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <a href="batchwatermark-image.html" class="inline-block"><img src="Logos/BWI.jpg" alt="BatchWatermark Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
+                    <a href="batchwatermark-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BWI.jpg" alt="BatchWatermark Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
                     <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
                     <a href="batchwatermark-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchWatermark Image</h3></a>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Add text and logo watermarks to full image folders. Preview result, tune placement and opacity — fully local, no cloud, no account required.</p>
                     <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$4.99</div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-10">
                         <a href="batchwatermark-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
                         <a href="https://apps.microsoft.com/detail/9n3s7zrpxgph?hl=en-US&gl=US" target="_blank" rel="noopener"
                            class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
                     </div>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <a href="batchcompress-image.html" class="inline-block"><img src="Logos/BCI.jpg" alt="BatchCompress Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
+                    <a href="batchcompress-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BCI.jpg" alt="BatchCompress Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
                     <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
                     <a href="batchcompress-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchCompress Image</h3></a>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Compress full image folders locally. Set quality, compare before and after, and export in one run — no cloud, no account, no subscription.</p>
                     <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$2.99</div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-10">
                         <a href="batchcompress-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
                         <a href="https://apps.microsoft.com/detail/9n1dbc2g87ht?hl=en-US&gl=US" target="_blank" rel="noopener"
                            class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
                     </div>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
-                    <a href="batchresize-image.html" class="inline-block"><img src="Logos/BRI.jpg" alt="BatchResize Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
+                    <a href="batchresize-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BRI.jpg" alt="BatchResize Image" class="w-12 h-12 rounded mb-3 object-cover"></a>
                     <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
                     <a href="batchresize-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchResize Image</h3></a>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Resize full image folders for social, web, email, and marketplace workflows. Use presets, crop controls, and preview — fully local.</p>
                     <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$2.99</div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-10">
                         <a href="batchresize-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
                         <a href="https://apps.microsoft.com/detail/9PPKDVXPTLV0?hl=en-US&gl=US" target="_blank" rel="noopener"
                            class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
@@ -224,7 +239,7 @@
                 <h2 class="text-retro-amber text-lg md:text-xl font-normal">platform</h2>
                 <div class="flex-1 h-px bg-gray-800"></div>
             </div>
-            <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+            <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
                 <div class="text-retro-green text-xs mb-3 opacity-60">web platform</div>
                 <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">devyo Life</h3>
                 <p class="text-gray-500 text-xs leading-relaxed mb-4">AI-guided personal growth and productivity platform. Develop your knowledge, habits, and judgment — on your own terms. Not just another productivity app: a life operating system built around the people using it.</p>
@@ -243,7 +258,7 @@
             <p class="text-gray-600 text-xs mb-5">Created using our own tools. Proof that AI output quality follows taste — not hype.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
                     <div class="text-retro-green text-xs mb-3 opacity-60">book</div>
                     <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">People, Places &amp; Perspective</h3>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">A visual book by Proyogi Baba. Made end-to-end with BatchGen Image and BatchEnhance Image.</p>
@@ -255,7 +270,7 @@
                     </div>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
                     <div class="text-retro-green text-xs mb-3 opacity-60">posters &amp; prints</div>
                     <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">3thousand30 on Etsy</h3>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Digital downloads and print-ready posters made with our own tools. Simple visuals that carry depth, mood, and presence.</p>
@@ -276,7 +291,7 @@
             <p class="text-gray-600 text-xs mb-5">Open source X / Twitter automation tools. Free, customizable, no paywalls.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
                     <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
                     <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Thread AI Automation</h3>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Automate X thread creation with AI. Fully customizable and free to run.</p>
@@ -284,7 +299,7 @@
                        class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
                     <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
                     <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Twitter AI Agent</h3>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">A simple X AI agent that works and is highly customizable. Free and open source.</p>
@@ -292,7 +307,7 @@
                        class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
                 </div>
 
-                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group" style="border-color: rgba(168,168,168,0.15);">
+                <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
                     <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
                     <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Repost AI Agent</h3>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">Automate smart X reposting with AI. Highly customizable and free to run.</p>
