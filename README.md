@@ -29,6 +29,7 @@ in each page's `<head>`. Hosted on GitHub Pages.
 |-----|-------------|-------------|
 | BatchGen Text with AI | `batchgen-text.html` | $14.99 |
 | BatchGen Image with AI | `batchgen-image.html` | ~~$19.99~~ **$13.99** (sale, ends 2026-06-09) |
+| Batch Translate with AI | `batchtranslate.html` | $19.99 |
 | BatchEnhance Image | `batchenhance-image.html` | $4.99 |
 | BatchFile Organiser | `batchfile-organiser.html` | $9.99 |
 | BatchWatermark Image | `batchwatermark-image.html` | $4.99 |
@@ -43,7 +44,7 @@ Store prices vary by region — the values above are the US prices.
 
 - **Changing a price:** update it on the home card, that app's detail page
   (header box + in-button price), and the `other_apps` mini-card on the other
-  six detail pages.
+  detail pages.
 - **Discounts:** sale price first, then struck original, then `-30%`, then a
   dated "limited-time" label. Keep the visible end date and the JSON-LD
   `priceValidUntil` in sync.
