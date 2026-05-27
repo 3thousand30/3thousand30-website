@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#00ff41">
-    <title>BatchFile Organiser — Sort Folders & Find Duplicates | 3thousand30</title>
+    <title>File Organiser for Windows — Sort Folders, Find Duplicates, Undo Changes | 3thousand30</title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="3thousand30">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://3thousand30.com/batchfile-organiser.html">
-    <meta property="og:title" content="BatchFile Organiser — Sort Folders & Find Duplicates | 3thousand30">
+    <meta property="og:title" content="File Organiser for Windows — Sort Folders, Find Duplicates, Undo Changes | 3thousand30">
     <meta property="og:description" content="Organise messy folders by type or date, detect exact duplicates by hash, preview every change, and undo the last operation. Fully local Windows app.">
     <meta property="og:image" content="https://3thousand30.com/screenshots/bfo/2.png">
     <meta property="og:image:alt" content="BatchFile Organiser app screenshot">
@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@3thousand30HQ">
     <meta name="twitter:creator" content="@3thousand30HQ">
-    <meta name="twitter:title" content="BatchFile Organiser — Sort Folders & Find Duplicates | 3thousand30">
+    <meta name="twitter:title" content="File Organiser for Windows — Sort Folders, Find Duplicates, Undo Changes | 3thousand30">
     <meta name="twitter:description" content="Organise messy folders by type or date, detect exact duplicates by hash, preview every change, and undo the last operation. Fully local Windows app.">
     <meta name="twitter:image" content="https://3thousand30.com/screenshots/bfo/2.png">
     <meta name="twitter:image:alt" content="BatchFile Organiser app screenshot">
@@ -35,21 +35,94 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "BatchFile Organiser",
-      "operatingSystem": "Windows",
-      "applicationCategory": "BusinessApplication",
-      "url": "https://3thousand30.com/batchfile-organiser.html",
-      "image": "https://3thousand30.com/Logos/BFO.webp",
-      "description": "Organise messy folders by type or date, detect exact duplicates by hash, preview every change, and undo the last operation. Fully local Windows app.",
-      "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" },
-      "offers": {
-        "@type": "Offer",
-        "price": "9.99",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://apps.microsoft.com/detail/9PB3Q7K9FVZQ"
-      }
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "BatchFile Organiser",
+          "operatingSystem": "Windows",
+          "applicationCategory": "BusinessApplication",
+          "url": "https://3thousand30.com/batchfile-organiser.html",
+          "image": "https://3thousand30.com/Logos/BFO.webp",
+          "description": "Organise messy folders by type or date, detect exact duplicates by hash, preview every change, and undo the last operation. Fully local Windows app.",
+          "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" },
+          "offers": {
+            "@type": "Offer",
+            "price": "9.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://apps.microsoft.com/detail/9PB3Q7K9FVZQ"
+          },
+          "mainEntityOfPage": "https://3thousand30.com/batchfile-organiser.html"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://3thousand30.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Products",
+              "item": "https://3thousand30.com/products/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "BatchFile Organiser",
+              "item": "https://3thousand30.com/batchfile-organiser.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What organisation modes does BatchFile Organiser support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It supports organisation by type, year and type, year and month, or year, month, and type."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does duplicate detection work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It uses exact file hashing, so it can find true duplicate files even when filenames are different."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I preview changes before applying them?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The app scans first and shows a full preview before changes are applied."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I undo the last operation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. It supports undoing the last operation so you can restore moved files and removed duplicates."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is it fully local?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Folder scanning, duplicate detection, previews, and file changes all happen locally with no cloud dependency or telemetry."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -124,6 +197,7 @@
         <header class="flex items-start space-x-5 mb-8">
             <img src="Logos/BFO.webp" alt="BatchFile Organiser" class="w-16 h-16 rounded object-cover flex-shrink-0">
             <div>
+                <p class="text-gray-600 text-[11px] mb-3"><a href="products/" class="hover:text-retro-green transition-colors">products</a> / <span class="text-warm-gray">BatchFile Organiser</span></p>
                 <div class="text-retro-green text-xs mb-2 opacity-60">utility · windows</div>
                 <h1 class="text-white text-2xl md:text-3xl font-light mb-3">BatchFile Organiser</h1>
                 <p class="text-retro-green text-sm md:text-base leading-relaxed" style="text-shadow: 0 0 8px #00ff41;">
@@ -188,6 +262,114 @@
                 <span class="text-warm-gray text-xs opacity-80">// protected-folder blocking for safety</span>
                 <span class="text-warm-gray text-xs opacity-80">// quick shortcuts: Desktop, Downloads, Documents, Pictures, Videos</span>
                 <span class="text-warm-gray text-xs opacity-80">// 100% local — no internet, no account, no telemetry</span>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">who_its_for</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">People cleaning messy folders</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Useful for Downloads, Pictures, Documents, and other folders that have grown chaotic over time.</p>
+                </div>
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">Asset-heavy content workflows</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">A good fit when image batches, exports, proofs, or translated files start multiplying and need safe, preview-first reorganisation.</p>
+                </div>
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">People who want local safety rails</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Strong if you want scan-first visibility, exact duplicate detection, and undo support without handing your file tree to another service.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">best_paired_with</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="batchresize-image.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-2 opacity-60">image-prep companion</div>
+                    <h3 class="text-white text-sm mb-2">BatchResize Image</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Organise source or export folders cleanly before or after building channel-specific image batches.</p>
+                </a>
+                <a href="batchwatermark-image.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-2 opacity-60">proof companion</div>
+                    <h3 class="text-white text-sm mb-2">BatchWatermark Image</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Useful when organised proof folders, review packs, and branded preview sets need a clear next step after cleanup.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">use_cases</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="use-cases/mass-create-social-media-content.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-2 opacity-60">adjacent workflow</div>
+                    <h3 class="text-white text-sm mb-2">Mass-create social media content</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Useful when content workflows create a sprawl of drafts, images, resized exports, and proof variants that need cleaner folder structure.</p>
+                </a>
+                <a href="use-cases/" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
+                    <div class="text-retro-green text-xs mb-2 opacity-60">workflow library</div>
+                    <h3 class="text-white text-sm mb-2">Browse all use cases</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Follow the live workflows now and the later multilingual and image-prep routes where better folder hygiene becomes even more useful.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">privacy_and_control</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="border p-6" style="border-color: rgba(0,255,65,0.15);">
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">
+                    BatchFile Organiser is fully local. Scans, previews, duplicate checks, and file operations all happen on your Windows machine without sending folder contents to a cloud service.
+                </p>
+                <p class="text-gray-500 text-xs leading-relaxed">
+                    That matters because file-organisation tools can be high-trust tools. This one is designed so you can inspect the plan first, apply it locally, and undo the last run if needed.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-5">
+                <span class="text-retro-green">></span>
+                <h2 class="text-retro-amber text-base font-normal">faq</h2>
+                <div class="flex-1 h-px bg-gray-800"></div>
+            </div>
+            <div class="space-y-4">
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">What organisation modes does BatchFile Organiser support?</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">It supports organisation by type, year and type, year and month, or year, month, and type.</p>
+                </div>
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">How does duplicate detection work?</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">It uses exact file hashing, so it can find true duplicate files even when filenames are different.</p>
+                </div>
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">Can I preview changes before applying them?</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Yes. The app scans first and shows a full preview before changes are applied.</p>
+                </div>
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">Can I undo the last operation?</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Yes. It supports undoing the last operation so you can restore moved files and removed duplicates.</p>
+                </div>
+                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
+                    <h3 class="text-white text-sm mb-2">Is it fully local?</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Yes. Folder scanning, duplicate detection, previews, and file changes all happen locally with no cloud dependency or telemetry.</p>
+                </div>
             </div>
         </section>
 
