@@ -27,7 +27,7 @@ in each page's `<head>`. Hosted on GitHub Pages.
 
 | App | Detail page | Price (USD) |
 |-----|-------------|-------------|
-| BatchGen Text with AI | `batchgen-text.html` | $14.99 |
+| Batch Generate Text with any AI | `batchgen-text.html` | ~~$24.99~~ **$18.74** (promo) |
 | BatchGen Image with AI | `batchgen-image.html` | ~~$19.99~~ **$13.99** (sale, ends 2026-06-09) |
 | Batch Translate with AI | `batchtranslate.html` | $19.99 |
 | BatchEnhance Image | `batchenhance-image.html` | $4.99 |
