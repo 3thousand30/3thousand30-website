@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://3thousand30.com/batchgen-text.html">
     <meta property="og:title" content="Batch Generate Text with any AI — BYO Keys, Personas, Samples, CSV Lists | 3thousand30">
     <meta property="og:description" content="Batch AI writing on Windows with your own API keys. Save providers, generate CSV topic lists, match persona and sample style, output in many languages, and save locally. About 7 MB.">
-    <meta property="og:image" content="https://3thousand30.com/screenshots/bgt/2.png">
+    <meta property="og:image" content="https://3thousand30.com/screenshots/bgt/2.webp">
     <meta property="og:image:alt" content="Batch Generate Text with any AI showing persona selection and batch content workflow">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -30,7 +30,7 @@
     <meta name="twitter:creator" content="@3thousand30HQ">
     <meta name="twitter:title" content="Batch Generate Text with any AI — BYO Keys, Personas, Samples, CSV Lists | 3thousand30">
     <meta name="twitter:description" content="Batch AI writing on Windows with your own API keys. Save providers, generate CSV topic lists, match persona and sample style, output in many languages, and save locally. About 7 MB.">
-    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bgt/2.png">
+    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bgt/2.webp">
     <meta name="twitter:image:alt" content="Batch Generate Text with any AI showing persona selection and batch content workflow">
 
     <script type="application/ld+json">
@@ -149,9 +149,7 @@
 </head>
 <body class="bg-black text-white font-mono antialiased overflow-x-hidden">
 
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true">
-        <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px);"></div>
-    </div>
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px); will-change: transform;"></div>
 
     <!-- Sticky nav -->
     <div class="sticky top-0 z-30 bg-black border-b" style="border-color: rgba(0,255,65,0.15);">
@@ -220,13 +218,13 @@
             <div class="relative">
                 <div class="overflow-hidden border" style="border-color: rgba(168,168,168,0.15);">
                     <div class="flex transition-transform duration-300 ease-in-out" id="carousel-track">
-                        <img src="screenshots/bgt/1.png" alt="Persona step showing a reusable writing profile with values, rules, notes, and writing datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bgt/2.png" alt="Persona editor for adding or tuning writer type, values, goals, note, and style datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/3.png" alt="Sample Intelligence step with sample analysis and persona comparison datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/4.png" alt="Generate Content List CSV modal for creating topics, moods, audiences, and themes inside the app" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/5.png" alt="Generate step with template, language, influence balance, content list, output folder, preview, and generate controls" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/6.png" alt="Completed batch output saved locally on the user's system" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/7.png" alt="AI provider settings showing multiple saved provider connections for different use cases" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
+                        <img src="screenshots/bgt/1.webp" alt="Persona step showing a reusable writing profile with values, rules, notes, and writing datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bgt/2.webp" alt="Persona editor for adding or tuning writer type, values, goals, note, and style datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
+                        <img src="screenshots/bgt/3.webp" alt="Sample Intelligence step with sample analysis and persona comparison datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
+                        <img src="screenshots/bgt/4.webp" alt="Generate Content List CSV modal for creating topics, moods, audiences, and themes inside the app" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
+                        <img src="screenshots/bgt/5.webp" alt="Generate step with template, language, influence balance, content list, output folder, preview, and generate controls" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
+                        <img src="screenshots/bgt/6.webp" alt="Completed batch output saved locally on the user's system" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
+                        <img src="screenshots/bgt/7.webp" alt="AI provider settings showing multiple saved provider connections for different use cases" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">←</button>
@@ -458,12 +456,7 @@
 
     </div>
 
-    <style>
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41; }
-            50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41; }
-        }
-    </style>
+
 
     <script>
         (function () {

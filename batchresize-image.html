@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://3thousand30.com/batchresize-image.html">
     <meta property="og:title" content="Batch Image Resizer for Windows — Resize Images in Bulk | 3thousand30">
     <meta property="og:description" content="Resize images in bulk for social media, web, email, and marketplaces on Windows. Use presets, crop controls, live preview, and local processing.">
-    <meta property="og:image" content="https://3thousand30.com/screenshots/bri/1.png">
+    <meta property="og:image" content="https://3thousand30.com/screenshots/bri/1.webp">
     <meta property="og:image:alt" content="BatchResize Image app screenshot">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
     <meta name="twitter:creator" content="@3thousand30HQ">
     <meta name="twitter:title" content="Batch Image Resizer for Windows — Resize Images in Bulk | 3thousand30">
     <meta name="twitter:description" content="Resize images in bulk for social media, web, email, and marketplaces on Windows. Use presets, crop controls, live preview, and local processing.">
-    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bri/1.png">
+    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bri/1.webp">
     <meta name="twitter:image:alt" content="BatchResize Image app screenshot">
 
     <script type="application/ld+json">
@@ -148,9 +148,7 @@
 </head>
 <body class="bg-black text-white font-mono antialiased overflow-x-hidden">
 
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true">
-        <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px);"></div>
-    </div>
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px); will-change: transform;"></div>
 
     <!-- Sticky nav -->
     <div class="sticky top-0 z-30 bg-black border-b" style="border-color: rgba(0,255,65,0.15);">
@@ -217,11 +215,11 @@
             <div class="relative">
                 <div class="overflow-hidden border" style="border-color: rgba(168,168,168,0.15);">
                     <div class="flex transition-transform duration-300 ease-in-out" id="carousel-track">
-                        <img src="screenshots/bri/1.png" alt="Choose a resize mode — custom, preset, or constrained" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/2.png" alt="Built-in presets for common social and web dimensions" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/3.png" alt="Preview before export — compare original and resized results" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/4.png" alt="Fit modes for exact dimensions, clean crops, or no distortion" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/5.png" alt="Batch progress — resize full folders with clear status updates" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bri/1.webp" alt="Choose a resize mode — custom, preset, or constrained" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bri/2.webp" alt="Built-in presets for common social and web dimensions" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bri/3.webp" alt="Preview before export — compare original and resized results" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bri/4.webp" alt="Fit modes for exact dimensions, clean crops, or no distortion" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bri/5.webp" alt="Batch progress — resize full folders with clear status updates" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
                     </div>
                 </div>
                 <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">←</button>
@@ -452,12 +450,7 @@
 
     </div>
 
-    <style>
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41; }
-            50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41; }
-        }
-    </style>
+
 
     <script>
         (function () {

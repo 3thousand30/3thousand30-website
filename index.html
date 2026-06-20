@@ -70,9 +70,7 @@
 <body class="bg-black text-white font-mono antialiased overflow-x-hidden">
 
     <!-- Retro scan lines -->
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true">
-        <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px);"></div>
-    </div>
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px); will-change: transform;"></div>
 
     <div class="relative z-20 max-w-4xl mx-auto px-6 py-12 md:py-16">
 
@@ -437,8 +435,8 @@
 
     <style>
         @keyframes glow {
-            0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41; }
-            50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41; }
+            0%, 100% { filter: drop-shadow(0 0 4px #00ff41); }
+            50% { filter: drop-shadow(0 0 10px #00ff41); }
         }
 
         body.accordion-ready .collapsible-section .section-panel {
