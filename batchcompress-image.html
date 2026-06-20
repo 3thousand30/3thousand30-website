@@ -195,7 +195,7 @@
 
         <!-- App header -->
         <header class="flex items-start space-x-5 mb-8">
-            <img src="Logos/BCI.webp" alt="BatchCompress Image" class="w-16 h-16 rounded object-cover flex-shrink-0">
+            <img src="Logos/BCI.webp" alt="BatchCompress Image" class="w-16 h-16 rounded object-cover flex-shrink-0" fetchpriority="high" decoding="async">
             <div>
                 <p class="text-gray-600 text-[11px] mb-3"><a href="products/" class="hover:text-retro-green transition-colors">products</a> / <span class="text-warm-gray">BatchCompress Image</span></p>
                 <div class="text-retro-green text-xs mb-2 opacity-60">utility · windows</div>
@@ -230,9 +230,9 @@
             <div class="relative">
                 <div class="overflow-hidden border" style="border-color: rgba(168,168,168,0.15);">
                     <div class="flex transition-transform duration-300 ease-in-out" id="carousel-track">
-                        <img src="screenshots/bci/1.png" alt="Tune quality and format before touching the full batch" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
-                        <img src="screenshots/bci/2.png" alt="Batch progress — compress full folders with clear status updates" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
-                        <img src="screenshots/bci/3.png" alt="Built-in help for a faster first run" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;">
+                        <img src="screenshots/bci/1.png" alt="Tune quality and format before touching the full batch" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bci/2.png" alt="Batch progress — compress full folders with clear status updates" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
+                        <img src="screenshots/bci/3.png" alt="Built-in help for a faster first run" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
                     </div>
                 </div>
                 <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">←</button>
@@ -381,43 +381,43 @@
             <div class="relative overflow-hidden border px-16 py-6" style="border-color: rgba(168,168,168,0.15);">
                 <div class="flex gap-3 transition-transform duration-300 ease-in-out" id="other-carousel-track">
                     <a href="batchgen-text.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BGT.webp" alt="Batch Generate Text with any AI" class="w-8 h-8 rounded mb-2 object-cover">
+                        <img src="Logos/BGT.webp" alt="Batch Generate Text with any AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
                         <p class="text-white text-xs group-hover:text-retro-green transition-colors">Batch Generate Text</p>
                         <p class="text-gray-600 text-xs mt-1">generative · windows</p>
                         <p class="inline-flex items-center gap-1.5 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2 py-0.5 mt-1"><span class="text-retro-amber text-xs font-medium">$14.99</span><span class="text-gray-600 text-xs line-through">$19.99</span><span class="bg-retro-amber text-black text-[10px] font-bold px-1">-25%</span></p>
                     </a>
                     <a href="batchgen-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BGI.webp" alt="BatchGen Image with AI" class="w-8 h-8 rounded mb-2 object-cover">
+                        <img src="Logos/BGI.webp" alt="BatchGen Image with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
                         <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchGen Image</p>
                         <p class="text-gray-600 text-xs mt-1">generative · windows</p>
                         <p class="inline-flex items-center gap-1.5 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2 py-0.5 mt-1"><span class="text-retro-amber text-xs font-medium">$13.99</span><span class="text-gray-600 text-xs line-through">$19.99</span><span class="bg-retro-amber text-black text-[10px] font-bold px-1">-30%</span></p>
                     </a>
                     <a href="batchtranslate.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BT.png" alt="Batch Translate with AI" class="w-8 h-8 rounded mb-2 object-cover">
+                        <img src="Logos/BT.png" alt="Batch Translate with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
                         <p class="text-white text-xs group-hover:text-retro-green transition-colors">Batch Translate</p>
                         <p class="text-gray-600 text-xs mt-1">translation · windows</p>
                         <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$19.99</p>
                     </a>
                     <a href="batchenhance-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BEI.webp" alt="BatchEnhance Image" class="w-8 h-8 rounded mb-2 object-cover">
+                        <img src="Logos/BEI.webp" alt="BatchEnhance Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
                         <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchEnhance Image</p>
                         <p class="text-gray-600 text-xs mt-1">utility · windows</p>
                         <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$4.99</p>
                     </a>
                     <a href="batchfile-organiser.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BFO.webp" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover">
+                        <img src="Logos/BFO.webp" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
                         <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchFile Organiser</p>
                         <p class="text-gray-600 text-xs mt-1">utility · windows</p>
                         <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$9.99</p>
                     </a>
                     <a href="batchwatermark-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BWI.webp" alt="BatchWatermark Image" class="w-8 h-8 rounded mb-2 object-cover">
+                        <img src="Logos/BWI.webp" alt="BatchWatermark Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
                         <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchWatermark Image</p>
                         <p class="text-gray-600 text-xs mt-1">utility · windows</p>
                         <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$4.99</p>
                     </a>
                     <a href="batchresize-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BRI.webp" alt="BatchResize Image" class="w-8 h-8 rounded mb-2 object-cover">
+                        <img src="Logos/BRI.webp" alt="BatchResize Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
                         <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchResize Image</p>
                         <p class="text-gray-600 text-xs mt-1">utility · windows</p>
                         <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$2.99</p>
