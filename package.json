@@ -1,0 +1,25 @@
+{
+  "name": "3thousand30-website",
+  "version": "1.0.0",
+  "description": "Marketing site for **3thousand30** — buy-once, privacy-first Windows tools.",
+  "main": "cookie-banner.js",
+  "scripts": {
+    "build:css": "tailwindcss -i tailwind.input.css -o tailwind.min.css --minify",
+    "watch:css": "tailwindcss -i tailwind.input.css -o tailwind.min.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3thousand30/3thousand30-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/3thousand30/3thousand30-website/issues"
+  },
+  "homepage": "https://github.com/3thousand30/3thousand30-website#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
