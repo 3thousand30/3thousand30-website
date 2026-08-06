@@ -47,20 +47,6 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap"></noscript>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8N64KW0ELL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', { analytics_storage: 'denied' });
-      try {
-        if (localStorage.getItem('cookie_consent') === 'granted') {
-          gtag('consent', 'update', { analytics_storage: 'granted' });
-        }
-      } catch (e) {}
-      gtag('js', new Date());
-      gtag('config', 'G-8N64KW0ELL');
-    </script>
-
 </head>
 <body class="bg-black text-white font-mono antialiased overflow-x-hidden">
 
@@ -96,16 +82,16 @@
                 <div class="flex-1 h-px bg-gray-800"></div>
             </div>
             <div class="space-y-4">
-                <p class="text-warm-gray text-sm leading-relaxed">We use Google Analytics to understand how people find and use this site. Which pages are visited, where traffic comes from, how long people stay. Nothing more.</p>
-                <p class="text-warm-gray text-sm leading-relaxed">We ask for your consent before enabling it. If you declined or ignored the prompt, Google Analytics is not running. Nothing is tracked.</p>
+                <p class="text-warm-gray text-sm leading-relaxed">We use Google Analytics to understand how people find and use this site: which pages are visited, where traffic comes from, and which product, Store, use-case, and external links are useful.</p>
+                <p class="text-warm-gray text-sm leading-relaxed">We ask for your consent before enabling it. If you decline or ignore the prompt, the Google Analytics script is not loaded and no analytics requests are sent.</p>
                 <p class="text-warm-gray text-sm leading-relaxed">If you accepted, here is what that means:</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 pt-1">
-                    <span class="text-warm-gray text-xs opacity-80">// Google receives anonymised usage data about your visit</span>
-                    <span class="text-warm-gray text-xs opacity-80">// no personal details, no account, no profile created by us</span>
+                    <span class="text-warm-gray text-xs opacity-80">// Google receives usage data about your visit and sets analytics cookies</span>
+                    <span class="text-warm-gray text-xs opacity-80">// we do not send names, email addresses, files, or app content</span>
                     <span class="text-warm-gray text-xs opacity-80">// we do not share or sell this data</span>
-                    <span class="text-warm-gray text-xs opacity-80">// you can withdraw consent at any time below</span>
+                    <span class="text-warm-gray text-xs opacity-80">// withdrawing consent below deletes this site's analytics cookies</span>
                 </div>
-                <p class="text-warm-gray text-sm leading-relaxed pt-1">We do not use advertising trackers, retargeting pixels, or any third-party tools beyond Google Analytics.</p>
+                <p class="text-warm-gray text-sm leading-relaxed pt-1">We do not use advertising trackers or retargeting pixels. Google Analytics is our only analytics service, and advertising consent remains disabled.</p>
             </div>
         </section>
 
@@ -146,7 +132,7 @@
                         accept analytics
                     </button>
                 </div>
-                <p class="text-gray-600 text-xs mt-4">Changes take effect immediately. No reload needed.</p>
+                <p class="text-gray-600 text-xs mt-4">Changes take effect immediately and are stored on this browser.</p>
             </div>
         </section>
 
@@ -184,7 +170,10 @@
 
     <script>
         function updateConsentUI() {
-            var c = localStorage.getItem('cookie_consent');
+            var c = null;
+            try {
+                c = localStorage.getItem('cookie_consent');
+            } catch (e) {}
             var statusEl = document.getElementById('consent-status');
             var withdrawBtn = document.getElementById('consent-withdraw');
             var acceptBtn = document.getElementById('consent-accept');
@@ -206,14 +195,16 @@
         }
 
         document.getElementById('consent-withdraw').addEventListener('click', function () {
-            localStorage.setItem('cookie_consent', 'denied');
-            gtag('consent', 'update', { analytics_storage: 'denied' });
+            if (window.analyticsConsent) {
+                window.analyticsConsent.deny();
+            }
             updateConsentUI();
         });
 
         document.getElementById('consent-accept').addEventListener('click', function () {
-            localStorage.setItem('cookie_consent', 'granted');
-            gtag('consent', 'update', { analytics_storage: 'granted' });
+            if (window.analyticsConsent) {
+                window.analyticsConsent.grant();
+            }
             updateConsentUI();
         });
 
