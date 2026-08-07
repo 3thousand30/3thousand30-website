@@ -57,9 +57,9 @@ module.exports = [
     code: 'BGI',
     slug: 'batchgen-image',
     url: '/batchgen-image.html',
-    name: 'BatchGen Image with AI',
-    seoTitle: 'BatchGen Image with AI — Bulk Image Generator for Windows | 3thousand30',
-    shortName: 'BatchGen Image',
+    name: 'Batch Generate Image with any AI',
+    seoTitle: 'Batch Generate Image with any AI — Bulk Image Generator for Windows | 3thousand30',
+    shortName: 'Batch Generate Image with any AI',
     type: 'ai',
     typeLabel: 'AI creation',
     categories: ['images', 'publishing', 'social'],
@@ -67,7 +67,7 @@ module.exports = [
     featured: true,
     tagline: 'Generate coherent image sets for campaigns, books, posters, and product ideas.',
     description: 'Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs.',
-    intro: 'BatchGen Image is for projects that need an image set rather than one lucky prompt. Build the list, choose a visual direction, generate more than you need, and keep human selection at the centre of the workflow.',
+    intro: 'Batch Generate Image with any AI is for projects that need an image set rather than one lucky prompt. Build the list, choose a visual direction, generate more than you need, and keep human selection at the centre of the workflow.',
     logo: '/Logos/BGI.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9pfr4v6827xq',
     docsUrl: 'https://3thousand30.github.io/batchgenimage-docs/',
@@ -85,10 +85,10 @@ module.exports = [
     ],
     audiences: ['Creators planning visual series', 'Authors and publishers building illustrated artifacts', 'Sellers preparing posters, concepts, and campaign imagery'],
     screenshotItems: screenshots('bgi', [
-      ['1.webp', 'BatchGen Image project setup', 'Set up the image batch and output direction.'],
-      ['2.webp', 'BatchGen Image template and prompt controls', 'Choose a reusable format for the set.'],
+      ['1.webp', 'Batch Generate Image with any AI project setup', 'Set up the image batch and output direction.'],
+      ['2.webp', 'Batch Generate Image with any AI template and prompt controls', 'Choose a reusable format for the set.'],
       ['4.webp', 'Generated image batch review', 'Generate enough candidates to make a real selection.'],
-      ['5.webp', 'BatchGen Image local output view', 'Keep the selected image files on your PC.']
+      ['5.webp', 'Batch Generate Image with any AI local output view', 'Keep the selected image files on your PC.']
     ]),
     faq: [
       { q: 'Does it include image-generation credits?', a: 'No. You use your own provider key, choose the model, and pay the provider directly.' },
