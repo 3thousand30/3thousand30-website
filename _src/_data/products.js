@@ -6,7 +6,24 @@ function screenshots(folder, files) {
   }));
 }
 
-module.exports = [
+// US Microsoft Store pricing, verified against the publisher catalog.
+// Keep pricing centralized so cards, product pages, and structured data agree.
+const usdPrices = {
+  BGT: { current: '14.99', original: '19.99', discountPercent: 25 },
+  BGI: { current: '14.99', original: '19.99', discountPercent: 25 },
+  BT: { current: '14.99', original: '19.99', discountPercent: 25 },
+  BFO: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BEI: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BRI: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BWI: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BCI: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BMP: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BSP: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BTP: { current: '3.74', original: '4.99', discountPercent: 25 },
+  KR: { current: '3.74', original: '4.99', discountPercent: 25 }
+};
+
+const products = [
   {
     code: 'BGT',
     slug: 'batchgen-text',
@@ -25,8 +42,6 @@ module.exports = [
     logo: '/Logos/BGT.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9n3b1b8dt39f',
     docsUrl: 'https://3thousand30.github.io/batchgentext-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'BYO key · local outputs',
     privacyText: 'API keys are encrypted locally with Windows DPAPI and finished files are saved to your PC. Prompts are sent only to the external AI provider you choose.',
     features: [
@@ -51,7 +66,7 @@ module.exports = [
     ],
     relatedProducts: ['BGI', 'BT', 'BTP'],
     relatedUseCases: ['mass-create-social-media-content', 'create-short-stories-for-teaching', 'create-a-poetry-book', 'create-song-lyrics-for-inspiration'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BGI',
@@ -71,8 +86,6 @@ module.exports = [
     logo: '/Logos/BGI.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9pfr4v6827xq',
     docsUrl: 'https://3thousand30.github.io/batchgenimage-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'BYO key · local outputs',
     privacyText: 'Your provider receives the generation request you choose to send. API keys are encrypted locally and generated images are saved on your machine rather than a 3thousand30 cloud.',
     features: [
@@ -97,7 +110,7 @@ module.exports = [
     ],
     relatedProducts: ['BGT', 'BEI', 'BRI'],
     relatedUseCases: ['create-a-photobook-with-ai-for-gifting', 'batch-create-images-for-social-media', 'create-a-colouring-book-for-children', 'create-posters-to-print-or-sell'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BT',
@@ -117,8 +130,6 @@ module.exports = [
     logo: '/Logos/BT.png',
     storeUrl: 'https://apps.microsoft.com/detail/9N75DWR9X2S7',
     docsUrl: 'https://3thousand30.github.io/batchtranslate-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'BYO key · local outputs',
     privacyText: 'Source content is sent to the external AI provider you select for translation. Keys are encrypted locally and the translated files are saved on your PC.',
     features: ['Process PDF, DOCX, TXT, and Markdown files', 'Translate a batch into one or more target languages', 'Choose your own provider and model', 'Save provider configurations for repeat work', 'Track progress across the folder', 'Store every translated result locally'],
@@ -136,7 +147,7 @@ module.exports = [
     ],
     relatedProducts: ['BGT', 'BTP', 'BMP'],
     relatedUseCases: ['publish-content-in-different-languages', 'translate-a-book-for-new-markets'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BFO',
@@ -156,8 +167,6 @@ module.exports = [
     logo: '/Logos/BFO.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9PB3Q7K9FVZQ',
     docsUrl: 'https://3thousand30.github.io/batchfileorganiser-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'Fully local',
     privacyText: 'Folder scanning, duplicate hashing, previews, file operations, and undo information stay on your Windows machine. No account or telemetry is required.',
     features: ['Organise files by type or date', 'Find exact duplicates by file hash', 'Preview the full proposed operation', 'Apply changes only after review', 'Undo the most recent operation', 'Run without uploading folder contents'],
@@ -175,7 +184,7 @@ module.exports = [
     ],
     relatedProducts: ['BCI', 'BRI', 'BEI'],
     relatedUseCases: ['organise-and-prepare-a-working-file-collection'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BEI',
@@ -195,8 +204,6 @@ module.exports = [
     logo: '/Logos/BEI.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9n2vhg38ss00',
     docsUrl: 'https://3thousand30.github.io/batchenhanceimage-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'Fully local',
     privacyText: 'Upscaling, sharpening, DPI settings, and exported files stay on your Windows machine with no cloud upload, account, or telemetry.',
     features: ['Upscale complete folders in one run', 'Choose scaling up to 8×', 'Set print-oriented DPI metadata', 'Apply sharpening when appropriate', 'Preview and review before final use', 'Process images without cloud upload'],
@@ -214,7 +221,7 @@ module.exports = [
     ],
     relatedProducts: ['BGI', 'BRI', 'BTP'],
     relatedUseCases: ['enhance-images-for-printing', 'create-a-photobook-with-ai-for-gifting', 'create-posters-to-print-or-sell'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BRI',
@@ -234,8 +241,6 @@ module.exports = [
     logo: '/Logos/BRI.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9PPKDVXPTLV0',
     docsUrl: 'https://3thousand30.github.io/batchresizeimage-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'Fully local',
     privacyText: 'Source images, crop choices, resize settings, and outputs remain on the machine. No account, upload, or telemetry is required.',
     features: ['Resize a whole folder in one run', 'Use practical social, web, email, and marketplace presets', 'Control crop and aspect-ratio handling', 'Preview the result before processing', 'Keep source files separate from outputs', 'Work without a cloud upload'],
@@ -253,7 +258,7 @@ module.exports = [
     ],
     relatedProducts: ['BGI', 'BCI', 'BWI'],
     relatedUseCases: ['resize-images-for-different-social-platforms', 'mass-create-social-media-content', 'batch-create-images-for-social-media'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BWI',
@@ -273,8 +278,6 @@ module.exports = [
     logo: '/Logos/BWI.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9n3s7zrpxgph',
     docsUrl: 'https://3thousand30.github.io/batchwatermarkimage-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'Fully local',
     privacyText: 'Source images, watermark assets, preview states, and exported files stay on your machine with no cloud upload, account, or telemetry.',
     features: ['Add a text watermark, logo watermark, or both', 'Control position, opacity, scale, and tiling', 'Preview placement before the batch run', 'Create proof, branded, or rights-marked sets', 'Write results to a separate output folder', 'Process the full set locally'],
@@ -292,7 +295,7 @@ module.exports = [
     ],
     relatedProducts: ['BGI', 'BRI', 'BCI'],
     relatedUseCases: ['add-watermarks-before-sharing-images', 'add-copyright-information-to-images', 'mass-create-social-media-content'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BCI',
@@ -312,8 +315,6 @@ module.exports = [
     logo: '/Logos/BCI.webp',
     storeUrl: 'https://apps.microsoft.com/detail/9n1dbc2g87ht',
     docsUrl: 'https://3thousand30.github.io/batchcompressimage-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price for your region.',
     privacyLabel: 'Fully local',
     privacyText: 'Compression and comparison happen on the PC. Source images and output files are not uploaded to a cloud service.',
     features: ['Compress a complete image folder', 'Choose a quality target for the batch', 'Compare original and compressed output', 'Prepare lighter files for websites, email, and marketplaces', 'Keep source and compressed copies separate', 'Run without an account or upload'],
@@ -330,7 +331,7 @@ module.exports = [
     ],
     relatedProducts: ['BRI', 'BWI', 'BFO'],
     relatedUseCases: ['compress-images-to-save-storage-space', 'organise-and-prepare-a-working-file-collection'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BMP',
@@ -350,8 +351,6 @@ module.exports = [
     logo: '/Logos/BMP.png',
     storeUrl: 'https://apps.microsoft.com/detail/9NVDT0TTN0WH',
     docsUrl: 'https://3thousand30.github.io/batchmergepdf-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price and promotion for your region.',
     privacyLabel: 'Fully local',
     privacyText: 'The source PDFs and merged result remain on your Windows machine. No account, subscription, or cloud upload by 3thousand30 is required.',
     features: ['Merge every PDF directly inside one folder', 'Use alphabetical filenames to control the order', 'Name the result after the source folder', 'Add continuous page numbers when useful', 'Skip an output that already exists', 'Track progress and open the output folder after completion'],
@@ -368,7 +367,7 @@ module.exports = [
     ],
     relatedProducts: ['BSP', 'BTP', 'BT'],
     relatedUseCases: ['merge-pdfs-without-using-the-internet', 'create-a-poetry-book', 'translate-a-book-for-new-markets'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BSP',
@@ -388,8 +387,6 @@ module.exports = [
     logo: '/Logos/BSP.png',
     storeUrl: 'https://apps.microsoft.com/detail/9MZKRHK6NRRS',
     docsUrl: 'https://3thousand30.github.io/batchsplitpdf-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price and promotion for your region.',
     privacyLabel: 'Fully local',
     privacyText: 'PDF reading, splitting, and file output happen locally on Windows. No account, subscription, or cloud upload by 3thousand30 is required.',
     features: ['Split one PDF into individual pages', 'Split one PDF into fixed-size chunks', 'Process all PDFs in a folder', 'Optionally include nested subfolders', 'Use automatic numbered output names', 'Track progress and safely skip existing outputs'],
@@ -405,7 +402,7 @@ module.exports = [
     ],
     relatedProducts: ['BMP', 'BTP', 'BFO'],
     relatedUseCases: ['translate-a-book-for-new-markets', 'create-short-stories-for-teaching'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'BTP',
@@ -425,8 +422,6 @@ module.exports = [
     logo: '/Logos/BTP.png',
     storeUrl: 'https://apps.microsoft.com/detail/9NS1L0DK0FQL',
     docsUrl: 'https://3thousand30.github.io/batchtexttopdf-docs/',
-    priceLabel: '$4.99 list price',
-    priceNote: '25% launch discount through 6 August 2027. Microsoft Store applies regional pricing.',
     privacyLabel: 'Fully local',
     privacyText: 'Core conversion runs on your PC. No account, upload, AI service, analytics, or telemetry is required.',
     features: ['Convert Markdown, TXT, DOCX, JPG, PNG, WebP, and GIF sources', 'Create one PDF per source or one combined ordered PDF', 'Choose eight presets or custom page dimensions and margins', 'Add page numbers to individual or combined output', 'Auto-pair same-named text and image files', 'Preserve multilingual text and full-colour emoji'],
@@ -447,7 +442,7 @@ module.exports = [
     ],
     relatedProducts: ['BMP', 'BSP', 'BGT'],
     relatedUseCases: ['batch-create-pdfs-from-text', 'create-a-colouring-book-for-children', 'create-a-poetry-book', 'create-short-stories-for-teaching'],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   },
   {
     code: 'KR',
@@ -467,8 +462,6 @@ module.exports = [
     logo: '/Logos/KR.png',
     storeUrl: 'https://apps.microsoft.com/detail/9MW7722B1026',
     docsUrl: 'https://3thousand30.github.io/keyrush-docs/',
-    priceLabel: 'Buy once',
-    priceNote: 'Microsoft Store shows the current price and promotion for your region.',
     privacyLabel: 'Offline-first · local scores',
     privacyText: 'Play, settings, local top-10 boards, score tags, and saved result cards stay on the machine. No account or telemetry is required.',
     features: ['Play Story, Endless, or Zen modes', 'Clear nine levels across three story chapters', 'Survive an endless lane that speeds up over time', 'Practise in a no-fail Zen passage mode', 'Keep local top-10 boards for every mode', 'Adjust motion, font size, contrast, sound, and music'],
@@ -488,6 +481,16 @@ module.exports = [
     ],
     relatedProducts: ['BGT', 'BFO'],
     relatedUseCases: [],
-    lastmod: '2026-08-07'
+    lastmod: '2026-08-08'
   }
 ];
+
+module.exports = products.map((product) => ({
+  ...product,
+  price: {
+    ...usdPrices[product.code],
+    currency: 'USD',
+    region: 'US',
+    verifiedOn: '2026-08-08'
+  }
+}));

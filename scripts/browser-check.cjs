@@ -61,6 +61,17 @@ async function auditAccessibility(page, label) {
   const productCardLicenses = await page.locator('[data-catalog-item] .card-license').allTextContents();
   assert(productCardLicenses.length === 12, `Product directory does not show a license label on every card (found ${productCardLicenses.length}).`);
   assert(productCardLicenses.every((label) => label.replace(/\s+/g, ' ').trim() === '// buy once'), 'Product cards do not use one consistent buy-once label.');
+  const productCardCurrentPrices = await page.locator('[data-catalog-item] .card-price-values strong').allTextContents();
+  const productCardOriginalPrices = await page.locator('[data-catalog-item] .card-price-values s').allTextContents();
+  const productCardDiscounts = await page.locator('[data-catalog-item] .card-discount').allTextContents();
+  assert(productCardCurrentPrices.length === 12, `Product directory does not show a current price on every card (found ${productCardCurrentPrices.length}).`);
+  assert(productCardCurrentPrices.filter((price) => price.trim() === '$14.99').length === 3, 'Product directory does not show the $14.99 US price on all three AI apps.');
+  assert(productCardCurrentPrices.filter((price) => price.trim() === '$3.74').length === 9, 'Product directory does not show the $3.74 US price on all nine other products.');
+  assert(productCardOriginalPrices.filter((price) => price.trim() === '$19.99').length === 3, 'Product directory AI original prices are incorrect.');
+  assert(productCardOriginalPrices.filter((price) => price.trim() === '$4.99').length === 9, 'Product directory standard original prices are incorrect.');
+  assert(productCardDiscounts.every((discount) => discount.trim() === '-25%'), 'Product cards do not all show the current -25% Store discount.');
+  assert(await page.locator('[data-catalog-item] .card-status', { hasText: 'released' }).count() === 0, 'Product cards still show the redundant released status.');
+  assert(await page.locator('[data-catalog-controls]').evaluate((element) => getComputedStyle(element).position) !== 'sticky', 'Product filters cover the catalog on mobile.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Product directory has horizontal overflow at 390px.');
   await page.locator('[data-filter-group="categories"][data-filter-value="pdf"]').click();
   visibleCount = await visibleCatalogItems(page);
@@ -88,9 +99,10 @@ async function auditAccessibility(page, label) {
 
   await page.goto(`${baseUrl}/batch-text-to-pdf.html`, { waitUntil: 'networkidle' });
   const btpText = await page.locator('body').textContent();
-  assert(/released/i.test(btpText), 'BTP is not visibly marked released.');
-  assert(btpText.includes('$4.99 list price'), 'BTP list price is missing.');
-  assert(btpText.includes('25% launch discount through 6 August 2027'), 'BTP promotion is missing.');
+  assert(btpText.includes('$3.74'), 'BTP current US price is missing.');
+  assert(btpText.includes('$4.99'), 'BTP original US price is missing.');
+  assert(btpText.includes('-25%'), 'BTP current Store discount is missing.');
+  assert(!/6 August 2027|launch discount through/i.test(btpText), 'BTP contains an obsolete promotion end date.');
   assert(!/coming soon|certification|preparing for release/i.test(btpText), 'BTP contains pre-release wording.');
   assert(await page.locator(`a[href="https://apps.microsoft.com/detail/9NS1L0DK0FQL"]`).count() >= 1, 'BTP Store product-identity link is missing.');
   const firstBtpScreenshot = page.locator('img[src^="/screenshots/btp/"]').first();
@@ -144,7 +156,7 @@ async function auditAccessibility(page, label) {
     process.exit(1);
   }
 
-  console.log('Browser checks passed: mobile layout, filters, navigation, BTP release details, assets, and analytics consent lifecycle.');
+  console.log('Browser checks passed: mobile layout, filters, navigation, product pricing, assets, and analytics consent lifecycle.');
 })().catch((error) => {
   console.error(error);
   process.exit(1);

@@ -67,12 +67,21 @@ for (const product of products) {
   if (product.name !== officialTitle) fail(`${product.code}: product name must be "${officialTitle}", found "${product.name}".`);
   if (product.shortName !== officialTitle) fail(`${product.code}: short name must preserve the exact Store title "${officialTitle}".`);
   if (!product.seoTitle.startsWith(`${officialTitle} — `)) fail(`${product.code}: SEO title must begin with the exact Store title.`);
+  if (!/^\d+\.\d{2}$/.test(product.price?.current)) fail(`${product.code}: current US price is missing or malformed.`);
+  if (!/^\d+\.\d{2}$/.test(product.price?.original)) fail(`${product.code}: original US price is missing or malformed.`);
+  if (product.price?.discountPercent !== 25) fail(`${product.code}: expected a 25% Store discount.`);
+  if (product.price?.currency !== 'USD' || product.price?.region !== 'US') fail(`${product.code}: price must identify the US Store and USD.`);
 
   const generatedProductPage = path.join(root, product.url.slice(1));
   if (fs.existsSync(generatedProductPage)) {
     const productHtml = fs.readFileSync(generatedProductPage, 'utf8');
     if (!productHtml.includes(`<title>${product.seoTitle}</title>`)) fail(`${product.code}: generated page title does not match product SEO title.`);
     if (!productHtml.includes(`>${officialTitle}</h1>`)) fail(`${product.code}: generated h1 does not use the exact Store title.`);
+    if (!productHtml.includes(`$${product.price.current}`)) fail(`${product.code}: generated page is missing the current US price.`);
+    if (!productHtml.includes(`$${product.price.original}`)) fail(`${product.code}: generated page is missing the original US price.`);
+    if (!productHtml.includes(`-${product.price.discountPercent}%`)) fail(`${product.code}: generated page is missing the Store discount.`);
+    if (!productHtml.includes(`"priceCurrency": "${product.price.currency}"`)) fail(`${product.code}: generated SoftwareApplication offer is missing its price currency.`);
+    if (/priceValidUntil/i.test(productHtml)) fail(`${product.code}: generated price offer must not publish an end date.`);
   }
 }
 if (officialStoreTitles.size !== products.length) {
@@ -142,23 +151,31 @@ const expectedSitemapUrls = [
 for (const url of expectedSitemapUrls) {
   if (!sitemapUrls.includes(url)) fail(`sitemap.xml: missing ${url}.`);
 }
+for (const product of products) {
+  const expectedEntry = `<loc>https://3thousand30.com${product.url}</loc>`;
+  const entryStart = sitemap.indexOf(expectedEntry);
+  const entryEnd = sitemap.indexOf('</url>', entryStart);
+  const entry = entryStart >= 0 && entryEnd >= 0 ? sitemap.slice(entryStart, entryEnd) : '';
+  if (!entry.includes(`<lastmod>${product.lastmod}</lastmod>`)) fail(`sitemap.xml: ${product.code} lastmod does not match ${product.lastmod}.`);
+}
 if (sitemapUrls.length !== expectedSitemapUrls.length) {
   fail(`sitemap.xml: expected ${expectedSitemapUrls.length} URLs, found ${sitemapUrls.length}.`);
 }
 if (sitemapUrls.includes('https://3thousand30.com/404.html')) fail('sitemap.xml: 404 page must not be included.');
 
 const btp = fs.readFileSync(path.join(root, 'batch-text-to-pdf.html'), 'utf8');
-for (const required of ['released', '9NS1L0DK0FQL', '$4.99 list price', '25% launch discount through 6 August 2027']) {
+for (const required of ['9NS1L0DK0FQL', '$3.74', '$4.99', '-25%', 'USD price shown']) {
   if (!btp.includes(required)) fail(`BTP page: missing required text ${required}.`);
 }
 if (/coming soon|certification|preparing for release/i.test(btp)) {
   fail('BTP page: contains forbidden pre-release wording.');
 }
+if (/launch discount through|6 August 2027/i.test(btp)) fail('BTP page: contains an obsolete promotion end date.');
 
 const productCards = fs.readFileSync(path.join(root, '_src', '_includes', 'components', 'cards.njk'), 'utf8');
-if (productCards.includes('item.priceLabel')) {
-  fail('Product cards: catalog presentation must not vary by product-specific price label.');
-}
+if (productCards.includes('item.priceLabel')) fail('Product cards: legacy priceLabel presentation remains.');
+if (/card-status[^\n]*released|>released</i.test(productCards)) fail('Product cards: redundant released status remains.');
+if (!productCards.includes('item.price.current') || !productCards.includes('item.price.discountPercent')) fail('Product cards: current Store pricing is missing.');
 if (!productCards.includes('<span class="card-license"><i>//</i> buy once</span>')) {
   fail('Product cards: shared buy-once label is missing.');
 }

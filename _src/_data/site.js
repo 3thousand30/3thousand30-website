@@ -17,9 +17,9 @@ module.exports = {
     'organise-and-prepare-a-working-file-collection'
   ],
   staticPages: [
-    { url: '/', lastmod: '2026-08-07', priority: '1.0' },
-    { url: '/products/', lastmod: '2026-08-07', priority: '0.9' },
-    { url: '/use-cases/', lastmod: '2026-08-07', priority: '0.9' },
+    { url: '/', lastmod: '2026-08-08', priority: '1.0' },
+    { url: '/products/', lastmod: '2026-08-08', priority: '0.9' },
+    { url: '/use-cases/', lastmod: '2026-08-08', priority: '0.9' },
     { url: '/manifesto.html', lastmod: '2026-08-07', priority: '0.5' },
     { url: '/privacy.html', lastmod: '2026-08-07', priority: '0.4' }
   ]

@@ -42,6 +42,13 @@
         "applicationCategory": {% if product.type == "game" %}"GameApplication"{% else %}"UtilitiesApplication"{% endif %},
         "operatingSystem": "Windows",
         "downloadUrl": {{ product.storeUrl | json | safe }},
+        "offers": {
+          "@type": "Offer",
+          "price": {{ product.price.current | json | safe }},
+          "priceCurrency": {{ product.price.currency | json | safe }},
+          "availability": "https://schema.org/InStock",
+          "url": {{ product.storeUrl | json | safe }}
+        },
         "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
       },
       {

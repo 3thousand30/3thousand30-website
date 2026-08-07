@@ -2,7 +2,11 @@
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="{{ item.type }}" data-categories="{{ item.categories | join(' ') }}" data-search="{{ item.name }} {{ item.description }} {{ item.typeLabel }} {{ item.categories | join(' ') }}">
   <div class="card-address">
     <span>app://{{ item.code | lower }}</span>
-    <span class="card-status"><i aria-hidden="true"></i>released</span>
+    <span class="card-price">
+      <span class="sr-only">US Store price ${{ item.price.current }}, {{ item.price.discountPercent }}% off the original ${{ item.price.original }}</span>
+      <span class="card-discount" aria-hidden="true">-{{ item.price.discountPercent }}%</span>
+      <span class="card-price-values" aria-hidden="true"><s>${{ item.price.original }}</s><strong>${{ item.price.current }}</strong></span>
+    </span>
   </div>
   <div class="mb-4 mt-5 flex items-start gap-4">
     <img src="{{ item.logo }}" alt="{{ item.name }} logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">

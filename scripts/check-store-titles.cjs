@@ -3,7 +3,7 @@ const products = require('../_src/_data/products.js');
 const publisherCatalogUrl = new URL('https://apps.microsoft.com/api/Products/SearchByPublisherName');
 publisherCatalogUrl.search = new URLSearchParams({
   publisherName: '3thousand30',
-  gl: 'DE',
+  gl: 'US',
   hl: 'en-US',
   exp: '0'
 }).toString();
@@ -37,6 +37,19 @@ function storeIdFromUrl(storeUrl) {
     if (product.name !== storeProduct.title) {
       failures.push(`${product.code}: website uses "${product.name}"; Microsoft Store uses "${storeProduct.title}".`);
     }
+
+    const storeCurrentPrice = Number(storeProduct.priceInfo?.price ?? storeProduct.price);
+    const storeOriginalPrice = Number(storeProduct.priceInfo?.msrp);
+    const storeDiscount = Number.parseInt(storeProduct.priceInfo?.badgeText?.replace(/[^0-9]/g, ''), 10);
+    if (Number(product.price.current) !== storeCurrentPrice) {
+      failures.push(`${product.code}: website current US price $${product.price.current}; Microsoft Store uses ${storeProduct.displayPrice}.`);
+    }
+    if (Number(product.price.original) !== storeOriginalPrice) {
+      failures.push(`${product.code}: website original US price $${product.price.original}; Microsoft Store uses ${storeProduct.strikethroughPrice}.`);
+    }
+    if (product.price.discountPercent !== storeDiscount) {
+      failures.push(`${product.code}: website discount -${product.price.discountPercent}%; Microsoft Store uses ${storeProduct.priceInfo?.badgeText}.`);
+    }
   }
 
   for (const [storeId, storeProduct] of storeById) {
@@ -49,7 +62,7 @@ function storeIdFromUrl(storeUrl) {
     process.exit(1);
   }
 
-  console.log(`Microsoft Store title checks passed: ${products.length} website products exactly match the publisher catalog.`);
+  console.log(`Microsoft Store checks passed: ${products.length} product titles and US prices exactly match the publisher catalog.`);
 })().catch((error) => {
   console.error(error);
   process.exit(1);
