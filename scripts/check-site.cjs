@@ -6,6 +6,22 @@ const products = require(path.join(root, '_src', '_data', 'products.js'));
 const useCases = require(path.join(root, '_src', '_data', 'useCases.js'));
 const failures = [];
 
+// Canonical display names from the Microsoft Store publisher catalog.
+const officialStoreTitles = new Map([
+  ['9N75DWR9X2S7', 'Batch Translate Text with any AI'],
+  ['9N3S7ZRPXGPH', 'Batch Watermark Image'],
+  ['9N1DBC2G87HT', 'Batch Compress Image'],
+  ['9PPKDVXPTLV0', 'Batch Resize Image'],
+  ['9N2VHG38SS00', 'Batch Enhance Image'],
+  ['9PB3Q7K9FVZQ', 'Batch File Organiser'],
+  ['9N3B1B8DT39F', 'Batch Generate Text with any AI'],
+  ['9PFR4V6827XQ', 'Batch Generate Image with any AI'],
+  ['9NVDT0TTN0WH', 'Batch Merge PDFs'],
+  ['9MZKRHK6NRRS', 'Batch Split PDFs'],
+  ['9NS1L0DK0FQL', 'Batch Text to PDF'],
+  ['9MW7722B1026', 'Key Rush']
+]);
+
 function fail(message) {
   failures.push(message);
 }
@@ -39,6 +55,28 @@ function localTargetExists(url, sourceFile) {
     : path.resolve(path.dirname(sourceFile), pathname);
   const resolved = pathname.endsWith('/') ? path.join(candidate, 'index.html') : candidate;
   return fs.existsSync(resolved);
+}
+
+for (const product of products) {
+  const storeId = product.storeUrl.split('/').pop().split('?')[0].toUpperCase();
+  const officialTitle = officialStoreTitles.get(storeId);
+  if (!officialTitle) {
+    fail(`${product.code}: Microsoft Store ID ${storeId} is missing from the canonical title map.`);
+    continue;
+  }
+  if (product.name !== officialTitle) fail(`${product.code}: product name must be "${officialTitle}", found "${product.name}".`);
+  if (product.shortName !== officialTitle) fail(`${product.code}: short name must preserve the exact Store title "${officialTitle}".`);
+  if (!product.seoTitle.startsWith(`${officialTitle} — `)) fail(`${product.code}: SEO title must begin with the exact Store title.`);
+
+  const generatedProductPage = path.join(root, product.url.slice(1));
+  if (fs.existsSync(generatedProductPage)) {
+    const productHtml = fs.readFileSync(generatedProductPage, 'utf8');
+    if (!productHtml.includes(`<title>${product.seoTitle}</title>`)) fail(`${product.code}: generated page title does not match product SEO title.`);
+    if (!productHtml.includes(`>${officialTitle}</h1>`)) fail(`${product.code}: generated h1 does not use the exact Store title.`);
+  }
+}
+if (officialStoreTitles.size !== products.length) {
+  fail(`Canonical Store title map has ${officialStoreTitles.size} entries for ${products.length} products.`);
 }
 
 const htmlFiles = walk(root).filter((file) => file.endsWith('.html'));

@@ -9,6 +9,7 @@
     "serve": "npm run build && eleventy --serve --output=.",
     "watch:css": "tailwindcss -i tailwind.input.css -o tailwind.min.css --watch",
     "check": "node scripts/check-site.cjs",
+    "check:store-titles": "node scripts/check-store-titles.cjs",
     "check:browser": "node scripts/browser-check.cjs"
   },
   "repository": {

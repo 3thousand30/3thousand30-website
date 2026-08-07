@@ -25,7 +25,7 @@ module.exports = [
       { title: 'Define the book, not one prompt', body: 'Choose a theme, audience, trim size, and approximate number of spreads. Build scene ideas, recurring motifs, section breaks, and cover directions before generating anything.' },
       { title: 'Generate a wider image set', body: 'In Batch Generate Image with any AI, set a reusable visual direction and an appropriate page ratio. Generate more candidates than the book needs so selection, not luck, controls the result.' },
       { title: 'Reject and sequence', body: 'Remove off-theme images, obvious artifacts, weak compositions, and repetitive scenes. Arrange the survivors so colour, subject, and mood change with intention.' },
-      { title: 'Prepare the selected images for print', body: 'Use BatchEnhance Image only on the final shortlist. Check target pixel dimensions and inspect enlarged files closely; upscaling cannot repair a fundamentally poor source.' },
+      { title: 'Prepare the selected images for print', body: 'Use Batch Enhance Image only on the final shortlist. Check target pixel dimensions and inspect enlarged files closely; upscaling cannot repair a fundamentally poor source.' },
       { title: 'Create and assemble the pages', body: 'Use Batch Text to PDF for text, image, or paired text-image pages. If sections were exported separately, use numbered filenames and Batch Merge PDFs to assemble the final order locally.' },
       { title: 'Proof a physical copy', body: 'Check margins, crop, colour, page order, and spine/cover requirements against the printer’s current specification. A digital PDF review does not replace a physical proof.' }
     ],
@@ -56,11 +56,11 @@ module.exports = [
     inputs: ['A campaign goal and audience', 'Three to five content pillars', 'A topic list and call-to-action rules', 'Brand voice and visual references', 'Target platform dimensions'],
     steps: [
       { title: 'Plan the campaign before generating', body: 'Define the purpose, audience, content pillars, selling frequency, and calls to action. A useful batch begins with a deliberate topic list, not ninety versions of the same generic idea.' },
-      { title: 'Generate the text batch', body: 'Use Batch Generate Text with a reusable persona and the required post formats. Preview a small sample first, then generate the broader batch only when the voice and structure are working.' },
+      { title: 'Generate the text batch', body: 'In Batch Generate Text with any AI, use a reusable persona and the required post formats. Preview a small sample first, then generate the broader batch only when the voice and structure are working.' },
       { title: 'Generate a matching visual set', body: 'In Batch Generate Image with any AI, set a visual persona, reference direction, and ratios suited to the campaign. Keep enough variation for selection without letting the set lose its identity.' },
       { title: 'Run a human critic pass', body: 'Remove repetition, hollow claims, awkward calls to action, unsafe advice, and images with obvious defects. Verify factual or product-specific claims against a trusted source.' },
-      { title: 'Prepare channel variants', body: 'Use BatchResize Image to produce the dimensions each platform actually needs. Check crops on text-heavy images and keep platform folders separate.' },
-      { title: 'Create proofs when useful', body: 'Use BatchWatermark Image for client previews, draft packs, or branded sample sets. Keep clean masters and publish only the approved version.' }
+      { title: 'Prepare channel variants', body: 'Use Batch Resize Image to produce the dimensions each platform actually needs. Check crops on text-heavy images and keep platform folders separate.' },
+      { title: 'Create proofs when useful', body: 'Use Batch Watermark Image for client previews, draft packs, or branded sample sets. Keep clean masters and publish only the approved version.' }
     ],
     review: ['Does every post say something distinct?', 'Are factual claims and links verified?', 'Do crops preserve faces, products, and on-image text?', 'Is the final pack named clearly enough to schedule without guessing?'],
     limitation: 'Batch creation is not batch autopublishing. Human review is necessary for accuracy, taste, platform fit, and brand safety.',
@@ -86,7 +86,7 @@ module.exports = [
     inputs: ['Event name, date, time, location, and contact details', 'Audience and desired tone', 'Any dress, RSVP, accessibility, or gift guidance', 'Print or digital delivery size'],
     steps: [
       { title: 'Lock the facts first', body: 'Create one source note containing the confirmed event details. Treat that note as authoritative so generated variants do not invent locations, dates, or RSVP instructions.' },
-      { title: 'Generate wording options', body: 'Use Batch Generate Text to create a small set of tones—formal, warm, playful, concise—while explicitly preserving the source facts. Select one before personalising names or guest groups.' },
+      { title: 'Generate wording options', body: 'Use Batch Generate Text with any AI to create a small set of tones—formal, warm, playful, concise—while explicitly preserving the source facts. Select one before personalising names or guest groups.' },
       { title: 'Create the visual direction', body: 'Use Batch Generate Image with any AI for background or illustration options at the intended aspect ratio. Avoid asking the image model to render the final invitation text; add verified text during layout instead.' },
       { title: 'Review every visible detail', body: 'Check names, spelling, time zone, address, RSVP deadline, phone number, and links. Ask another person to read the final copy because familiarity hides mistakes.' },
       { title: 'Export the finished invitation', body: 'Prepare the final text and image inputs, then use Batch Text to PDF for a consistent printable or shareable document. Test the PDF on a phone and, if printing, on paper.' }
@@ -113,7 +113,7 @@ module.exports = [
       { title: 'Define age and page complexity', body: 'Younger children need larger shapes and less detail; older children can handle denser scenes. Write the rule into the visual persona so the set does not swing between toddler pages and adult line art.' },
       { title: 'Generate line-art candidates', body: 'In Batch Generate Image with any AI, set a consistent black-line direction, plain background, and the target aspect ratio. Generate alternatives because stray grey shading, broken outlines, and malformed objects are common rejection reasons.' },
       { title: 'Review for safety and usability', body: 'Reject frightening details, unsafe actions, accidental words, trademarks, and confusing anatomy. Print a few test pages to see whether the line weight is actually colourable.' },
-      { title: 'Prepare the selected artwork', body: 'Use BatchEnhance Image only if the selected pages need larger pixel dimensions. Inspect the outlines after scaling and keep the original files.' },
+      { title: 'Prepare the selected artwork', body: 'Use Batch Enhance Image only if the selected pages need larger pixel dimensions. Inspect the outlines after scaling and keep the original files.' },
       { title: 'Assemble the printable book', body: 'Use Batch Text to PDF to place image pages at a consistent trim size and create a combined document. Add a separate title or instruction page if needed, then review every page boundary.' },
       { title: 'Order a physical proof', body: 'Check show-through, line weight, safe margins, binding loss, and whether the page backs should remain blank. Update the source set before publishing more copies.' }
     ],
@@ -137,7 +137,7 @@ module.exports = [
     inputs: ['Recorded memories, quotes, lessons, and names', 'Permission for private stories or photographs', 'A chapter outline', 'A preferred tone and audience'],
     steps: [
       { title: 'Collect the human source material', body: 'Write or transcribe the real memories first. Label who supplied each story and flag private details that should not appear in a shared edition.' },
-      { title: 'Build a chapter map', body: 'Group the material into themes such as resilience, humour, work, relationships, or family rituals. Use Batch Generate Text to help structure or rewrite, but do not let it invent family history.' },
+      { title: 'Build a chapter map', body: 'Group the material into themes such as resilience, humour, work, relationships, or family rituals. Use Batch Generate Text with any AI to help structure or rewrite, but do not let it invent family history.' },
       { title: 'Review the voice with the family', body: 'Check names, events, and sensitive language with the people involved. Preserve disagreement or uncertainty rather than smoothing it into false certainty.' },
       { title: 'Create supporting images if wanted', body: 'Use Batch Generate Image with any AI for symbolic or decorative illustrations, not fake documentary evidence. Label generated visuals appropriately if readers might otherwise mistake them for real family photographs.' },
       { title: 'Create the document', body: 'Use Batch Text to PDF to convert the approved chapters and paired images. If chapters were produced separately, number them clearly and use Batch Merge PDFs for the final assembly.' },
@@ -163,7 +163,7 @@ module.exports = [
     inputs: ['Learner age and reading level', 'Learning objective and required vocabulary', 'Length and content boundaries', 'Review criteria for accuracy and safety'],
     steps: [
       { title: 'Define the learning objective', body: 'Write what the learner should understand or practise after reading. Include vocabulary, reading length, cultural context, and topics that must be avoided.' },
-      { title: 'Generate a small pilot set', body: 'Use Batch Generate Text to draft two or three stories first. Check reading level, repetition, facts, and whether the lesson is actually present before expanding the batch.' },
+      { title: 'Generate a small pilot set', body: 'Use Batch Generate Text with any AI to draft two or three stories first. Check reading level, repetition, facts, and whether the lesson is actually present before expanding the batch.' },
       { title: 'Review as an educator', body: 'Correct inaccuracies, stereotypes, unsafe advice, and language that is too difficult or too simplistic. AI-generated educational content needs subject-matter review.' },
       { title: 'Create optional illustrations', body: 'Use Batch Generate Image with any AI and a stable child-appropriate direction. Check every visual for relevance, safety, accidental text, and character inconsistency.' },
       { title: 'Produce the PDF set', body: 'Use Batch Text to PDF for separate story PDFs or one combined class pack. Use Batch Merge PDFs when separately exported sections need assembly, and Batch Split PDFs when a combined pack must later become individual handouts.' },
@@ -189,7 +189,7 @@ module.exports = [
     inputs: ['A theme, emotional range, and intended reader', 'Original notes, phrases, or experiences', 'Form and length constraints', 'A publication and rights plan'],
     steps: [
       { title: 'Define the collection’s boundaries', body: 'Choose the theme, forms, length range, and voice rules. If the work uses AI assistance, decide how that will be described before publication.' },
-      { title: 'Generate drafts, not finished truth', body: 'Use Batch Generate Text to explore prompts, images, forms, and variations. Avoid requesting imitation of a living poet and keep your own source notes central.' },
+      { title: 'Generate drafts, not finished truth', body: 'Use Batch Generate Text with any AI to explore prompts, images, forms, and variations. Avoid requesting imitation of a living poet and keep your own source notes central.' },
       { title: 'Curate and rewrite heavily', body: 'Reject generic metaphors, repeated structures, and lines that merely sound poetic. Rewrite selected pieces until the language earns its place in the collection.' },
       { title: 'Build the sequence', body: 'Arrange the poems by movement, contrast, and emotional rhythm. Read the entire manuscript aloud and remove pieces that weaken the whole.' },
       { title: 'Add artwork only when it contributes', body: 'Use Batch Generate Image with any AI for a cover or restrained section art if it improves the object. Do not force an illustration onto every poem.' },
@@ -215,14 +215,14 @@ module.exports = [
     inputs: ['Theme, narrator, and emotional movement', 'Desired structure or section labels', 'Original phrases or story notes', 'Clear rules against artist imitation'],
     steps: [
       { title: 'Start from your own idea', body: 'Write the story, emotion, key images, and point of view before generating. The model should expand a creative brief, not replace the reason the song exists.' },
-      { title: 'Generate different kinds of material', body: 'Use Batch Generate Text for hook alternatives, rhyme families, verse angles, bridge ideas, and structural variations. Ask for contrast rather than thirty near-identical full songs.' },
+      { title: 'Generate different kinds of material', body: 'Use Batch Generate Text with any AI for hook alternatives, rhyme families, verse angles, bridge ideas, and structural variations. Ask for contrast rather than thirty near-identical full songs.' },
       { title: 'Avoid imitation prompts', body: 'Describe musical or emotional qualities in general terms instead of requesting the voice of a living artist. Do not reuse existing lyrics or near-verbatim phrases.' },
       { title: 'Select fragments, then rewrite', body: 'Pull the few lines or images that unlock something useful. Rewrite for singability, breath, stress, melody, and personal meaning.' },
       { title: 'Check originality before release', body: 'Search distinctive phrases, review any collaborators’ contributions, and keep a record of your human edits and source notes.' }
     ],
     review: ['Does the lyric sound specific to your song rather than generically “poetic”?', 'Can each line be sung naturally?', 'Were living-artist imitation and existing lyrics avoided?', 'Were distinctive phrases checked before release?'],
     limitation: 'Generated wording can resemble common or existing phrases. It does not provide a guarantee of originality, ownership, or clearance.',
-    privacy: 'The selected text provider receives the prompt. Drafts and output files are saved locally by Batch Generate Text.',
+    privacy: 'The selected text provider receives the prompt. Drafts and output files are saved locally by Batch Generate Text with any AI.',
     relatedUseCases: ['create-a-poetry-book', 'create-short-stories-for-teaching'],
     faq: [{ q: 'Can I ask for lyrics “in the style of” a famous living artist?', a: 'Use general musical qualities and your own references instead. The goal is original material, not imitation of a living creator.' }]
   }),
@@ -243,7 +243,7 @@ module.exports = [
       { title: 'Set the reusable visual system', body: 'Configure style, aspect ratio, visual persona, and any reference images in Batch Generate Image with any AI. Test a few representative topics before running the complete list.' },
       { title: 'Generate alternatives', body: 'Create enough range to reject malformed objects, weak composition, accidental text, and images that are too similar to one another.' },
       { title: 'Select a coherent master set', body: 'Review the campaign as a grid. Keep visual rhythm and brand fit in mind, not only whether each image works alone.' },
-      { title: 'Resize after selection', body: 'Use BatchResize Image to produce platform-specific copies from approved masters. Review crops where faces, products, or text-adjacent space matter.' },
+      { title: 'Resize after selection', body: 'Use Batch Resize Image to produce platform-specific copies from approved masters. Review crops where faces, products, or text-adjacent space matter.' },
       { title: 'Name for publication', body: 'Use clear filenames or folders that connect every image to its topic and platform so scheduling does not become another manual puzzle.' }
     ],
     review: ['Does each image support a specific post?', 'Is the set coherent without being repetitive?', 'Are accidental text and obvious generation defects removed?', 'Are platform crops manually checked?'],
@@ -268,8 +268,8 @@ module.exports = [
       { title: 'Design the collection before the posters', body: 'Choose the number of pieces, shared visual rules, intended room or customer, and target aspect ratios. A series needs variation and a recognizable identity.' },
       { title: 'Generate at the right shape', body: 'In Batch Generate Image with any AI, choose the closest available ratio and a reusable visual direction. Do not rely on generated lettering for final poster typography.' },
       { title: 'Select for a physical object', body: 'Reject images that only look good as thumbnails. Inspect edges, fine detail, faces, and negative space at full size.' },
-      { title: 'Prepare print masters', body: 'Use BatchEnhance Image on the selected files and check the required pixel dimensions for each final size. Keep a separate master for every aspect ratio rather than stretching one file.' },
-      { title: 'Create storefront previews', body: 'Use BatchResize Image for lighter web copies and BatchWatermark Image for visible preview marks when useful. Keep the clean print files offline and separate.' },
+      { title: 'Prepare print masters', body: 'Use Batch Enhance Image on the selected files and check the required pixel dimensions for each final size. Keep a separate master for every aspect ratio rather than stretching one file.' },
+      { title: 'Create storefront previews', body: 'Use Batch Resize Image for lighter web copies and Batch Watermark Image for visible preview marks when useful. Keep the clean print files offline and separate.' },
       { title: 'Proof and list honestly', body: 'Order or make a test print, verify crop and colour, and ensure the listing describes the actual size, medium, and fulfilment method.' }
     ],
     review: ['Does the set feel like a collection?', 'Are print dimensions sufficient?', 'Has generated text been replaced with verified typography?', 'Are web previews separate from clean masters?'],
@@ -293,14 +293,14 @@ module.exports = [
     steps: [
       { title: 'Freeze the source edition', body: 'Correct and approve the source documents first. Assign a version or date so every translation can be traced back to the same text.' },
       { title: 'Create the terminology rules', body: 'List product names, people, places, phrases that should not be translated, and preferred terminology. Locale matters: the same language can differ by market.' },
-      { title: 'Run a small translation sample', body: 'Use Batch Translate on representative files before processing the full set. Evaluate tone, formatting, names, headings, and repeated terminology.' },
+      { title: 'Run a small translation sample', body: 'Use Batch Translate Text with any AI on representative files before processing the full set. Evaluate tone, formatting, names, headings, and repeated terminology.' },
       { title: 'Translate into separated folders', body: 'Run the approved configuration for each target language and keep output directories clearly labelled by language and source version.' },
       { title: 'Use human language review', body: 'Have a capable reviewer correct meaning, tone, cultural fit, and layout. Back-translation can surface problems but does not replace a native review.' },
       { title: 'Publish as distinct editions', body: 'Keep canonical source links and language labels clear. When the source changes, update translations deliberately rather than silently drifting out of sync.' }
     ],
     review: ['Is every translation tied to one approved source version?', 'Are names and product terms consistent?', 'Did a qualified person review public-facing output?', 'Are language and locale labels correct?'],
     limitation: 'AI translation can miss context, idiom, legal meaning, and culturally sensitive nuance. High-stakes material requires qualified professional review.',
-    privacy: 'Documents are sent to the AI provider selected in Batch Translate. The translated files are saved locally and are not stored by a separate 3thousand30 service.',
+    privacy: 'Documents are sent to the AI provider selected in Batch Translate Text with any AI. The translated files are saved locally and are not stored by a separate 3thousand30 service.',
     relatedUseCases: ['translate-a-book-for-new-markets', 'batch-create-pdfs-from-text'],
     faq: [{ q: 'Can I publish without a human reviewer?', a: 'For public work, that is risky. At minimum, have a fluent reviewer check meaning, terminology, tone, and formatting.' }]
   }),
@@ -319,14 +319,14 @@ module.exports = [
     steps: [
       { title: 'Prepare the source manuscript', body: 'Remove unresolved edits and split the source into predictable chapter files if that makes review easier. Keep the original edition unchanged.' },
       { title: 'Build a book-specific glossary', body: 'Record character names, invented terms, recurring phrases, tone, dialogue rules, and words that must remain unchanged.' },
-      { title: 'Translate a representative chapter', body: 'Use Batch Translate on one chapter containing dialogue, description, headings, and difficult terms. Revise the instructions before translating the complete manuscript.' },
+      { title: 'Translate a representative chapter', body: 'Use Batch Translate Text with any AI on one chapter containing dialogue, description, headings, and difficult terms. Revise the instructions before translating the complete manuscript.' },
       { title: 'Edit as a book, not a file conversion', body: 'A fluent reviewer must check voice, continuity, cultural context, and repeated terminology across chapters. Track corrections so later chapters receive the same treatment.' },
       { title: 'Rebuild the language edition', body: 'Use Batch Text to PDF for corrected chapter inputs. Use Batch Merge PDFs to assemble numbered sections, or Batch Split PDFs when a combined proof needs to return to chapter-sized review files.' },
       { title: 'Proof the new layout', body: 'Translated text changes line length and page count. Check contents, page breaks, headers, cover/spine dimensions, and platform metadata as a new edition.' }
     ],
     review: ['Are translation rights clear?', 'Is terminology consistent across the whole book?', 'Did a fluent editor review voice and cultural context?', 'Was the final layout proofed as a separate edition?'],
     limitation: 'A machine-translated manuscript is not a publication-ready book. Rights, literary editing, cultural review, and edition-specific layout remain human responsibilities.',
-    privacy: 'Book text goes to the provider selected in Batch Translate. PDF conversion, splitting, merging, and final stored files remain local.',
+    privacy: 'Book text goes to the provider selected in Batch Translate Text with any AI. PDF conversion, splitting, merging, and final stored files remain local.',
     relatedUseCases: ['publish-content-in-different-languages', 'create-a-poetry-book', 'merge-pdfs-without-using-the-internet'],
     faq: [{ q: 'Why not translate the final PDF and publish it directly?', a: 'Book translation changes text length, line breaks, page count, and sometimes structure. Rebuilding and proofing the target-language edition gives you control over those changes.' }]
   }),
@@ -346,7 +346,7 @@ module.exports = [
       { title: 'Keep masters separate', body: 'Treat the clean source folder as read-only. Create a dedicated proof output so there is no ambiguity about which files can be shared.' },
       { title: 'Choose a mark that matches the purpose', body: 'Use a clear “PROOF”, client name, logo, or review notice. A subtle brand mark and a strong proof overlay solve different problems.' },
       { title: 'Preview representative images', body: 'Test light, dark, portrait, landscape, and detail-heavy files. One corner position may disappear or cover important content across a mixed set.' },
-      { title: 'Run the local batch', body: 'Use BatchWatermark Image to apply the approved text, logo, opacity, position, scale, or tiling across the folder.' },
+      { title: 'Run the local batch', body: 'Use Batch Watermark Image to apply the approved text, logo, opacity, position, scale, or tiling across the folder.' },
       { title: 'Inspect before sending', body: 'Open several outputs at full size, verify the correct files were processed, and send only the proof folder.' }
     ],
     review: ['Are clean masters untouched?', 'Is the mark visible on both light and dark images?', 'Does it avoid covering essential detail?', 'Is only the proof folder being shared?'],
@@ -370,7 +370,7 @@ module.exports = [
     steps: [
       { title: 'Confirm the notice is accurate', body: 'Decide the exact visible line, such as a creator name and year. Do not imply ownership you do not hold, and remember that requirements differ by jurisdiction.' },
       { title: 'Design for readability', body: 'Choose a font size, colour, opacity, and position that remain legible without overwhelming the image. Test against the lightest and darkest examples.' },
-      { title: 'Create publication copies', body: 'Use BatchWatermark Image to apply the verified text consistently to a separate folder. Preserve clean masters for print or later licensing.' },
+      { title: 'Create publication copies', body: 'Use Batch Watermark Image to apply the verified text consistently to a separate folder. Preserve clean masters for print or later licensing.' },
       { title: 'Inspect the complete range', body: 'Check portrait, landscape, cropped, and differently coloured images. Adjust or split the batch if one setting does not work across the set.' },
       { title: 'Use other rights records too', body: 'Keep source files, creation records, contracts, and publication dates. A visible line is useful communication, not a complete rights-management system.' }
     ],
@@ -395,7 +395,7 @@ module.exports = [
     steps: [
       { title: 'Measure the source folder', body: 'Record total size, file count, formats, and the largest files. This gives the batch a measurable target rather than a vague “make it smaller” goal.' },
       { title: 'Protect the originals', body: 'Keep the original folder unchanged. Compression should create delivery or archive copies unless the loss is understood and accepted.' },
-      { title: 'Test a representative subset', body: 'Use BatchCompress Image on detailed photos, flat graphics, gradients, and text-heavy images. One quality setting can affect these very differently.' },
+      { title: 'Test a representative subset', body: 'Use Batch Compress Image on detailed photos, flat graphics, gradients, and text-heavy images. One quality setting can affect these very differently.' },
       { title: 'Compare at real viewing size', body: 'Inspect edges, faces, text, gradients, and colour blocks. Choose the lightest acceptable setting for the intended destination, not the smallest file at any cost.' },
       { title: 'Run and measure the batch', body: 'Process the complete folder locally, then compare total size and spot-check outputs before uploading or archiving them.' }
     ],
@@ -420,7 +420,7 @@ module.exports = [
     steps: [
       { title: 'Calculate the target', body: 'Start from the printer’s current specification and physical dimensions. DPI metadata alone does not create detail; pixel dimensions are what determine available image data.' },
       { title: 'Select before enhancing', body: 'Do not upscale an entire generation folder. Remove weak, duplicate, and defective images first so time is spent only on genuine candidates.' },
-      { title: 'Choose a controlled scale', body: 'Use BatchEnhance Image with the smallest scale that reaches the target. Stronger enlargement can make existing defects more obvious.' },
+      { title: 'Choose a controlled scale', body: 'Use Batch Enhance Image with the smallest scale that reaches the target. Stronger enlargement can make existing defects more obvious.' },
       { title: 'Inspect at full resolution', body: 'Check faces, hands, lettering, fine edges, textures, and smooth gradients. Compare the output to the source and reject files that become artificial or over-sharpened.' },
       { title: 'Order a representative proof', body: 'Print one or more difficult images at the actual size. Check crop, sharpness, colour, and viewing distance before committing to a complete run.' }
     ],
@@ -445,7 +445,7 @@ module.exports = [
     steps: [
       { title: 'Verify current channel requirements', body: 'Platform specifications change. Confirm the formats and placements you are actually publishing before creating presets or output folders.' },
       { title: 'Protect the master set', body: 'Keep one approved source folder. Every platform version should be reproducible from those masters rather than resized from an already resized copy.' },
-      { title: 'Create one channel batch at a time', body: 'Use BatchResize Image with the target dimensions and crop behavior. Write each result to a clearly named platform folder.' },
+      { title: 'Create one channel batch at a time', body: 'Use Batch Resize Image with the target dimensions and crop behavior. Write each result to a clearly named platform folder.' },
       { title: 'Inspect sensitive crops', body: 'Review images containing faces, products, logos, and on-image text. Automatic crop rules cannot know what is semantically important.' },
       { title: 'Test in the publishing interface', body: 'Upload a small sample or preview it in the platform’s composer. Feed corrections back into the resize setup before processing future campaigns.' }
     ],
@@ -523,11 +523,11 @@ module.exports = [
     inputs: ['A copied working folder rather than the only archive', 'A desired type- or date-based structure', 'Rules for exact duplicates', 'A plan for source, working, and delivery files'],
     steps: [
       { title: 'Create a safe working copy', body: 'Do not begin a large cleanup on the only copy of important work. Make or verify a backup and identify which folder is in scope.' },
-      { title: 'Scan before moving anything', body: 'Use BatchFile Organiser to inspect file types and exact duplicate results. Hash matches can reveal identical files even when names differ.' },
+      { title: 'Scan before moving anything', body: 'Use Batch File Organiser to inspect file types and exact duplicate results. Hash matches can reveal identical files even when names differ.' },
       { title: 'Preview the proposed structure', body: 'Choose type or date organisation and examine the complete plan. Look for project conventions that automated grouping should not override.' },
       { title: 'Apply one understandable operation', body: 'Run the approved organisation step locally. Verify representative folders immediately while the undo context is still clear.' },
       { title: 'Separate masters from delivery copies', body: 'Keep high-quality sources distinct from resized, compressed, watermarked, or enhanced outputs. This prevents accidental quality loss in later work.' },
-      { title: 'Prepare only the files that need it', body: 'Use BatchCompress Image for lighter delivery or archive copies and BatchEnhance Image for selected print files. Neither action is a substitute for folder organisation.' }
+      { title: 'Prepare only the files that need it', body: 'Use Batch Compress Image for lighter delivery or archive copies and Batch Enhance Image for selected print files. Neither action is a substitute for folder organisation.' }
     ],
     review: ['Is there a backup or safe working copy?', 'Were duplicate matches inspected before removal decisions?', 'Does the preview respect project-specific folders?', 'Are masters separated from derived outputs?'],
     limitation: 'Hash matching identifies exact duplicates, not the “best” edit. Organisation rules cannot infer every project convention, so preview and backup remain important.',
