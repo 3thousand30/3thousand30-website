@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+permalink: use-cases/index.html
+title: Practical Windows Workflows for Publishing, Social Images, PDFs, and Files | 3thousand30
+description: Search 20 practical 3thousand30 workflows for books, social content, image preparation, translation, local PDFs, and file organisation.
+pageType: catalog
+analyticsPageType: use_case_index
+catalogKind: use-cases
+---
+{% from "components/cards.njk" import useCaseCard %}
+
+<section class="site-shell py-12 sm:py-16">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb"><a href="/" class="hover:text-retro-green">home</a> / <span class="text-gray-400">use cases</span></nav>
+  <div class="max-w-4xl">
+    <p class="eyebrow mb-4">{{ useCases.length }} practical workflows</p>
+    <h1 class="text-4xl font-light leading-tight text-white sm:text-6xl">Start with the outcome, then choose the tools.</h1>
+    <p class="mt-6 max-w-3xl text-base leading-8 text-gray-400">These guides include source preparation, selection, review, awkward intermediate steps, privacy boundaries, and limitations—not just a feature list with a new headline.</p>
+  </div>
+</section>
+
+<section class="site-shell pb-20" data-filter-catalog>
+  <div class="sticky top-16 z-30 -mx-2 mb-8 border-y border-white/10 bg-black/95 px-2 py-5 backdrop-blur">
+    <div class="grid gap-5 lg:grid-cols-[minmax(240px,1fr)_2fr] lg:items-end">
+      <div>
+        <label for="use-case-search" class="mb-2 block text-[11px] uppercase tracking-[0.14em] text-gray-500">Search workflows</label>
+        <input id="use-case-search" type="search" class="min-h-11 w-full border border-white/20 bg-black px-4 text-sm text-white placeholder:text-gray-700 focus:border-retro-green" placeholder="books, social, PDF…" data-catalog-search>
+      </div>
+      <div class="space-y-3">
+        <div class="flex flex-wrap gap-2" aria-label="Filter by outcome group">
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="all" aria-pressed="true">all outcomes</button>
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="books" aria-pressed="false">books & publishing</button>
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="social" aria-pressed="false">social & images</button>
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="files" aria-pressed="false">PDF & files</button>
+        </div>
+        <div class="flex flex-wrap gap-2" aria-label="Filter by core product">
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="all" aria-pressed="true">any product</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bgt" aria-pressed="false">text AI</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bgi" aria-pressed="false">image AI</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="btp" aria-pressed="false">text to PDF</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bwi" aria-pressed="false">watermark</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bfo" aria-pressed="false">organise</button>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-[11px] text-gray-600" data-result-count aria-live="polite">{{ useCases.length }} results</p>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    {% for item in useCases %}{{ useCaseCard(item) }}{% endfor %}
+  </div>
+  <div class="panel mt-8 p-8 text-center" data-empty-state hidden>
+    <p class="text-sm text-gray-400">No workflow matches those filters.</p>
+    <p class="mt-2 text-xs text-gray-600">Try a broader term or product.</p>
+  </div>
+</section>

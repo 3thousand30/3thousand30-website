@@ -1,530 +1,462 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="bg-black">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00ff41">
-    <title>Batch Generate Text with any AI — BYO Keys, Personas, Samples, CSV Lists | 3thousand30</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="preload" as="image" href="Logos/BGT.webp">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Batch Generate Text with any AI for Windows — Buy Once | 3thousand30</title>
+  <meta name="description" content="Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs.">
+  <meta name="author" content="3thousand30">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://3thousand30.com/batchgen-text.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <link rel="canonical" href="https://3thousand30.com/batchgen-text.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="3thousand30">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://3thousand30.com/batchgen-text.html">
+  <meta property="og:title" content="Batch Generate Text with any AI for Windows — Buy Once | 3thousand30">
+  <meta property="og:description" content="Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs.">
+  <meta property="og:image" content="https://3thousand30.com/Logos/BGT.webp">
+  <meta property="og:image:alt" content="Batch Generate Text with any AI logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@3thousand30HQ">
+  <meta name="twitter:creator" content="@3thousand30HQ">
+  <meta name="twitter:title" content="Batch Generate Text with any AI for Windows — Buy Once | 3thousand30">
+  <meta name="twitter:description" content="Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs.">
+  <meta name="twitter:image" content="https://3thousand30.com/Logos/BGT.webp">
 
-    <meta name="description" content="Batch AI writing on Windows with your own API keys. Save providers, generate CSV topic lists, match persona and sample style, output in many languages, and save locally. About 7 MB.">
-    <meta name="keywords" content="bulk AI writing Windows, batch AI writing tool, social media post generator Windows, no subscription AI writer, AI writing with your own API key, generate CSV topics, sample analysis writing persona">
-    <meta name="author" content="3thousand30">
-    <meta name="robots" content="index, follow, max-image-preview:large">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="3thousand30">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:url" content="https://3thousand30.com/batchgen-text.html">
-    <meta property="og:title" content="Batch Generate Text with any AI — BYO Keys, Personas, Samples, CSV Lists | 3thousand30">
-    <meta property="og:description" content="Batch AI writing on Windows with your own API keys. Save providers, generate CSV topic lists, match persona and sample style, output in many languages, and save locally. About 7 MB.">
-    <meta property="og:image" content="https://3thousand30.com/screenshots/bgt/2.webp">
-    <meta property="og:image:alt" content="Batch Generate Text with any AI showing persona selection and batch content workflow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Batch Generate Text with any AI",
+        "description": "Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs.",
+        "url": "https://3thousand30.com/batchgen-text.html",
+        "image": "https://3thousand30.com/Logos/BGT.webp",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows",
+        "downloadUrl": "https://apps.microsoft.com/detail/9n3b1b8dt39f",
+        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
+          { "@type": "ListItem", "position": 3, "name": "Batch Generate Text with any AI", "item": "https://3thousand30.com/batchgen-text.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Does it include AI usage?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. You bring your own provider key and pay that provider directly, so you can choose the model and cost profile." }
+        },{
+          "@type": "Question",
+          "name": "Where are outputs stored?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Generated Markdown or text files are saved to the folder you choose on your Windows PC." }
+        },{
+          "@type": "Question",
+          "name": "Is the whole workflow offline?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The app and saved outputs are local. Generation requires a connection to the external AI provider you selected." }
+        }]
+      }
+    ]
+  }
+  </script>
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@3thousand30HQ">
-    <meta name="twitter:creator" content="@3thousand30HQ">
-    <meta name="twitter:title" content="Batch Generate Text with any AI — BYO Keys, Personas, Samples, CSV Lists | 3thousand30">
-    <meta name="twitter:description" content="Batch AI writing on Windows with your own API keys. Save providers, generate CSV topic lists, match persona and sample style, output in many languages, and save locally. About 7 MB.">
-    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bgt/2.webp">
-    <meta name="twitter:image:alt" content="Batch Generate Text with any AI showing persona selection and batch content workflow">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "Batch Generate Text with any AI",
-          "operatingSystem": "Windows",
-          "applicationCategory": "BusinessApplication",
-          "url": "https://3thousand30.com/batchgen-text.html",
-          "image": "https://3thousand30.com/Logos/BGT.webp",
-          "description": "Batch AI writing on Windows with your own API keys. Save providers, generate CSV topic lists, match persona and sample style, output in many languages, and save locally. About 7 MB.",
-          "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" },
-          "offers": {
-            "@type": "Offer",
-            "price": "14.99",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://apps.microsoft.com/detail/9n3b1b8dt39f"
-          },
-          "mainEntityOfPage": "https://3thousand30.com/batchgen-text.html"
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://3thousand30.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Products",
-              "item": "https://3thousand30.com/products/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Batch Generate Text with any AI",
-              "item": "https://3thousand30.com/batchgen-text.html"
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What can Batch Generate Text with any AI create?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "It can generate blog drafts, social posts, X threads, LinkedIn posts, product copy, short stories, campaign variations, and other repeatable text batches. You can upload a CSV or generate a topic list inside the app."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do I need my own AI key?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. This is a bring-your-own-key workflow. You can save multiple provider connections, choose the model for each job, and pay that provider directly."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are the outputs saved locally?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. The generated files are saved to your PC. API keys are encrypted locally with Windows DPAPI. If you choose an external AI provider, the prompt request goes to that provider."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Why use it instead of another writing subscription?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You buy the app once instead of renting another dashboard. After that, your ongoing cost is mostly the AI provider usage you choose, often very low when you use efficient models."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do I still need to review the writing?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. The app speeds up production, but hooks, claims, tone, and final polish still need human review."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-    <link rel="stylesheet" href="tailwind.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap"></noscript>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/tailwind.min.css">
 </head>
-<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+<body class="min-h-screen overflow-x-hidden bg-black font-mono text-white antialiased" data-page-type="product">
+  <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
+  <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
 
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px); will-change: transform;"></div>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <div class="site-shell flex min-h-16 items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
+      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    </a>
 
-    <!-- Sticky nav -->
-    <div class="sticky top-0 z-30 bg-black border-b" style="border-color: rgba(0,255,65,0.15);">
-        <div class="max-w-4xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
-            <a href="/" class="text-warm-gray text-xs hover:text-retro-green transition-colors whitespace-nowrap">← 3thousand30</a>
-            <div class="flex items-center gap-2 flex-shrink-0">
-                <a href="https://apps.microsoft.com/detail/9n3b1b8dt39f?hl=en-US&gl=US" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 border border-retro-amber text-retro-amber text-xs px-3 py-2 hover:bg-retro-amber hover:text-black transition-colors duration-200">
-                    <svg viewBox="0 0 12 12" width="12" height="12" fill="currentColor" aria-hidden="true">
-                        <rect x="0" y="0" width="5.5" height="5.5"/><rect x="6.5" y="0" width="5.5" height="5.5"/>
-                        <rect x="0" y="6.5" width="5.5" height="5.5"/><rect x="6.5" y="6.5" width="5.5" height="5.5"/>
-                    </svg>
-                    <span class="hidden sm:inline">Microsoft Store</span>
-                    <span class="opacity-50">·</span>
-                    <span class="font-medium">$14.99</span>
-                </a>
-                <a href="https://3thousand30.github.io/batchgentext-docs" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 border text-warm-gray text-xs px-3 py-2 hover:border-warm-gray hover:text-white transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">
-                    <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
-                        <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V2.5zm2.5-1A1.5 1.5 0 0 0 3 3v10.5h8V1H4.5zM5 4h5v1H5V4zm0 2.5h5v1H5v-1zm0 2.5h3v1H5V9z"/>
-                    </svg>
-                    <span class="hidden sm:inline">docs</span>
-                </a>
-            </div>
-        </div>
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page">products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400">use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400">manifesto</a>
+    </nav>
+
+    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true" data-menu-icon>☰</span>
+    </button>
+  </div>
+
+  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 md:hidden" aria-label="Mobile navigation" data-mobile-menu>
+    <div class="grid gap-2">
+      <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
+      <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
+      <a href="/manifesto.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">manifesto</a>
+      <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
+    </div>
+  </nav>
+</header>
+
+
+  <main id="main-content" class="relative z-20">
+
+
+
+
+<section class="site-shell py-10 sm:py-14">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-retro-green">home</a> /
+    <a href="/products/" class="hover:text-retro-green">products</a> /
+    <span class="text-gray-400">Batch Generate Text</span>
+  </nav>
+
+  <div class="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+    <div>
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="tag text-retro-green">released</span>
+        <span class="tag">AI creation</span>
+        <span class="tag">Windows</span>
+      </div>
+      <h1 class="max-w-4xl text-4xl font-light leading-tight text-white sm:text-6xl">Batch Generate Text with any AI</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-retro-green">Turn a topic list into a reviewed batch of writing with your own AI provider.</p>
+      <p class="mt-5 max-w-3xl text-sm leading-7 text-gray-400">Batch Generate Text is built for writing jobs that repeat: social posts, article drafts, product copy, poems, stories, and custom formats. Set the structure once, preview one result, review the batch, and keep the saved files on your PC.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://apps.microsoft.com/detail/9n3b1b8dt39f" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="Batch Generate Text with any AI Microsoft Store">Microsoft Store →</a>
+        <a href="https://3thousand30.github.io/batchgentext-docs/" target="_blank" rel="noopener" class="button-secondary" data-analytics-event="outbound_click" data-analytics-name="Batch Generate Text with any AI documentation">documentation</a>
+      </div>
     </div>
 
-    <div class="relative z-20 max-w-4xl mx-auto px-6 py-10 md:py-14">
-
-        <!-- App header -->
-        <header class="flex items-start space-x-5 mb-8">
-            <img src="Logos/BGT.webp" alt="Batch Generate Text with any AI" class="w-16 h-16 rounded object-cover flex-shrink-0" fetchpriority="high" decoding="async">
-            <div>
-                <p class="text-gray-600 text-[11px] mb-3"><a href="products/" class="hover:text-retro-green transition-colors">products</a> / <span class="text-warm-gray">Batch Generate Text with any AI</span></p>
-                <div class="text-retro-green text-xs mb-2 opacity-60">generative · windows</div>
-                <h1 class="text-white text-2xl md:text-3xl font-light mb-3">Batch Generate Text with any AI</h1>
-                <p class="text-retro-green text-sm md:text-base leading-relaxed" style="text-shadow: 0 0 8px #00ff41;">
-                    Batch blogs, posts, tweets, product copy, and repeatable content lists with your own AI keys.
-                </p>
-                <div class="mt-4">
-                    <div class="inline-flex items-center flex-wrap gap-2.5 border px-3 py-1.5" style="border-color: rgba(255,176,0,0.45); background: rgba(255,176,0,0.06);">
-                        <span class="text-retro-amber text-base font-medium">$14.99</span>
-                        <span class="text-gray-600 text-xs line-through">$19.99</span>
-                        <span class="bg-retro-amber text-black text-[10px] font-bold px-1.5 py-0.5">-25%</span>
-                        <span class="text-retro-green text-[10px] uppercase tracking-wide">limited-time offer</span>
-                    </div>
-                    <p class="text-gray-600 text-[10px] mt-2">* One-time purchase, no subscription. Microsoft Store prices vary by country/region; the amounts shown are US prices.</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Description -->
-        <div class="border p-6 mb-10" style="border-color: rgba(0,255,65,0.15);">
-            <p class="text-warm-gray text-sm leading-relaxed">
-                Batch Generate Text with any AI is for writing work that repeats: blog drafts, tweets, LinkedIn posts, product copy, launch notes, and custom formats. Buy the app once, bring your own AI keys, and save multiple provider connections so DeepSeek can handle cheap long drafts while OpenAI handles short sharp posts. Generate CSV topic lists inside the app, analyze sample writing, tune a reusable persona, preview one item, then save the batch locally as Markdown or text. The Tauri rebuild is about 7 MB, so it stays lean on the machine too.
-            </p>
+    <aside class="panel-green p-6 reveal-item" data-reveal aria-label="Product facts">
+      <img src="/Logos/BGT.webp" alt="Batch Generate Text with any AI logo" class="h-24 w-24 rounded-2xl object-cover" width="96" height="96">
+      <dl class="mt-6 space-y-5 text-xs">
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">license</dt>
+          <dd class="mt-1 text-retro-amber">Buy once</dd>
+          <dd class="mt-2 leading-5 text-gray-600">Microsoft Store shows the current price for your region.</dd>
         </div>
-
-        <!-- Screenshots -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">screenshots</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="relative">
-                <div class="overflow-hidden border" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="flex transition-transform duration-300 ease-in-out" id="carousel-track">
-                        <img src="screenshots/bgt/1.webp" alt="Persona step showing a reusable writing profile with values, rules, notes, and writing datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bgt/2.webp" alt="Persona editor for adding or tuning writer type, values, goals, note, and style datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/3.webp" alt="Sample Intelligence step with sample analysis and persona comparison datapoints" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/4.webp" alt="Generate Content List CSV modal for creating topics, moods, audiences, and themes inside the app" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/5.webp" alt="Generate step with template, language, influence balance, content list, output folder, preview, and generate controls" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/6.webp" alt="Completed batch output saved locally on the user's system" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                        <img src="screenshots/bgt/7.webp" alt="AI provider settings showing multiple saved provider connections for different use cases" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">←</button>
-                <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">→</button>
-                <div class="flex justify-center gap-2 mt-3" id="carousel-dots"></div>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">what_it_does</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
-                <span class="text-warm-gray text-xs opacity-80">// buy once app, bring your own AI key</span>
-                <span class="text-warm-gray text-xs opacity-80">// lightweight Tauri desktop app, about 7 MB</span>
-                <span class="text-warm-gray text-xs opacity-80">// save multiple provider connections for different writing jobs</span>
-                <span class="text-warm-gray text-xs opacity-80">// generate topic CSVs inside the app</span>
-                <span class="text-warm-gray text-xs opacity-80">// persona v2: values, goals, rules, notes, and 10 writing datapoints</span>
-                <span class="text-warm-gray text-xs opacity-80">// sample analysis that compares writing samples with the active persona</span>
-                <span class="text-warm-gray text-xs opacity-80">// influence modes: persona-led, balanced, or sample-led</span>
-                <span class="text-warm-gray text-xs opacity-80">// templates for blog, LinkedIn, X, Facebook, and short story output</span>
-                <span class="text-warm-gray text-xs opacity-80">// custom templates for sections, length, output format, and rules</span>
-                <span class="text-warm-gray text-xs opacity-80">// output in built-in languages or a custom language</span>
-                <span class="text-warm-gray text-xs opacity-80">// preview the first item before generating the full batch</span>
-                <span class="text-warm-gray text-xs opacity-80">// API keys encrypted locally with Windows DPAPI</span>
-                <span class="text-warm-gray text-xs opacity-80">// local Markdown or plain text files</span>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">who_its_for</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Creators and solo brands</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">For people who want to batch-create posts, threads, article drafts, newsletters, and voice-led content without paying monthly software rent.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Ecommerce and launch operators</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Useful for product descriptions, announcement copy, promotional sequences, listing support content, and other structured writing batches.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">People who want BYOKey control</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">A fit if you want to choose your own provider, manage token cost directly, and keep generated files on your own machine.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">best_paired_with</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="batchgen-image.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">generative companion</div>
-                    <h3 class="text-white text-sm mb-2">BatchGen Image with AI</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Pair writing batches with matching visual batches for launch packs, social calendars, quote cards, and creator workflows.</p>
-                </a>
-                <a href="batchtranslate.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">multilingual companion</div>
-                    <h3 class="text-white text-sm mb-2">Batch Translate with AI</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Useful when the draft system is working and the next step is republishing the content in more than one language.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">use_cases</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="use-cases/mass-create-social-media-content.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">live workflow</div>
-                    <h3 class="text-white text-sm mb-2">Mass-create social media content</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">See how Batch Generate Text fits into a broader workflow for posts, threads, images, resized exports, and proof-ready content packs.</p>
-                </a>
-                <a href="use-cases/" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">workflow library</div>
-                    <h3 class="text-white text-sm mb-2">Browse all use cases</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Use the hub to move from feature-level browsing into live workflow pages and the next upcoming content and translation routes.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">privacy_and_control</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="border p-6" style="border-color: rgba(0,255,65,0.15);">
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">
-                    This is a bring-your-own-key workflow. You choose the provider, model, and budget. API keys are encrypted locally using Windows DPAPI. Generated outputs are saved to your PC, not stored in a hidden 3thousand30 cloud.
-                </p>
-                <p class="text-gray-500 text-xs leading-relaxed">
-                    Important distinction: the saved files stay on your machine, but prompt requests go to the external AI provider you selected. We do not pretend otherwise, and that clarity is part of the product design.
-                </p>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">faq</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="space-y-4">
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">What can Batch Generate Text with any AI create?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">It can generate blog drafts, social posts, X threads, LinkedIn posts, product copy, short stories, campaign variations, and other repeatable text batches. You can upload a CSV or generate a topic list inside the app.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Do I need my own AI key?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. This is a bring-your-own-key workflow. You can save multiple provider connections, choose the model for each job, and pay that provider directly.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Are the outputs saved locally?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. The generated files are saved to your PC. API keys are encrypted locally with Windows DPAPI. If you choose an external AI provider, the prompt request goes to that provider.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Why use it instead of another writing subscription?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">You buy the app once instead of renting another dashboard. After that, your ongoing cost is mostly the AI provider usage you choose, often very low when you use efficient models.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Do I still need to review the writing?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. The app speeds up production, but hooks, claims, tone, and final polish still need human review.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Other apps -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">other_apps</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <style>#other-carousel-track > a { width: 100%; } @media (min-width: 768px) { #other-carousel-track > a { width: calc(100% / 3); } }</style>
-            <div class="relative overflow-hidden border px-16 py-6" style="border-color: rgba(168,168,168,0.15);">
-                <div class="flex gap-3 transition-transform duration-300 ease-in-out" id="other-carousel-track">
-                    <a href="batchgen-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BGI.webp" alt="BatchGen Image with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchGen Image</p>
-                        <p class="text-gray-600 text-xs mt-1">generative · windows</p>
-                        <p class="inline-flex items-center gap-1.5 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2 py-0.5 mt-1"><span class="text-retro-amber text-xs font-medium">$13.99</span><span class="text-gray-600 text-xs line-through">$19.99</span><span class="bg-retro-amber text-black text-[10px] font-bold px-1">-30%</span></p>
-                    </a>
-                    <a href="batchtranslate.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BT.png" alt="Batch Translate with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">Batch Translate</p>
-                        <p class="text-gray-600 text-xs mt-1">translation · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$19.99</p>
-                    </a>
-                    <a href="batchenhance-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BEI.webp" alt="BatchEnhance Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchEnhance Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$4.99</p>
-                    </a>
-                    <a href="batchfile-organiser.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BFO.webp" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchFile Organiser</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$9.99</p>
-                    </a>
-                    <a href="batchwatermark-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BWI.webp" alt="BatchWatermark Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchWatermark Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$4.99</p>
-                    </a>
-                    <a href="batchcompress-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BCI.webp" alt="BatchCompress Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchCompress Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$2.99</p>
-                    </a>
-                    <a href="batchresize-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BRI.webp" alt="BatchResize Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchResize Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$2.99</p>
-                    </a>
-                </div>
-                <button id="other-carousel-prev" class="absolute left-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">←</button>
-                <button id="other-carousel-next" class="absolute right-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">→</button>
-                <div class="flex justify-center gap-2 mt-3" id="other-carousel-dots"></div>
-            </div>
-        </section>
-
-        <!-- Separator -->
-        <div class="flex justify-center mb-10">
-            <div class="flex items-center space-x-2 opacity-30">
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-            </div>
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">privacy boundary</dt>
+          <dd class="mt-1 text-retro-green">BYO key · local outputs</dd>
         </div>
+        <div>
+          <dt class="text-gray-600">product code</dt>
+          <dd class="mt-1 text-white">BGT</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
 
-        <!-- Footer -->
-        <footer class="border-t border-gray-800 pt-8 text-center">
-            <div class="flex flex-col md:flex-row md:justify-center md:gap-8 space-y-3 md:space-y-0 mb-4">
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">get_in_touch:</span>
-                    <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
-                </div>
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">follow:</span>
-                    <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
-                </div>
-            </div>
-            <div>
-                <a href="privacy.html" class="text-gray-600 text-xs hover:text-warm-gray transition-colors">privacy policy</a>
-            </div>
-        </footer>
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8">
+    <p class="eyebrow mb-3">what_it_does</p>
+    <h2 class="section-heading">A focused workflow, not a suite you have to rent.</h2>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Generate complete batches from a CSV topic list</p>
     </div>
 
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Save multiple AI provider and model connections</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Use reusable personas and writing samples for consistency</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Create posts, threads, articles, product copy, and custom formats</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Preview before committing to a full batch</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Save finished work locally as Markdown or plain text</p>
+    </div>
+
+  </div>
+</section>
 
 
-    <script>
-        (function () {
-            var track = document.getElementById('carousel-track');
-            var dotsEl = document.getElementById('carousel-dots');
-            var total = track.children.length;
-            var current = 0;
-            var touchStartX = 0;
-            for (var i = 0; i < total; i++) {
-                var dot = document.createElement('button');
-                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
-                dot.setAttribute('data-i', i);
-                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
-                dotsEl.appendChild(dot);
-            }
-            function go(n) {
-                current = (n + total) % total;
-                track.style.transform = 'translateX(-' + current * 100 + '%)';
-                Array.from(dotsEl.children).forEach(function (d, i) {
-                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
-                });
-            }
-            document.getElementById('carousel-prev').addEventListener('click', function () { go(current - 1); });
-            document.getElementById('carousel-next').addEventListener('click', function () { go(current + 1); });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'ArrowLeft') go(current - 1);
-                if (e.key === 'ArrowRight') go(current + 1);
-            });
-            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', function (e) {
-                var diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
-            }, { passive: true });
-        })();
-    </script>
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-12 sm:py-16">
+    <div class="mb-8">
+      <p class="eyebrow mb-3">inside_the_app</p>
+      <h2 class="section-heading">See the actual Windows workflow</h2>
+    </div>
+    <div class="grid gap-5 lg:grid-cols-2">
 
-    <script>
-        (function () {
-            var track = document.getElementById('other-carousel-track');
-            var dotsEl = document.getElementById('other-carousel-dots');
-            if (!track || !dotsEl) return;
-            
-            // Clone first 3 cards and append for seamless wrap
-            var origCards = Array.from(track.children);
-            origCards.slice(0, 3).forEach(function (card) {
-                track.appendChild(card.cloneNode(true));
-            });
-            var total = origCards.length;
-            var current = 0;
-            var touchStartX = 0;
-            for (var i = 0; i < total; i++) {
-                var dot = document.createElement('button');
-                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
-                dot.setAttribute('data-i', i);
-                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
-                dotsEl.appendChild(dot);
-            }
-            function go(n) {
-                current = (n + total) % total;
-                var itemWidth = track.children[0] ? track.children[0].getBoundingClientRect().width : 0;
-                track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
-                Array.from(dotsEl.children).forEach(function (d, i) {
-                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
-                });
-            }
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bgt/1.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Batch Generate Text topic and template setup">
+          <img src="/screenshots/bgt/1.webp" alt="Batch Generate Text topic and template setup" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Choose the format and prepare the batch.</figcaption>
+      </figure>
 
-            document.getElementById('other-carousel-prev').addEventListener('click', function () { go(current - 1); });
-            document.getElementById('other-carousel-next').addEventListener('click', function () { go(current + 1); });
-            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', function (e) {
-                var diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
-            }, { passive: true });
-            window.addEventListener('resize', function () {
-                if (track.children.length) {
-                    var itemWidth = track.children[0].getBoundingClientRect().width;
-                    track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
-                }
-            });
-        })();
-    </script>
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bgt/2.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Provider and model selection in Batch Generate Text">
+          <img src="/screenshots/bgt/2.webp" alt="Provider and model selection in Batch Generate Text" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Bring the provider and model that fit the job.</figcaption>
+      </figure>
 
-<script src="cookie-banner.js"></script>
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bgt/3.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Persona controls for consistent batch writing">
+          <img src="/screenshots/bgt/3.webp" alt="Persona controls for consistent batch writing" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Reuse a voice and writing rules across the set.</figcaption>
+      </figure>
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bgt/6.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Completed Batch Generate Text files saved locally">
+          <img src="/screenshots/bgt/6.webp" alt="Completed Batch Generate Text files saved locally" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Review the completed run and keep the outputs locally.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="site-shell grid gap-6 py-12 sm:py-16 lg:grid-cols-2">
+  <div class="panel p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">who_it_is_for</p>
+    <ul class="space-y-4 text-sm leading-6 text-gray-400">
+      <li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Creators building a repeatable content system</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Publishers preparing stories, poems, or chapters</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Small teams producing structured copy without another subscription</span></li>
+    </ul>
+  </div>
+  <div class="panel-green p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">privacy_and_control</p>
+    <h2 class="text-xl font-light text-white">BYO key · local outputs</h2>
+    <p class="mt-4 text-sm leading-7 text-gray-400">API keys are encrypted locally with Windows DPAPI and finished files are saved to your PC. Prompts are sent only to the external AI provider you choose.</p>
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8 flex items-end justify-between gap-5">
+    <div>
+      <p class="eyebrow mb-3">use_it_for</p>
+      <h2 class="section-heading">Practical workflows</h2>
+    </div>
+    <a href="/use-cases/" class="text-link text-xs">all use cases →</a>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bgt bgi bri bwi" data-search="Plan and Create Social Media Content in Batches Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies. Social &amp; image production BGT BGI BRI BWI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Social &amp; image production</p>
+    <span class="text-[10px] text-gray-700">UC-2</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Plan and Create Social Media Content in Batches</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGT</span><span class="tag">BGI</span><span class="tag">BRI</span><span class="tag">BWI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/mass-create-social-media-content.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Plan and Create Social Media Content in Batches">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt bgi btp bmp bsp" data-search="Create Short Stories for Teaching Create a themed set of age-appropriate stories and illustrations, then turn them into classroom or home-learning PDFs. Books &amp; publishing BGT BGI BTP BMP BSP">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Books &amp; publishing</p>
+    <span class="text-[10px] text-gray-700">UC-6</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Create Short Stories for Teaching</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Create a themed set of age-appropriate stories and illustrations, then turn them into classroom or home-learning PDFs.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGT</span><span class="tag">BGI</span><span class="tag">BTP</span><span class="tag">BMP</span><span class="tag">BSP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/create-short-stories-for-teaching.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Create Short Stories for Teaching">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt bgi btp bmp" data-search="Create a Poetry Book to Publish or Sell Develop, curate, revise, and assemble a coherent poetry collection rather than publishing a raw generation dump. Books &amp; publishing BGT BGI BTP BMP">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Books &amp; publishing</p>
+    <span class="text-[10px] text-gray-700">UC-7</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Create a Poetry Book to Publish or Sell</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Develop, curate, revise, and assemble a coherent poetry collection rather than publishing a raw generation dump.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGT</span><span class="tag">BGI</span><span class="tag">BTP</span><span class="tag">BMP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/create-a-poetry-book.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Create a Poetry Book to Publish or Sell">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt" data-search="Create Song Lyrics for Inspiration Generate original hooks, themes, images, and structural alternatives as raw material for human songwriting. Books &amp; publishing BGT">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Books &amp; publishing</p>
+    <span class="text-[10px] text-gray-700">UC-8</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Create Song Lyrics for Inspiration</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Generate original hooks, themes, images, and structural alternatives as raw material for human songwriting.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGT</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/create-song-lyrics-for-inspiration.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Create Song Lyrics for Inspiration">open workflow →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+
+<section class="site-shell max-w-4xl py-12 sm:py-16">
+  <p class="eyebrow mb-3">faq</p>
+  <h2 class="section-heading mb-7">Straight answers</h2>
+  <div class="space-y-3">
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Does it include AI usage?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. You bring your own provider key and pay that provider directly, so you can choose the model and cost profile.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Where are outputs stored?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">Generated Markdown or text files are saved to the folder you choose on your Windows PC.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Is the whole workflow offline?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">The app and saved outputs are local. Generation requires a connection to the external AI provider you selected.</p>
+    </details>
+
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="panel-amber grid gap-7 p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+    <div>
+      <p class="eyebrow mb-3 text-retro-amber">ready_when_you_are</p>
+      <h2 class="text-2xl font-light text-white">Own Batch Generate Text and keep the workflow.</h2>
+      <p class="mt-3 text-sm leading-6 text-gray-500">The Microsoft Store shows the current price for your region.</p>
+    </div>
+    <a href="https://apps.microsoft.com/detail/9n3b1b8dt39f" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="Batch Generate Text with any AI Microsoft Store bottom CTA">open Microsoft Store →</a>
+  </div>
+</section>
+
+
+<section class="site-shell pb-10 pt-6">
+  <p class="eyebrow mb-5">related_products</p>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="images publishing social" data-search="BatchGen Image with AI Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs. AI creation images publishing social">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BGI.webp" alt="BatchGen Image with AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">AI creation</p>
+  <h3 class="text-lg font-light text-white">BatchGen Image with AI</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">publishing</span><span class="tag">social</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchgen-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchGen Image with AI">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="translation writing publishing" data-search="Batch Translate with AI Batch-translate PDF, DOCX, TXT, and Markdown files on Windows using your own AI key and save each result locally. AI translation translation writing publishing">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BT.png" alt="Batch Translate with AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">AI translation</p>
+  <h3 class="text-lg font-light text-white">Batch Translate with AI</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Batch-translate PDF, DOCX, TXT, and Markdown files on Windows using your own AI key and save each result locally.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">translation</span><span class="tag">writing</span><span class="tag">publishing</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchtranslate.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Translate with AI">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf publishing files" data-search="Batch Text to PDF A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering. Local PDF utility pdf publishing files">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BTP.png" alt="Batch Text to PDF logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local PDF utility</p>
+  <h3 class="text-lg font-light text-white">Batch Text to PDF</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">pdf</span><span class="tag">publishing</span><span class="tag">files</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">$4.99 list price</span>
+    <a href="/batch-text-to-pdf.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Text to PDF">view app →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="relative z-20 mt-20 border-t border-white/10 bg-black">
+  <div class="site-shell grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
+    <div>
+      <p class="eyebrow mb-3">3thousand30</p>
+      <p class="max-w-xl text-sm leading-6 text-gray-500">Affordable, privacy-first, buy-once Windows tools for work worth keeping.</p>
+      <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-xs">
+        <a href="mailto:hello@3thousand30.com" class="text-link">hello@3thousand30.com</a>
+        <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-link">@3thousand30HQ on X</a>
+      </div>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-3 text-xs text-gray-500 md:justify-end" aria-label="Footer navigation">
+      <a href="/products/" class="hover:text-white">products</a>
+      <a href="/use-cases/" class="hover:text-white">use cases</a>
+      <a href="/manifesto.html" class="hover:text-white">manifesto</a>
+      <a href="/privacy.html" class="hover:text-white">privacy</a>
+    </nav>
+  </div>
+</footer>
+
+
+  <script src="/site.js"></script>
+  <script src="/cookie-banner.js"></script>
 </body>
 </html>

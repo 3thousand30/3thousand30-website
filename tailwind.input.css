@@ -1,3 +1,167 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #050505;
+  }
+
+  ::selection {
+    color: #050505;
+    background: #00ff41;
+  }
+
+  :focus-visible {
+    outline: 2px solid #ffb000;
+    outline-offset: 4px;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+@layer components {
+  .site-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-[0.24em] text-retro-green;
+  }
+
+  .section-heading {
+    @apply text-2xl font-light text-white sm:text-3xl;
+  }
+
+  .panel {
+    border: 1px solid rgba(168, 168, 168, 0.16);
+    background: rgba(255, 255, 255, 0.018);
+  }
+
+  .panel-green {
+    border: 1px solid rgba(0, 255, 65, 0.22);
+    background: rgba(0, 255, 65, 0.035);
+  }
+
+  .panel-amber {
+    border: 1px solid rgba(255, 176, 0, 0.22);
+    background: rgba(255, 176, 0, 0.035);
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 border border-retro-green bg-retro-green px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-black transition-colors hover:bg-black hover:text-retro-green;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 border px-5 py-3 text-xs uppercase tracking-[0.12em] text-warm-gray transition-colors hover:border-retro-amber hover:text-retro-amber;
+    border-color: rgba(168, 168, 168, 0.32);
+  }
+
+  .text-link {
+    @apply text-retro-amber underline decoration-dotted underline-offset-4 transition-colors hover:text-white;
+  }
+
+  .tag {
+    @apply inline-flex items-center border px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-gray-400;
+    border-color: rgba(168, 168, 168, 0.22);
+  }
+
+  .catalog-card {
+    @apply relative flex h-full flex-col overflow-hidden border p-5 transition duration-200 hover:-translate-y-0.5 hover:border-retro-green sm:p-6;
+    border-color: rgba(168, 168, 168, 0.17);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.008));
+  }
+
+  .filter-button {
+    @apply min-h-10 border px-3 py-2 text-[11px] uppercase tracking-[0.1em] text-gray-500 transition-colors hover:border-gray-500 hover:text-white;
+    border-color: rgba(168, 168, 168, 0.22);
+  }
+
+  .filter-button[aria-pressed="true"] {
+    @apply border-retro-green text-retro-green;
+    background: rgba(0, 255, 65, 0.07);
+  }
+
+  .prose-3030 h2 {
+    @apply mt-12 scroll-mt-24 text-xl font-light text-retro-amber sm:text-2xl;
+  }
+
+  .prose-3030 h3 {
+    @apply mt-7 scroll-mt-24 text-base font-normal text-white;
+  }
+
+  .prose-3030 p {
+    @apply mt-4 text-sm leading-7 text-gray-400;
+  }
+
+  .prose-3030 ul,
+  .prose-3030 ol {
+    @apply mt-4 space-y-2 pl-5 text-sm leading-7 text-gray-400;
+  }
+
+  .prose-3030 ul {
+    @apply list-disc;
+  }
+
+  .prose-3030 ol {
+    @apply list-decimal;
+  }
+
+  .prose-3030 strong {
+    @apply font-semibold text-gray-200;
+  }
+
+  .faq-item[open] summary {
+    @apply text-retro-green;
+  }
+
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .reveal-ready {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 450ms ease, transform 450ms ease;
+  }
+
+  .js .reveal-ready.revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .reveal-ready {
+    opacity: 1;
+    transform: none;
+  }
+}

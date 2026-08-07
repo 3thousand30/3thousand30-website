@@ -1,0 +1,31 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for item in site.staticPages %}
+  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
+    <lastmod>{{ item.lastmod }}</lastmod>
+    <changefreq>{% if item.url == '/' %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{{ item.priority }}</priority>
+  </url>
+{% endfor %}
+{% for product in products %}
+  <url>
+    <loc>{{ site.url }}{{ product.url }}</loc>
+    <lastmod>{{ product.lastmod }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{% endfor %}
+{% for useCase in useCases %}
+  <url>
+    <loc>{{ site.url }}{{ useCase.url }}</loc>
+    <lastmod>{{ useCase.lastmod }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+{% endfor %}
+</urlset>

@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+permalink: products/index.html
+title: Buy-Once Windows Apps for AI, Images, PDFs, Files, and Offline Play | 3thousand30
+description: Search and filter 3thousand30’s released Windows apps for batch AI creation, image preparation, local PDF workflows, file organisation, and offline play.
+pageType: catalog
+analyticsPageType: product_index
+catalogKind: products
+---
+{% from "components/cards.njk" import productCard %}
+
+<section class="site-shell py-12 sm:py-16">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb"><a href="/" class="hover:text-retro-green">home</a> / <span class="text-gray-400">products</span></nav>
+  <div class="max-w-4xl">
+    <p class="eyebrow mb-4">{{ products.length }} released products</p>
+    <h1 class="text-4xl font-light leading-tight text-white sm:text-6xl">Find the smallest tool that completes the job.</h1>
+    <p class="mt-6 max-w-3xl text-base leading-8 text-gray-400">Browse AI creation apps, local utilities, PDF tools, and an offline typing game. Every product page explains the workflow, privacy boundary, and practical limitations.</p>
+  </div>
+</section>
+
+<section class="site-shell pb-20" data-filter-catalog>
+  <div class="sticky top-16 z-30 -mx-2 mb-8 border-y border-white/10 bg-black/95 px-2 py-5 backdrop-blur">
+    <div class="grid gap-5 lg:grid-cols-[minmax(240px,1fr)_2fr] lg:items-end">
+      <div>
+        <label for="product-search" class="mb-2 block text-[11px] uppercase tracking-[0.14em] text-gray-500">Search products</label>
+        <input id="product-search" type="search" class="min-h-11 w-full border border-white/20 bg-black px-4 text-sm text-white placeholder:text-gray-700 focus:border-retro-green" placeholder="PDF, images, writing…" data-catalog-search>
+      </div>
+      <div class="space-y-3">
+        <div class="flex flex-wrap gap-2" aria-label="Filter by product type">
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="all" aria-pressed="true">all</button>
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="ai" aria-pressed="false">AI creation</button>
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="utility" aria-pressed="false">local utilities</button>
+          <button type="button" class="filter-button" data-filter-group="kind" data-filter-value="game" aria-pressed="false">games</button>
+        </div>
+        <div class="flex flex-wrap gap-2" aria-label="Filter by task">
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="all" aria-pressed="true">any task</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="pdf" aria-pressed="false">PDF</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="images" aria-pressed="false">images</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="writing" aria-pressed="false">writing</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="translation" aria-pressed="false">translation</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="files" aria-pressed="false">files</button>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-[11px] text-gray-600" data-result-count aria-live="polite">{{ products.length }} results</p>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    {% for item in products %}{{ productCard(item) }}{% endfor %}
+  </div>
+  <div class="panel mt-8 p-8 text-center" data-empty-state hidden>
+    <p class="text-sm text-gray-400">No product matches those filters.</p>
+    <p class="mt-2 text-xs text-gray-600">Clear the search or choose a broader task.</p>
+  </div>
+</section>

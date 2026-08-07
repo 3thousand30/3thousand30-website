@@ -1,553 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="bg-black">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00ff41">
-    <title>3thousand30 — Buy-Once, Privacy-First Windows Apps</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <script>document.documentElement.classList.add('js');</script>
+  <title>3thousand30 — Buy-Once, Privacy-First Windows Apps</title>
+  <meta name="description" content="Buy-once Windows apps for batch writing, image creation, translation, PDF workflows, file organisation, and offline play—without subscription lock-in.">
+  <meta name="author" content="3thousand30">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://3thousand30.com/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <link rel="canonical" href="https://3thousand30.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="3thousand30">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://3thousand30.com/">
+  <meta property="og:title" content="3thousand30 — Buy-Once, Privacy-First Windows Apps">
+  <meta property="og:description" content="Buy-once Windows apps for batch writing, image creation, translation, PDF workflows, file organisation, and offline play—without subscription lock-in.">
+  <meta property="og:image" content="https://3thousand30.com/3030-300x300.png">
+  <meta property="og:image:alt" content="3thousand30 — Buy-Once, Privacy-First Windows Apps">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@3thousand30HQ">
+  <meta name="twitter:creator" content="@3thousand30HQ">
+  <meta name="twitter:title" content="3thousand30 — Buy-Once, Privacy-First Windows Apps">
+  <meta name="twitter:description" content="Buy-once Windows apps for batch writing, image creation, translation, PDF workflows, file organisation, and offline play—without subscription lock-in.">
+  <meta name="twitter:image" content="https://3thousand30.com/3030-300x300.png">
 
-    <!-- SEO -->
-    <meta name="description" content="Buy-once Windows apps and practical workflow use cases for batch AI writing, image generation, document translation, upscaling, watermarking, compression, resizing, and file organising. No subscriptions. No tracking. Your data stays yours.">
-    <meta name="keywords" content="buy once Windows apps, no subscription apps, privacy-first tools, batch AI writing, batch AI image generation, AI document translation, bulk image resizer Windows, photobook with AI workflow, mass create social media content">
-    <meta name="author" content="3thousand30">
-    <meta name="robots" content="index, follow, max-image-preview:large">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="3thousand30">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:url" content="https://3thousand30.com/">
-    <meta property="og:title" content="3thousand30 — Buy-Once, Privacy-First Windows Apps">
-    <meta property="og:description" content="Buy-once Windows apps and practical workflow use cases for batch AI writing, image generation, document translation, upscaling, watermarking, compression, resizing, and file organising. No subscriptions. No tracking. Your data stays yours.">
-    <meta property="og:image" content="https://3thousand30.com/3030-300x300.png">
-    <meta property="og:image:alt" content="3thousand30 — buy-once, privacy-first Windows apps">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "3thousand30 — Buy-Once, Privacy-First Windows Apps",
+    "description": "Buy-once Windows apps for batch writing, image creation, translation, PDF workflows, file organisation, and offline play—without subscription lock-in.",
+    "url": "https://3thousand30.com/",
+    "isPartOf": { "@type": "WebSite", "name": "3thousand30", "url": "https://3thousand30.com/" }
+  }
+  </script>
 
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@3thousand30HQ">
-    <meta name="twitter:creator" content="@3thousand30HQ">
-    <meta name="twitter:title" content="3thousand30 — Buy-Once, Privacy-First Windows Apps">
-    <meta name="twitter:description" content="Buy-once Windows apps and practical workflow use cases for batch AI writing, image generation, document translation, upscaling, watermarking, compression, resizing, and file organising. No subscriptions. No tracking. Your data stays yours.">
-    <meta name="twitter:image" content="https://3thousand30.com/3030-300x300.png">
-    <meta name="twitter:image:alt" content="3thousand30 — buy-once, privacy-first Windows apps">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "3thousand30",
-      "url": "https://3thousand30.com/",
-      "logo": "https://3thousand30.com/3030-300x300.png",
-      "description": "Buy-once, privacy-first Windows apps. No subscriptions, no tracking — your data stays on your machine.",
-      "sameAs": ["https://x.com/3thousand30HQ"]
-    }
-    </script>
-    <link rel="stylesheet" href="tailwind.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap"></noscript>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/tailwind.min.css">
 </head>
-<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+<body class="min-h-screen overflow-x-hidden bg-black font-mono text-white antialiased" data-page-type="home">
+  <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
+  <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
 
-    <!-- Retro scan lines -->
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px); will-change: transform;"></div>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <div class="site-shell flex min-h-16 items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
+      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    </a>
 
-    <div class="relative z-20 max-w-4xl mx-auto px-6 py-12 md:py-16">
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-gray-400">products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400">use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400">manifesto</a>
+    </nav>
 
-        <!-- Header -->
-        <header class="text-center mb-16">
-            <div class="flex justify-center mb-6">
-                <img src="3030-logo.webp" alt="3thousand30" class="h-20 md:h-24 w-auto" fetchpriority="high" decoding="async">
-            </div>
-            <h1 class="text-3xl md:text-5xl font-mono font-light tracking-wider text-retro-green mb-4" style="animation: glow 3s ease-in-out infinite;">
-                3thousand30
-            </h1>
-            <p class="text-warm-gray text-sm md:text-base font-light tracking-widest">
-                build for 3030 — not for next quarter
-            </p>
-            <div class="flex justify-center items-center mt-5 space-x-1">
-                <div class="w-8 h-px bg-warm-gray opacity-40"></div>
-                <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
-                <div class="w-12 h-px bg-warm-gray opacity-40"></div>
-                <div class="w-1 h-1 bg-retro-amber rounded-full"></div>
-                <div class="w-8 h-px bg-warm-gray opacity-40"></div>
-            </div>
-        </header>
+    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true" data-menu-icon>☰</span>
+    </button>
+  </div>
 
-        <!-- Philosophy -->
-        <section class="mb-16">
-            <div class="border p-6 md:p-8" style="border-color: rgba(0,255,65,0.15);">
-                <p class="text-warm-gray text-sm md:text-base leading-relaxed mb-4">
-                    Too many companies make users dependent, confused, tracked, and locked into subscriptions. We reject that model.
-                </p>
-                <p class="text-warm-gray text-sm md:text-base leading-relaxed mb-6">
-                    3thousand30 builds affordable, privacy-first, buy-once tools — and uses them in real workflows and artifacts — helping ordinary people become more capable, creative, and independent.
-                </p>
-                <p class="text-warm-gray text-xs mb-6">
-                    <a href="manifesto.html" class="text-retro-amber hover:text-white transition-colors underline decoration-dotted underline-offset-4">read our full manifesto →</a>
-                </p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-                    <span class="text-retro-green opacity-70">// buy once</span>
-                    <span class="text-retro-green opacity-70">// local-first</span>
-                    <span class="text-retro-green opacity-70">// no subscriptions</span>
-                    <span class="text-retro-green opacity-70">// your data stays yours</span>
-                </div>
-            </div>
-        </section>
+  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 md:hidden" aria-label="Mobile navigation" data-mobile-menu>
+    <div class="grid gap-2">
+      <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
+      <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
+      <a href="/manifesto.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">manifesto</a>
+      <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
+    </div>
+  </nav>
+</header>
 
-        <!-- Windows Apps -->
-        <section id="windows-apps" class="collapsible-section mb-16 is-open" data-collapsible>
-            <button type="button" class="section-toggle flex items-center gap-3 w-full mb-6 text-left" aria-expanded="true" aria-controls="panel-windows-apps">
-                <span class="text-retro-green">></span>
-                <span role="heading" aria-level="2" class="text-retro-amber text-lg md:text-xl font-normal">windows apps</span>
-                <span class="flex-1 h-px bg-gray-800 block"></span>
-                <span class="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-gray-600">tap or scroll</span>
-                <span class="toggle-icon text-warm-gray text-base leading-none" aria-hidden="true">▸</span>
-            </button>
-            <div id="panel-windows-apps" class="section-panel">
-                <div class="section-panel-inner">
-                    <div class="product-scroll-area max-h-[72vh] overflow-y-auto pr-1 md:pr-2">
-                        <div class="product-scroll-header sticky top-0 z-10 mb-5 border-b pb-4" style="border-color: rgba(0,255,65,0.12); background: linear-gradient(180deg, rgba(0,0,0,0.96), rgba(0,0,0,0.92));">
-                            <p class="text-gray-600 text-xs">Browse the full stack or jump by app if you already know the workflow you want. <a href="products/" class="text-retro-amber hover:text-white transition-colors">view all products →</a></p>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchgen-text.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BGT.webp" alt="Batch Generate Text with any AI" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">generative · windows</div>
-                            <a href="batchgen-text.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Batch Generate Text with any AI</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk AI writing with BYO keys, reusable personas, sample analysis, CSV topic generation, and local saved outputs.</p>
-                            <div class="inline-flex items-center gap-2 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2.5 py-1 mb-3">
-                                <span class="text-retro-amber text-sm font-medium">$14.99</span>
-                                <span class="text-gray-600 text-xs line-through">$19.99</span>
-                                <span class="bg-retro-amber text-black text-[10px] font-bold px-1 py-0.5">-25%</span>
-                                <span class="text-retro-green text-[10px] uppercase tracking-wide">limited time</span>
-                            </div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchgen-text.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9n3b1b8dt39f?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
+  <main id="main-content" class="relative z-20">
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchgen-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BGI.webp" alt="BatchGen Image with AI" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">generative · windows</div>
-                            <a href="batchgen-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchGen Image with AI</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk AI image generation. BYOKey — you choose the provider and pay them directly. Your files stay on your machine.</p>
-                            <div class="inline-flex items-center gap-2 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2.5 py-1 mb-3">
-                                <span class="text-retro-amber text-sm font-medium">$13.99</span>
-                                <span class="text-gray-600 text-xs line-through">$19.99</span>
-                                <span class="bg-retro-amber text-black text-[10px] font-bold px-1 py-0.5">-30%</span>
-                                <span class="text-retro-green text-[10px] uppercase tracking-wide">limited time · ends Jun 9</span>
-                            </div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchgen-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9pfr4v6827xq?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchtranslate.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BT.png" alt="Batch Translate with AI" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">translation · windows</div>
-                            <a href="batchtranslate.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Batch Translate with AI</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Batch-translate PDF, DOCX, TXT, and Markdown files with your own AI key. Choose providers, target languages, and save every output to your PC.</p>
-                            <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$19.99</div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchtranslate.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9N75DWR9X2S7?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchenhance-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BEI.webp" alt="BatchEnhance Image" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
-                            <a href="batchenhance-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchEnhance Image</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Upscale and prepare image batches for high-quality print. Fully local. No cloud, no account, no telemetry. Nothing leaves your machine.</p>
-                            <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$4.99</div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchenhance-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9n2vhg38ss00?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchfile-organiser.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BFO.webp" alt="BatchFile Organiser" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
-                            <a href="batchfile-organiser.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchFile Organiser</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Bulk file organisation for Windows. Sort, rename, and arrange files in batches — fully local, no cloud, no account required.</p>
-                            <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$9.99</div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchfile-organiser.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9pb3q7k9fvzq?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
+<section class="site-shell grid min-h-[70vh] items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.08fr_0.92fr]">
+  <div class="reveal-item" data-reveal>
+    <p class="eyebrow mb-5">buy once · keep your workflow</p>
+    <h1 class="max-w-4xl text-4xl font-light leading-[1.12] text-white sm:text-6xl lg:text-7xl">
+      Useful Windows tools.<br><span class="text-retro-green">No software rent.</span>
+    </h1>
+    <p class="mt-7 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
+      Batch-create, prepare, translate, organise, and publish your work with privacy-first apps that stay clear about what runs locally and what reaches an AI provider.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a href="/products/" class="button-primary" data-analytics-event="product_catalog_click">browse products →</a>
+      <a href="/use-cases/" class="button-secondary" data-analytics-event="use_case_catalog_click">explore workflows</a>
+    </div>
+  </div>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchwatermark-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BWI.webp" alt="BatchWatermark Image" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
-                            <a href="batchwatermark-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchWatermark Image</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Add text and logo watermarks to full image folders. Preview result, tune placement and opacity — fully local, no cloud, no account required.</p>
-                            <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$4.99</div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchwatermark-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9n3s7zrpxgph?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
+  <div class="panel-green relative overflow-hidden p-6 sm:p-8 reveal-item" data-reveal>
+    <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-retro-green/10 blur-3xl" aria-hidden="true"></div>
+    <p class="eyebrow mb-5">system_status</p>
+    <dl class="space-y-5">
+      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
+        <dt class="text-xs text-gray-500">released products</dt>
+        <dd class="text-3xl font-light text-retro-green">12</dd>
+      </div>
+      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
+        <dt class="text-xs text-gray-500">practical workflows</dt>
+        <dd class="text-3xl font-light text-retro-amber">20</dd>
+      </div>
+    </dl>
+    <div class="mt-5 grid grid-cols-2 gap-4 text-xs leading-5 text-gray-500">
+      <div><span class="block text-white">local-first</span>files and utility work stay on your PC</div>
+      <div><span class="block text-white">BYOKey</span>choose and pay AI providers directly</div>
+    </div>
+  </div>
+</section>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchcompress-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BCI.webp" alt="BatchCompress Image" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
-                            <a href="batchcompress-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchCompress Image</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Compress full image folders locally. Set quality, compare before and after, and export in one run — no cloud, no account, no subscription.</p>
-                            <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$2.99</div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchcompress-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9n1dbc2g87ht?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell grid gap-8 py-12 md:grid-cols-3">
+    <div class="reveal-item" data-reveal>
+      <p class="eyebrow mb-3">01 · ownership</p>
+      <h2 class="text-lg font-light text-white">Buy the app once</h2>
+      <p class="mt-3 text-xs leading-6 text-gray-500">No monthly subscription from us and no feature maze designed to keep you renting access.</p>
+    </div>
+    <div class="reveal-item" data-reveal>
+      <p class="eyebrow mb-3">02 · privacy</p>
+      <h2 class="text-lg font-light text-white">Know what leaves your PC</h2>
+      <p class="mt-3 text-xs leading-6 text-gray-500">Local tools stay local. AI apps contact only the provider you choose for the request you make.</p>
+    </div>
+    <div class="reveal-item" data-reveal>
+      <p class="eyebrow mb-3">03 · capability</p>
+      <h2 class="text-lg font-light text-white">Build repeatable workflows</h2>
+      <p class="mt-3 text-xs leading-6 text-gray-500">The goal is not more buttons. It is a working system you understand and can reuse.</p>
+    </div>
+  </div>
+</section>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <a href="batchresize-image.html" class="inline-block before:content-[''] before:absolute before:inset-0 before:z-0"><img src="Logos/BRI.webp" alt="BatchResize Image" class="w-12 h-12 rounded mb-3 object-cover" loading="lazy" decoding="async"></a>
-                            <div class="text-retro-green text-xs mb-3 opacity-60">utility · windows</div>
-                            <a href="batchresize-image.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">BatchResize Image</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Resize full image folders for social, web, email, and marketplace workflows. Use presets, crop controls, and preview — fully local.</p>
-                            <div class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-sm font-medium px-2.5 py-1 mb-3">$2.99</div>
-                            <div class="flex items-center space-x-4 relative z-10">
-                                <a href="batchresize-image.html" class="text-retro-amber text-xs hover:text-white transition-colors">details →</a>
-                                <a href="https://apps.microsoft.com/detail/9PPKDVXPTLV0?hl=en-US&gl=US" target="_blank" rel="noopener"
-                                   class="text-retro-amber text-xs hover:text-white transition-colors">get it on Windows →</a>
-                            </div>
-                        </div>
+<section class="site-shell py-16 sm:py-24">
+  <div class="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+      <p class="eyebrow mb-3">selected_tools</p>
+      <h2 class="section-heading">Start with the job in front of you</h2>
+    </div>
+    <a href="/products/" class="text-link text-xs">all 12 products →</a>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="writing publishing social" data-search="Batch Generate Text with any AI Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs. AI creation writing publishing social">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BGT.webp" alt="Batch Generate Text with any AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">AI creation</p>
+  <h3 class="text-lg font-light text-white">Batch Generate Text with any AI</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">writing</span><span class="tag">publishing</span><span class="tag">social</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchgen-text.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Generate Text with any AI">view app →</a>
+  </div>
+</article>
 
-        <!-- Use Cases -->
-        <section id="use-cases" class="collapsible-section mb-16" data-collapsible>
-            <button type="button" class="section-toggle flex items-center gap-3 w-full mb-4 text-left" aria-expanded="false" aria-controls="panel-use-cases">
-                <span class="text-retro-green">></span>
-                <span role="heading" aria-level="2" class="text-retro-amber text-lg md:text-xl font-normal">use_cases</span>
-                <span class="flex-1 h-px bg-gray-800 block"></span>
-                <span class="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-gray-600">tap or scroll</span>
-                <span class="toggle-icon text-warm-gray text-base leading-none" aria-hidden="true">▸</span>
-            </button>
-            <div id="panel-use-cases" class="section-panel">
-                <div class="section-panel-inner">
-                    <p class="text-gray-600 text-xs mb-5">Practical workflow pages built from real output, real costs, and the kind of review loop that keeps batch AI work from turning into slop. <a href="use-cases/" class="text-retro-amber hover:text-white transition-colors">browse the use-case library →</a></p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="images publishing social" data-search="BatchGen Image with AI Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs. AI creation images publishing social">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BGI.webp" alt="BatchGen Image with AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">AI creation</p>
+  <h3 class="text-lg font-light text-white">BatchGen Image with AI</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">publishing</span><span class="tag">social</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchgen-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchGen Image with AI">view app →</a>
+  </div>
+</article>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <div class="text-retro-green text-xs mb-3 opacity-60">print workflow · windows</div>
-                            <a href="use-cases/create-a-photobook-with-ai-for-gifting.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">How To Create A Photobook With AI For Gifting</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Generate a themed image batch, reject hard, enhance for print, assemble the book, then publish, gift, or sell the final artifact.</p>
-                            <div class="flex flex-wrap gap-2 mb-4 relative z-10">
-                                <a href="batchgen-image.html" class="border border-[#00ff41]/20 px-2 py-1 text-[10px] text-warm-gray hover:text-white hover:border-retro-green transition-colors">BatchGen Image</a>
-                                <a href="batchenhance-image.html" class="border border-[#00ff41]/20 px-2 py-1 text-[10px] text-warm-gray hover:text-white hover:border-retro-green transition-colors">BatchEnhance Image</a>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-4 relative z-10">
-                                <a href="use-cases/create-a-photobook-with-ai-for-gifting.html" class="text-retro-amber text-xs hover:text-white transition-colors">read workflow →</a>
-                                <a href="https://www.amazon.com/dp/B0GWVL1D6R" target="_blank" rel="noopener" class="text-retro-amber text-xs hover:text-white transition-colors">artifact proof →</a>
-                            </div>
-                        </div>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf publishing files" data-search="Batch Text to PDF A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering. Local PDF utility pdf publishing files">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BTP.png" alt="Batch Text to PDF logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local PDF utility</p>
+  <h3 class="text-lg font-light text-white">Batch Text to PDF</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">pdf</span><span class="tag">publishing</span><span class="tag">files</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">$4.99 list price</span>
+    <a href="/batch-text-to-pdf.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Text to PDF">view app →</a>
+  </div>
+</article>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <div class="text-retro-green text-xs mb-3 opacity-60">content workflow · windows</div>
-                            <a href="use-cases/mass-create-social-media-content.html"><h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">How To Mass Create Social Media Content With AI</h3></a>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Create posts, threads, images, resized exports, and proof-marked variants in one repeatable workflow for creators and ecommerce sellers.</p>
-                            <div class="flex flex-wrap gap-2 mb-4 relative z-10">
-                                <a href="batchgen-text.html" class="border border-[#00ff41]/20 px-2 py-1 text-[10px] text-warm-gray hover:text-white hover:border-retro-green transition-colors">Batch Generate Text</a>
-                                <a href="batchgen-image.html" class="border border-[#00ff41]/20 px-2 py-1 text-[10px] text-warm-gray hover:text-white hover:border-retro-green transition-colors">BatchGen Image</a>
-                                <a href="batchresize-image.html" class="border border-[#00ff41]/20 px-2 py-1 text-[10px] text-warm-gray hover:text-white hover:border-retro-green transition-colors">BatchResize Image</a>
-                                <a href="batchwatermark-image.html" class="border border-[#00ff41]/20 px-2 py-1 text-[10px] text-warm-gray hover:text-white hover:border-retro-green transition-colors">BatchWatermark Image</a>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-4 relative z-10">
-                                <a href="use-cases/mass-create-social-media-content.html" class="text-retro-amber text-xs hover:text-white transition-colors">read workflow →</a>
-                                <a href="https://x.com/ProyogiBaba" target="_blank" rel="noopener" class="text-retro-amber text-xs hover:text-white transition-colors">public reference →</a>
-                            </div>
-                        </div>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf files publishing" data-search="Batch Merge PDFs A lightweight local PDF merger for Windows with alphabetical ordering, folder-based output naming, optional page numbers, progress, and skip-existing support. Local PDF utility pdf files publishing">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BMP.png" alt="Batch Merge PDFs logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local PDF utility</p>
+  <h3 class="text-lg font-light text-white">Batch Merge PDFs</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A lightweight local PDF merger for Windows with alphabetical ordering, folder-based output naming, optional page numbers, progress, and skip-existing support.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">pdf</span><span class="tag">files</span><span class="tag">publishing</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batch-merge-pdfs.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Merge PDFs">view app →</a>
+  </div>
+</article>
 
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="files productivity" data-search="BatchFile Organiser A local Windows file organiser with type/date sorting, hash-based duplicate detection, complete previews, and undo for the last operation. Local utility files productivity">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BFO.webp" alt="BatchFile Organiser logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local utility</p>
+  <h3 class="text-lg font-light text-white">BatchFile Organiser</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows file organiser with type/date sorting, hash-based duplicate detection, complete previews, and undo for the last operation.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">files</span><span class="tag">productivity</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchfile-organiser.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchFile Organiser">view app →</a>
+  </div>
+</article>
 
-        <!-- Platform -->
-        <section id="platform" class="collapsible-section mb-16" data-collapsible>
-            <button type="button" class="section-toggle flex items-center gap-3 w-full mb-6 text-left" aria-expanded="false" aria-controls="panel-platform">
-                <span class="text-retro-green">></span>
-                <span role="heading" aria-level="2" class="text-retro-amber text-lg md:text-xl font-normal">platform</span>
-                <span class="flex-1 h-px bg-gray-800 block"></span>
-                <span class="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-gray-600">tap or scroll</span>
-                <span class="toggle-icon text-warm-gray text-base leading-none" aria-hidden="true">▸</span>
-            </button>
-            <div id="panel-platform" class="section-panel">
-                <div class="section-panel-inner">
-                    <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                        <div class="text-retro-green text-xs mb-3 opacity-60">web platform</div>
-                        <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">devyo Life</h3>
-                        <p class="text-gray-500 text-xs leading-relaxed mb-4">AI-guided personal growth and productivity platform. Develop your knowledge, habits, and judgment — on your own terms. Not just another productivity app: a life operating system built around the people using it.</p>
-                        <a href="https://devyo.life/" target="_blank" rel="noopener"
-                           class="text-retro-amber text-xs hover:text-white transition-colors">visit devyo.life →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="game" data-categories="game typing offline" data-search="Key Rush Offline-first typing action with story missions, an accelerating endless lane, no-fail zen practice, local top-10 boards, and no account or telemetry. Offline game game typing offline">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/KR.png" alt="Key Rush logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Offline game</p>
+  <h3 class="text-lg font-light text-white">Key Rush</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Offline-first typing action with story missions, an accelerating endless lane, no-fail zen practice, local top-10 boards, and no account or telemetry.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">game</span><span class="tag">typing</span><span class="tag">offline</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/key-rush.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Key Rush">view app →</a>
+  </div>
+</article>
 
-        <!-- Windows Games -->
-        <section id="windows-games" class="collapsible-section mb-16" data-collapsible>
-            <button type="button" class="section-toggle flex items-center gap-3 w-full mb-6 text-left" aria-expanded="false" aria-controls="panel-windows-games">
-                <span class="text-retro-green">></span>
-                <span role="heading" aria-level="2" class="text-retro-amber text-lg md:text-xl font-normal">windows_games</span>
-                <span class="flex-1 h-px bg-gray-800 block"></span>
-                <span class="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-gray-600">tap or scroll</span>
-                <span class="toggle-icon text-warm-gray text-base leading-none" aria-hidden="true">▸</span>
-            </button>
-            <div id="panel-windows-games" class="section-panel">
-                <div class="section-panel-inner">
-                    <div class="relative overflow-hidden border p-6 md:p-8" style="border-color: rgba(168,168,168,0.15); background: radial-gradient(circle at top, rgba(0,255,65,0.08), transparent 55%), linear-gradient(180deg, rgba(255,176,0,0.04), rgba(0,0,0,0));">
-                        <div class="absolute inset-0 opacity-20" aria-hidden="true" style="background: linear-gradient(135deg, transparent 0%, rgba(0,255,65,0.08) 45%, transparent 100%);"></div>
-                        <div class="relative">
-                            <div class="text-retro-green text-xs mb-3 opacity-60">games lab · boot sequence active</div>
-                            <h3 class="text-white text-lg md:text-2xl font-light mb-3">coming_soon.exe</h3>
-                            <p class="text-warm-gray text-sm md:text-base leading-relaxed max-w-2xl">
-                                The cartridge bay is warming up. We are still tuning the controls, balancing the weirdness, and making sure the first Windows game feels worth the wait instead of merely shipped.
-                            </p>
-                            <div class="mt-6 border p-4" style="border-color: rgba(255,176,0,0.2); background: rgba(0,0,0,0.35);">
-                                <div class="flex items-center justify-between gap-4 text-[10px] uppercase tracking-[0.32em] text-warm-gray mb-3">
-                                    <span>boot sequence</span>
-                                    <span>76%</span>
-                                </div>
-                                <div class="h-3 border overflow-hidden" style="border-color: rgba(0,255,65,0.2);">
-                                    <div class="game-loader h-full w-[76%] bg-gradient-to-r from-retro-green via-retro-amber to-retro-green"></div>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 text-xs mt-4">No fake release date yet. Just a blinking cursor, a live wire, and a promise that this section will wake up properly when the first build is ready.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  </div>
+</section>
 
-        <!-- Free Tools -->
-        <section id="free-tools" class="collapsible-section mb-16" data-collapsible>
-            <button type="button" class="section-toggle flex items-center gap-3 w-full mb-4 text-left" aria-expanded="false" aria-controls="panel-free-tools">
-                <span class="text-retro-green">></span>
-                <span role="heading" aria-level="2" class="text-retro-amber text-lg md:text-xl font-normal">free_tools</span>
-                <span class="flex-1 h-px bg-gray-800 block"></span>
-                <span class="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-gray-600">tap or scroll</span>
-                <span class="toggle-icon text-warm-gray text-base leading-none" aria-hidden="true">▸</span>
-            </button>
-            <div id="panel-free-tools" class="section-panel">
-                <div class="section-panel-inner">
-                    <p class="text-gray-600 text-xs mb-5">Open source X / Twitter automation tools. Free, customizable, no paywalls.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-16 sm:py-24">
+    <div class="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="eyebrow mb-3">from_tools_to_outcomes</p>
+        <h2 class="section-heading">Complete workflows, including the messy middle</h2>
+      </div>
+      <a href="/use-cases/" class="text-link text-xs">all 20 use cases →</a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
-                            <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Thread AI Automation</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Automate X thread creation with AI. Fully customizable and free to run.</p>
-                            <a href="https://github.com/3thousand30/simple_twitter_thread_ai_automation" target="_blank" rel="noopener"
-                               class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
-                        </div>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei btp bmp" data-search="Create a Photobook With AI for Gifting Turn a themed AI image collection into a reviewed, print-ready physical book instead of a folder of disconnected generations. Books &amp; publishing BGI BEI BTP BMP">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Books &amp; publishing</p>
+    <span class="text-[10px] text-gray-700">UC-1</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Create a Photobook With AI for Gifting</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Turn a themed AI image collection into a reviewed, print-ready physical book instead of a folder of disconnected generations.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGI</span><span class="tag">BEI</span><span class="tag">BTP</span><span class="tag">BMP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/create-a-photobook-with-ai-for-gifting.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Create a Photobook With AI for Gifting">open workflow →</a>
+  </div>
+</article>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
-                            <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Twitter AI Agent</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">A simple X AI agent that works and is highly customizable. Free and open source.</p>
-                            <a href="https://github.com/3thousand30/simple_twitter_ai_agent" target="_blank" rel="noopener"
-                               class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
-                        </div>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bgt bgi bri bwi" data-search="Plan and Create Social Media Content in Batches Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies. Social &amp; image production BGT BGI BRI BWI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Social &amp; image production</p>
+    <span class="text-[10px] text-gray-700">UC-2</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Plan and Create Social Media Content in Batches</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGT</span><span class="tag">BGI</span><span class="tag">BRI</span><span class="tag">BWI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/mass-create-social-media-content.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Plan and Create Social Media Content in Batches">open workflow →</a>
+  </div>
+</article>
 
-                        <div class="border p-5 hover:border-retro-green transition-colors duration-300 group relative" style="border-color: rgba(168,168,168,0.15);">
-                            <div class="text-retro-green text-xs mb-3 opacity-60">open source</div>
-                            <h3 class="text-white text-sm font-normal mb-2 group-hover:text-retro-green transition-colors">Repost AI Agent</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed mb-4">Automate smart X reposting with AI. Highly customizable and free to run.</p>
-                            <a href="https://github.com/3thousand30/simple_twitter_repost_ai_agent" target="_blank" rel="noopener"
-                               class="text-retro-amber text-xs hover:text-white transition-colors">view on GitHub →</a>
-                        </div>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="btp" data-search="Batch-Create PDFs From Text Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document. PDF &amp; file workflows BTP">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">PDF &amp; file workflows</p>
+    <span class="text-[10px] text-gray-700">UC-20</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Batch-Create PDFs From Text</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BTP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/batch-create-pdfs-from-text.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Batch-Create PDFs From Text">open workflow →</a>
+  </div>
+</article>
 
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="bmp" data-search="Merge PDFs Without Using the Internet Combine chapters, scans, reports, or exported sections into one predictable PDF while the documents stay on the PC. PDF &amp; file workflows BMP">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">PDF &amp; file workflows</p>
+    <span class="text-[10px] text-gray-700">UC-18</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Merge PDFs Without Using the Internet</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Combine chapters, scans, reports, or exported sections into one predictable PDF while the documents stay on the PC.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BMP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/merge-pdfs-without-using-the-internet.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Merge PDFs Without Using the Internet">open workflow →</a>
+  </div>
+</article>
 
-        <!-- Separator -->
-        <div class="flex justify-center mb-10">
-            <div class="flex items-center space-x-2 opacity-30">
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-            </div>
-        </div>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei btp" data-search="Create a Colouring Book for Children Develop a safe, coherent line-art theme and turn the selected pages into a printable book. Books &amp; publishing BGI BEI BTP">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Books &amp; publishing</p>
+    <span class="text-[10px] text-gray-700">UC-4</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Create a Colouring Book for Children</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Develop a safe, coherent line-art theme and turn the selected pages into a printable book.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGI</span><span class="tag">BEI</span><span class="tag">BTP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/create-a-colouring-book-for-children.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Create a Colouring Book for Children">open workflow →</a>
+  </div>
+</article>
 
-        <!-- Footer -->
-        <footer class="border-t border-gray-800 pt-8 text-center">
-            <div class="flex flex-col md:flex-row md:justify-center md:gap-8 space-y-3 md:space-y-0 mb-4">
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">get_in_touch:</span>
-                    <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
-                </div>
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">follow:</span>
-                    <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
-                </div>
-            </div>
-            <div>
-                <a href="privacy.html" class="text-gray-600 text-xs hover:text-warm-gray transition-colors">privacy policy</a>
-            </div>
-        </footer>
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="bfo bci bei" data-search="Organise and Prepare a Working File Collection Clean a Downloads, publishing, or image-output folder before archiving, sharing, or starting the next workflow. PDF &amp; file workflows BFO BCI BEI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">PDF &amp; file workflows</p>
+    <span class="text-[10px] text-gray-700">UC-21</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Organise and Prepare a Working File Collection</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Clean a Downloads, publishing, or image-output folder before archiving, sharing, or starting the next workflow.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BFO</span><span class="tag">BCI</span><span class="tag">BEI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/organise-and-prepare-a-working-file-collection.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Organise and Prepare a Working File Collection">open workflow →</a>
+  </div>
+</article>
 
     </div>
+  </div>
+</section>
 
-    <style>
-        @keyframes glow {
-            0%, 100% { filter: drop-shadow(0 0 4px #00ff41); }
-            50% { filter: drop-shadow(0 0 10px #00ff41); }
-        }
+<section class="site-shell py-16 sm:py-24">
+  <div class="panel-amber grid gap-8 p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center reveal-item" data-reveal>
+    <div>
+      <p class="eyebrow mb-3 text-retro-amber">the operating principle</p>
+      <h2 class="section-heading">Technology should make you more capable, not more dependent.</h2>
+      <p class="mt-4 max-w-3xl text-sm leading-7 text-gray-400">That means transparent providers, local files, reasonable prices, honest limits, and products that keep working without a monthly gate.</p>
+    </div>
+    <a href="/manifesto.html" class="button-secondary">read the manifesto →</a>
+  </div>
+</section>
 
-        body.accordion-ready .collapsible-section .section-panel {
-            display: grid;
-            grid-template-rows: 0fr;
-            opacity: 0.45;
-            transition: grid-template-rows 0.45s ease, opacity 0.3s ease;
-        }
+  </main>
 
-        body.accordion-ready .collapsible-section.is-open .section-panel {
-            grid-template-rows: 1fr;
-            opacity: 1;
-        }
+  <footer class="relative z-20 mt-20 border-t border-white/10 bg-black">
+  <div class="site-shell grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
+    <div>
+      <p class="eyebrow mb-3">3thousand30</p>
+      <p class="max-w-xl text-sm leading-6 text-gray-500">Affordable, privacy-first, buy-once Windows tools for work worth keeping.</p>
+      <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-xs">
+        <a href="mailto:hello@3thousand30.com" class="text-link">hello@3thousand30.com</a>
+        <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-link">@3thousand30HQ on X</a>
+      </div>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-3 text-xs text-gray-500 md:justify-end" aria-label="Footer navigation">
+      <a href="/products/" class="hover:text-white">products</a>
+      <a href="/use-cases/" class="hover:text-white">use cases</a>
+      <a href="/manifesto.html" class="hover:text-white">manifesto</a>
+      <a href="/privacy.html" class="hover:text-white">privacy</a>
+    </nav>
+  </div>
+</footer>
 
-        body.accordion-ready .collapsible-section .section-panel-inner {
-            overflow: hidden;
-            min-height: 0;
-        }
 
-        .section-toggle:focus-visible {
-            outline: 1px solid rgba(0,255,65,0.7);
-            outline-offset: 8px;
-        }
-
-        .toggle-icon {
-            transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-            opacity: 0.7;
-        }
-
-        .product-scroll-area {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .product-scroll-area::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-            display: none;
-        }
-
-        .collapsible-section.is-open .toggle-icon {
-            transform: rotate(90deg);
-            color: #00ff41;
-            opacity: 1;
-        }
-
-        .game-loader {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-loader::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
-            animation: loadingSweep 2.4s linear infinite;
-        }
-
-        @keyframes loadingSweep {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            body.accordion-ready .collapsible-section .section-panel,
-            .toggle-icon,
-            .game-loader::after,
-            h1 {
-                transition: none;
-                animation: none !important;
-            }
-        }
-    </style>
-
-    <script>
-        (function () {
-            document.body.classList.add('accordion-ready');
-
-            var sections = Array.from(document.querySelectorAll('[data-collapsible]'));
-            if (!sections.length) return;
-
-            function setSectionState(section, isOpen, markUser) {
-                var button = section.querySelector('.section-toggle');
-                section.classList.toggle('is-open', isOpen);
-                if (button) {
-                    button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                }
-                if (markUser) {
-                    section.dataset.userToggled = 'true';
-                }
-            }
-
-            sections.forEach(function (section) {
-                var button = section.querySelector('.section-toggle');
-                if (!button) return;
-                button.addEventListener('click', function () {
-                    setSectionState(section, !section.classList.contains('is-open'), true);
-                });
-            });
-
-            if (!('IntersectionObserver' in window)) {
-                sections.forEach(function (section) {
-                    setSectionState(section, true, false);
-                });
-                return;
-            }
-
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (!entry.isIntersecting || entry.intersectionRatio < 0.32) return;
-                    var section = entry.target;
-                    if (section.dataset.userToggled !== 'true') {
-                        setSectionState(section, true, false);
-                    }
-                    observer.unobserve(section);
-                });
-            }, { threshold: [0.32, 0.6] });
-
-            sections.forEach(function (section, index) {
-                if (index === 0) return;
-                observer.observe(section);
-            });
-        })();
-    </script>
-
-    <script src="cookie-banner.js"></script>
+  <script src="/site.js"></script>
+  <script src="/cookie-banner.js"></script>
 </body>
 </html>

@@ -4,8 +4,12 @@
   "description": "Marketing site for **3thousand30** — buy-once, privacy-first Windows tools.",
   "main": "cookie-banner.js",
   "scripts": {
+    "build": "npm run build:css && eleventy --output=.",
     "build:css": "tailwindcss -i tailwind.input.css -o tailwind.min.css --minify",
-    "watch:css": "tailwindcss -i tailwind.input.css -o tailwind.min.css --watch"
+    "serve": "npm run build && eleventy --serve --output=.",
+    "watch:css": "tailwindcss -i tailwind.input.css -o tailwind.min.css --watch",
+    "check": "node scripts/check-site.cjs",
+    "check:browser": "node scripts/browser-check.cjs"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,9 @@
   },
   "homepage": "https://github.com/3thousand30/3thousand30-website#readme",
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@axe-core/playwright": "^4.12.1",
+    "playwright-core": "^1.62.1",
     "tailwindcss": "^3.4.19"
   }
 }

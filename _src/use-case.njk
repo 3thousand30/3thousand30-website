@@ -1,0 +1,162 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: useCases
+  size: 1
+  alias: useCase
+permalink: "use-cases/{{ useCase.slug }}.html"
+pageType: use_case
+eleventyComputed:
+  title: "How to {{ useCase.title | lower }} on Windows | 3thousand30"
+  description: "{{ useCase.summary }}"
+---
+{% from "components/cards.njk" import useCaseCard %}
+{% set workflowProducts = products | filterByCodes(useCase.products) %}
+{% set related = useCases | filterBySlugs(useCase.relatedUseCases) %}
+
+<section class="site-shell py-10 sm:py-14">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-retro-green">home</a> /
+    <a href="/use-cases/" class="hover:text-retro-green">use cases</a> /
+    <span class="text-gray-400">UC-{{ useCase.id }}</span>
+  </nav>
+
+  <div class="max-w-5xl">
+    <div class="mb-5 flex flex-wrap gap-2">
+      <span class="tag text-retro-green">{{ useCase.categoryLabel }}</span>
+      <span class="tag">practical workflow</span>
+    </div>
+    <h1 class="text-4xl font-light leading-tight text-white sm:text-6xl">{{ useCase.title }}</h1>
+    <p class="mt-6 max-w-4xl text-lg leading-8 text-retro-green">{{ useCase.summary }}</p>
+  </div>
+</section>
+
+<section class="site-shell grid gap-5 pb-12 lg:grid-cols-2">
+  <div class="panel p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">real_life_scenario</p>
+    <p class="text-sm leading-7 text-gray-300">{{ useCase.scenario }}</p>
+  </div>
+  <div class="panel-green p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">finished_outcome</p>
+    <p class="text-sm leading-7 text-gray-300">{{ useCase.outcome }}</p>
+  </div>
+</section>
+
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-10">
+    <p class="eyebrow mb-5">recommended_stack</p>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {% for item in workflowProducts %}
+      <a href="{{ item.url }}" class="panel group flex items-center gap-4 p-4 transition-colors hover:border-retro-green" data-analytics-event="product_click" data-analytics-name="{{ item.name }} from {{ useCase.title }}">
+        <img src="{{ item.logo }}" alt="" class="h-11 w-11 rounded-lg object-cover" width="44" height="44" loading="lazy">
+        <span>
+          <span class="block text-[10px] text-gray-600">{{ item.code }}</span>
+          <span class="block text-xs text-white group-hover:text-retro-green">{{ item.shortName }}</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="site-shell grid gap-12 py-12 sm:py-16 lg:grid-cols-[250px_minmax(0,1fr)] lg:items-start">
+  <aside class="panel p-5 lg:sticky lg:top-24" aria-label="On this page">
+    <p class="eyebrow mb-4">on_this_page</p>
+    <nav class="grid gap-3 text-xs text-gray-500">
+      <a href="#inputs" class="hover:text-retro-green">What you need</a>
+      <a href="#workflow" class="hover:text-retro-green">Workflow</a>
+      <a href="#review" class="hover:text-retro-green">Review checklist</a>
+      <a href="#limits" class="hover:text-retro-green">Limits & privacy</a>
+      {% if useCase.proofLinks.length %}<a href="#example" class="hover:text-retro-green">Public example</a>{% endif %}
+      {% if useCase.faq.length %}<a href="#faq" class="hover:text-retro-green">FAQ</a>{% endif %}
+    </nav>
+  </aside>
+
+  <article class="min-w-0">
+    <section id="inputs" class="scroll-mt-24">
+      <p class="eyebrow mb-3">what_you_need</p>
+      <h2 class="section-heading">Prepare the inputs before opening the apps</h2>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+        {% for input in useCase.inputs %}<li class="panel flex gap-3 p-4 text-sm leading-6 text-gray-400"><span class="text-retro-green" aria-hidden="true">✓</span><span>{{ input }}</span></li>{% endfor %}
+      </ul>
+    </section>
+
+    <section id="workflow" class="scroll-mt-24 pt-14">
+      <p class="eyebrow mb-3">step_by_step</p>
+      <h2 class="section-heading">The working process</h2>
+      <ol class="mt-7 space-y-5">
+        {% for step in useCase.steps %}
+        <li class="panel grid gap-4 p-5 sm:grid-cols-[44px_1fr] sm:p-6 reveal-item" data-reveal>
+          <span class="flex h-11 w-11 items-center justify-center border border-retro-green/40 text-sm text-retro-green">{{ loop.index }}</span>
+          <div>
+            <h3 class="text-base font-normal text-white">{{ step.title }}</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-400">{{ step.body }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section id="review" class="scroll-mt-24 pt-14">
+      <p class="eyebrow mb-3">human_checkpoint</p>
+      <h2 class="section-heading">Review before you call it finished</h2>
+      <ul class="mt-6 space-y-3">
+        {% for item in useCase.review %}<li class="panel flex gap-4 p-4 text-sm leading-6 text-gray-300"><span class="text-retro-amber" aria-hidden="true">□</span><span>{{ item }}</span></li>{% endfor %}
+      </ul>
+    </section>
+
+    <section id="limits" class="scroll-mt-24 pt-14">
+      <p class="eyebrow mb-3">honest_boundaries</p>
+      <h2 class="section-heading">Limits and privacy</h2>
+      <div class="mt-6 grid gap-4">
+        <div class="panel-amber p-6">
+          <h3 class="text-sm text-retro-amber">Practical limitation</h3>
+          <p class="mt-3 text-sm leading-7 text-gray-400">{{ useCase.limitation }}</p>
+        </div>
+        <div class="panel-green p-6">
+          <h3 class="text-sm text-retro-green">Privacy boundary</h3>
+          <p class="mt-3 text-sm leading-7 text-gray-400">{{ useCase.privacy }}</p>
+        </div>
+      </div>
+    </section>
+
+    {% if useCase.proofLinks.length %}
+    <section id="example" class="scroll-mt-24 pt-14">
+      <p class="eyebrow mb-3">public_proof</p>
+      <h2 class="section-heading">A real output from this kind of workflow</h2>
+      <div class="mt-6 grid gap-3">
+        {% for link in useCase.proofLinks %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="panel flex min-h-14 items-center justify-between gap-5 p-5 text-sm text-retro-amber transition-colors hover:border-retro-amber hover:text-white" data-analytics-event="outbound_click"><span>{{ link.label }}</span><span aria-hidden="true">↗</span></a>{% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if useCase.faq.length %}
+    <section id="faq" class="scroll-mt-24 pt-14">
+      <p class="eyebrow mb-3">faq</p>
+      <h2 class="section-heading mb-7">Questions worth answering</h2>
+      <div class="space-y-3">
+        {% for item in useCase.faq %}
+        <details class="faq-item panel group">
+          <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white"><span>{{ item.q }}</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
+          <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">{{ item.a }}</p>
+        </details>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </article>
+</div>
+
+{% if related.length %}
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-12 sm:py-16">
+    <div class="mb-8 flex items-end justify-between gap-5">
+      <div><p class="eyebrow mb-3">continue_the_work</p><h2 class="section-heading">Related workflows</h2></div>
+      <a href="/use-cases/" class="text-link text-xs">all use cases →</a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {% for item in related %}{{ useCaseCard(item) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

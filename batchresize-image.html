@@ -1,527 +1,447 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="bg-black">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00ff41">
-    <title>Batch Image Resizer for Windows — Resize Images in Bulk | 3thousand30</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <script>document.documentElement.classList.add('js');</script>
+  <title>BatchResize Image for Windows — Buy Once | 3thousand30</title>
+  <meta name="description" content="A local Windows batch image resizer with platform presets, crop controls, live preview, and predictable folder output.">
+  <meta name="author" content="3thousand30">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://3thousand30.com/batchresize-image.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <link rel="canonical" href="https://3thousand30.com/batchresize-image.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="3thousand30">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://3thousand30.com/batchresize-image.html">
+  <meta property="og:title" content="BatchResize Image for Windows — Buy Once | 3thousand30">
+  <meta property="og:description" content="A local Windows batch image resizer with platform presets, crop controls, live preview, and predictable folder output.">
+  <meta property="og:image" content="https://3thousand30.com/Logos/BRI.webp">
+  <meta property="og:image:alt" content="BatchResize Image logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@3thousand30HQ">
+  <meta name="twitter:creator" content="@3thousand30HQ">
+  <meta name="twitter:title" content="BatchResize Image for Windows — Buy Once | 3thousand30">
+  <meta name="twitter:description" content="A local Windows batch image resizer with platform presets, crop controls, live preview, and predictable folder output.">
+  <meta name="twitter:image" content="https://3thousand30.com/Logos/BRI.webp">
 
-    <meta name="description" content="Resize images in bulk for social media, web, email, and marketplaces on Windows. Use presets, crop controls, live preview, and local processing.">
-    <meta name="keywords" content="batch image resizer Windows, resize images in bulk, social media image resizer, batch resize images windows 10, bulk resize images windows">
-    <meta name="author" content="3thousand30">
-    <meta name="robots" content="index, follow, max-image-preview:large">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="3thousand30">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:url" content="https://3thousand30.com/batchresize-image.html">
-    <meta property="og:title" content="Batch Image Resizer for Windows — Resize Images in Bulk | 3thousand30">
-    <meta property="og:description" content="Resize images in bulk for social media, web, email, and marketplaces on Windows. Use presets, crop controls, live preview, and local processing.">
-    <meta property="og:image" content="https://3thousand30.com/screenshots/bri/1.webp">
-    <meta property="og:image:alt" content="BatchResize Image app screenshot">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "BatchResize Image",
+        "description": "A local Windows batch image resizer with platform presets, crop controls, live preview, and predictable folder output.",
+        "url": "https://3thousand30.com/batchresize-image.html",
+        "image": "https://3thousand30.com/Logos/BRI.webp",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows",
+        "downloadUrl": "https://apps.microsoft.com/detail/9PPKDVXPTLV0",
+        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
+          { "@type": "ListItem", "position": 3, "name": "BatchResize Image", "item": "https://3thousand30.com/batchresize-image.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Will every aspect ratio crop cleanly?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Review the preview, especially when faces, text, or products sit close to an edge." }
+        },{
+          "@type": "Question",
+          "name": "Does it change the originals?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Use a separate output folder so the approved source set remains intact." }
+        },{
+          "@type": "Question",
+          "name": "Does it need internet access?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Resizing is local." }
+        }]
+      }
+    ]
+  }
+  </script>
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@3thousand30HQ">
-    <meta name="twitter:creator" content="@3thousand30HQ">
-    <meta name="twitter:title" content="Batch Image Resizer for Windows — Resize Images in Bulk | 3thousand30">
-    <meta name="twitter:description" content="Resize images in bulk for social media, web, email, and marketplaces on Windows. Use presets, crop controls, live preview, and local processing.">
-    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bri/1.webp">
-    <meta name="twitter:image:alt" content="BatchResize Image app screenshot">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "BatchResize Image",
-          "operatingSystem": "Windows",
-          "applicationCategory": "MultimediaApplication",
-          "url": "https://3thousand30.com/batchresize-image.html",
-          "image": "https://3thousand30.com/Logos/BRI.webp",
-          "description": "Resize images in bulk for social media, web, email, and marketplaces on Windows. Use presets, crop controls, live preview, and local processing.",
-          "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" },
-          "offers": {
-            "@type": "Offer",
-            "price": "2.99",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://apps.microsoft.com/detail/9PPKDVXPTLV0"
-          },
-          "mainEntityOfPage": "https://3thousand30.com/batchresize-image.html"
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://3thousand30.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Products",
-              "item": "https://3thousand30.com/products/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "BatchResize Image",
-              "item": "https://3thousand30.com/batchresize-image.html"
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Can BatchResize Image resize full folders at once?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. It is designed for batch resizing entire folders rather than editing images one by one."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can it resize for Instagram, LinkedIn, X, and marketplaces?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. It includes preset sizes for common social, web, email, and marketplace use cases, plus custom-dimension options."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I keep aspect ratio or crop to fit?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. It supports multiple fit modes including aspect-ratio preserving options and crop-to-fill workflows."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is it fully local?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. The resize workflow runs locally on your Windows machine with no cloud upload, no account, and no telemetry."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is it useful for Etsy or marketplace images?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. It is a strong fit when product images need channel-specific dimensions, cleaner previews, or repeatable export sizes for ecommerce."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-    <link rel="stylesheet" href="tailwind.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap"></noscript>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/tailwind.min.css">
 </head>
-<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+<body class="min-h-screen overflow-x-hidden bg-black font-mono text-white antialiased" data-page-type="product">
+  <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
+  <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
 
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px); will-change: transform;"></div>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <div class="site-shell flex min-h-16 items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
+      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    </a>
 
-    <!-- Sticky nav -->
-    <div class="sticky top-0 z-30 bg-black border-b" style="border-color: rgba(0,255,65,0.15);">
-        <div class="max-w-4xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
-            <a href="/" class="text-warm-gray text-xs hover:text-retro-green transition-colors whitespace-nowrap">← 3thousand30</a>
-            <div class="flex items-center gap-2 flex-shrink-0">
-                <a href="https://apps.microsoft.com/detail/9PPKDVXPTLV0?hl=en-US&gl=US" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 border border-retro-amber text-retro-amber text-xs px-3 py-2 hover:bg-retro-amber hover:text-black transition-colors duration-200">
-                    <svg viewBox="0 0 12 12" width="12" height="12" fill="currentColor" aria-hidden="true">
-                        <rect x="0" y="0" width="5.5" height="5.5"/><rect x="6.5" y="0" width="5.5" height="5.5"/>
-                        <rect x="0" y="6.5" width="5.5" height="5.5"/><rect x="6.5" y="6.5" width="5.5" height="5.5"/>
-                    </svg>
-                    <span class="hidden sm:inline">Microsoft Store</span>
-                    <span class="opacity-50">·</span>
-                    <span class="font-medium">$2.99</span>
-                </a>
-                <a href="https://3thousand30.github.io/batchresizeimage-docs/" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 border text-warm-gray text-xs px-3 py-2 hover:border-warm-gray hover:text-white transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">
-                    <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
-                        <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V2.5zm2.5-1A1.5 1.5 0 0 0 3 3v10.5h8V1H4.5zM5 4h5v1H5V4zm0 2.5h5v1H5v-1zm0 2.5h3v1H5V9z"/>
-                    </svg>
-                    <span class="hidden sm:inline">docs</span>
-                </a>
-            </div>
-        </div>
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page">products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400">use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400">manifesto</a>
+    </nav>
+
+    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true" data-menu-icon>☰</span>
+    </button>
+  </div>
+
+  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 md:hidden" aria-label="Mobile navigation" data-mobile-menu>
+    <div class="grid gap-2">
+      <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
+      <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
+      <a href="/manifesto.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">manifesto</a>
+      <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
+    </div>
+  </nav>
+</header>
+
+
+  <main id="main-content" class="relative z-20">
+
+
+
+
+<section class="site-shell py-10 sm:py-14">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-retro-green">home</a> /
+    <a href="/products/" class="hover:text-retro-green">products</a> /
+    <span class="text-gray-400">BatchResize Image</span>
+  </nav>
+
+  <div class="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+    <div>
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="tag text-retro-green">released</span>
+        <span class="tag">Local utility</span>
+        <span class="tag">Windows</span>
+      </div>
+      <h1 class="max-w-4xl text-4xl font-light leading-tight text-white sm:text-6xl">BatchResize Image</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-retro-green">Turn one approved image set into the dimensions each channel needs.</p>
+      <p class="mt-5 max-w-3xl text-sm leading-7 text-gray-400">BatchResize Image handles the repetitive versioning step after the creative work is approved. Choose a target size or preset, check the crop, and process the set locally instead of resizing each file by hand.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://apps.microsoft.com/detail/9PPKDVXPTLV0" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="BatchResize Image Microsoft Store">Microsoft Store →</a>
+        <a href="https://3thousand30.github.io/batchresizeimage-docs/" target="_blank" rel="noopener" class="button-secondary" data-analytics-event="outbound_click" data-analytics-name="BatchResize Image documentation">documentation</a>
+      </div>
     </div>
 
-    <div class="relative z-20 max-w-4xl mx-auto px-6 py-10 md:py-14">
-
-        <!-- App header -->
-        <header class="flex items-start space-x-5 mb-8">
-            <img src="Logos/BRI.webp" alt="BatchResize Image" class="w-16 h-16 rounded object-cover flex-shrink-0" fetchpriority="high" decoding="async">
-            <div>
-                <p class="text-gray-600 text-[11px] mb-3"><a href="products/" class="hover:text-retro-green transition-colors">products</a> / <span class="text-warm-gray">BatchResize Image</span></p>
-                <div class="text-retro-green text-xs mb-2 opacity-60">utility · windows</div>
-                <h1 class="text-white text-2xl md:text-3xl font-light mb-3">BatchResize Image</h1>
-                <p class="text-retro-green text-sm md:text-base leading-relaxed" style="text-shadow: 0 0 8px #00ff41;">
-                    Resize images in bulk for social media, web, email, and marketplaces. Preview first. All local.
-                </p>
-                <div class="mt-4">
-                    <div class="inline-flex items-baseline gap-2 border px-3 py-1.5" style="border-color: rgba(255,176,0,0.45); background: rgba(255,176,0,0.06);">
-                        <span class="text-retro-amber text-base font-medium">$2.99</span>
-                        <span class="text-warm-gray text-[11px]">one-time purchase</span>
-                    </div>
-                    <p class="text-gray-600 text-[10px] mt-2">* Microsoft Store prices vary by country/region; the amount shown is the US price.</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Description -->
-        <div class="border p-6 mb-10" style="border-color: rgba(0,255,65,0.15);">
-            <p class="text-warm-gray text-sm leading-relaxed">
-                Choose an input folder, pick exact dimensions or built-in presets, check the live preview, and resize the full batch in one run. Whether you are preparing Instagram posts, LinkedIn banners, YouTube thumbnails, email headers, marketplace uploads, or general web assets, BRI helps you hit the right dimensions without bouncing between editors.
-            </p>
+    <aside class="panel-green p-6 reveal-item" data-reveal aria-label="Product facts">
+      <img src="/Logos/BRI.webp" alt="BatchResize Image logo" class="h-24 w-24 rounded-2xl object-cover" width="96" height="96">
+      <dl class="mt-6 space-y-5 text-xs">
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">license</dt>
+          <dd class="mt-1 text-retro-amber">Buy once</dd>
+          <dd class="mt-2 leading-5 text-gray-600">Microsoft Store shows the current price for your region.</dd>
         </div>
-
-        <!-- Screenshots -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">screenshots</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="relative">
-                <div class="overflow-hidden border" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="flex transition-transform duration-300 ease-in-out" id="carousel-track">
-                        <img src="screenshots/bri/1.webp" alt="Choose a resize mode — custom, preset, or constrained" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/2.webp" alt="Built-in presets for common social and web dimensions" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/3.webp" alt="Preview before export — compare original and resized results" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/4.webp" alt="Fit modes for exact dimensions, clean crops, or no distortion" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bri/5.webp" alt="Batch progress — resize full folders with clear status updates" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                    </div>
-                </div>
-                <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">←</button>
-                <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">→</button>
-                <div class="flex justify-center gap-2 mt-3" id="carousel-dots"></div>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">what_it_does</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
-                <span class="text-warm-gray text-xs opacity-80">// batch resize workflow — choose a folder, pick dimensions or presets, process the full batch</span>
-                <span class="text-warm-gray text-xs opacity-80">// preset library — built-in sizes for Instagram, LinkedIn, X, Facebook, YouTube, email, and web</span>
-                <span class="text-warm-gray text-xs opacity-80">// three resize approaches — custom dimensions, preset mode, or constrained resizing</span>
-                <span class="text-warm-gray text-xs opacity-80">// fit control — Maintain AR, Contain, Crop to Fill, and Fill depending on the job</span>
-                <span class="text-warm-gray text-xs opacity-80">// crop focus — anchor the crop or draw a reusable crop template for consistent batches</span>
-                <span class="text-warm-gray text-xs opacity-80">// live preview — compare original and resized output before committing</span>
-                <span class="text-warm-gray text-xs opacity-80">// flexible export — keep original format or convert to JPG, PNG, or WebP</span>
-                <span class="text-warm-gray text-xs opacity-80">// background colour support for contained layouts</span>
-                <span class="text-warm-gray text-xs opacity-80">// metadata control — optionally strip EXIF data from output files</span>
-                <span class="text-warm-gray text-xs opacity-80">// skip existing — re-run safely without reprocessing completed files</span>
-                <span class="text-warm-gray text-xs opacity-80">// real-time progress with file-level error logging</span>
-                <span class="text-warm-gray text-xs opacity-80">// 100% local — no internet, no account, no telemetry</span>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">who_its_for</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Social content builders</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Ideal for turning one image set into X, LinkedIn, Instagram, Facebook, and email-ready exports without manual repetition.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Marketplace and ecommerce sellers</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Useful when listing images, promo banners, or product previews need repeatable sizes across storefronts and channels.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">People who want local image prep</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">A fit for users who want full-folder resizing with preview and crop control, but without cloud upload steps or subscriptions.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">best_paired_with</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="batchwatermark-image.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">proof companion</div>
-                    <h3 class="text-white text-sm mb-2">BatchWatermark Image</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Resize into the final channel or marketplace format first, then apply proof overlays or subtle brand marks to the correct output shape.</p>
-                </a>
-                <a href="batchcompress-image.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">delivery companion</div>
-                    <h3 class="text-white text-sm mb-2">BatchCompress Image</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">A good pairing when the resized set also needs lighter file sizes for faster page loads, email delivery, or marketplace requirements.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">use_cases</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="use-cases/mass-create-social-media-content.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">live workflow</div>
-                    <h3 class="text-white text-sm mb-2">Mass-create social media content</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">See how BRI takes a batch of generated images and turns them into platform-ready exports for X, LinkedIn, Instagram, and related channels.</p>
-                </a>
-                <a href="use-cases/" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">workflow library</div>
-                    <h3 class="text-white text-sm mb-2">Browse all use cases</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Use the hub to follow the live content route now and the later image-prep and marketplace-heavy workflows when they land.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">privacy_and_control</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="border p-6" style="border-color: rgba(0,255,65,0.15);">
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">
-                    BatchResize Image is fully local. Source files, resize settings, preview states, and exports stay on your Windows machine with no cloud upload, no account requirement, and no telemetry.
-                </p>
-                <p class="text-gray-500 text-xs leading-relaxed">
-                    That matters when you are preparing content batches, product images, or private visual assets that should not pass through another web service just to change dimensions.
-                </p>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">faq</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="space-y-4">
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Can BatchResize Image resize full folders at once?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. It is designed for batch resizing entire folders rather than editing images one by one.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Can it resize for Instagram, LinkedIn, X, and marketplaces?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. It includes preset sizes for common social, web, email, and marketplace use cases, plus custom-dimension options.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Can I keep aspect ratio or crop to fit?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. It supports multiple fit modes including aspect-ratio preserving options and crop-to-fill workflows.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Is it fully local?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. The resize workflow runs locally on your Windows machine with no cloud upload, no account, and no telemetry.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Is it useful for Etsy or marketplace images?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. It is a strong fit when product images need channel-specific dimensions, cleaner previews, or repeatable export sizes for ecommerce.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Other apps -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">other_apps</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <style>#other-carousel-track > a { width: 100%; } @media (min-width: 768px) { #other-carousel-track > a { width: calc(100% / 3); } }</style>
-            <div class="relative overflow-hidden border px-16 py-6" style="border-color: rgba(168,168,168,0.15);">
-                <div class="flex gap-3 transition-transform duration-300 ease-in-out" id="other-carousel-track">
-                    <a href="batchgen-text.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BGT.webp" alt="Batch Generate Text with any AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">Batch Generate Text</p>
-                        <p class="text-gray-600 text-xs mt-1">generative · windows</p>
-                        <p class="inline-flex items-center gap-1.5 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2 py-0.5 mt-1"><span class="text-retro-amber text-xs font-medium">$14.99</span><span class="text-gray-600 text-xs line-through">$19.99</span><span class="bg-retro-amber text-black text-[10px] font-bold px-1">-25%</span></p>
-                    </a>
-                    <a href="batchgen-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BGI.webp" alt="BatchGen Image with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchGen Image</p>
-                        <p class="text-gray-600 text-xs mt-1">generative · windows</p>
-                        <p class="inline-flex items-center gap-1.5 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2 py-0.5 mt-1"><span class="text-retro-amber text-xs font-medium">$13.99</span><span class="text-gray-600 text-xs line-through">$19.99</span><span class="bg-retro-amber text-black text-[10px] font-bold px-1">-30%</span></p>
-                    </a>
-                    <a href="batchtranslate.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BT.png" alt="Batch Translate with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">Batch Translate</p>
-                        <p class="text-gray-600 text-xs mt-1">translation · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$19.99</p>
-                    </a>
-                    <a href="batchenhance-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BEI.webp" alt="BatchEnhance Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchEnhance Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$4.99</p>
-                    </a>
-                    <a href="batchfile-organiser.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BFO.webp" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchFile Organiser</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$9.99</p>
-                    </a>
-                    <a href="batchwatermark-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BWI.webp" alt="BatchWatermark Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchWatermark Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$4.99</p>
-                    </a>
-                    <a href="batchcompress-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BCI.webp" alt="BatchCompress Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchCompress Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$2.99</p>
-                    </a>
-                </div>
-                <button id="other-carousel-prev" class="absolute left-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">←</button>
-                <button id="other-carousel-next" class="absolute right-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">→</button>
-                <div class="flex justify-center gap-2 mt-3" id="other-carousel-dots"></div>
-            </div>
-        </section>
-
-        <!-- Separator -->
-        <div class="flex justify-center mb-10">
-            <div class="flex items-center space-x-2 opacity-30">
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-            </div>
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">privacy boundary</dt>
+          <dd class="mt-1 text-retro-green">Fully local</dd>
         </div>
+        <div>
+          <dt class="text-gray-600">product code</dt>
+          <dd class="mt-1 text-white">BRI</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
 
-        <!-- Footer -->
-        <footer class="border-t border-gray-800 pt-8 text-center">
-            <div class="flex flex-col md:flex-row md:justify-center md:gap-8 space-y-3 md:space-y-0 mb-4">
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">get_in_touch:</span>
-                    <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
-                </div>
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">follow:</span>
-                    <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
-                </div>
-            </div>
-            <div>
-                <a href="privacy.html" class="text-gray-600 text-xs hover:text-warm-gray transition-colors">privacy policy</a>
-            </div>
-        </footer>
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8">
+    <p class="eyebrow mb-3">what_it_does</p>
+    <h2 class="section-heading">A focused workflow, not a suite you have to rent.</h2>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Resize a whole folder in one run</p>
     </div>
 
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Use practical social, web, email, and marketplace presets</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Control crop and aspect-ratio handling</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Preview the result before processing</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Keep source files separate from outputs</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Work without a cloud upload</p>
+    </div>
+
+  </div>
+</section>
 
 
-    <script>
-        (function () {
-            var track = document.getElementById('carousel-track');
-            var dotsEl = document.getElementById('carousel-dots');
-            var total = track.children.length;
-            var current = 0;
-            var touchStartX = 0;
-            for (var i = 0; i < total; i++) {
-                var dot = document.createElement('button');
-                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
-                dot.setAttribute('data-i', i);
-                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
-                dotsEl.appendChild(dot);
-            }
-            function go(n) {
-                current = (n + total) % total;
-                track.style.transform = 'translateX(-' + current * 100 + '%)';
-                Array.from(dotsEl.children).forEach(function (d, i) {
-                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
-                });
-            }
-            document.getElementById('carousel-prev').addEventListener('click', function () { go(current - 1); });
-            document.getElementById('carousel-next').addEventListener('click', function () { go(current + 1); });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'ArrowLeft') go(current - 1);
-                if (e.key === 'ArrowRight') go(current + 1);
-            });
-            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', function (e) {
-                var diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
-            }, { passive: true });
-        })();
-    </script>
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-12 sm:py-16">
+    <div class="mb-8">
+      <p class="eyebrow mb-3">inside_the_app</p>
+      <h2 class="section-heading">See the actual Windows workflow</h2>
+    </div>
+    <div class="grid gap-5 lg:grid-cols-2">
 
-    <script>
-        (function () {
-            var track = document.getElementById('other-carousel-track');
-            var dotsEl = document.getElementById('other-carousel-dots');
-            if (!track || !dotsEl) return;
-            
-            // Clone first 3 cards and append for seamless wrap
-            var origCards = Array.from(track.children);
-            origCards.slice(0, 3).forEach(function (card) {
-                track.appendChild(card.cloneNode(true));
-            });
-            
-            var total = origCards.length;
-            var current = 0;
-            var touchStartX = 0;
-            
-            for (var i = 0; i < total; i++) {
-                var dot = document.createElement('button');
-                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
-                dot.setAttribute('data-i', i);
-                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
-                dotsEl.appendChild(dot);
-            }
-            
-            function go(n) {
-                current = (n + total) % total;
-                var itemWidth = track.children[0] ? track.children[0].getBoundingClientRect().width : 0;
-                track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
-                Array.from(dotsEl.children).forEach(function (d, i) {
-                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
-                });
-            }
-            
-            document.getElementById('other-carousel-prev').addEventListener('click', function () { go(current - 1); });
-            document.getElementById('other-carousel-next').addEventListener('click', function () { go(current + 1); });
-            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', function (e) {
-                var diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
-            }, { passive: true });
-            window.addEventListener('resize', function () {
-                if (track.children.length) {
-                    var itemWidth = track.children[0].getBoundingClientRect().width;
-                    track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
-                }
-            });
-        })();
-    </script>
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bri/1.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchResize Image folder setup">
+          <img src="/screenshots/bri/1.webp" alt="BatchResize Image folder setup" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Choose the approved source set.</figcaption>
+      </figure>
 
-<script src="cookie-banner.js"></script>
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bri/2.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchResize Image preset controls">
+          <img src="/screenshots/bri/2.webp" alt="BatchResize Image preset controls" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Apply one repeatable target size.</figcaption>
+      </figure>
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bri/4.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchResize Image crop preview">
+          <img src="/screenshots/bri/4.webp" alt="BatchResize Image crop preview" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Check what will be kept before processing.</figcaption>
+      </figure>
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bri/5.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchResize Image completed batch">
+          <img src="/screenshots/bri/5.webp" alt="BatchResize Image completed batch" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Export a clean platform-ready folder.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="site-shell grid gap-6 py-12 sm:py-16 lg:grid-cols-2">
+  <div class="panel p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">who_it_is_for</p>
+    <ul class="space-y-4 text-sm leading-6 text-gray-400">
+      <li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Social teams preparing channel variants</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Ecommerce sellers standardising listing images</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Anyone maintaining web and email image sizes</span></li>
+    </ul>
+  </div>
+  <div class="panel-green p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">privacy_and_control</p>
+    <h2 class="text-xl font-light text-white">Fully local</h2>
+    <p class="mt-4 text-sm leading-7 text-gray-400">Source images, crop choices, resize settings, and outputs remain on the machine. No account, upload, or telemetry is required.</p>
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8 flex items-end justify-between gap-5">
+    <div>
+      <p class="eyebrow mb-3">use_it_for</p>
+      <h2 class="section-heading">Practical workflows</h2>
+    </div>
+    <a href="/use-cases/" class="text-link text-xs">all use cases →</a>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bri" data-search="Resize Images for Different Social Platforms Turn one approved master set into channel-specific dimensions without manually resizing every image. Social &amp; image production BRI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Social &amp; image production</p>
+    <span class="text-[10px] text-gray-700">UC-17</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Resize Images for Different Social Platforms</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Turn one approved master set into channel-specific dimensions without manually resizing every image.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BRI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/resize-images-for-different-social-platforms.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Resize Images for Different Social Platforms">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bgt bgi bri bwi" data-search="Plan and Create Social Media Content in Batches Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies. Social &amp; image production BGT BGI BRI BWI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Social &amp; image production</p>
+    <span class="text-[10px] text-gray-700">UC-2</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Plan and Create Social Media Content in Batches</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGT</span><span class="tag">BGI</span><span class="tag">BRI</span><span class="tag">BWI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/mass-create-social-media-content.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Plan and Create Social Media Content in Batches">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bgi bri" data-search="Batch-Create Images for Social Media Generate a coherent visual series for a campaign, challenge, launch, or month-long content plan. Social &amp; image production BGI BRI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Social &amp; image production</p>
+    <span class="text-[10px] text-gray-700">UC-9</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Batch-Create Images for Social Media</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Generate a coherent visual series for a campaign, challenge, launch, or month-long content plan.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGI</span><span class="tag">BRI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/batch-create-images-for-social-media.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Batch-Create Images for Social Media">open workflow →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+
+<section class="site-shell max-w-4xl py-12 sm:py-16">
+  <p class="eyebrow mb-3">faq</p>
+  <h2 class="section-heading mb-7">Straight answers</h2>
+  <div class="space-y-3">
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Will every aspect ratio crop cleanly?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. Review the preview, especially when faces, text, or products sit close to an edge.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Does it change the originals?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">Use a separate output folder so the approved source set remains intact.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Does it need internet access?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. Resizing is local.</p>
+    </details>
+
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="panel-amber grid gap-7 p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+    <div>
+      <p class="eyebrow mb-3 text-retro-amber">ready_when_you_are</p>
+      <h2 class="text-2xl font-light text-white">Own BatchResize Image and keep the workflow.</h2>
+      <p class="mt-3 text-sm leading-6 text-gray-500">The Microsoft Store shows the current price for your region.</p>
+    </div>
+    <a href="https://apps.microsoft.com/detail/9PPKDVXPTLV0" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="BatchResize Image Microsoft Store bottom CTA">open Microsoft Store →</a>
+  </div>
+</section>
+
+
+<section class="site-shell pb-10 pt-6">
+  <p class="eyebrow mb-5">related_products</p>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="images publishing social" data-search="BatchGen Image with AI Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs. AI creation images publishing social">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BGI.webp" alt="BatchGen Image with AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">AI creation</p>
+  <h3 class="text-lg font-light text-white">BatchGen Image with AI</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">publishing</span><span class="tag">social</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchgen-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchGen Image with AI">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="images web storage" data-search="BatchCompress Image A fully local Windows batch image compressor with quality controls, before-and-after comparison, and clean output folders. Local utility images web storage">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BCI.webp" alt="BatchCompress Image logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local utility</p>
+  <h3 class="text-lg font-light text-white">BatchCompress Image</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A fully local Windows batch image compressor with quality controls, before-and-after comparison, and clean output folders.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">web</span><span class="tag">storage</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchcompress-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchCompress Image">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="images social rights" data-search="BatchWatermark Image A fully local Windows batch watermarker with text and logo layers, opacity, placement, tiling, preview, and controlled export. Local utility images social rights">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BWI.webp" alt="BatchWatermark Image logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local utility</p>
+  <h3 class="text-lg font-light text-white">BatchWatermark Image</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A fully local Windows batch watermarker with text and logo layers, opacity, placement, tiling, preview, and controlled export.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">social</span><span class="tag">rights</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchwatermark-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchWatermark Image">view app →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="relative z-20 mt-20 border-t border-white/10 bg-black">
+  <div class="site-shell grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
+    <div>
+      <p class="eyebrow mb-3">3thousand30</p>
+      <p class="max-w-xl text-sm leading-6 text-gray-500">Affordable, privacy-first, buy-once Windows tools for work worth keeping.</p>
+      <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-xs">
+        <a href="mailto:hello@3thousand30.com" class="text-link">hello@3thousand30.com</a>
+        <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-link">@3thousand30HQ on X</a>
+      </div>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-3 text-xs text-gray-500 md:justify-end" aria-label="Footer navigation">
+      <a href="/products/" class="hover:text-white">products</a>
+      <a href="/use-cases/" class="hover:text-white">use cases</a>
+      <a href="/manifesto.html" class="hover:text-white">manifesto</a>
+      <a href="/privacy.html" class="hover:text-white">privacy</a>
+    </nav>
+  </div>
+</footer>
+
+
+  <script src="/site.js"></script>
+  <script src="/cookie-banner.js"></script>
 </body>
 </html>

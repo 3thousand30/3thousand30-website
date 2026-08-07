@@ -1,522 +1,447 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="bg-black">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00ff41">
-    <title>Batch Image Upscaler for Print — Upscale Images in Bulk on Windows | 3thousand30</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <script>document.documentElement.classList.add('js');</script>
+  <title>BatchEnhance Image for Windows — Buy Once | 3thousand30</title>
+  <meta name="description" content="A fully local Windows image upscaler with batch processing, print-ready DPI controls, sharpening, and up to 8× scaling.">
+  <meta name="author" content="3thousand30">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://3thousand30.com/batchenhance-image.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <link rel="canonical" href="https://3thousand30.com/batchenhance-image.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="3thousand30">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://3thousand30.com/batchenhance-image.html">
+  <meta property="og:title" content="BatchEnhance Image for Windows — Buy Once | 3thousand30">
+  <meta property="og:description" content="A fully local Windows image upscaler with batch processing, print-ready DPI controls, sharpening, and up to 8× scaling.">
+  <meta property="og:image" content="https://3thousand30.com/Logos/BEI.webp">
+  <meta property="og:image:alt" content="BatchEnhance Image logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@3thousand30HQ">
+  <meta name="twitter:creator" content="@3thousand30HQ">
+  <meta name="twitter:title" content="BatchEnhance Image for Windows — Buy Once | 3thousand30">
+  <meta name="twitter:description" content="A fully local Windows image upscaler with batch processing, print-ready DPI controls, sharpening, and up to 8× scaling.">
+  <meta name="twitter:image" content="https://3thousand30.com/Logos/BEI.webp">
 
-    <meta name="description" content="Upscale images in bulk for print, posters, books, and physical products. Fully local Windows app with up to 8x scaling, print-ready DPI, and no cloud.">
-    <meta name="keywords" content="batch image upscaler Windows, upscale images in bulk, print ready images, image DPI converter, offline image upscaler">
-    <meta name="author" content="3thousand30">
-    <meta name="robots" content="index, follow, max-image-preview:large">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="3thousand30">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:url" content="https://3thousand30.com/batchenhance-image.html">
-    <meta property="og:title" content="Batch Image Upscaler for Print — Upscale Images in Bulk on Windows | 3thousand30">
-    <meta property="og:description" content="Upscale images in bulk for print, posters, books, and physical products. Fully local Windows app with up to 8x scaling, print-ready DPI, and no cloud.">
-    <meta property="og:image" content="https://3thousand30.com/screenshots/bei/1.webp">
-    <meta property="og:image:alt" content="BatchEnhance Image app screenshot">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "BatchEnhance Image",
+        "description": "A fully local Windows image upscaler with batch processing, print-ready DPI controls, sharpening, and up to 8× scaling.",
+        "url": "https://3thousand30.com/batchenhance-image.html",
+        "image": "https://3thousand30.com/Logos/BEI.webp",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows",
+        "downloadUrl": "https://apps.microsoft.com/detail/9n2vhg38ss00",
+        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
+          { "@type": "ListItem", "position": 3, "name": "BatchEnhance Image", "item": "https://3thousand30.com/batchenhance-image.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Can enhancement repair every bad image?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It can improve size and presentation, but it cannot rescue weak composition, severe artifacts, or missing detail." }
+        },{
+          "@type": "Question",
+          "name": "Is it only for AI images?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It can prepare ordinary photos and digital artwork as well." }
+        },{
+          "@type": "Question",
+          "name": "Does it upload images?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Processing is local." }
+        }]
+      }
+    ]
+  }
+  </script>
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@3thousand30HQ">
-    <meta name="twitter:creator" content="@3thousand30HQ">
-    <meta name="twitter:title" content="Batch Image Upscaler for Print — Upscale Images in Bulk on Windows | 3thousand30">
-    <meta name="twitter:description" content="Upscale images in bulk for print, posters, books, and physical products. Fully local Windows app with up to 8x scaling, print-ready DPI, and no cloud.">
-    <meta name="twitter:image" content="https://3thousand30.com/screenshots/bei/1.webp">
-    <meta name="twitter:image:alt" content="BatchEnhance Image app screenshot">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "BatchEnhance Image",
-          "operatingSystem": "Windows",
-          "applicationCategory": "MultimediaApplication",
-          "url": "https://3thousand30.com/batchenhance-image.html",
-          "image": "https://3thousand30.com/Logos/BEI.webp",
-          "description": "Upscale images in bulk for print, posters, books, and physical products. Fully local Windows app with up to 8x scaling, print-ready DPI, and no cloud.",
-          "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" },
-          "offers": {
-            "@type": "Offer",
-            "price": "4.99",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://apps.microsoft.com/detail/9n2vhg38ss00"
-          },
-          "mainEntityOfPage": "https://3thousand30.com/batchenhance-image.html"
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://3thousand30.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Products",
-              "item": "https://3thousand30.com/products/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "BatchEnhance Image",
-              "item": "https://3thousand30.com/batchenhance-image.html"
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Is BatchEnhance Image fully local?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. It is a fully local Windows app with no cloud dependency, no account requirement, and no telemetry."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is it good for posters, books, and print output?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. It is designed for print-facing image prep, especially where larger output sizes and print-ready DPI matter."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How much can it upscale?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "It supports 2x, 3x, 4x, 6x, and 8x upscaling, plus a 1x mode when you only want to embed DPI metadata."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does it add print-ready DPI metadata?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. You can embed 150, 300, or 600 DPI metadata into the exported files."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What does it pair well with?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "It pairs especially well with BatchGen Image with AI for photobooks, posters, and other workflows where image generation comes before print prep."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-    <link rel="stylesheet" href="tailwind.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap"></noscript>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/tailwind.min.css">
 </head>
-<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+<body class="min-h-screen overflow-x-hidden bg-black font-mono text-white antialiased" data-page-type="product">
+  <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
+  <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
 
-    <div class="fixed inset-0 pointer-events-none opacity-5 z-10" aria-hidden="true" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff41 2px, #00ff41 4px); will-change: transform;"></div>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <div class="site-shell flex min-h-16 items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
+      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    </a>
 
-    <!-- Sticky nav -->
-    <div class="sticky top-0 z-30 bg-black border-b" style="border-color: rgba(0,255,65,0.15);">
-        <div class="max-w-4xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
-            <a href="/" class="text-warm-gray text-xs hover:text-retro-green transition-colors whitespace-nowrap">← 3thousand30</a>
-            <div class="flex items-center gap-2 flex-shrink-0">
-                <a href="https://apps.microsoft.com/detail/9n2vhg38ss00?hl=en-US&gl=US" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 border border-retro-amber text-retro-amber text-xs px-3 py-2 hover:bg-retro-amber hover:text-black transition-colors duration-200">
-                    <svg viewBox="0 0 12 12" width="12" height="12" fill="currentColor" aria-hidden="true">
-                        <rect x="0" y="0" width="5.5" height="5.5"/><rect x="6.5" y="0" width="5.5" height="5.5"/>
-                        <rect x="0" y="6.5" width="5.5" height="5.5"/><rect x="6.5" y="6.5" width="5.5" height="5.5"/>
-                    </svg>
-                    <span class="hidden sm:inline">Microsoft Store</span>
-                    <span class="opacity-50">·</span>
-                    <span class="font-medium">$4.99</span>
-                </a>
-                <a href="https://3thousand30.github.io/batchenhanceimage-docs" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 border text-warm-gray text-xs px-3 py-2 hover:border-warm-gray hover:text-white transition-colors duration-200" style="border-color: rgba(168,168,168,0.3);">
-                    <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
-                        <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V2.5zm2.5-1A1.5 1.5 0 0 0 3 3v10.5h8V1H4.5zM5 4h5v1H5V4zm0 2.5h5v1H5v-1zm0 2.5h3v1H5V9z"/>
-                    </svg>
-                    <span class="hidden sm:inline">docs</span>
-                </a>
-            </div>
-        </div>
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page">products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400">use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400">manifesto</a>
+    </nav>
+
+    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true" data-menu-icon>☰</span>
+    </button>
+  </div>
+
+  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 md:hidden" aria-label="Mobile navigation" data-mobile-menu>
+    <div class="grid gap-2">
+      <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
+      <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
+      <a href="/manifesto.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">manifesto</a>
+      <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
+    </div>
+  </nav>
+</header>
+
+
+  <main id="main-content" class="relative z-20">
+
+
+
+
+<section class="site-shell py-10 sm:py-14">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-retro-green">home</a> /
+    <a href="/products/" class="hover:text-retro-green">products</a> /
+    <span class="text-gray-400">BatchEnhance Image</span>
+  </nav>
+
+  <div class="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+    <div>
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="tag text-retro-green">released</span>
+        <span class="tag">Local utility</span>
+        <span class="tag">Windows</span>
+      </div>
+      <h1 class="max-w-4xl text-4xl font-light leading-tight text-white sm:text-6xl">BatchEnhance Image</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-retro-green">Upscale selected images in batches for books, posters, prints, and physical products.</p>
+      <p class="mt-5 max-w-3xl text-sm leading-7 text-gray-400">BatchEnhance Image helps after selection, when the strongest image is compositionally right but too small for the planned print size. It processes a folder locally and gives you consistent output settings across the set.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://apps.microsoft.com/detail/9n2vhg38ss00" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="BatchEnhance Image Microsoft Store">Microsoft Store →</a>
+        <a href="https://3thousand30.github.io/batchenhanceimage-docs/" target="_blank" rel="noopener" class="button-secondary" data-analytics-event="outbound_click" data-analytics-name="BatchEnhance Image documentation">documentation</a>
+      </div>
     </div>
 
-    <div class="relative z-20 max-w-4xl mx-auto px-6 py-10 md:py-14">
-
-        <!-- App header -->
-        <header class="flex items-start space-x-5 mb-8">
-            <img src="Logos/BEI.webp" alt="BatchEnhance Image" class="w-16 h-16 rounded object-cover flex-shrink-0" fetchpriority="high" decoding="async">
-            <div>
-                <p class="text-gray-600 text-[11px] mb-3"><a href="products/" class="hover:text-retro-green transition-colors">products</a> / <span class="text-warm-gray">BatchEnhance Image</span></p>
-                <div class="text-retro-green text-xs mb-2 opacity-60">utility · windows</div>
-                <h1 class="text-white text-2xl md:text-3xl font-light mb-3">BatchEnhance Image</h1>
-                <p class="text-retro-green text-sm md:text-base leading-relaxed" style="text-shadow: 0 0 8px #00ff41;">
-                    Upscale images in bulk for print, posters, books, and physical products. Fully local.
-                </p>
-                <div class="mt-4">
-                    <div class="inline-flex items-baseline gap-2 border px-3 py-1.5" style="border-color: rgba(255,176,0,0.45); background: rgba(255,176,0,0.06);">
-                        <span class="text-retro-amber text-base font-medium">$4.99</span>
-                        <span class="text-warm-gray text-[11px]">one-time purchase</span>
-                    </div>
-                    <p class="text-gray-600 text-[10px] mt-2">* Microsoft Store prices vary by country/region; the amount shown is the US price.</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Description -->
-        <div class="border p-6 mb-10" style="border-color: rgba(0,255,65,0.15);">
-            <p class="text-warm-gray text-sm leading-relaxed">
-                Point at a folder, choose scale and DPI, and enhance the full batch. Built for print creators, photobook makers, poster workflows, and anyone who needs quality upscaling without cloud dependency. Lanczos3 resampling with post-upscale sharpening keeps fine detail intact.
-            </p>
+    <aside class="panel-green p-6 reveal-item" data-reveal aria-label="Product facts">
+      <img src="/Logos/BEI.webp" alt="BatchEnhance Image logo" class="h-24 w-24 rounded-2xl object-cover" width="96" height="96">
+      <dl class="mt-6 space-y-5 text-xs">
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">license</dt>
+          <dd class="mt-1 text-retro-amber">Buy once</dd>
+          <dd class="mt-2 leading-5 text-gray-600">Microsoft Store shows the current price for your region.</dd>
         </div>
-
-        <!-- Screenshots -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">screenshots</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="relative">
-                <div class="overflow-hidden border" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="flex transition-transform duration-300 ease-in-out" id="carousel-track">
-                        <img src="screenshots/bei/1.webp" alt="Main interface showing folder selection, scale options from 1x to 8x, DPI settings, and output format" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bei/2.webp" alt="Interface with folder selected showing 3 images found and ready to enhance" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bei/3.webp" alt="Enhancement in progress showing batch processing with cancel option" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bei/4.webp" alt="In-app how-to guide explaining the three steps: select folder, choose settings, enhance and open" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                        <img src="screenshots/bei/5.webp" alt="Enhancement logs showing file-level error messages and processing results" class="w-full flex-shrink-0 object-contain" style="max-height:420px; background:#0a0a0a;" decoding="async">
-                    </div>
-                </div>
-                <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">←</button>
-                <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity" style="border-color: rgba(255,176,0,0.4);">→</button>
-                <div class="flex justify-center gap-2 mt-3" id="carousel-dots"></div>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">what_it_does</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
-                <span class="text-warm-gray text-xs opacity-80">// batch print-prep — process entire folders at once</span>
-                <span class="text-warm-gray text-xs opacity-80">// Lanczos3 high-quality resampling + post-upscale sharpening</span>
-                <span class="text-warm-gray text-xs opacity-80">// 2x, 3x, 4x, 6x, 8x upscaling options</span>
-                <span class="text-warm-gray text-xs opacity-80">// 1x mode for DPI metadata embedding only</span>
-                <span class="text-warm-gray text-xs opacity-80">// print-ready DPI metadata: 150, 300, or 600 DPI</span>
-                <span class="text-warm-gray text-xs opacity-80">// output formats: JPG, PNG, WebP, or keep original</span>
-                <span class="text-warm-gray text-xs opacity-80">// skip existing — safe to re-run on updated folders</span>
-                <span class="text-warm-gray text-xs opacity-80">// real-time progress with file-level error logging</span>
-                <span class="text-warm-gray text-xs opacity-80">// safe cancel mid-run</span>
-                <span class="text-warm-gray text-xs opacity-80">// 100% local — no internet, no account, no telemetry</span>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">who_its_for</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Print-focused creators</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">For people preparing images for posters, books, art prints, and other physical outputs where resolution and DPI matter.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Photobook and artifact workflows</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">A strong fit when a larger image batch has already been selected and the next step is making it more suitable for real-world printing.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">People who want offline prep</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Works well for users who do not want cloud upscalers, accounts, subscriptions, or telemetry wrapped around print-prep work.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">best_paired_with</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="batchgen-image.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">generation companion</div>
-                    <h3 class="text-white text-sm mb-2">BatchGen Image with AI</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Generate the exploratory batch first, shortlist the strong results, then use BEI to push them toward print-ready output.</p>
-                </a>
-                <a href="batchresize-image.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">format companion</div>
-                    <h3 class="text-white text-sm mb-2">BatchResize Image</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Useful when the batch also needs clean alternate sizes for web previews, social proof, or marketplace-friendly promotional versions.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">use_cases</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="use-cases/create-a-photobook-with-ai-for-gifting.html" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">live workflow</div>
-                    <h3 class="text-white text-sm mb-2">Create a photobook with AI for gifting</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">See how BEI handles the print-prep stage after image generation, review, and shortlist selection.</p>
-                </a>
-                <a href="use-cases/" class="block border p-5 hover:border-retro-green transition-colors duration-300" style="border-color: rgba(168,168,168,0.15);">
-                    <div class="text-retro-green text-xs mb-2 opacity-60">workflow library</div>
-                    <h3 class="text-white text-sm mb-2">Browse all use cases</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Use the hub to follow the live photobook route now and the later poster and print-focused use cases when they land.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">privacy_and_control</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="border p-6" style="border-color: rgba(0,255,65,0.15);">
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">
-                    BatchEnhance Image is fully local. There is no cloud dependency, no AI provider setup, no account layer, and no telemetry collecting a record of your print-prep work.
-                </p>
-                <p class="text-gray-500 text-xs leading-relaxed">
-                    That matters when you are working through large batches of images that represent books, posters, or other sellable outputs and you want the prep pipeline to stay under your control.
-                </p>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">faq</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <div class="space-y-4">
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Is BatchEnhance Image fully local?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. It is a fully local Windows app with no cloud dependency, no account requirement, and no telemetry.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Is it good for posters, books, and print output?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. It is designed for print-facing image prep, especially where larger output sizes and print-ready DPI matter.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">How much can it upscale?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">It supports 2x, 3x, 4x, 6x, and 8x upscaling, plus a 1x mode when you only want to embed DPI metadata.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">Does it add print-ready DPI metadata?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Yes. You can embed 150, 300, or 600 DPI metadata into the exported files.</p>
-                </div>
-                <div class="border p-5" style="border-color: rgba(168,168,168,0.15);">
-                    <h3 class="text-white text-sm mb-2">What does it pair well with?</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">It pairs especially well with BatchGen Image with AI for photobooks, posters, and other workflows where image generation comes before print prep.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Other apps -->
-        <section class="mb-12">
-            <div class="flex items-center space-x-3 mb-5">
-                <span class="text-retro-green">></span>
-                <h2 class="text-retro-amber text-base font-normal">other_apps</h2>
-                <div class="flex-1 h-px bg-gray-800"></div>
-            </div>
-            <style>#other-carousel-track > a { width: 100%; } @media (min-width: 768px) { #other-carousel-track > a { width: calc(100% / 3); } }</style>
-            <div class="relative overflow-hidden border px-16 py-6" style="border-color: rgba(168,168,168,0.15);">
-                <div class="flex gap-3 transition-transform duration-300 ease-in-out" id="other-carousel-track">
-                    <a href="batchgen-text.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BGT.webp" alt="Batch Generate Text with any AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">Batch Generate Text</p>
-                        <p class="text-gray-600 text-xs mt-1">generative · windows</p>
-                        <p class="inline-flex items-center gap-1.5 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2 py-0.5 mt-1"><span class="text-retro-amber text-xs font-medium">$14.99</span><span class="text-gray-600 text-xs line-through">$19.99</span><span class="bg-retro-amber text-black text-[10px] font-bold px-1">-25%</span></p>
-                    </a>
-                    <a href="batchgen-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BGI.webp" alt="BatchGen Image with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchGen Image</p>
-                        <p class="text-gray-600 text-xs mt-1">generative · windows</p>
-                        <p class="inline-flex items-center gap-1.5 border border-[#ffb000]/40 bg-[#ffb000]/10 px-2 py-0.5 mt-1"><span class="text-retro-amber text-xs font-medium">$13.99</span><span class="text-gray-600 text-xs line-through">$19.99</span><span class="bg-retro-amber text-black text-[10px] font-bold px-1">-30%</span></p>
-                    </a>
-                    <a href="batchtranslate.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BT.png" alt="Batch Translate with AI" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">Batch Translate</p>
-                        <p class="text-gray-600 text-xs mt-1">translation · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$19.99</p>
-                    </a>
-                    <a href="batchfile-organiser.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BFO.webp" alt="BatchFile Organiser" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchFile Organiser</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$9.99</p>
-                    </a>
-                    <a href="batchwatermark-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BWI.webp" alt="BatchWatermark Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchWatermark Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$4.99</p>
-                    </a>
-                    <a href="batchcompress-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BCI.webp" alt="BatchCompress Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchCompress Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$2.99</p>
-                    </a>
-                    <a href="batchresize-image.html" class="block w-full flex-shrink-0 border border-transparent p-4 hover:border-retro-green transition-colors duration-300 group">
-                        <img src="Logos/BRI.webp" alt="BatchResize Image" class="w-8 h-8 rounded mb-2 object-cover" loading="lazy" decoding="async">
-                        <p class="text-white text-xs group-hover:text-retro-green transition-colors">BatchResize Image</p>
-                        <p class="text-gray-600 text-xs mt-1">utility · windows</p>
-                        <p class="inline-block border border-[#ffb000]/40 bg-[#ffb000]/10 text-retro-amber text-xs px-2 py-0.5 mt-1">$2.99</p>
-                    </a>
-                </div>
-                <button id="other-carousel-prev" class="absolute left-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">←</button>
-                <button id="other-carousel-next" class="absolute right-6 top-1/2 -translate-y-1/2 text-retro-amber text-base px-3 py-1 bg-black border opacity-60 hover:opacity-100 transition-opacity z-10" style="border-color: rgba(255,176,0,0.4);">→</button>
-                <div class="flex justify-center gap-2 mt-3" id="other-carousel-dots"></div>
-            </div>
-        </section>
-
-        <!-- Separator -->
-        <div class="flex justify-center mb-10">
-            <div class="flex items-center space-x-2 opacity-30">
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-amber rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-                <div class="w-16 h-px bg-warm-gray"></div>
-                <div class="w-2 h-2 bg-retro-green rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-            </div>
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">privacy boundary</dt>
+          <dd class="mt-1 text-retro-green">Fully local</dd>
         </div>
+        <div>
+          <dt class="text-gray-600">product code</dt>
+          <dd class="mt-1 text-white">BEI</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
 
-        <!-- Footer -->
-        <footer class="border-t border-gray-800 pt-8 text-center">
-            <div class="flex flex-col md:flex-row md:justify-center md:gap-8 space-y-3 md:space-y-0 mb-4">
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">get_in_touch:</span>
-                    <a href="mailto:hello@3thousand30.com" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">hello@3thousand30.com</a>
-                </div>
-                <div class="flex items-center justify-center space-x-3">
-                    <span class="text-retro-green text-sm">></span>
-                    <span class="text-warm-gray text-sm">follow:</span>
-                    <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-retro-amber hover:text-white transition-colors text-sm underline decoration-dotted underline-offset-4">@3thousand30HQ on X</a>
-                </div>
-            </div>
-            <div>
-                <a href="privacy.html" class="text-gray-600 text-xs hover:text-warm-gray transition-colors">privacy policy</a>
-            </div>
-        </footer>
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8">
+    <p class="eyebrow mb-3">what_it_does</p>
+    <h2 class="section-heading">A focused workflow, not a suite you have to rent.</h2>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Upscale complete folders in one run</p>
     </div>
 
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Choose scaling up to 8×</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Set print-oriented DPI metadata</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Apply sharpening when appropriate</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Preview and review before final use</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Process images without cloud upload</p>
+    </div>
+
+  </div>
+</section>
 
 
-    <script>
-        (function () {
-            var track = document.getElementById('carousel-track');
-            var dotsEl = document.getElementById('carousel-dots');
-            var total = track.children.length;
-            var current = 0;
-            var touchStartX = 0;
-            for (var i = 0; i < total; i++) {
-                var dot = document.createElement('button');
-                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
-                dot.setAttribute('data-i', i);
-                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
-                dotsEl.appendChild(dot);
-            }
-            function go(n) {
-                current = (n + total) % total;
-                track.style.transform = 'translateX(-' + current * 100 + '%)';
-                Array.from(dotsEl.children).forEach(function (d, i) {
-                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
-                });
-            }
-            document.getElementById('carousel-prev').addEventListener('click', function () { go(current - 1); });
-            document.getElementById('carousel-next').addEventListener('click', function () { go(current + 1); });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'ArrowLeft') go(current - 1);
-                if (e.key === 'ArrowRight') go(current + 1);
-            });
-            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', function (e) {
-                var diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
-            }, { passive: true });
-        })();
-    </script>
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-12 sm:py-16">
+    <div class="mb-8">
+      <p class="eyebrow mb-3">inside_the_app</p>
+      <h2 class="section-heading">See the actual Windows workflow</h2>
+    </div>
+    <div class="grid gap-5 lg:grid-cols-2">
 
-    <script>
-        (function () {
-            var track = document.getElementById('other-carousel-track');
-            var dotsEl = document.getElementById('other-carousel-dots');
-            if (!track || !dotsEl) return;
-            
-            // Clone first 3 cards and append for seamless wrap
-            var origCards = Array.from(track.children);
-            origCards.slice(0, 3).forEach(function (card) {
-                track.appendChild(card.cloneNode(true));
-            });
-            var total = origCards.length;
-            var current = 0;
-            var touchStartX = 0;
-            for (var i = 0; i < total; i++) {
-                var dot = document.createElement('button');
-                dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === 0 ? '#ffb000' : 'rgba(168,168,168,0.3)') + ';border:none;cursor:pointer;padding:0;';
-                dot.setAttribute('data-i', i);
-                dot.addEventListener('click', function () { go(+this.getAttribute('data-i')); });
-                dotsEl.appendChild(dot);
-            }
-            function go(n) {
-                current = (n + total) % total;
-                var itemWidth = track.children[0] ? track.children[0].getBoundingClientRect().width : 0;
-                track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
-                Array.from(dotsEl.children).forEach(function (d, i) {
-                    d.style.background = i === current ? '#ffb000' : 'rgba(168,168,168,0.3)';
-                });
-            }
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bei/1.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchEnhance Image source selection">
+          <img src="/screenshots/bei/1.webp" alt="BatchEnhance Image source selection" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Choose the selected image folder.</figcaption>
+      </figure>
 
-            document.getElementById('other-carousel-prev').addEventListener('click', function () { go(current - 1); });
-            document.getElementById('other-carousel-next').addEventListener('click', function () { go(current + 1); });
-            track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', function (e) {
-                var diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) go(current + (diff > 0 ? 1 : -1));
-            }, { passive: true });
-            window.addEventListener('resize', function () {
-                if (track.children.length) {
-                    var itemWidth = track.children[0].getBoundingClientRect().width;
-                    track.style.transform = 'translateX(-' + current * itemWidth + 'px)';
-                }
-            });
-        })();
-    </script>
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bei/2.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchEnhance Image upscale controls">
+          <img src="/screenshots/bei/2.webp" alt="BatchEnhance Image upscale controls" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Set scale and print-oriented options consistently.</figcaption>
+      </figure>
 
-<script src="cookie-banner.js"></script>
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bei/4.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchEnhance Image comparison view">
+          <img src="/screenshots/bei/4.webp" alt="BatchEnhance Image comparison view" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Inspect the result rather than assuming enlargement fixed everything.</figcaption>
+      </figure>
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bei/5.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: BatchEnhance Image batch output">
+          <img src="/screenshots/bei/5.webp" alt="BatchEnhance Image batch output" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Export the prepared image set locally.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="site-shell grid gap-6 py-12 sm:py-16 lg:grid-cols-2">
+  <div class="panel p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">who_it_is_for</p>
+    <ul class="space-y-4 text-sm leading-6 text-gray-400">
+      <li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Authors preparing book artwork</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Artists making posters or prints</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Sellers preparing images for physical products</span></li>
+    </ul>
+  </div>
+  <div class="panel-green p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">privacy_and_control</p>
+    <h2 class="text-xl font-light text-white">Fully local</h2>
+    <p class="mt-4 text-sm leading-7 text-gray-400">Upscaling, sharpening, DPI settings, and exported files stay on your Windows machine with no cloud upload, account, or telemetry.</p>
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8 flex items-end justify-between gap-5">
+    <div>
+      <p class="eyebrow mb-3">use_it_for</p>
+      <h2 class="section-heading">Practical workflows</h2>
+    </div>
+    <a href="/use-cases/" class="text-link text-xs">all use cases →</a>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bei" data-search="Enhance Images for Printing Upscale a selected image set against real print dimensions and inspect the result before ordering. Social &amp; image production BEI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Social &amp; image production</p>
+    <span class="text-[10px] text-gray-700">UC-16</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Enhance Images for Printing</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Upscale a selected image set against real print dimensions and inspect the result before ordering.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BEI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/enhance-images-for-printing.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Enhance Images for Printing">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei btp bmp" data-search="Create a Photobook With AI for Gifting Turn a themed AI image collection into a reviewed, print-ready physical book instead of a folder of disconnected generations. Books &amp; publishing BGI BEI BTP BMP">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Books &amp; publishing</p>
+    <span class="text-[10px] text-gray-700">UC-1</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Create a Photobook With AI for Gifting</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Turn a themed AI image collection into a reviewed, print-ready physical book instead of a folder of disconnected generations.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGI</span><span class="tag">BEI</span><span class="tag">BTP</span><span class="tag">BMP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/create-a-photobook-with-ai-for-gifting.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Create a Photobook With AI for Gifting">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei bri bwi" data-search="Create Posters to Print or Sell Generate a themed poster collection, prepare selected artwork for target sizes, and create marked previews without damaging the masters. Books &amp; publishing BGI BEI BRI BWI">
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <p class="eyebrow">Books &amp; publishing</p>
+    <span class="text-[10px] text-gray-700">UC-10</span>
+  </div>
+  <h3 class="text-lg font-light leading-7 text-white">Create Posters to Print or Sell</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Generate a themed poster collection, prepare selected artwork for target sizes, and create marked previews without damaging the masters.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BGI</span><span class="tag">BEI</span><span class="tag">BRI</span><span class="tag">BWI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/create-posters-to-print-or-sell.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Create Posters to Print or Sell">open workflow →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+
+<section class="site-shell max-w-4xl py-12 sm:py-16">
+  <p class="eyebrow mb-3">faq</p>
+  <h2 class="section-heading mb-7">Straight answers</h2>
+  <div class="space-y-3">
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Can enhancement repair every bad image?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. It can improve size and presentation, but it cannot rescue weak composition, severe artifacts, or missing detail.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Is it only for AI images?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. It can prepare ordinary photos and digital artwork as well.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Does it upload images?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. Processing is local.</p>
+    </details>
+
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="panel-amber grid gap-7 p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+    <div>
+      <p class="eyebrow mb-3 text-retro-amber">ready_when_you_are</p>
+      <h2 class="text-2xl font-light text-white">Own BatchEnhance Image and keep the workflow.</h2>
+      <p class="mt-3 text-sm leading-6 text-gray-500">The Microsoft Store shows the current price for your region.</p>
+    </div>
+    <a href="https://apps.microsoft.com/detail/9n2vhg38ss00" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="BatchEnhance Image Microsoft Store bottom CTA">open Microsoft Store →</a>
+  </div>
+</section>
+
+
+<section class="site-shell pb-10 pt-6">
+  <p class="eyebrow mb-5">related_products</p>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="images publishing social" data-search="BatchGen Image with AI Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs. AI creation images publishing social">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BGI.webp" alt="BatchGen Image with AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">AI creation</p>
+  <h3 class="text-lg font-light text-white">BatchGen Image with AI</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">publishing</span><span class="tag">social</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchgen-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchGen Image with AI">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="images social web" data-search="BatchResize Image A local Windows batch image resizer with platform presets, crop controls, live preview, and predictable folder output. Local utility images social web">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BRI.webp" alt="BatchResize Image logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local utility</p>
+  <h3 class="text-lg font-light text-white">BatchResize Image</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows batch image resizer with platform presets, crop controls, live preview, and predictable folder output.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">social</span><span class="tag">web</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">Buy once</span>
+    <a href="/batchresize-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="BatchResize Image">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf publishing files" data-search="Batch Text to PDF A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering. Local PDF utility pdf publishing files">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <img src="/Logos/BTP.png" alt="Batch Text to PDF logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
+    <span class="tag text-retro-green">released</span>
+  </div>
+  <p class="eyebrow mb-2">Local PDF utility</p>
+  <h3 class="text-lg font-light text-white">Batch Text to PDF</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">pdf</span><span class="tag">publishing</span><span class="tag">files</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="text-retro-amber">$4.99 list price</span>
+    <a href="/batch-text-to-pdf.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Text to PDF">view app →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="relative z-20 mt-20 border-t border-white/10 bg-black">
+  <div class="site-shell grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
+    <div>
+      <p class="eyebrow mb-3">3thousand30</p>
+      <p class="max-w-xl text-sm leading-6 text-gray-500">Affordable, privacy-first, buy-once Windows tools for work worth keeping.</p>
+      <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-xs">
+        <a href="mailto:hello@3thousand30.com" class="text-link">hello@3thousand30.com</a>
+        <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-link">@3thousand30HQ on X</a>
+      </div>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-3 text-xs text-gray-500 md:justify-end" aria-label="Footer navigation">
+      <a href="/products/" class="hover:text-white">products</a>
+      <a href="/use-cases/" class="hover:text-white">use cases</a>
+      <a href="/manifesto.html" class="hover:text-white">manifesto</a>
+      <a href="/privacy.html" class="hover:text-white">privacy</a>
+    </nav>
+  </div>
+</footer>
+
+
+  <script src="/site.js"></script>
+  <script src="/cookie-banner.js"></script>
 </body>
 </html>

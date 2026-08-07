@@ -1,0 +1,28 @@
+<header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <div class="site-shell flex min-h-16 items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
+      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'product' or catalogKind == 'products' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'product' or catalogKind == 'products' %} aria-current="page"{% endif %}>products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'use_case' or catalogKind == 'use-cases' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'use_case' or catalogKind == 'use-cases' %} aria-current="page"{% endif %}>use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'manifesto' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'manifesto' %} aria-current="page"{% endif %}>manifesto</a>
+    </nav>
+
+    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true" data-menu-icon>☰</span>
+    </button>
+  </div>
+
+  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 md:hidden" aria-label="Mobile navigation" data-mobile-menu>
+    <div class="grid gap-2">
+      <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
+      <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
+      <a href="/manifesto.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">manifesto</a>
+      <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
+    </div>
+  </nav>
+</header>

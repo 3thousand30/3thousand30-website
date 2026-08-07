@@ -28,13 +28,16 @@
     }
 
     function getPageType() {
+        var bodyType = document.body && document.body.getAttribute('data-page-type');
+        if (bodyType) return bodyType;
+
         var path = window.location.pathname.toLowerCase();
 
         if (path === '/' || path === '/index.html') return 'home';
         if (path === '/use-cases/' || path === '/use-cases/index.html') return 'use_case_index';
         if (path.indexOf('/use-cases/') === 0) return 'use_case';
         if (path === '/products/' || path === '/products/index.html') return 'product_index';
-        if (/\/batch[^/]*\.html$/.test(path)) return 'product';
+        if (/\/(batch[^/]*|key-rush)\.html$/.test(path)) return 'product';
         if (path.endsWith('/privacy.html')) return 'privacy';
         if (path.endsWith('/manifesto.html')) return 'manifesto';
         if (path.endsWith('/404.html')) return 'not_found';
@@ -185,9 +188,15 @@
                 destination_host: url.hostname
             };
 
+            var explicitEvent = link.getAttribute('data-analytics-event');
+            if (explicitEvent) {
+                sendAnalyticsEvent(explicitEvent, parameters);
+                return;
+            }
+
             if (url.hostname === 'apps.microsoft.com') {
                 sendAnalyticsEvent('store_click', parameters);
-            } else if (sameOrigin && /\/batch[^/]*\.html$/.test(path)) {
+            } else if (sameOrigin && /\/(batch[^/]*|key-rush)\.html$/.test(path)) {
                 sendAnalyticsEvent('product_click', parameters);
             } else if (sameOrigin && (path === '/products/' || path.endsWith('/products/index.html'))) {
                 sendAnalyticsEvent('product_catalog_click', parameters);

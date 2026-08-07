@@ -1,53 +1,31 @@
-# 3thousand30 Website
+# 3thousand30 website
 
-Marketing site for **3thousand30** — buy-once, privacy-first Windows tools.
+Public marketing website for [3thousand30.com](https://3thousand30.com).
 
-🔗 Live: [3thousand30.com](https://3thousand30.com)
+The site uses Eleventy to generate committed static HTML into the repository root. GitHub Pages continues to publish that root, so deployment does not depend on a separate server or runtime.
 
-## Stack
+## Local commands
 
-Plain static HTML, no build step. Tailwind is loaded via the
-[Tailwind CDN](https://cdn.tailwindcss.com) with an inline `tailwind.config`
-in each page's `<head>`. Hosted on GitHub Pages.
+```bash
+npm install
+npm run build
+npm run check
+npm run serve
+```
 
-**Workflow:** edit HTML → commit → push → live. No npm, no build, no dependencies.
+- `npm run build` compiles Tailwind and regenerates every public page, `robots.txt`, and `sitemap.xml`.
+- `npm run check` validates output count, canonical URLs, local links/assets, JSON-LD, sitemap coverage, analytics safeguards, and required BTP release details.
+- `npm run serve` builds and starts Eleventy’s local development server.
 
-## Structure
+## Content architecture
 
-| Path | Purpose |
-|------|---------|
-| `index.html` | Home — products, platform, artifacts, free tools |
-| `batch*.html` | One detail page per paid app |
-| `manifesto.html` / `privacy.html` | Manifesto & privacy policy |
-| `cookie-banner.js` | Consent banner (Google Analytics opt-in) |
-| `Logos/`, `screenshots/` | Image assets |
-| `sitemap.xml`, `robots.txt`, `CNAME` | SEO / hosting config |
+- `_src/_data/products.js` is the canonical product catalog.
+- `_src/_data/useCases.js` is the canonical use-case library.
+- `_src/_includes/` contains shared layouts and components.
+- `_src/product.njk` generates every dedicated product page.
+- `_src/use-case.njk` generates every dedicated use-case page.
+- `_src/sitemap.njk` generates the sitemap from the same public data.
+- `site.js` provides accessible navigation, catalog filtering, consent controls, and reduced-motion-aware reveal enhancement.
+- `cookie-banner.js` owns consent-gated Google Analytics loading and interaction events.
 
-## Products
-
-| App | Detail page | Price (USD) |
-|-----|-------------|-------------|
-| Batch Generate Text with any AI | `batchgen-text.html` | ~~$24.99~~ **$18.74** (promo) |
-| BatchGen Image with AI | `batchgen-image.html` | ~~$19.99~~ **$13.99** (sale, ends 2026-06-09) |
-| Batch Translate with AI | `batchtranslate.html` | $19.99 |
-| BatchEnhance Image | `batchenhance-image.html` | $4.99 |
-| BatchFile Organiser | `batchfile-organiser.html` | $9.99 |
-| BatchWatermark Image | `batchwatermark-image.html` | $4.99 |
-| BatchCompress Image | `batchcompress-image.html` | $2.99 |
-| BatchResize Image | `batchresize-image.html` | $2.99 |
-
-Prices appear in three places per product: the home card, the detail-page
-header box, and the `other_apps` carousel on every other detail page. Microsoft
-Store prices vary by region — the values above are the US prices.
-
-## Maintenance notes
-
-- **Changing a price:** update it on the home card, that app's detail page
-  (header box + in-button price), and the `other_apps` mini-card on the other
-  detail pages.
-- **Discounts:** sale price first, then struck original, then `-30%`, then a
-  dated "limited-time" label. Keep the visible end date and the JSON-LD
-  `priceValidUntil` in sync.
-- **SEO:** each page has its own `<title>`, meta description, canonical, Open
-  Graph/Twitter tags, and `SoftwareApplication` JSON-LD. Bump `lastmod` in
-  `sitemap.xml` when content changes.
+Existing public product and use-case URLs are preserved. New content should be added to the data files, built, checked, and committed together with the generated root output.

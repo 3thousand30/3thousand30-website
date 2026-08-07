@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" class="bg-black">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <script>document.documentElement.classList.add('js');</script>
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="author" content="3thousand30">
+  <meta name="robots" content="{% if noindex %}noindex, follow{% else %}index, follow, max-image-preview:large{% endif %}">
+  <link rel="canonical" href="{{ site.url }}{{ canonicalUrl or page.url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="{% if pageType == 'use_case' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="3thousand30">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="{{ site.url }}{{ canonicalUrl or page.url }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ site.url }}{{ image or site.defaultImage }}">
+  <meta property="og:image:alt" content="{{ imageAlt or title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{ site.xHandle }}">
+  <meta name="twitter:creator" content="{{ site.xHandle }}">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ image or site.defaultImage }}">
+
+  {% if pageType == 'product' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": {{ product.name | json | safe }},
+        "description": {{ product.description | json | safe }},
+        "url": {{ (site.url + product.url) | json | safe }},
+        "image": {{ (site.url + product.logo) | json | safe }},
+        "applicationCategory": {% if product.type == "game" %}"GameApplication"{% else %}"UtilitiesApplication"{% endif %},
+        "operatingSystem": "Windows",
+        "downloadUrl": {{ product.storeUrl | json | safe }},
+        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
+          { "@type": "ListItem", "position": 3, "name": {{ product.name | json | safe }}, "item": {{ (site.url + product.url) | json | safe }} }
+        ]
+      }{% if product.faq.length %},
+      {
+        "@type": "FAQPage",
+        "mainEntity": [{% for item in product.faq %}{
+          "@type": "Question",
+          "name": {{ item.q | json | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | json | safe }} }
+        }{% if not loop.last %},{% endif %}{% endfor %}]
+      }{% endif %}
+    ]
+  }
+  </script>
+  {% elif pageType == 'use_case' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": {{ useCase.title | json | safe }},
+        "description": {{ useCase.summary | json | safe }},
+        "url": {{ (site.url + useCase.url) | json | safe }},
+        "datePublished": "2026-08-07",
+        "dateModified": {{ useCase.lastmod | json | safe }},
+        "author": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" },
+        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/", "logo": { "@type": "ImageObject", "url": "https://3thousand30.com/3030-300x300.png" } }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://3thousand30.com/use-cases/" },
+          { "@type": "ListItem", "position": 3, "name": {{ useCase.title | json | safe }}, "item": {{ (site.url + useCase.url) | json | safe }} }
+        ]
+      }{% if useCase.faq.length %},
+      {
+        "@type": "FAQPage",
+        "mainEntity": [{% for item in useCase.faq %}{
+          "@type": "Question",
+          "name": {{ item.q | json | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | json | safe }} }
+        }{% if not loop.last %},{% endif %}{% endfor %}]
+      }{% endif %}
+    ]
+  }
+  </script>
+  {% else %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": {% if pageType == "home" %}"WebSite"{% elif pageType == "catalog" %}"CollectionPage"{% else %}"WebPage"{% endif %},
+    "name": {{ title | json | safe }},
+    "description": {{ description | json | safe }},
+    "url": {{ (site.url + (canonicalUrl or page.url)) | json | safe }},
+    "isPartOf": { "@type": "WebSite", "name": "3thousand30", "url": "https://3thousand30.com/" }
+  }
+  </script>
+  {% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/tailwind.min.css">
+</head>
+<body class="min-h-screen overflow-x-hidden bg-black font-mono text-white antialiased" data-page-type="{{ analyticsPageType or pageType or 'page' }}">
+  <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
+  <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
+
+  {% include "components/header.njk" %}
+
+  <main id="main-content" class="relative z-20">
+    {{ content | safe }}
+  </main>
+
+  {% include "components/footer.njk" %}
+
+  <script src="/site.js"></script>
+  <script src="/cookie-banner.js"></script>
+</body>
+</html>

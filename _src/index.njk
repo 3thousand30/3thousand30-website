@@ -1,0 +1,104 @@
+---
+layout: layouts/base.njk
+permalink: index.html
+title: 3thousand30 — Buy-Once, Privacy-First Windows Apps
+description: Buy-once Windows apps for batch writing, image creation, translation, PDF workflows, file organisation, and offline play—without subscription lock-in.
+pageType: home
+---
+{% from "components/cards.njk" import productCard, useCaseCard %}
+{% set featuredProducts = products | filterByCodes(site.featuredProductCodes) %}
+{% set featuredUseCases = useCases | filterBySlugs(site.featuredUseCaseSlugs) %}
+
+<section class="site-shell grid min-h-[70vh] items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.08fr_0.92fr]">
+  <div class="reveal-item" data-reveal>
+    <p class="eyebrow mb-5">buy once · keep your workflow</p>
+    <h1 class="max-w-4xl text-4xl font-light leading-[1.12] text-white sm:text-6xl lg:text-7xl">
+      Useful Windows tools.<br><span class="text-retro-green">No software rent.</span>
+    </h1>
+    <p class="mt-7 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
+      Batch-create, prepare, translate, organise, and publish your work with privacy-first apps that stay clear about what runs locally and what reaches an AI provider.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a href="/products/" class="button-primary" data-analytics-event="product_catalog_click">browse products →</a>
+      <a href="/use-cases/" class="button-secondary" data-analytics-event="use_case_catalog_click">explore workflows</a>
+    </div>
+  </div>
+
+  <div class="panel-green relative overflow-hidden p-6 sm:p-8 reveal-item" data-reveal>
+    <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-retro-green/10 blur-3xl" aria-hidden="true"></div>
+    <p class="eyebrow mb-5">system_status</p>
+    <dl class="space-y-5">
+      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
+        <dt class="text-xs text-gray-500">released products</dt>
+        <dd class="text-3xl font-light text-retro-green">{{ products.length }}</dd>
+      </div>
+      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
+        <dt class="text-xs text-gray-500">practical workflows</dt>
+        <dd class="text-3xl font-light text-retro-amber">{{ useCases.length }}</dd>
+      </div>
+    </dl>
+    <div class="mt-5 grid grid-cols-2 gap-4 text-xs leading-5 text-gray-500">
+      <div><span class="block text-white">local-first</span>files and utility work stay on your PC</div>
+      <div><span class="block text-white">BYOKey</span>choose and pay AI providers directly</div>
+    </div>
+  </div>
+</section>
+
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell grid gap-8 py-12 md:grid-cols-3">
+    <div class="reveal-item" data-reveal>
+      <p class="eyebrow mb-3">01 · ownership</p>
+      <h2 class="text-lg font-light text-white">Buy the app once</h2>
+      <p class="mt-3 text-xs leading-6 text-gray-500">No monthly subscription from us and no feature maze designed to keep you renting access.</p>
+    </div>
+    <div class="reveal-item" data-reveal>
+      <p class="eyebrow mb-3">02 · privacy</p>
+      <h2 class="text-lg font-light text-white">Know what leaves your PC</h2>
+      <p class="mt-3 text-xs leading-6 text-gray-500">Local tools stay local. AI apps contact only the provider you choose for the request you make.</p>
+    </div>
+    <div class="reveal-item" data-reveal>
+      <p class="eyebrow mb-3">03 · capability</p>
+      <h2 class="text-lg font-light text-white">Build repeatable workflows</h2>
+      <p class="mt-3 text-xs leading-6 text-gray-500">The goal is not more buttons. It is a working system you understand and can reuse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="site-shell py-16 sm:py-24">
+  <div class="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+      <p class="eyebrow mb-3">selected_tools</p>
+      <h2 class="section-heading">Start with the job in front of you</h2>
+    </div>
+    <a href="/products/" class="text-link text-xs">all {{ products.length }} products →</a>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    {% for item in featuredProducts %}{{ productCard(item) }}{% endfor %}
+  </div>
+</section>
+
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-16 sm:py-24">
+    <div class="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="eyebrow mb-3">from_tools_to_outcomes</p>
+        <h2 class="section-heading">Complete workflows, including the messy middle</h2>
+      </div>
+      <a href="/use-cases/" class="text-link text-xs">all {{ useCases.length }} use cases →</a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {% for item in featuredUseCases %}{{ useCaseCard(item) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="site-shell py-16 sm:py-24">
+  <div class="panel-amber grid gap-8 p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center reveal-item" data-reveal>
+    <div>
+      <p class="eyebrow mb-3 text-retro-amber">the operating principle</p>
+      <h2 class="section-heading">Technology should make you more capable, not more dependent.</h2>
+      <p class="mt-4 max-w-3xl text-sm leading-7 text-gray-400">That means transparent providers, local files, reasonable prices, honest limits, and products that keep working without a monthly gate.</p>
+    </div>
+    <a href="/manifesto.html" class="button-secondary">read the manifesto →</a>
+  </div>
+</section>

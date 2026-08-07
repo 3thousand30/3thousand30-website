@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+permalink: privacy.html
+title: Privacy Policy | 3thousand30
+description: Privacy policy for 3thousand30, its consent-gated Google Analytics setup, and its local-first Windows apps.
+pageType: privacy
+---
+<section class="site-shell py-14 sm:py-20">
+  <p class="eyebrow mb-5">privacy</p>
+  <h1 class="max-w-4xl text-4xl font-light leading-tight text-white sm:text-6xl">Your work is yours. Our website analytics are optional.</h1>
+  <p class="mt-7 max-w-3xl text-base leading-8 text-gray-400">Privacy is part of the product design, not a footer formality. This policy explains what the website measures, how consent works, and where app data goes.</p>
+  <p class="mt-4 text-xs text-gray-600">Last updated: 7 August 2026</p>
+</section>
+
+<div class="site-shell max-w-4xl pb-20">
+  <div class="prose-3030">
+    <section>
+      <p class="eyebrow">website_analytics</p>
+      <h2>Google Analytics loads only after you accept.</h2>
+      <p>We use Google Analytics 4 to understand which pages are visited, how people find the site, and which product, Microsoft Store, use-case, documentation, and external links are useful.</p>
+      <p>Before consent, the Google Analytics script is not loaded and the website sends no analytics request to Google. If you accept, the site loads measurement ID <strong>G-8N64KW0ELL</strong>, sends the current page view, and stores your choice in this browser.</p>
+      <p>Advertising storage, ad-user data, and ad-personalisation consent remain disabled. We do not add advertising pixels or retargeting trackers.</p>
+    </section>
+
+    <section>
+      <p class="eyebrow mt-14">what_google_receives</p>
+      <h2>Analytics data about the visit</h2>
+      <p>After acceptance, Google may receive information such as the page URL, referrer, approximate location derived from network information, device/browser information, and the interaction labels we send for useful site links. Google may set analytics cookies such as <strong>_ga</strong>.</p>
+      <p>Google handles that data under its own terms and privacy practices. You can decline here and still use the complete website.</p>
+    </section>
+
+    <section>
+      <p class="eyebrow mt-14">windows_apps</p>
+      <h2>Local utilities stay local.</h2>
+      <p>Our local utility apps process their files and settings on your Windows machine. 3thousand30 does not run a hidden file-processing cloud, require an app account, or receive telemetry from those workflows.</p>
+      <p>AI-enabled apps run locally but send the prompt or source content required for generation or translation to the external AI provider you choose and configure. API keys are stored locally using Windows protection where the product specifies it. We do not intercept or store those provider requests.</p>
+      <p>Product pages state their privacy boundary directly so “local” is not used to hide an external AI request.</p>
+    </section>
+
+    <section id="manage-consent" class="scroll-mt-24">
+      <p class="eyebrow mt-14">manage_consent</p>
+      <h2>Change this browser’s analytics choice</h2>
+      <div class="panel-green mt-6 p-6">
+        <p class="m-0 text-sm text-gray-400">Current choice: <strong class="text-retro-green" data-consent-status>checking…</strong></p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <button type="button" class="button-primary" data-consent-grant>accept analytics</button>
+          <button type="button" class="button-secondary" data-consent-deny>withdraw / decline</button>
+        </div>
+        <p class="mt-4 text-xs text-gray-600">Withdrawal takes effect immediately, disables later analytics requests in this page, and deletes this site’s known Google Analytics cookies where the browser permits it.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="eyebrow mt-14">contact</p>
+      <h2>Questions or privacy requests</h2>
+      <p>Email <a href="mailto:{{ site.email }}" class="text-link">{{ site.email }}</a>. Include enough context for us to understand the question, but do not send sensitive files or API keys.</p>
+    </section>
+  </div>
+</div>
