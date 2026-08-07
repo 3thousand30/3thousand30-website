@@ -82,17 +82,17 @@
   <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
   <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
 
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
   <div class="site-shell flex min-h-16 items-center justify-between gap-6">
-    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
-      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
-      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    <a href="/" class="site-brand flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 object-cover" width="36" height="36">
+      <span class="hidden sm:block"><b>3thousand30</b><small>independent signal</small></span>
     </a>
 
     <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
-      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page">products</a>
-      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400">use cases</a>
-      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400">manifesto</a>
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page"><span aria-hidden="true">./</span>products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>manifesto</a>
     </nav>
 
     <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
@@ -255,11 +255,12 @@
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bt btp bmp bsp" data-search="Translate a Book for New Markets Translate a complete manuscript, review it as a new edition, and rebuild a language-specific print or digital book. Books &amp; publishing BT BTP BMP BSP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">Books &amp; publishing</p>
-    <span class="text-[10px] text-gray-700">UC-12</span>
+  <div class="card-address">
+    <span>workflow://UC-12</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Translate a Book for New Markets</h3>
+  <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
+  <h3 class="text-base font-normal leading-7 text-white">Translate a Book for New Markets</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Translate a complete manuscript, review it as a new edition, and rebuild a language-specific print or digital book.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BT</span><span class="tag">BTP</span><span class="tag">BMP</span><span class="tag">BSP</span>
@@ -270,11 +271,12 @@
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt bgi btp bmp bsp" data-search="Create Short Stories for Teaching Create a themed set of age-appropriate stories and illustrations, then turn them into classroom or home-learning PDFs. Books &amp; publishing BGT BGI BTP BMP BSP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">Books &amp; publishing</p>
-    <span class="text-[10px] text-gray-700">UC-6</span>
+  <div class="card-address">
+    <span>workflow://UC-6</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Create Short Stories for Teaching</h3>
+  <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
+  <h3 class="text-base font-normal leading-7 text-white">Create Short Stories for Teaching</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Create a themed set of age-appropriate stories and illustrations, then turn them into classroom or home-learning PDFs.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BGT</span><span class="tag">BGI</span><span class="tag">BTP</span><span class="tag">BMP</span><span class="tag">BSP</span>
@@ -336,52 +338,67 @@
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf files publishing" data-search="Batch Merge PDFs A lightweight local PDF merger for Windows with alphabetical ordering, folder-based output naming, optional page numbers, progress, and skip-existing support. Local PDF utility pdf files publishing">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BMP.png" alt="Batch Merge PDFs logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://bmp</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">Local PDF utility</p>
-  <h3 class="text-lg font-light text-white">Batch Merge PDFs</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BMP.png" alt="Batch Merge PDFs logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local PDF utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Merge PDFs</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A lightweight local PDF merger for Windows with alphabetical ordering, folder-based output naming, optional page numbers, progress, and skip-existing support.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">pdf</span><span class="tag">files</span><span class="tag">publishing</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">Buy once</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batch-merge-pdfs.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Merge PDFs">view app →</a>
   </div>
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf publishing files" data-search="Batch Text to PDF A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering. Local PDF utility pdf publishing files">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BTP.png" alt="Batch Text to PDF logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://btp</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">Local PDF utility</p>
-  <h3 class="text-lg font-light text-white">Batch Text to PDF</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BTP.png" alt="Batch Text to PDF logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local PDF utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Text to PDF</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">pdf</span><span class="tag">publishing</span><span class="tag">files</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">$4.99 list price</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batch-text-to-pdf.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Text to PDF">view app →</a>
   </div>
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="files productivity" data-search="Batch File Organiser A local Windows file organiser with type/date sorting, hash-based duplicate detection, complete previews, and undo for the last operation. Local utility files productivity">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BFO.webp" alt="Batch File Organiser logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://bfo</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">Local utility</p>
-  <h3 class="text-lg font-light text-white">Batch File Organiser</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BFO.webp" alt="Batch File Organiser logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch File Organiser</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows file organiser with type/date sorting, hash-based duplicate detection, complete previews, and undo for the last operation.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">files</span><span class="tag">productivity</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">Buy once</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batchfile-organiser.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch File Organiser">view app →</a>
   </div>
 </article>

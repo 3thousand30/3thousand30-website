@@ -73,17 +73,17 @@
   <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
   <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
 
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
   <div class="site-shell flex min-h-16 items-center justify-between gap-6">
-    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
-      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
-      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    <a href="/" class="site-brand flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 object-cover" width="36" height="36">
+      <span class="hidden sm:block"><b>3thousand30</b><small>independent signal</small></span>
     </a>
 
     <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
-      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-gray-400">products</a>
-      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page">use cases</a>
-      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400">manifesto</a>
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page"><span aria-hidden="true">./</span>use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>manifesto</a>
     </nav>
 
     <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
@@ -283,11 +283,12 @@
     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bt btp bmp bsp" data-search="Translate a Book for New Markets Translate a complete manuscript, review it as a new edition, and rebuild a language-specific print or digital book. Books &amp; publishing BT BTP BMP BSP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">Books &amp; publishing</p>
-    <span class="text-[10px] text-gray-700">UC-12</span>
+  <div class="card-address">
+    <span>workflow://UC-12</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Translate a Book for New Markets</h3>
+  <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
+  <h3 class="text-base font-normal leading-7 text-white">Translate a Book for New Markets</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Translate a complete manuscript, review it as a new edition, and rebuild a language-specific print or digital book.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BT</span><span class="tag">BTP</span><span class="tag">BMP</span><span class="tag">BSP</span>
@@ -298,11 +299,12 @@
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="btp" data-search="Batch-Create PDFs From Text Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document. PDF &amp; file workflows BTP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">PDF &amp; file workflows</p>
-    <span class="text-[10px] text-gray-700">UC-20</span>
+  <div class="card-address">
+    <span>workflow://UC-20</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Batch-Create PDFs From Text</h3>
+  <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
+  <h3 class="text-base font-normal leading-7 text-white">Batch-Create PDFs From Text</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BTP</span>

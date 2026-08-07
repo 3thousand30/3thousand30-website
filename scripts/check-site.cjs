@@ -155,6 +155,14 @@ if (/coming soon|certification|preparing for release/i.test(btp)) {
   fail('BTP page: contains forbidden pre-release wording.');
 }
 
+const productCards = fs.readFileSync(path.join(root, '_src', '_includes', 'components', 'cards.njk'), 'utf8');
+if (productCards.includes('item.priceLabel')) {
+  fail('Product cards: catalog presentation must not vary by product-specific price label.');
+}
+if (!productCards.includes('<span class="card-license"><i>//</i> buy once</span>')) {
+  fail('Product cards: shared buy-once label is missing.');
+}
+
 const analytics = fs.readFileSync(path.join(root, 'cookie-banner.js'), 'utf8');
 for (const required of [
   "MEASUREMENT_ID = 'G-8N64KW0ELL'",

@@ -9,58 +9,62 @@ pageType: home
 {% set featuredProducts = products | filterByCodes(site.featuredProductCodes) %}
 {% set featuredUseCases = useCases | filterBySlugs(site.featuredUseCaseSlugs) %}
 
-<section class="site-shell grid min-h-[70vh] items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.08fr_0.92fr]">
-  <div class="reveal-item" data-reveal>
-    <p class="eyebrow mb-5">buy once · keep your workflow</p>
-    <h1 class="max-w-4xl text-4xl font-light leading-[1.12] text-white sm:text-6xl lg:text-7xl">
-      Useful Windows tools.<br><span class="text-retro-green">No software rent.</span>
-    </h1>
-    <p class="mt-7 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
-      Batch-create, prepare, translate, organise, and publish your work with privacy-first apps that stay clear about what runs locally and what reaches an AI provider.
-    </p>
-    <div class="mt-9 flex flex-wrap gap-3">
-      <a href="/products/" class="button-primary" data-analytics-event="product_catalog_click">browse products →</a>
-      <a href="/use-cases/" class="button-secondary" data-analytics-event="use_case_catalog_click">explore workflows</a>
+<section class="home-hero site-shell">
+  <div class="home-console reveal-item" data-reveal>
+    <div class="home-signal-rain" aria-hidden="true">
+      <span style="--signal-x: 5%; --signal-delay: -3s;">01001 OWN 3030 BUILD 10110 KEEP 01101</span>
+      <span style="--signal-x: 23%; --signal-delay: -11s;">CAPABLE 00101 LOCAL 11010 CHOOSE</span>
+      <span style="--signal-x: 52%; --signal-delay: -7s;">NO RENT 10101 NO LOCK-IN 3030</span>
+      <span style="--signal-x: 74%; --signal-delay: -15s;">PRIVACY 01110 TASTE 10011 CONTROL</span>
+      <span style="--signal-x: 92%; --signal-delay: -5s;">BUILD 3030 01010 INDEPENDENT 11001</span>
     </div>
-  </div>
 
-  <div class="panel-green relative overflow-hidden p-6 sm:p-8 reveal-item" data-reveal>
-    <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-retro-green/10 blur-3xl" aria-hidden="true"></div>
-    <p class="eyebrow mb-5">system_status</p>
-    <dl class="space-y-5">
-      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
-        <dt class="text-xs text-gray-500">released products</dt>
-        <dd class="text-3xl font-light text-retro-green">{{ products.length }}</dd>
+    <div class="home-console-bar">
+      <span><i aria-hidden="true"></i> secure transmission // 3T30-0001</span>
+      <span class="hidden sm:inline">build horizon: 3030</span>
+    </div>
+
+    <div class="home-console-grid">
+      <div class="home-hero-copy">
+        <p class="terminal-prompt"><span>root@3030</span>:~$ reject --dependency</p>
+        <p class="home-kicker">build for 3030 — not for next quarter</p>
+        <h1>Useful Windows tools.<span>No software rent.</span></h1>
+        <p class="home-deck">Buy once. Keep your files. Choose your AI provider when a workflow needs one. Build without handing your work—or your judgment—to another black box.</p>
+        <div class="home-actions">
+          <a href="/products/" class="button-primary" data-analytics-event="product_catalog_click">browse products →</a>
+          <a href="/use-cases/" class="button-secondary" data-analytics-event="use_case_catalog_click">explore workflows</a>
+        </div>
       </div>
-      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
-        <dt class="text-xs text-gray-500">practical workflows</dt>
-        <dd class="text-3xl font-light text-retro-amber">{{ useCases.length }}</dd>
-      </div>
-    </dl>
-    <div class="mt-5 grid grid-cols-2 gap-4 text-xs leading-5 text-gray-500">
-      <div><span class="block text-white">local-first</span>files and utility work stay on your PC</div>
-      <div><span class="block text-white">BYOKey</span>choose and pay AI providers directly</div>
+
+      <aside class="home-doctrine" aria-label="3thousand30 operating doctrine">
+        <span class="home-doctrine-watermark" aria-hidden="true">3030</span>
+        <p class="home-doctrine-label">// operating_doctrine</p>
+        <p class="home-doctrine-opposition">Their model: <span>dependency.</span></p>
+        <p class="home-doctrine-answer">Our answer: <strong>capability.</strong></p>
+        <ul>
+          <li><span>01</span> people are capable</li>
+          <li><span>02</span> tools should increase freedom</li>
+          <li><span>03</span> privacy is a principle</li>
+          <li><span>04</span> AI does not replace taste</li>
+        </ul>
+        <p class="home-doctrine-prompt">&gt; dependence is not the goal<span class="terminal-cursor" aria-hidden="true">_</span></p>
+      </aside>
+    </div>
+
+    <div class="home-console-footer">
+      <span><b>{{ products.length }}</b> released tools</span>
+      <span><b>{{ useCases.length }}</b> practical workflows</span>
+      <span><b>local-first</b> where possible</span>
+      <span><b>BYO AI</b> where needed</span>
     </div>
   </div>
 </section>
 
-<section class="border-y border-white/10 bg-white/[0.015]">
-  <div class="site-shell grid gap-8 py-12 md:grid-cols-3">
-    <div class="reveal-item" data-reveal>
-      <p class="eyebrow mb-3">01 · ownership</p>
-      <h2 class="text-lg font-light text-white">Buy the app once</h2>
-      <p class="mt-3 text-xs leading-6 text-gray-500">No monthly subscription from us and no feature maze designed to keep you renting access.</p>
-    </div>
-    <div class="reveal-item" data-reveal>
-      <p class="eyebrow mb-3">02 · privacy</p>
-      <h2 class="text-lg font-light text-white">Know what leaves your PC</h2>
-      <p class="mt-3 text-xs leading-6 text-gray-500">Local tools stay local. AI apps contact only the provider you choose for the request you make.</p>
-    </div>
-    <div class="reveal-item" data-reveal>
-      <p class="eyebrow mb-3">03 · capability</p>
-      <h2 class="text-lg font-light text-white">Build repeatable workflows</h2>
-      <p class="mt-3 text-xs leading-6 text-gray-500">The goal is not more buttons. It is a working system you understand and can reuse.</p>
-    </div>
+<section class="principle-rail" aria-label="Operating principles">
+  <div class="site-shell">
+    <a href="/manifesto.html"><span>01 //</span><strong>own the tool</strong><small>not another monthly permission slip</small></a>
+    <a href="/privacy.html"><span>02 //</span><strong>know what leaves</strong><small>local by default, explicit when connected</small></a>
+    <a href="/use-cases/"><span>03 //</span><strong>become more capable</strong><small>workflows you can understand and reuse</small></a>
   </div>
 </section>
 

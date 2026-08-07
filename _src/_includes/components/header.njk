@@ -1,14 +1,14 @@
-<header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+<header class="site-header sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
   <div class="site-shell flex min-h-16 items-center justify-between gap-6">
-    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
-      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
-      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    <a href="/" class="site-brand flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 object-cover" width="36" height="36">
+      <span class="hidden sm:block"><b>3thousand30</b><small>independent signal</small></span>
     </a>
 
     <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
-      <a href="/products/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'product' or catalogKind == 'products' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'product' or catalogKind == 'products' %} aria-current="page"{% endif %}>products</a>
-      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'use_case' or catalogKind == 'use-cases' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'use_case' or catalogKind == 'use-cases' %} aria-current="page"{% endif %}>use cases</a>
-      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'manifesto' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'manifesto' %} aria-current="page"{% endif %}>manifesto</a>
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'product' or catalogKind == 'products' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'product' or catalogKind == 'products' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'use_case' or catalogKind == 'use-cases' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'use_case' or catalogKind == 'use-cases' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'manifesto' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'manifesto' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>manifesto</a>
     </nav>
 
     <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>

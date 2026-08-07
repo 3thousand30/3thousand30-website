@@ -58,6 +58,9 @@ async function auditAccessibility(page, label) {
   assert(await page.locator('#cookie-banner').count() === 0, 'Consent banner returned after acceptance.');
   let visibleCount = await visibleCatalogItems(page);
   assert(visibleCount === 12, `Product directory does not initially show 12 products (found ${visibleCount}).`);
+  const productCardLicenses = await page.locator('[data-catalog-item] .card-license').allTextContents();
+  assert(productCardLicenses.length === 12, `Product directory does not show a license label on every card (found ${productCardLicenses.length}).`);
+  assert(productCardLicenses.every((label) => label.replace(/\s+/g, ' ').trim() === '// buy once'), 'Product cards do not use one consistent buy-once label.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Product directory has horizontal overflow at 390px.');
   await page.locator('[data-filter-group="categories"][data-filter-value="pdf"]').click();
   visibleCount = await visibleCatalogItems(page);
@@ -118,6 +121,19 @@ async function auditAccessibility(page, label) {
   assert(!requests.some((url) => /googletagmanager\.com\/gtag|google-analytics\.com\/g\/collect/.test(url)), 'Analytics requested data after consent was denied and the page reloaded.');
   assert((await page.locator('[data-consent-status]').textContent()).trim() === 'declined', 'Privacy page does not show declined status.');
   await auditAccessibility(page, 'Privacy page');
+
+  await page.setViewportSize({ width: 1365, height: 650 });
+  await page.goto(`${baseUrl}/`, { waitUntil: 'networkidle' });
+  const desktopOpening = await page.evaluate(() => {
+    const consolePanel = document.querySelector('.home-console');
+    return {
+      panelBottom: consolePanel?.getBoundingClientRect().bottom ?? Number.POSITIVE_INFINITY,
+      viewportHeight: window.innerHeight,
+      overflowX: document.documentElement.scrollWidth > document.documentElement.clientWidth
+    };
+  });
+  assert(desktopOpening.panelBottom <= desktopOpening.viewportHeight, `Homepage opening console is clipped at 1365x650 (bottom ${desktopOpening.panelBottom}px).`);
+  assert(!desktopOpening.overflowX, 'Homepage has horizontal overflow at 1365px.');
 
   assert(pageErrors.length === 0, `Browser page errors: ${pageErrors.join(' | ')}`);
   await browser.close();

@@ -50,17 +50,17 @@
   <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
   <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
 
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
   <div class="site-shell flex min-h-16 items-center justify-between gap-6">
-    <a href="/" class="flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
-      <img src="/3030-logo.webp" alt="" class="h-9 w-9 rounded-sm object-cover" width="36" height="36">
-      <span class="hidden text-xs tracking-[0.12em] sm:inline">3thousand30</span>
+    <a href="/" class="site-brand flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 object-cover" width="36" height="36">
+      <span class="hidden sm:block"><b>3thousand30</b><small>independent signal</small></span>
     </a>
 
     <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
-      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-gray-400">products</a>
-      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400">use cases</a>
-      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400">manifesto</a>
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>manifesto</a>
     </nav>
 
     <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
@@ -85,58 +85,62 @@
 
 
 
-<section class="site-shell grid min-h-[70vh] items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.08fr_0.92fr]">
-  <div class="reveal-item" data-reveal>
-    <p class="eyebrow mb-5">buy once · keep your workflow</p>
-    <h1 class="max-w-4xl text-4xl font-light leading-[1.12] text-white sm:text-6xl lg:text-7xl">
-      Useful Windows tools.<br><span class="text-retro-green">No software rent.</span>
-    </h1>
-    <p class="mt-7 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
-      Batch-create, prepare, translate, organise, and publish your work with privacy-first apps that stay clear about what runs locally and what reaches an AI provider.
-    </p>
-    <div class="mt-9 flex flex-wrap gap-3">
-      <a href="/products/" class="button-primary" data-analytics-event="product_catalog_click">browse products →</a>
-      <a href="/use-cases/" class="button-secondary" data-analytics-event="use_case_catalog_click">explore workflows</a>
+<section class="home-hero site-shell">
+  <div class="home-console reveal-item" data-reveal>
+    <div class="home-signal-rain" aria-hidden="true">
+      <span style="--signal-x: 5%; --signal-delay: -3s;">01001 OWN 3030 BUILD 10110 KEEP 01101</span>
+      <span style="--signal-x: 23%; --signal-delay: -11s;">CAPABLE 00101 LOCAL 11010 CHOOSE</span>
+      <span style="--signal-x: 52%; --signal-delay: -7s;">NO RENT 10101 NO LOCK-IN 3030</span>
+      <span style="--signal-x: 74%; --signal-delay: -15s;">PRIVACY 01110 TASTE 10011 CONTROL</span>
+      <span style="--signal-x: 92%; --signal-delay: -5s;">BUILD 3030 01010 INDEPENDENT 11001</span>
     </div>
-  </div>
 
-  <div class="panel-green relative overflow-hidden p-6 sm:p-8 reveal-item" data-reveal>
-    <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-retro-green/10 blur-3xl" aria-hidden="true"></div>
-    <p class="eyebrow mb-5">system_status</p>
-    <dl class="space-y-5">
-      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
-        <dt class="text-xs text-gray-500">released products</dt>
-        <dd class="text-3xl font-light text-retro-green">12</dd>
+    <div class="home-console-bar">
+      <span><i aria-hidden="true"></i> secure transmission // 3T30-0001</span>
+      <span class="hidden sm:inline">build horizon: 3030</span>
+    </div>
+
+    <div class="home-console-grid">
+      <div class="home-hero-copy">
+        <p class="terminal-prompt"><span>root@3030</span>:~$ reject --dependency</p>
+        <p class="home-kicker">build for 3030 — not for next quarter</p>
+        <h1>Useful Windows tools.<span>No software rent.</span></h1>
+        <p class="home-deck">Buy once. Keep your files. Choose your AI provider when a workflow needs one. Build without handing your work—or your judgment—to another black box.</p>
+        <div class="home-actions">
+          <a href="/products/" class="button-primary" data-analytics-event="product_catalog_click">browse products →</a>
+          <a href="/use-cases/" class="button-secondary" data-analytics-event="use_case_catalog_click">explore workflows</a>
+        </div>
       </div>
-      <div class="flex items-end justify-between gap-4 border-b border-white/10 pb-4">
-        <dt class="text-xs text-gray-500">practical workflows</dt>
-        <dd class="text-3xl font-light text-retro-amber">20</dd>
-      </div>
-    </dl>
-    <div class="mt-5 grid grid-cols-2 gap-4 text-xs leading-5 text-gray-500">
-      <div><span class="block text-white">local-first</span>files and utility work stay on your PC</div>
-      <div><span class="block text-white">BYOKey</span>choose and pay AI providers directly</div>
+
+      <aside class="home-doctrine" aria-label="3thousand30 operating doctrine">
+        <span class="home-doctrine-watermark" aria-hidden="true">3030</span>
+        <p class="home-doctrine-label">// operating_doctrine</p>
+        <p class="home-doctrine-opposition">Their model: <span>dependency.</span></p>
+        <p class="home-doctrine-answer">Our answer: <strong>capability.</strong></p>
+        <ul>
+          <li><span>01</span> people are capable</li>
+          <li><span>02</span> tools should increase freedom</li>
+          <li><span>03</span> privacy is a principle</li>
+          <li><span>04</span> AI does not replace taste</li>
+        </ul>
+        <p class="home-doctrine-prompt">&gt; dependence is not the goal<span class="terminal-cursor" aria-hidden="true">_</span></p>
+      </aside>
+    </div>
+
+    <div class="home-console-footer">
+      <span><b>12</b> released tools</span>
+      <span><b>20</b> practical workflows</span>
+      <span><b>local-first</b> where possible</span>
+      <span><b>BYO AI</b> where needed</span>
     </div>
   </div>
 </section>
 
-<section class="border-y border-white/10 bg-white/[0.015]">
-  <div class="site-shell grid gap-8 py-12 md:grid-cols-3">
-    <div class="reveal-item" data-reveal>
-      <p class="eyebrow mb-3">01 · ownership</p>
-      <h2 class="text-lg font-light text-white">Buy the app once</h2>
-      <p class="mt-3 text-xs leading-6 text-gray-500">No monthly subscription from us and no feature maze designed to keep you renting access.</p>
-    </div>
-    <div class="reveal-item" data-reveal>
-      <p class="eyebrow mb-3">02 · privacy</p>
-      <h2 class="text-lg font-light text-white">Know what leaves your PC</h2>
-      <p class="mt-3 text-xs leading-6 text-gray-500">Local tools stay local. AI apps contact only the provider you choose for the request you make.</p>
-    </div>
-    <div class="reveal-item" data-reveal>
-      <p class="eyebrow mb-3">03 · capability</p>
-      <h2 class="text-lg font-light text-white">Build repeatable workflows</h2>
-      <p class="mt-3 text-xs leading-6 text-gray-500">The goal is not more buttons. It is a working system you understand and can reuse.</p>
-    </div>
+<section class="principle-rail" aria-label="Operating principles">
+  <div class="site-shell">
+    <a href="/manifesto.html"><span>01 //</span><strong>own the tool</strong><small>not another monthly permission slip</small></a>
+    <a href="/privacy.html"><span>02 //</span><strong>know what leaves</strong><small>local by default, explicit when connected</small></a>
+    <a href="/use-cases/"><span>03 //</span><strong>become more capable</strong><small>workflows you can understand and reuse</small></a>
   </div>
 </section>
 
@@ -151,103 +155,133 @@
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="writing publishing social" data-search="Batch Generate Text with any AI Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs. AI creation writing publishing social">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BGT.webp" alt="Batch Generate Text with any AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://bgt</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">AI creation</p>
-  <h3 class="text-lg font-light text-white">Batch Generate Text with any AI</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BGT.webp" alt="Batch Generate Text with any AI logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">AI creation</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Generate Text with any AI</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Bulk AI writing for Windows with reusable personas, sample analysis, CSV topic lists, multiple providers, and local Markdown or text outputs.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">writing</span><span class="tag">publishing</span><span class="tag">social</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">Buy once</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batchgen-text.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Generate Text with any AI">view app →</a>
   </div>
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="ai" data-categories="images publishing social" data-search="Batch Generate Image with any AI Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs. AI creation images publishing social">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BGI.webp" alt="Batch Generate Image with any AI logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://bgi</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">AI creation</p>
-  <h3 class="text-lg font-light text-white">Batch Generate Image with any AI</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BGI.webp" alt="Batch Generate Image with any AI logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">AI creation</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Generate Image with any AI</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Bulk AI image generation on Windows with your own provider, reusable visual personas, styles, reference images, captions, and local outputs.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">images</span><span class="tag">publishing</span><span class="tag">social</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">Buy once</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batchgen-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Generate Image with any AI">view app →</a>
   </div>
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf publishing files" data-search="Batch Text to PDF A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering. Local PDF utility pdf publishing files">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BTP.png" alt="Batch Text to PDF logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://btp</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">Local PDF utility</p>
-  <h3 class="text-lg font-light text-white">Batch Text to PDF</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BTP.png" alt="Batch Text to PDF logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local PDF utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Text to PDF</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">pdf</span><span class="tag">publishing</span><span class="tag">files</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">$4.99 list price</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batch-text-to-pdf.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Text to PDF">view app →</a>
   </div>
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf files publishing" data-search="Batch Merge PDFs A lightweight local PDF merger for Windows with alphabetical ordering, folder-based output naming, optional page numbers, progress, and skip-existing support. Local PDF utility pdf files publishing">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BMP.png" alt="Batch Merge PDFs logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://bmp</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">Local PDF utility</p>
-  <h3 class="text-lg font-light text-white">Batch Merge PDFs</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BMP.png" alt="Batch Merge PDFs logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local PDF utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Merge PDFs</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A lightweight local PDF merger for Windows with alphabetical ordering, folder-based output naming, optional page numbers, progress, and skip-existing support.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">pdf</span><span class="tag">files</span><span class="tag">publishing</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">Buy once</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batch-merge-pdfs.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Merge PDFs">view app →</a>
   </div>
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="files productivity" data-search="Batch File Organiser A local Windows file organiser with type/date sorting, hash-based duplicate detection, complete previews, and undo for the last operation. Local utility files productivity">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/BFO.webp" alt="Batch File Organiser logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://bfo</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">Local utility</p>
-  <h3 class="text-lg font-light text-white">Batch File Organiser</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BFO.webp" alt="Batch File Organiser logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch File Organiser</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows file organiser with type/date sorting, hash-based duplicate detection, complete previews, and undo for the last operation.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">files</span><span class="tag">productivity</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">Buy once</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/batchfile-organiser.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch File Organiser">view app →</a>
   </div>
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="game" data-categories="game typing offline" data-search="Key Rush Offline-first typing action with story missions, an accelerating endless lane, no-fail zen practice, local top-10 boards, and no account or telemetry. Offline game game typing offline">
-  <div class="mb-5 flex items-start justify-between gap-4">
-    <img src="/Logos/KR.png" alt="Key Rush logo" class="h-14 w-14 rounded-xl object-cover" width="56" height="56" loading="lazy" decoding="async">
-    <span class="tag text-retro-green">released</span>
+  <div class="card-address">
+    <span>app://kr</span>
+    <span class="card-status"><i aria-hidden="true"></i>released</span>
   </div>
-  <p class="eyebrow mb-2">Offline game</p>
-  <h3 class="text-lg font-light text-white">Key Rush</h3>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/KR.png" alt="Key Rush logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Offline game</p>
+      <h3 class="text-base font-normal leading-6 text-white">Key Rush</h3>
+    </div>
+  </div>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Offline-first typing action with story missions, an accelerating endless lane, no-fail zen practice, local top-10 boards, and no account or telemetry.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">game</span><span class="tag">typing</span><span class="tag">offline</span>
   </div>
   <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
-    <span class="text-retro-amber">Buy once</span>
+    <span class="card-license"><i>//</i> buy once</span>
     <a href="/key-rush.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Key Rush">view app →</a>
   </div>
 </article>
@@ -267,11 +301,12 @@
     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei btp bmp" data-search="Create a Photobook With AI for Gifting Turn a themed AI image collection into a reviewed, print-ready physical book instead of a folder of disconnected generations. Books &amp; publishing BGI BEI BTP BMP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">Books &amp; publishing</p>
-    <span class="text-[10px] text-gray-700">UC-1</span>
+  <div class="card-address">
+    <span>workflow://UC-1</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Create a Photobook With AI for Gifting</h3>
+  <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
+  <h3 class="text-base font-normal leading-7 text-white">Create a Photobook With AI for Gifting</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Turn a themed AI image collection into a reviewed, print-ready physical book instead of a folder of disconnected generations.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BGI</span><span class="tag">BEI</span><span class="tag">BTP</span><span class="tag">BMP</span>
@@ -282,11 +317,12 @@
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bgt bgi bri bwi" data-search="Plan and Create Social Media Content in Batches Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies. Social &amp; image production BGT BGI BRI BWI">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">Social &amp; image production</p>
-    <span class="text-[10px] text-gray-700">UC-2</span>
+  <div class="card-address">
+    <span>workflow://UC-2</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Plan and Create Social Media Content in Batches</h3>
+  <p class="eyebrow mb-2 mt-5">Social &amp; image production</p>
+  <h3 class="text-base font-normal leading-7 text-white">Plan and Create Social Media Content in Batches</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BGT</span><span class="tag">BGI</span><span class="tag">BRI</span><span class="tag">BWI</span>
@@ -297,11 +333,12 @@
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="btp" data-search="Batch-Create PDFs From Text Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document. PDF &amp; file workflows BTP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">PDF &amp; file workflows</p>
-    <span class="text-[10px] text-gray-700">UC-20</span>
+  <div class="card-address">
+    <span>workflow://UC-20</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Batch-Create PDFs From Text</h3>
+  <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
+  <h3 class="text-base font-normal leading-7 text-white">Batch-Create PDFs From Text</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BTP</span>
@@ -312,11 +349,12 @@
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="bmp" data-search="Merge PDFs Without Using the Internet Combine chapters, scans, reports, or exported sections into one predictable PDF while the documents stay on the PC. PDF &amp; file workflows BMP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">PDF &amp; file workflows</p>
-    <span class="text-[10px] text-gray-700">UC-18</span>
+  <div class="card-address">
+    <span>workflow://UC-18</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Merge PDFs Without Using the Internet</h3>
+  <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
+  <h3 class="text-base font-normal leading-7 text-white">Merge PDFs Without Using the Internet</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Combine chapters, scans, reports, or exported sections into one predictable PDF while the documents stay on the PC.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BMP</span>
@@ -327,11 +365,12 @@
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei btp" data-search="Create a Colouring Book for Children Develop a safe, coherent line-art theme and turn the selected pages into a printable book. Books &amp; publishing BGI BEI BTP">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">Books &amp; publishing</p>
-    <span class="text-[10px] text-gray-700">UC-4</span>
+  <div class="card-address">
+    <span>workflow://UC-4</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Create a Colouring Book for Children</h3>
+  <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
+  <h3 class="text-base font-normal leading-7 text-white">Create a Colouring Book for Children</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Develop a safe, coherent line-art theme and turn the selected pages into a printable book.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BGI</span><span class="tag">BEI</span><span class="tag">BTP</span>
@@ -342,11 +381,12 @@
 </article>
 
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="bfo bci bei" data-search="Organise and Prepare a Working File Collection Clean a Downloads, publishing, or image-output folder before archiving, sharing, or starting the next workflow. PDF &amp; file workflows BFO BCI BEI">
-  <div class="mb-4 flex items-start justify-between gap-3">
-    <p class="eyebrow">PDF &amp; file workflows</p>
-    <span class="text-[10px] text-gray-700">UC-21</span>
+  <div class="card-address">
+    <span>workflow://UC-21</span>
+    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
   </div>
-  <h3 class="text-lg font-light leading-7 text-white">Organise and Prepare a Working File Collection</h3>
+  <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
+  <h3 class="text-base font-normal leading-7 text-white">Organise and Prepare a Working File Collection</h3>
   <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Clean a Downloads, publishing, or image-output folder before archiving, sharing, or starting the next workflow.</p>
   <div class="mt-5 flex flex-wrap gap-2">
     <span class="tag">BFO</span><span class="tag">BCI</span><span class="tag">BEI</span>
