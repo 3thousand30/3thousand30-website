@@ -27,10 +27,10 @@
 {% endmacro %}
 
 {% macro useCaseCard(item) %}
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="{{ item.category }}" data-categories="{{ item.products | join(' ') | lower }}" data-search="{{ item.title }} {{ item.summary }} {{ item.categoryLabel }} {{ item.products | join(' ') }}">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="{{ item.category }}" data-categories="{{ item.products | join(' ') | lower }} {{ item.productGroups | join(' ') }}" data-search="{{ item.title }} {{ item.summary }} {{ item.categoryLabel }} {{ item.products | join(' ') }}">
   <div class="card-address">
     <span>workflow://UC-{{ item.id }}</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>{{ item.steps.length }} steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">{{ item.categoryLabel }}</p>
   <h3 class="text-base font-normal leading-7 text-white">{{ item.title }}</h3>

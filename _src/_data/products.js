@@ -65,7 +65,7 @@ const products = [
       { q: 'Is the whole workflow offline?', a: 'The app and saved outputs are local. Generation requires a connection to the external AI provider you selected.' }
     ],
     relatedProducts: ['BGI', 'BT', 'BTP'],
-    relatedUseCases: ['mass-create-social-media-content', 'create-short-stories-for-teaching', 'create-a-poetry-book', 'create-song-lyrics-for-inspiration'],
+    relatedUseCases: ['generate-product-descriptions-from-csv-with-ai', 'mass-create-social-media-content', 'create-short-stories-for-teaching', 'create-a-poetry-book', 'create-song-lyrics-for-inspiration'],
     lastmod: '2026-08-08'
   },
   {
@@ -146,7 +146,7 @@ const products = [
       { q: 'Does 3thousand30 store my documents?', a: 'No. The selected AI provider receives the translation request; 3thousand30 does not add another cloud-storage layer.' }
     ],
     relatedProducts: ['BGT', 'BTP', 'BMP'],
-    relatedUseCases: ['publish-content-in-different-languages', 'translate-a-book-for-new-markets'],
+    relatedUseCases: ['translate-multiple-documents-with-ai', 'publish-content-in-different-languages', 'translate-a-book-for-new-markets'],
     lastmod: '2026-08-08'
   },
   {
@@ -183,7 +183,7 @@ const products = [
       { q: 'Is it fully local?', a: 'Yes. Folder data and operations stay on the machine.' }
     ],
     relatedProducts: ['BCI', 'BRI', 'BEI'],
-    relatedUseCases: ['organise-and-prepare-a-working-file-collection'],
+    relatedUseCases: ['find-exact-duplicate-files-by-hash', 'organise-and-prepare-a-working-file-collection'],
     lastmod: '2026-08-08'
   },
   {
@@ -220,7 +220,7 @@ const products = [
       { q: 'Does it upload images?', a: 'No. Processing is local.' }
     ],
     relatedProducts: ['BGI', 'BRI', 'BTP'],
-    relatedUseCases: ['enhance-images-for-printing', 'create-a-photobook-with-ai-for-gifting', 'create-posters-to-print-or-sell'],
+    relatedUseCases: ['upscale-a-folder-of-images-offline', 'enhance-images-for-printing', 'create-a-photobook-with-ai-for-gifting', 'create-posters-to-print-or-sell'],
     lastmod: '2026-08-08'
   },
   {
@@ -257,7 +257,7 @@ const products = [
       { q: 'Does it need internet access?', a: 'No. Resizing is local.' }
     ],
     relatedProducts: ['BGI', 'BCI', 'BWI'],
-    relatedUseCases: ['resize-images-for-different-social-platforms', 'mass-create-social-media-content', 'batch-create-images-for-social-media'],
+    relatedUseCases: ['resize-hundreds-of-images-at-once', 'batch-crop-product-images-into-squares', 'resize-images-for-different-social-platforms', 'mass-create-social-media-content', 'batch-create-images-for-social-media'],
     lastmod: '2026-08-08'
   },
   {
@@ -294,7 +294,7 @@ const products = [
       { q: 'Are images uploaded?', a: 'No. Watermarking is local.' }
     ],
     relatedProducts: ['BGI', 'BRI', 'BCI'],
-    relatedUseCases: ['add-watermarks-before-sharing-images', 'add-copyright-information-to-images', 'mass-create-social-media-content'],
+    relatedUseCases: ['add-a-logo-watermark-to-a-folder-of-images', 'add-watermarks-before-sharing-images', 'add-copyright-information-to-images', 'mass-create-social-media-content'],
     lastmod: '2026-08-08'
   },
   {
@@ -366,7 +366,7 @@ const products = [
       { q: 'Are PDFs uploaded?', a: 'No. The merge runs locally.' }
     ],
     relatedProducts: ['BSP', 'BTP', 'BT'],
-    relatedUseCases: ['merge-pdfs-without-using-the-internet', 'create-a-poetry-book', 'translate-a-book-for-new-markets'],
+    relatedUseCases: ['combine-markdown-chapters-into-one-book-pdf', 'merge-pdfs-without-using-the-internet', 'create-a-poetry-book', 'translate-a-book-for-new-markets'],
     lastmod: '2026-08-08'
   },
   {
@@ -401,7 +401,7 @@ const products = [
       { q: 'Does splitting use the cloud?', a: 'No. The workflow is local.' }
     ],
     relatedProducts: ['BMP', 'BTP', 'BFO'],
-    relatedUseCases: ['translate-a-book-for-new-markets', 'create-short-stories-for-teaching'],
+    relatedUseCases: ['split-multiple-pdfs-into-separate-pages', 'translate-a-book-for-new-markets', 'create-short-stories-for-teaching'],
     lastmod: '2026-08-08'
   },
   {
@@ -441,7 +441,7 @@ const products = [
       { q: 'Does it need an AI service?', a: 'No. PDF conversion is local and does not require an AI provider.' }
     ],
     relatedProducts: ['BMP', 'BSP', 'BGT'],
-    relatedUseCases: ['batch-create-pdfs-from-text', 'create-a-colouring-book-for-children', 'create-a-poetry-book', 'create-short-stories-for-teaching'],
+    relatedUseCases: ['convert-markdown-files-to-pdf-in-bulk', 'combine-markdown-chapters-into-one-book-pdf', 'batch-create-pdfs-from-text', 'create-a-colouring-book-for-children', 'create-a-poetry-book', 'create-short-stories-for-teaching'],
     lastmod: '2026-08-08'
   },
   {

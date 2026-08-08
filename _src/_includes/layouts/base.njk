@@ -34,25 +34,49 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": {{ (site.url + product.url + "#webpage") | json | safe }},
+        "url": {{ (site.url + product.url) | json | safe }},
+        "name": {{ product.seoTitle | json | safe }},
+        "description": {{ product.description | json | safe }},
+        "breadcrumb": { "@id": {{ (site.url + product.url + "#breadcrumb") | json | safe }} },
+        "mainEntity": { "@id": {{ (site.url + product.url + "#software") | json | safe }} }
+      },
+      {
         "@type": "SoftwareApplication",
+        "@id": {{ (site.url + product.url + "#software") | json | safe }},
         "name": {{ product.name | json | safe }},
         "description": {{ product.description | json | safe }},
         "url": {{ (site.url + product.url) | json | safe }},
+        "mainEntityOfPage": { "@id": {{ (site.url + product.url + "#webpage") | json | safe }} },
         "image": {{ (site.url + product.logo) | json | safe }},
+        "screenshot": [{% for screenshot in product.screenshotItems %}{{ (site.url + screenshot.src) | json | safe }}{% if not loop.last %},{% endif %}{% endfor %}],
         "applicationCategory": {% if product.type == "game" %}"GameApplication"{% else %}"UtilitiesApplication"{% endif %},
         "operatingSystem": "Windows",
+        "isAccessibleForFree": false,
+        "installUrl": {{ product.storeUrl | json | safe }},
         "downloadUrl": {{ product.storeUrl | json | safe }},
+        "sameAs": [{{ product.storeUrl | json | safe }}{% if product.docsUrl %}, {{ product.docsUrl | json | safe }}{% endif %}],
         "offers": {
           "@type": "Offer",
           "price": {{ product.price.current | json | safe }},
           "priceCurrency": {{ product.price.currency | json | safe }},
           "availability": "https://schema.org/InStock",
-          "url": {{ product.storeUrl | json | safe }}
+          "url": {{ product.storeUrl | json | safe }},
+          "seller": { "@id": "https://3thousand30.com/#organization" }
         },
-        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+        "publisher": { "@id": "https://3thousand30.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://3thousand30.com/#organization",
+        "name": "3thousand30",
+        "url": "https://3thousand30.com/",
+        "logo": { "@type": "ImageObject", "url": "https://3thousand30.com/3030-300x300.png" }
       },
       {
         "@type": "BreadcrumbList",
+        "@id": {{ (site.url + product.url + "#breadcrumb") | json | safe }},
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
           { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },

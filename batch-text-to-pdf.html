@@ -34,25 +34,49 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://3thousand30.com/batch-text-to-pdf.html#webpage",
+        "url": "https://3thousand30.com/batch-text-to-pdf.html",
+        "name": "Batch Text to PDF — Batch PDF Creator for Windows | 3thousand30",
+        "description": "A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.",
+        "breadcrumb": { "@id": "https://3thousand30.com/batch-text-to-pdf.html#breadcrumb" },
+        "mainEntity": { "@id": "https://3thousand30.com/batch-text-to-pdf.html#software" }
+      },
+      {
         "@type": "SoftwareApplication",
+        "@id": "https://3thousand30.com/batch-text-to-pdf.html#software",
         "name": "Batch Text to PDF",
         "description": "A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.",
         "url": "https://3thousand30.com/batch-text-to-pdf.html",
+        "mainEntityOfPage": { "@id": "https://3thousand30.com/batch-text-to-pdf.html#webpage" },
         "image": "https://3thousand30.com/Logos/BTP.png",
+        "screenshot": ["https://3thousand30.com/screenshots/btp/01-mixed-source-batch.png","https://3thousand30.com/screenshots/btp/02-custom-page-size.png","https://3thousand30.com/screenshots/btp/03-auto-pair-images.png","https://3thousand30.com/screenshots/btp/04-combined-document.png","https://3thousand30.com/screenshots/btp/05-completed-conversion.png","https://3thousand30.com/screenshots/btp/06-local-processing.png"],
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows",
+        "isAccessibleForFree": false,
+        "installUrl": "https://apps.microsoft.com/detail/9NS1L0DK0FQL",
         "downloadUrl": "https://apps.microsoft.com/detail/9NS1L0DK0FQL",
+        "sameAs": ["https://apps.microsoft.com/detail/9NS1L0DK0FQL", "https://3thousand30.github.io/batchtexttopdf-docs/"],
         "offers": {
           "@type": "Offer",
           "price": "3.74",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://apps.microsoft.com/detail/9NS1L0DK0FQL"
+          "url": "https://apps.microsoft.com/detail/9NS1L0DK0FQL",
+          "seller": { "@id": "https://3thousand30.com/#organization" }
         },
-        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+        "publisher": { "@id": "https://3thousand30.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://3thousand30.com/#organization",
+        "name": "3thousand30",
+        "url": "https://3thousand30.com/",
+        "logo": { "@type": "ImageObject", "url": "https://3thousand30.com/3030-300x300.png" }
       },
       {
         "@type": "BreadcrumbList",
+        "@id": "https://3thousand30.com/batch-text-to-pdf.html#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
           { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
@@ -297,10 +321,42 @@
   </div>
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="btp" data-search="Batch-Create PDFs From Text Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document. PDF &amp; file workflows BTP">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="btp pdf-tools" data-search="Convert Markdown Files to PDF in Bulk Turn a folder of Markdown documents into consistently sized PDFs on Windows without converting files one by one or uploading the source text. PDF &amp; file workflows BTP">
+  <div class="card-address">
+    <span>workflow://UC-22</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
+  </div>
+  <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
+  <h3 class="text-base font-normal leading-7 text-white">Convert Markdown Files to PDF in Bulk</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Turn a folder of Markdown documents into consistently sized PDFs on Windows without converting files one by one or uploading the source text.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BTP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/convert-markdown-files-to-pdf-in-bulk.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Convert Markdown Files to PDF in Bulk">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="btp bmp pdf-tools" data-search="Combine Markdown Chapters Into One Book PDF Turn an ordered folder of Markdown chapters and optional illustrations into one locally created, page-numbered book PDF. Books &amp; publishing BTP BMP">
+  <div class="card-address">
+    <span>workflow://UC-30</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
+  </div>
+  <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
+  <h3 class="text-base font-normal leading-7 text-white">Combine Markdown Chapters Into One Book PDF</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Turn an ordered folder of Markdown chapters and optional illustrations into one locally created, page-numbered book PDF.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BTP</span><span class="tag">BMP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/combine-markdown-chapters-into-one-book-pdf.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Combine Markdown Chapters Into One Book PDF">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="btp pdf-tools" data-search="Batch-Create PDFs From Text Convert a folder of Markdown, text, DOCX, or images into separate PDFs or one ordered document. PDF &amp; file workflows BTP">
   <div class="card-address">
     <span>workflow://UC-20</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
   <h3 class="text-base font-normal leading-7 text-white">Batch-Create PDFs From Text</h3>
@@ -313,10 +369,10 @@
   </div>
 </article>
 
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei btp" data-search="Create a Colouring Book for Children Develop a safe, coherent line-art theme and turn the selected pages into a printable book. Books &amp; publishing BGI BEI BTP">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgi bei btp pdf-tools image-tools" data-search="Create a Colouring Book for Children Develop a safe, coherent line-art theme and turn the selected pages into a printable book. Books &amp; publishing BGI BEI BTP">
   <div class="card-address">
     <span>workflow://UC-4</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
   <h3 class="text-base font-normal leading-7 text-white">Create a Colouring Book for Children</h3>
@@ -329,10 +385,10 @@
   </div>
 </article>
 
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt bgi btp bmp" data-search="Create a Poetry Book to Publish or Sell Develop, curate, revise, and assemble a coherent poetry collection rather than publishing a raw generation dump. Books &amp; publishing BGT BGI BTP BMP">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt bgi btp bmp pdf-tools" data-search="Create a Poetry Book to Publish or Sell Develop, curate, revise, and assemble a coherent poetry collection rather than publishing a raw generation dump. Books &amp; publishing BGT BGI BTP BMP">
   <div class="card-address">
     <span>workflow://UC-7</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
   <h3 class="text-base font-normal leading-7 text-white">Create a Poetry Book to Publish or Sell</h3>
@@ -345,10 +401,10 @@
   </div>
 </article>
 
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt bgi btp bmp bsp" data-search="Create Short Stories for Teaching Create a themed set of age-appropriate stories and illustrations, then turn them into classroom or home-learning PDFs. Books &amp; publishing BGT BGI BTP BMP BSP">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="books" data-categories="bgt bgi btp bmp bsp pdf-tools" data-search="Create Short Stories for Teaching Create a themed set of age-appropriate stories and illustrations, then turn them into classroom or home-learning PDFs. Books &amp; publishing BGT BGI BTP BMP BSP">
   <div class="card-address">
     <span>workflow://UC-6</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">Books &amp; publishing</p>
   <h3 class="text-base font-normal leading-7 text-white">Create Short Stories for Teaching</h3>

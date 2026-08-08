@@ -4,7 +4,9 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const products = require(path.join(root, '_src', '_data', 'products.js'));
 const useCases = require(path.join(root, '_src', '_data', 'useCases.js'));
+const site = require(path.join(root, '_src', '_data', 'site.js'));
 const failures = [];
+let softwareSchemaCount = 0;
 
 // Canonical display names from the Microsoft Store publisher catalog.
 const officialStoreTitles = new Map([
@@ -21,6 +23,26 @@ const officialStoreTitles = new Map([
   ['9NS1L0DK0FQL', 'Batch Text to PDF'],
   ['9MW7722B1026', 'Key Rush']
 ]);
+
+const highIntentUseCaseSlugs = [
+  'convert-markdown-files-to-pdf-in-bulk',
+  'resize-hundreds-of-images-at-once',
+  'translate-multiple-documents-with-ai',
+  'generate-product-descriptions-from-csv-with-ai',
+  'split-multiple-pdfs-into-separate-pages',
+  'add-a-logo-watermark-to-a-folder-of-images',
+  'upscale-a-folder-of-images-offline',
+  'find-exact-duplicate-files-by-hash',
+  'combine-markdown-chapters-into-one-book-pdf',
+  'batch-crop-product-images-into-squares'
+];
+
+if (JSON.stringify(site.priorityUseCaseSlugs) !== JSON.stringify(highIntentUseCaseSlugs)) {
+  fail('Use-case directory priority does not match the approved high-intent set.');
+}
+for (const slug of site.featuredUseCaseSlugs) {
+  if (!highIntentUseCaseSlugs.includes(slug)) fail(`Homepage features a non-priority use case: ${slug}.`);
+}
 
 function fail(message) {
   failures.push(message);
@@ -57,6 +79,47 @@ function localTargetExists(url, sourceFile) {
   return fs.existsSync(resolved);
 }
 
+function structuredDataNodes(html) {
+  return Array.from(html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)).flatMap((match) => {
+    try {
+      const document = JSON.parse(match[1]);
+      return document['@graph'] || [document];
+    } catch {
+      return [];
+    }
+  });
+}
+
+const productCodes = new Set(products.map((product) => product.code));
+const useCaseSlugs = new Set(useCases.map((useCase) => useCase.slug));
+const useCaseIds = new Set(useCases.map((useCase) => useCase.id));
+if (useCaseSlugs.size !== useCases.length) fail('Use cases: duplicate slug found.');
+if (useCaseIds.size !== useCases.length) fail('Use cases: duplicate ID found.');
+
+for (const useCase of useCases) {
+  for (const code of useCase.products) {
+    if (!productCodes.has(code)) fail(`${useCase.slug}: unknown product code ${code}.`);
+  }
+  for (const relatedSlug of useCase.relatedUseCases) {
+    if (!useCaseSlugs.has(relatedSlug)) fail(`${useCase.slug}: unknown related use case ${relatedSlug}.`);
+    if (relatedSlug === useCase.slug) fail(`${useCase.slug}: use case links to itself.`);
+  }
+}
+
+for (const slug of highIntentUseCaseSlugs) {
+  const useCase = useCases.find((item) => item.slug === slug);
+  if (!useCase) {
+    fail(`High-intent use case missing: ${slug}.`);
+    continue;
+  }
+  if (useCase.steps.length < 5) fail(`${slug}: needs at least five distinct workflow steps.`);
+  if (useCase.inputs.length < 4) fail(`${slug}: needs at least four concrete inputs.`);
+  if (useCase.review.length < 4) fail(`${slug}: needs at least four human-review checks.`);
+  if (useCase.faq.length < 2) fail(`${slug}: needs at least two specific FAQ answers.`);
+  const editorialText = [useCase.summary, useCase.scenario, useCase.outcome, ...useCase.steps.map((step) => `${step.title} ${step.body}`), ...useCase.review, useCase.limitation, useCase.privacy].join(' ');
+  if (editorialText.trim().split(/\s+/).length < 250) fail(`${slug}: content is too thin for a standalone high-intent page.`);
+}
+
 for (const product of products) {
   const storeId = product.storeUrl.split('/').pop().split('?')[0].toUpperCase();
   const officialTitle = officialStoreTitles.get(storeId);
@@ -82,10 +145,34 @@ for (const product of products) {
     if (!productHtml.includes(`-${product.price.discountPercent}%`)) fail(`${product.code}: generated page is missing the Store discount.`);
     if (!productHtml.includes(`"priceCurrency": "${product.price.currency}"`)) fail(`${product.code}: generated SoftwareApplication offer is missing its price currency.`);
     if (/priceValidUntil/i.test(productHtml)) fail(`${product.code}: generated price offer must not publish an end date.`);
+
+    const nodes = structuredDataNodes(productHtml);
+    const software = nodes.find((node) => node['@type'] === 'SoftwareApplication');
+    const webPage = nodes.find((node) => node['@type'] === 'WebPage');
+    const organization = nodes.find((node) => node['@id'] === 'https://3thousand30.com/#organization');
+    const softwareId = `https://3thousand30.com${product.url}#software`;
+    if (!software) {
+      fail(`${product.code}: SoftwareApplication structured data is missing.`);
+    } else {
+      softwareSchemaCount += 1;
+      if (software['@id'] !== softwareId) fail(`${product.code}: SoftwareApplication @id is incorrect.`);
+      if (software.name !== product.name) fail(`${product.code}: SoftwareApplication name is incorrect.`);
+      if (software.operatingSystem !== 'Windows') fail(`${product.code}: SoftwareApplication operating system is missing.`);
+      if (software.installUrl !== product.storeUrl || software.downloadUrl !== product.storeUrl) fail(`${product.code}: SoftwareApplication Store identity is incomplete.`);
+      if (software.offers?.price !== product.price.current || software.offers?.priceCurrency !== product.price.currency) fail(`${product.code}: SoftwareApplication Offer price is incorrect.`);
+      if (software.offers?.seller?.['@id'] !== 'https://3thousand30.com/#organization') fail(`${product.code}: SoftwareApplication Offer seller is missing.`);
+      if (!Array.isArray(software.screenshot) || software.screenshot.length !== product.screenshotItems.length) fail(`${product.code}: SoftwareApplication screenshots do not match the product page.`);
+      if (software.aggregateRating && (Number(software.aggregateRating.ratingValue) <= 0 || Number(software.aggregateRating.ratingCount || software.aggregateRating.reviewCount) <= 0)) fail(`${product.code}: invalid or fabricated aggregate rating.`);
+    }
+    if (webPage?.mainEntity?.['@id'] !== softwareId) fail(`${product.code}: WebPage does not identify the software as its main entity.`);
+    if (!organization) fail(`${product.code}: publisher Organization entity is missing.`);
   }
 }
 if (officialStoreTitles.size !== products.length) {
   fail(`Canonical Store title map has ${officialStoreTitles.size} entries for ${products.length} products.`);
+}
+if (softwareSchemaCount !== products.length) {
+  fail(`SoftwareApplication schema found on ${softwareSchemaCount} of ${products.length} product pages.`);
 }
 
 const htmlFiles = walk(root).filter((file) => file.endsWith('.html'));
@@ -176,6 +263,7 @@ const productCards = fs.readFileSync(path.join(root, '_src', '_includes', 'compo
 if (productCards.includes('item.priceLabel')) fail('Product cards: legacy priceLabel presentation remains.');
 if (/card-status[^\n]*released|>released</i.test(productCards)) fail('Product cards: redundant released status remains.');
 if (!productCards.includes('item.price.current') || !productCards.includes('item.price.discountPercent')) fail('Product cards: current Store pricing is missing.');
+if (productCards.includes('field tested') || !productCards.includes('{{ item.steps.length }} steps')) fail('Use-case cards: objective workflow depth must replace unsupported status claims.');
 if (!productCards.includes('<span class="card-license"><i>//</i> buy once</span>')) {
   fail('Product cards: shared buy-once label is missing.');
 }
@@ -199,4 +287,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Site checks passed: ${htmlFiles.length} HTML pages, ${products.length} products, ${useCases.length} use cases, ${sitemapUrls.length} sitemap URLs.`);
+console.log(`Site checks passed: ${htmlFiles.length} HTML pages, ${products.length} products with SoftwareApplication + Offer schema, ${useCases.length} use cases, ${sitemapUrls.length} sitemap URLs.`);

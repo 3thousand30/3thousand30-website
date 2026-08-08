@@ -34,25 +34,49 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://3thousand30.com/key-rush.html#webpage",
+        "url": "https://3thousand30.com/key-rush.html",
+        "name": "Key Rush — Offline Typing Game for Windows | 3thousand30",
+        "description": "Offline-first typing action with story missions, an accelerating endless lane, no-fail zen practice, local top-10 boards, and no account or telemetry.",
+        "breadcrumb": { "@id": "https://3thousand30.com/key-rush.html#breadcrumb" },
+        "mainEntity": { "@id": "https://3thousand30.com/key-rush.html#software" }
+      },
+      {
         "@type": "SoftwareApplication",
+        "@id": "https://3thousand30.com/key-rush.html#software",
         "name": "Key Rush",
         "description": "Offline-first typing action with story missions, an accelerating endless lane, no-fail zen practice, local top-10 boards, and no account or telemetry.",
         "url": "https://3thousand30.com/key-rush.html",
+        "mainEntityOfPage": { "@id": "https://3thousand30.com/key-rush.html#webpage" },
         "image": "https://3thousand30.com/Logos/KR.png",
+        "screenshot": ["https://3thousand30.com/screenshots/kr/02-home-menu.png","https://3thousand30.com/screenshots/kr/03-chapter-select.png","https://3thousand30.com/screenshots/kr/08-story-gameplay.png","https://3thousand30.com/screenshots/kr/11-endless-life-bonus.png","https://3thousand30.com/screenshots/kr/09-zen-gameplay.png","https://3thousand30.com/screenshots/kr/04-leaderboard.png"],
         "applicationCategory": "GameApplication",
         "operatingSystem": "Windows",
+        "isAccessibleForFree": false,
+        "installUrl": "https://apps.microsoft.com/detail/9MW7722B1026",
         "downloadUrl": "https://apps.microsoft.com/detail/9MW7722B1026",
+        "sameAs": ["https://apps.microsoft.com/detail/9MW7722B1026", "https://3thousand30.github.io/keyrush-docs/"],
         "offers": {
           "@type": "Offer",
           "price": "3.74",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://apps.microsoft.com/detail/9MW7722B1026"
+          "url": "https://apps.microsoft.com/detail/9MW7722B1026",
+          "seller": { "@id": "https://3thousand30.com/#organization" }
         },
-        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+        "publisher": { "@id": "https://3thousand30.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://3thousand30.com/#organization",
+        "name": "3thousand30",
+        "url": "https://3thousand30.com/",
+        "logo": { "@type": "ImageObject", "url": "https://3thousand30.com/3030-300x300.png" }
       },
       {
         "@type": "BreadcrumbList",
+        "@id": "https://3thousand30.com/key-rush.html#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
           { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },

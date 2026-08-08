@@ -1,11 +1,15 @@
 function useCase(data) {
+  const productGroups = [];
+  if (data.products.some((code) => ['BTP', 'BMP', 'BSP'].includes(code))) productGroups.push('pdf-tools');
+  if (data.products.some((code) => ['BRI', 'BWI', 'BCI', 'BEI'].includes(code))) productGroups.push('image-tools');
+
   return Object.assign({
     status: 'published',
     lastmod: '2026-08-07',
     proofLinks: [],
     relatedUseCases: [],
     faq: []
-  }, data, { url: `/use-cases/${data.slug}.html` });
+  }, data, { productGroups, url: `/use-cases/${data.slug}.html` });
 }
 
 module.exports = [
@@ -66,7 +70,8 @@ module.exports = [
     limitation: 'Batch creation is not batch autopublishing. Human review is necessary for accuracy, taste, platform fit, and brand safety.',
     privacy: 'Text and image generation requests go to the providers you choose. Resizing, watermarking, file storage, and review remain local.',
     proofLinks: [{ label: 'Proyogi Baba on X', url: 'https://x.com/ProyogiBaba' }],
-    relatedUseCases: ['batch-create-images-for-social-media', 'resize-images-for-different-social-platforms', 'add-watermarks-before-sharing-images'],
+    relatedUseCases: ['generate-product-descriptions-from-csv-with-ai', 'batch-create-images-for-social-media', 'resize-images-for-different-social-platforms'],
+    lastmod: '2026-08-08',
     faq: [
       { q: 'Should I publish everything the batch creates?', a: 'No. Generate for range, then reject aggressively. Volume is useful only when review prevents it from becoming repetitive noise.' },
       { q: 'Is this only for creators?', a: 'No. The same structure works for ecommerce launches, product education, events, and small-business campaigns.' }
@@ -301,7 +306,8 @@ module.exports = [
     review: ['Is every translation tied to one approved source version?', 'Are names and product terms consistent?', 'Did a qualified person review public-facing output?', 'Are language and locale labels correct?'],
     limitation: 'AI translation can miss context, idiom, legal meaning, and culturally sensitive nuance. High-stakes material requires qualified professional review.',
     privacy: 'Documents are sent to the AI provider selected in Batch Translate Text with any AI. The translated files are saved locally and are not stored by a separate 3thousand30 service.',
-    relatedUseCases: ['translate-a-book-for-new-markets', 'batch-create-pdfs-from-text'],
+    relatedUseCases: ['translate-multiple-documents-with-ai', 'translate-a-book-for-new-markets', 'generate-product-descriptions-from-csv-with-ai'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Can I publish without a human reviewer?', a: 'For public work, that is risky. At minimum, have a fluent reviewer check meaning, terminology, tone, and formatting.' }]
   }),
   useCase({
@@ -327,7 +333,8 @@ module.exports = [
     review: ['Are translation rights clear?', 'Is terminology consistent across the whole book?', 'Did a fluent editor review voice and cultural context?', 'Was the final layout proofed as a separate edition?'],
     limitation: 'A machine-translated manuscript is not a publication-ready book. Rights, literary editing, cultural review, and edition-specific layout remain human responsibilities.',
     privacy: 'Book text goes to the provider selected in Batch Translate Text with any AI. PDF conversion, splitting, merging, and final stored files remain local.',
-    relatedUseCases: ['publish-content-in-different-languages', 'create-a-poetry-book', 'merge-pdfs-without-using-the-internet'],
+    relatedUseCases: ['translate-multiple-documents-with-ai', 'combine-markdown-chapters-into-one-book-pdf', 'publish-content-in-different-languages'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Why not translate the final PDF and publish it directly?', a: 'Book translation changes text length, line breaks, page count, and sometimes structure. Rebuilding and proofing the target-language edition gives you control over those changes.' }]
   }),
   useCase({
@@ -352,7 +359,8 @@ module.exports = [
     review: ['Are clean masters untouched?', 'Is the mark visible on both light and dark images?', 'Does it avoid covering essential detail?', 'Is only the proof folder being shared?'],
     limitation: 'A visible watermark can discourage casual reuse, but it cannot guarantee that an image will not be copied, cropped, edited, or recreated.',
     privacy: 'Watermarking is fully local. Source images and logo assets are not uploaded.',
-    relatedUseCases: ['add-copyright-information-to-images', 'mass-create-social-media-content', 'create-posters-to-print-or-sell'],
+    relatedUseCases: ['add-a-logo-watermark-to-a-folder-of-images', 'add-copyright-information-to-images', 'mass-create-social-media-content'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Should the watermark cover the centre?', a: 'For review proofs, a stronger central or tiled mark may be appropriate. For branded previews, a lighter edge placement may be less distracting. Test against the actual set.' }]
   }),
   useCase({
@@ -402,7 +410,8 @@ module.exports = [
     review: ['Was the original folder preserved?', 'Were different image types included in the test?', 'Is the quality acceptable at the real display size?', 'Is the size reduction recorded?'],
     limitation: 'Lossy compression removes information. Repeated compression can compound artifacts, and the best setting depends on image content and intended use.',
     privacy: 'Compression and comparison happen locally; the images do not need to leave the PC.',
-    relatedUseCases: ['resize-images-for-different-social-platforms', 'organise-and-prepare-a-working-file-collection', 'create-posters-to-print-or-sell'],
+    relatedUseCases: ['resize-hundreds-of-images-at-once', 'organise-and-prepare-a-working-file-collection', 'batch-crop-product-images-into-squares'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Should I compress before or after resizing?', a: 'Usually resize first, then compress the final delivery dimensions. That avoids carrying unnecessary pixels and lets you judge the actual published result.' }]
   }),
   useCase({
@@ -427,7 +436,8 @@ module.exports = [
     review: ['Are target pixel dimensions based on the printer specification?', 'Were only selected images processed?', 'Were artifacts checked at full resolution?', 'Was at least one physical proof reviewed?'],
     limitation: 'Enhancement can enlarge and improve presentation, but it cannot recover detail that was never present or fix bad anatomy, composition, or heavy compression.',
     privacy: 'The enhancement workflow is fully local.',
-    relatedUseCases: ['create-a-photobook-with-ai-for-gifting', 'create-posters-to-print-or-sell', 'create-a-colouring-book-for-children'],
+    relatedUseCases: ['upscale-a-folder-of-images-offline', 'create-a-photobook-with-ai-for-gifting', 'create-posters-to-print-or-sell'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Is setting 300 DPI enough?', a: 'No. The image also needs enough pixels for the physical dimensions. DPI metadata without sufficient pixel dimensions does not add real detail.' }]
   }),
   useCase({
@@ -452,7 +462,8 @@ module.exports = [
     review: ['Were current platform requirements verified?', 'Did every output come from the master set?', 'Are important subjects preserved in the crop?', 'Are platform folders unambiguous?'],
     limitation: 'One composition cannot always be adapted cleanly to every aspect ratio. Some images need manual crops or a separately composed version.',
     privacy: 'Resizing happens locally. Platform upload occurs only when you choose to publish.',
-    relatedUseCases: ['mass-create-social-media-content', 'batch-create-images-for-social-media', 'compress-images-to-save-storage-space'],
+    relatedUseCases: ['resize-hundreds-of-images-at-once', 'batch-crop-product-images-into-squares', 'mass-create-social-media-content'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Can I use one preset forever?', a: 'No. Platform recommendations and placements change, so verify current requirements when a campaign matters.' }]
   }),
   useCase({
@@ -477,7 +488,8 @@ module.exports = [
     review: ['Does the folder contain only intended PDFs?', 'Do filenames sort into the exact required order?', 'Are page numbers necessary and correct?', 'Were the first, last, and transition pages checked?'],
     limitation: 'The app combines PDFs; it does not repair corrupted documents or decide the semantic order for you. Filename preparation is part of the workflow.',
     privacy: 'Merging runs locally and does not upload the PDFs.',
-    relatedUseCases: ['batch-create-pdfs-from-text', 'translate-a-book-for-new-markets', 'create-a-poetry-book'],
+    relatedUseCases: ['combine-markdown-chapters-into-one-book-pdf', 'split-multiple-pdfs-into-separate-pages', 'batch-create-pdfs-from-text'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Why did my files merge in the wrong order?', a: 'The merge follows alphabetical filenames. Use consistent zero-padded numeric prefixes to make the intended order explicit.' }]
   }),
   useCase({
@@ -503,7 +515,8 @@ module.exports = [
     review: ['Are filenames correct for combined order?', 'Do page size and margins match the use?', 'Are paired images attached to the right text?', 'Were skipped and renamed files reviewed?'],
     limitation: 'DOCX conversion extracts paragraph text but does not reproduce Word styling, page layout, or embedded images. Animated GIFs become static image pages, and existing PDFs are skipped.',
     privacy: 'Core conversion is local and requires no AI service, upload, account, analytics, or telemetry.',
-    relatedUseCases: ['merge-pdfs-without-using-the-internet', 'create-short-stories-for-teaching', 'create-a-poetry-book'],
+    relatedUseCases: ['convert-markdown-files-to-pdf-in-bulk', 'combine-markdown-chapters-into-one-book-pdf', 'merge-pdfs-without-using-the-internet'],
+    lastmod: '2026-08-08',
     faq: [
       { q: 'Can it preserve Markdown formatting?', a: 'Yes. It renders supported Markdown formatting and relative local images.' },
       { q: 'Can it combine the whole folder?', a: 'Yes. Combined mode processes supported source files in filename order.' }
@@ -532,7 +545,308 @@ module.exports = [
     review: ['Is there a backup or safe working copy?', 'Were duplicate matches inspected before removal decisions?', 'Does the preview respect project-specific folders?', 'Are masters separated from derived outputs?'],
     limitation: 'Hash matching identifies exact duplicates, not the “best” edit. Organisation rules cannot infer every project convention, so preview and backup remain important.',
     privacy: 'Scanning, hashing, moving, compression, and enhancement run locally.',
-    relatedUseCases: ['compress-images-to-save-storage-space', 'enhance-images-for-printing', 'merge-pdfs-without-using-the-internet'],
+    relatedUseCases: ['find-exact-duplicate-files-by-hash', 'compress-images-to-save-storage-space', 'enhance-images-for-printing'],
+    lastmod: '2026-08-08',
     faq: [{ q: 'Does duplicate detection decide which copy to delete?', a: 'It identifies exact matches. You still decide which path or copy belongs in the final structure.' }]
+  }),
+  useCase({
+    id: 22,
+    slug: 'convert-markdown-files-to-pdf-in-bulk',
+    title: 'Convert Markdown Files to PDF in Bulk',
+    shortTitle: 'Batch Markdown to PDF',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Turn a folder of Markdown documents into consistently sized PDFs on Windows without converting files one by one or uploading the source text.',
+    scenario: 'A documentation set, lesson pack, article archive, or collection of AI-assisted drafts exists as separate Markdown files. Each file needs its own readable PDF, using the same page size and margins.',
+    outcome: 'A local output folder containing one PDF for every supported Markdown source, with formatting and relative local images checked against the originals.',
+    products: ['BTP'],
+    inputs: ['Markdown files collected in one working folder', 'Any relative local images referenced by the Markdown', 'A page size and margin system', 'A separate output folder'],
+    steps: [
+      { title: 'Prepare a controlled source folder', body: 'Copy only the Markdown documents intended for this run into one working folder. Keep referenced local images at the relative paths expected by the source files and remove abandoned drafts from the batch.' },
+      { title: 'Check representative Markdown', body: 'Open a simple file and a complex file containing headings, lists, emphasis, links, code, or images. Correct broken relative image paths and malformed Markdown before conversion.' },
+      { title: 'Choose one PDF per source', body: 'In Batch Text to PDF, use separate-output mode so each Markdown file produces its own PDF. Choose one page preset or exact custom dimensions and margins for the complete set.' },
+      { title: 'Run the folder conversion locally', body: 'Select the source and output folders, start the batch, and inspect the converted, skipped, renamed, and failed counts instead of assuming every source succeeded.' },
+      { title: 'Review formatting and page breaks', body: 'Open PDFs from the beginning, middle, and end of the batch. Check headings, lists, local images, multilingual text, emoji, long code lines, and awkward page breaks.' },
+      { title: 'Fix sources and rerun', body: 'Correct the Markdown or shared page setup rather than manually patching every PDF. Keep approved outputs separate when using skip-existing behavior during a partial rerun.' }
+    ],
+    review: ['Did every intended Markdown file produce a PDF?', 'Are relative local images present and attached to the right document?', 'Are page dimensions and margins consistent?', 'Were failed, skipped, or renamed outputs investigated?'],
+    limitation: 'Markdown rendering supports practical document formatting, but it is not a full web browser or an arbitrary CSS publishing engine. Complex layouts may need a dedicated layout tool.',
+    privacy: 'Markdown parsing, image loading, and PDF creation run locally. No AI provider, upload, account, analytics, or telemetry is required.',
+    relatedUseCases: ['batch-create-pdfs-from-text', 'combine-markdown-chapters-into-one-book-pdf', 'merge-pdfs-without-using-the-internet'],
+    faq: [
+      { q: 'Can the app convert the whole folder at once?', a: 'Yes. Separate-output mode creates one PDF for each supported source in the selected folder.' },
+      { q: 'Do local Markdown images work?', a: 'Supported relative local images can be rendered when their paths remain valid from the Markdown source.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 23,
+    slug: 'resize-hundreds-of-images-at-once',
+    title: 'Resize Hundreds of Images at Once',
+    shortTitle: 'Resize hundreds of images',
+    category: 'social',
+    categoryLabel: 'Social & image production',
+    summary: 'Resize a large image folder on Windows with one repeatable dimension and crop policy while preserving a separate master set.',
+    scenario: 'A camera export, generated-image folder, event collection, or product-photo set contains hundreds of oversized files that all need the same practical output dimensions.',
+    outcome: 'A separate, consistently sized output folder produced from protected masters, with sensitive crops reviewed rather than trusted blindly.',
+    products: ['BRI'],
+    inputs: ['A protected master-image folder', 'Exact target dimensions or a suitable preset', 'A crop or aspect-ratio policy', 'A separate destination folder'],
+    steps: [
+      { title: 'Define the actual destination', body: 'Choose dimensions for the website, catalogue, email, display, or archive that will use the images. Do not resize simply because the originals feel large.' },
+      { title: 'Protect the masters', body: 'Keep the original folder unchanged and write resized copies elsewhere. Repeatedly resizing already reduced files compounds quality loss and makes future variants harder.' },
+      { title: 'Test the difficult examples first', body: 'Preview portrait, landscape, panoramic, text-heavy, face, and edge-positioned subjects in Batch Resize Image. One easy photograph is not a meaningful crop test.' },
+      { title: 'Choose one understandable rule', body: 'Set the target size and crop or aspect-ratio handling for the batch. If the folder contains incompatible compositions, split it into smaller groups rather than forcing one rule onto everything.' },
+      { title: 'Run the batch into a clean folder', body: 'Process the approved set and keep the output location clearly named with its dimensions or destination so nobody mistakes it for the master archive.' },
+      { title: 'Inspect a distributed sample', body: 'Check files from across the run, including the unusual aspect ratios. Confirm pixel dimensions and review whether faces, products, logos, or text were cut.' }
+    ],
+    review: ['Do the dimensions match the real destination?', 'Are originals untouched?', 'Were difficult aspect ratios previewed?', 'Are the output folder and naming unambiguous?'],
+    limitation: 'A batch resize rule cannot understand the important subject in every composition. Some files need a different crop or a manually prepared variant.',
+    privacy: 'Image reading, resizing, preview, and export happen locally without uploading the folder.',
+    relatedUseCases: ['batch-crop-product-images-into-squares', 'resize-images-for-different-social-platforms', 'compress-images-to-save-storage-space'],
+    faq: [
+      { q: 'Can one batch contain different aspect ratios?', a: 'Yes, but review the chosen handling carefully. Mixed portrait, landscape, and panoramic files may not all crop well under one rule.' },
+      { q: 'Should I resize the originals?', a: 'Keep the masters and create a separate resized output set so future sizes can always be produced from the best source.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 24,
+    slug: 'translate-multiple-documents-with-ai',
+    title: 'Translate Multiple Documents With AI',
+    shortTitle: 'Batch-translate documents',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Translate a folder of PDF, DOCX, TXT, or Markdown documents with a chosen AI provider and save every result locally for human review.',
+    scenario: 'A team has a set of guides, articles, lessons, or customer documents that must be translated consistently without opening, prompting, and saving each document separately.',
+    outcome: 'A locally saved translation set organised by target language, with terminology and high-risk passages reviewed against the sources.',
+    products: ['BT'],
+    inputs: ['Supported source documents', 'Confirmed source and target languages', 'A glossary for names and specialist terms', 'An AI provider key and model choice'],
+    steps: [
+      { title: 'Inventory the source set', body: 'Separate PDF, DOCX, TXT, and Markdown files that belong in the run. Remove obsolete copies and identify documents containing legal, medical, financial, or safety-critical wording that need qualified review.' },
+      { title: 'Prepare terminology rules', body: 'Write down product names, people, abbreviations, phrases that must remain unchanged, and preferred translations. Consistency cannot be recovered reliably after an uncontrolled batch.' },
+      { title: 'Configure your provider and model', body: 'In Batch Translate Text with any AI, choose the provider and model appropriate to the language pair and document sensitivity. Run a representative sample before the full folder.' },
+      { title: 'Choose the target languages', body: 'Set one or more targets and confirm how outputs will be named and separated. Keep each language easy to identify without opening the files.' },
+      { title: 'Run the batch and keep the sources', body: 'Translate the folder, monitor progress, and save results locally. Preserve the original documents beside—not inside—the translated output structure.' },
+      { title: 'Review meaning, not only fluency', body: 'Compare headings, numbers, names, instructions, links, warnings, and specialist terminology with the source. Natural-sounding text can still be materially wrong.' }
+    ],
+    review: ['Were obsolete or duplicate sources excluded?', 'Is terminology consistent across documents?', 'Are names, numbers, links, and warnings accurate?', 'Did a qualified person review high-risk content?'],
+    limitation: 'AI translation can omit, soften, invent, or misinterpret content. It is not a substitute for qualified translation when errors could cause legal, financial, medical, or safety consequences.',
+    privacy: 'Source content is sent to the external AI provider you select. Provider keys are encrypted locally, and translated files are saved on your PC rather than a 3thousand30 cloud.',
+    relatedUseCases: ['publish-content-in-different-languages', 'translate-a-book-for-new-markets', 'convert-markdown-files-to-pdf-in-bulk'],
+    faq: [
+      { q: 'Does translation run completely offline?', a: 'No. The app and saved files are local, but the document content selected for translation is sent to your chosen AI provider.' },
+      { q: 'Which source formats can be batched?', a: 'The workflow supports PDF, DOCX, TXT, and Markdown documents.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 25,
+    slug: 'generate-product-descriptions-from-csv-with-ai',
+    title: 'Generate Product Descriptions From a CSV With AI',
+    shortTitle: 'Bulk product descriptions',
+    category: 'social',
+    categoryLabel: 'Social & image production',
+    summary: 'Turn a structured product CSV into a reviewed batch of description drafts while preserving product facts and controlling the output format.',
+    scenario: 'A seller or small catalogue team has dozens of products with factual fields but inconsistent, missing, or repetitive descriptions that are being drafted one listing at a time.',
+    outcome: 'One locally saved draft per product in a repeatable format, ready for factual review and deliberate publication rather than automatic upload.',
+    products: ['BGT'],
+    inputs: ['A clean CSV with one row per product', 'Verified product facts and differentiators', 'A description structure and tone', 'Forbidden claims and marketplace constraints'],
+    steps: [
+      { title: 'Treat the CSV as the factual source', body: 'Create stable columns for product name, material, dimensions, intended use, included items, differentiators, and any mandatory wording. Leave unknown facts blank instead of asking the model to guess.' },
+      { title: 'Define one reusable output structure', body: 'Set the required title, short description, benefits, specifications, care notes, or other fields in Batch Generate Text with any AI. Match the structure to where the copy will actually be used.' },
+      { title: 'Set voice and claim boundaries', body: 'Use a persona or writing sample for tone, then explicitly prohibit invented certifications, guarantees, comparisons, sustainability claims, and unsupported performance statements.' },
+      { title: 'Preview varied product rows', body: 'Test a simple product, a complex product, and one with sparse data. Correct the CSV or template when the sample reveals missing facts or repetitive phrasing.' },
+      { title: 'Generate the complete batch', body: 'Run the approved topic list with the chosen provider and model. Save each draft locally using filenames that map back to a stable product identifier.' },
+      { title: 'Verify before publishing', body: 'Compare every factual claim with the source data. Remove generic filler, check marketplace rules, and edit descriptions that sound interchangeable across products.' }
+    ],
+    review: ['Can every factual statement be traced to the CSV or another approved source?', 'Are prohibited claims absent?', 'Does each file map to the correct product?', 'Were generic and repetitive drafts rewritten or rejected?'],
+    limitation: 'The model does not know whether catalogue facts are true and can invent persuasive-sounding details. This workflow creates drafts; it does not verify or publish listings.',
+    privacy: 'CSV row content and prompts are sent to the AI provider you choose. Provider keys are encrypted locally and finished Markdown or text files are saved to your PC.',
+    relatedUseCases: ['mass-create-social-media-content', 'publish-content-in-different-languages', 'organise-and-prepare-a-working-file-collection'],
+    faq: [
+      { q: 'Does the app upload descriptions to a marketplace?', a: 'No. It creates local text or Markdown drafts for review; publication remains a separate deliberate step.' },
+      { q: 'Is AI usage included in the app price?', a: 'No. You bring your own compatible provider key, choose the model, and pay that provider directly.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 26,
+    slug: 'split-multiple-pdfs-into-separate-pages',
+    title: 'Split Multiple PDFs Into Separate Pages',
+    shortTitle: 'Batch-split PDFs by page',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Turn every PDF in a Windows folder into predictably named single-page files without uploading the documents or opening them one by one.',
+    scenario: 'A scan archive, statement folder, worksheet pack, or exported report set contains multi-page PDFs that must become individual page files for review, routing, or a later workflow.',
+    outcome: 'A locally produced set of numbered single-page PDFs for every successfully processed source, with source-to-output counts verified.',
+    products: ['BSP'],
+    inputs: ['One PDF or a folder of PDF sources', 'A decision about nested subfolders', 'A separate output location', 'Expected page counts for representative files'],
+    steps: [
+      { title: 'Protect the source PDFs', body: 'Work from a copied or backed-up source folder and choose a separate destination. Splitting creates derived files; it should not make the originals harder to find.' },
+      { title: 'Choose file or folder mode', body: 'Use single-file mode for one document or folder mode for the complete batch. Include nested subfolders only when their PDFs genuinely belong in the same operation.' },
+      { title: 'Set pages per file to one', body: 'Configure Batch Split PDFs to create one output for every source page. Confirm the destination and automatic numbering before starting.' },
+      { title: 'Run the local split', body: 'Process the file or folder and review progress, completed files, skipped outputs, and any failures rather than treating a finished progress bar as proof.' },
+      { title: 'Reconcile page counts', body: 'For representative sources, compare the original page count with the number of outputs. Open the first, middle, and last extracted pages and verify orientation and content.' },
+      { title: 'Organise the derived pages', body: 'Keep outputs grouped or named so every page can be traced back to its original document before sharing, routing, or merging them elsewhere.' }
+    ],
+    review: ['Are the original PDFs preserved?', 'Did each source produce the expected number of pages?', 'Can every page be traced to its source?', 'Were skipped or failed files investigated?'],
+    limitation: 'Splitting preserves page boundaries; it does not understand semantic sections, rename pages by their contents, repair corrupted PDFs, or perform OCR.',
+    privacy: 'PDF reading, splitting, numbering, and output happen locally without a cloud upload.',
+    relatedUseCases: ['merge-pdfs-without-using-the-internet', 'combine-markdown-chapters-into-one-book-pdf', 'organise-and-prepare-a-working-file-collection'],
+    faq: [
+      { q: 'Can it split every PDF in a folder?', a: 'Yes. Folder mode processes the PDFs in the selected folder and can optionally include nested subfolders.' },
+      { q: 'Can it create chunks instead of single pages?', a: 'Yes. Set a larger pages-per-file value when the required output is a sequence of fixed-size chunks.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 27,
+    slug: 'add-a-logo-watermark-to-a-folder-of-images',
+    title: 'Add a Logo Watermark to a Folder of Images',
+    shortTitle: 'Batch logo watermarking',
+    category: 'social',
+    categoryLabel: 'Social & image production',
+    summary: 'Apply one consistently scaled and positioned logo to an image folder locally while retaining clean, untouched masters.',
+    scenario: 'A photographer, artist, seller, or small brand has a delivery folder that needs a visible logo before previews, samples, listings, or public sharing.',
+    outcome: 'A separate branded image set carrying one reviewed logo treatment, with placement checked across portrait and landscape files.',
+    products: ['BWI'],
+    inputs: ['A clean master-image folder', 'A suitable logo asset', 'Position, scale, and opacity rules', 'A separate branded-output folder'],
+    steps: [
+      { title: 'Keep an untouched master set', body: 'Copy or select the clean source folder and direct all marked files to a different destination. A watermark should never become the only surviving version of an image.' },
+      { title: 'Prepare the logo for the images', body: 'Choose a logo with enough contrast and clean edges at the intended display size. Inspect transparent areas and avoid a mark whose fine details collapse when reduced.' },
+      { title: 'Set a repeatable placement rule', body: 'In Batch Watermark Image, choose the position, scale, and opacity. Test both a light image and a dark image, plus portrait and landscape examples.' },
+      { title: 'Preview the visual exceptions', body: 'Check whether the mark covers faces, products, signatures, captions, or important edge detail. Split incompatible images into a second batch when one position cannot work.' },
+      { title: 'Export the branded folder locally', body: 'Run the approved setup into a clearly named output folder and retain the exact logo asset and settings needed to recreate the set.' },
+      { title: 'Inspect legibility and restraint', body: 'Review images from across the batch at normal viewing size. The logo should be visible enough for the purpose without overwhelming the work it identifies.' }
+    ],
+    review: ['Are the clean masters untouched?', 'Does the logo remain legible on light and dark images?', 'Were portrait and landscape placements checked?', 'Does the output folder clearly identify branded copies?'],
+    limitation: 'One placement does not suit every composition. A visible logo can communicate identity, but it cannot prevent copying or establish ownership by itself.',
+    privacy: 'Source images, the logo asset, previews, and exports stay on the Windows PC. No upload or account is required.',
+    relatedUseCases: ['add-watermarks-before-sharing-images', 'add-copyright-information-to-images', 'batch-create-images-for-social-media'],
+    faq: [
+      { q: 'Can I keep the original images clean?', a: 'Yes. Write the branded copies to a separate output folder and retain the master folder unchanged.' },
+      { q: 'Does adding a logo prevent image theft?', a: 'No. It is a visible identity or deterrent, not a complete rights-enforcement system.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 28,
+    slug: 'upscale-a-folder-of-images-offline',
+    title: 'Upscale a Folder of Images Offline',
+    shortTitle: 'Batch-upscale images offline',
+    category: 'social',
+    categoryLabel: 'Social & image production',
+    summary: 'Increase the pixel dimensions of a selected image folder locally, using controlled scaling and inspection instead of uploading files to an online enhancer.',
+    scenario: 'A selected folder of older, generated, or exported images is too small for the intended display or print size and needs one repeatable enlargement pass.',
+    outcome: 'A separate enlarged set at a justified scale, with sharpening and difficult details reviewed against the original files.',
+    products: ['BEI'],
+    inputs: ['A selected folder rather than an unreviewed archive', 'Required final pixel dimensions', 'The smallest scale that reaches the target', 'A separate enhanced-output folder'],
+    steps: [
+      { title: 'Calculate the real pixel target', body: 'Start from the final display or print dimensions. Do not confuse DPI metadata with actual image detail; determine how many pixels the intended use requires.' },
+      { title: 'Remove poor candidates first', body: 'Reject duplicates, severe compression, malformed details, missed focus, and images that are simply wrong. Enlargement makes some defects easier to see rather than fixing them.' },
+      { title: 'Choose the smallest sufficient scale', body: 'In Batch Enhance Image, select the lowest enlargement that reaches the target. A larger number is not automatically a better result.' },
+      { title: 'Test sharpening on difficult details', body: 'Preview faces, lettering, fine edges, gradients, and textured areas. Compare sharpening choices at full resolution and avoid halos or brittle edges.' },
+      { title: 'Run the selected folder locally', body: 'Write enhanced files to a new destination while retaining the sources. Keep the folder name or notes clear about the scale and settings used.' },
+      { title: 'Inspect outputs at actual size', body: 'Compare representative originals and outputs at 100% and at the final viewing size. Reject files where enlargement exaggerates artifacts or creates an artificial surface.' }
+    ],
+    review: ['Is the target based on required pixel dimensions?', 'Were weak source images rejected first?', 'Was the smallest sufficient scale used?', 'Were faces, text, edges, and gradients inspected?'],
+    limitation: 'Upscaling can enlarge and improve presentation, but it cannot recover detail that was never present or repair bad anatomy, composition, focus, or severe compression.',
+    privacy: 'Upscaling, sharpening, DPI settings, previews, and exports run locally without uploading the images.',
+    relatedUseCases: ['enhance-images-for-printing', 'create-posters-to-print-or-sell', 'create-a-photobook-with-ai-for-gifting'],
+    faq: [
+      { q: 'Does changing DPI create more image detail?', a: 'No. Real detail depends on pixel dimensions and source quality. DPI metadata describes intended physical density; it does not invent pixels.' },
+      { q: 'Should I upscale every image I generated?', a: 'No. Select the strongest candidates first so time and storage are not spent enlarging weak or defective files.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 29,
+    slug: 'find-exact-duplicate-files-by-hash',
+    title: 'Find Exact Duplicate Files by Hash',
+    shortTitle: 'Find exact duplicate files',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Identify byte-for-byte duplicate files on Windows even when their filenames differ, then review the matching paths before reorganising anything.',
+    scenario: 'A Downloads, project, photo, or publishing folder contains repeated copies named final, final-2, copy, or something unrelated, making filename-based cleanup unreliable.',
+    outcome: 'A reviewed set of exact hash matches with a deliberate decision about which location or filename should remain canonical.',
+    products: ['BFO'],
+    inputs: ['A clearly bounded folder to scan', 'A current backup or safe working copy', 'Rules for choosing the canonical path', 'Time to review duplicate groups'],
+    steps: [
+      { title: 'Set a safe scan boundary', body: 'Choose the project or collection that actually needs review instead of treating the entire drive as one cleanup problem. Verify that important data is backed up.' },
+      { title: 'Scan for exact matches', body: 'Use Batch File Organiser to calculate file hashes. Matching hashes identify identical file contents even when the filenames or folder locations differ.' },
+      { title: 'Review each duplicate group', body: 'Compare paths, names, dates, and project context. A duplicate in a backup or delivery folder may be intentional even when its contents are identical.' },
+      { title: 'Choose the canonical copy deliberately', body: 'Decide which location and filename belong in the working structure. Do not assume the newest, shortest-named, or first-listed copy is automatically correct.' },
+      { title: 'Preview the proposed operation', body: 'Inspect the complete plan before moving or reorganising files. Separate duplicate decisions from unrelated folder cleanup when that keeps the action easier to understand.' },
+      { title: 'Verify while undo context is clear', body: 'After applying an approved operation, open representative files and confirm the expected paths. Use undo promptly if the result does not match the preview.' }
+    ],
+    review: ['Was the scan scope intentionally bounded?', 'Is there a backup or safe working copy?', 'Were intentional backup and delivery duplicates recognised?', 'Was every canonical path chosen by a person?'],
+    limitation: 'Hash equality proves that file contents are identical; it does not decide which copy belongs in the archive, whether redundancy is intentional, or which different edit is best.',
+    privacy: 'File scanning, hashing, preview, organisation, and undo information remain on the Windows machine.',
+    relatedUseCases: ['organise-and-prepare-a-working-file-collection', 'compress-images-to-save-storage-space', 'resize-hundreds-of-images-at-once'],
+    faq: [
+      { q: 'Can two files with different names be exact duplicates?', a: 'Yes. Hash comparison uses the file contents rather than the filename.' },
+      { q: 'Does a matching hash mean I should delete one copy?', a: 'Not automatically. Backup, delivery, or project-folder duplicates can be intentional; review the paths before deciding.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 30,
+    slug: 'combine-markdown-chapters-into-one-book-pdf',
+    title: 'Combine Markdown Chapters Into One Book PDF',
+    shortTitle: 'Markdown chapters to book PDF',
+    category: 'books',
+    categoryLabel: 'Books & publishing',
+    summary: 'Turn an ordered folder of Markdown chapters and optional illustrations into one locally created, page-numbered book PDF.',
+    scenario: 'A manuscript is stored as one Markdown file per chapter because that is easier to write, version, and review, but delivery requires one continuous PDF in a reliable order.',
+    outcome: 'One combined book PDF created from explicitly numbered chapters, with dimensions, illustrations, chapter transitions, and page numbers reviewed.',
+    products: ['BTP', 'BMP'],
+    inputs: ['Final chapter Markdown files', 'Zero-padded filename order', 'Book dimensions and margins', 'Optional same-named chapter images'],
+    steps: [
+      { title: 'Freeze the chapter set', body: 'Copy approved chapters into a clean build folder. Remove notes and superseded drafts so the conversion cannot accidentally include them.' },
+      { title: 'Encode order in the filenames', body: 'Use zero-padded names such as 01-title, 02-introduction, and 03-chapter-one. Combined output follows filename order, so ordering should be visible before the app opens.' },
+      { title: 'Prepare chapter illustrations', body: 'When a chapter needs a matching image, give the image and Markdown file the same base name and decide whether it belongs before or after the text, inline or on its own page.' },
+      { title: 'Set one book page system', body: 'In Batch Text to PDF, choose the required preset or exact custom dimensions, margins, and page-number setting. Use the same system for the complete manuscript.' },
+      { title: 'Create the combined document', body: 'Run combined mode and review converted, skipped, renamed, and failed items. If separately produced front matter or appendices must be added later, order those PDFs explicitly and combine them with Batch Merge PDFs.' },
+      { title: 'Proof the document as a book', body: 'Check the title page, every chapter opening, image pairing, multilingual text, emoji, page-number continuity, blank pages, final page, and the printer or delivery specification.' }
+    ],
+    review: ['Does filename order match the intended reading order?', 'Are only approved chapters present?', 'Are illustrations paired with the correct chapter?', 'Were every chapter transition and page-number sequence checked?'],
+    limitation: 'Automated conversion cannot make editorial decisions or reproduce an arbitrary desktop-publishing layout. DOCX styling is not preserved, and print production still requires printer-specific proofing.',
+    privacy: 'Markdown rendering, image pairing, PDF creation, and merging run locally without an AI service or document upload.',
+    relatedUseCases: ['convert-markdown-files-to-pdf-in-bulk', 'batch-create-pdfs-from-text', 'merge-pdfs-without-using-the-internet'],
+    faq: [
+      { q: 'How is chapter order determined?', a: 'Combined mode follows filename order. Zero-padded numeric prefixes make the intended sequence explicit and repeatable.' },
+      { q: 'Can chapter images be included?', a: 'Yes. Same-named text and image files can be paired with configurable placement in the combined output.' }
+    ],
+    lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 31,
+    slug: 'batch-crop-product-images-into-squares',
+    title: 'Batch-Crop Product Images Into Squares',
+    shortTitle: 'Square product-image batch',
+    category: 'social',
+    categoryLabel: 'Social & image production',
+    summary: 'Create a consistent square product-image set from mixed source ratios on Windows while reviewing crops that could cut off products, labels, or context.',
+    scenario: 'A marketplace, catalogue, or storefront needs square thumbnails, but the approved product photographs contain a mixture of portrait, landscape, and near-square compositions.',
+    outcome: 'A separate folder of consistently sized square images, with unsuitable automatic crops identified and handled as exceptions.',
+    products: ['BRI'],
+    inputs: ['Approved product-photo masters', 'The required square pixel dimensions', 'A safe-area rule around each product', 'A separate marketplace-output folder'],
+    steps: [
+      { title: 'Confirm the destination specification', body: 'Choose the actual square dimensions required by the storefront, catalogue, or publishing system. Avoid relying on an old preset when the destination matters.' },
+      { title: 'Protect the approved photography', body: 'Keep the master folder unchanged. Square exports are delivery variants and should always be reproducible from the strongest source files.' },
+      { title: 'Sort obvious crop exceptions', body: 'Identify tall products, wide bundles, packaging with edge text, lifestyle scenes, and items already touching the frame. These are the images most likely to need special treatment.' },
+      { title: 'Preview the square rule', body: 'In Batch Resize Image, set the target square dimensions and crop handling. Test representative products and verify that labels, handles, accessories, shadows, and required context remain visible.' },
+      { title: 'Process compatible images together', body: 'Run the approved batch into a clearly named square-output folder. Move incompatible compositions into a separate group with a different crop or manually prepared source.' },
+      { title: 'Review the catalogue as a grid', body: 'Inspect the complete set at thumbnail size and full size. Check consistent scale, unexpected clipping, background variation, and whether any product looks misleadingly different from its source.' }
+    ],
+    review: ['Do dimensions match the current destination requirement?', 'Are labels and complete products visible?', 'Were difficult compositions separated?', 'Does the final grid look consistent without misrepresenting products?'],
+    limitation: 'Automatic cropping is not content-aware and cannot guarantee that the commercially important part of every product remains in frame. Some images require a separate crop or source composition.',
+    privacy: 'Product photos, crop previews, and square exports remain local. Upload occurs only when you choose to publish the approved files.',
+    relatedUseCases: ['resize-hundreds-of-images-at-once', 'resize-images-for-different-social-platforms', 'add-a-logo-watermark-to-a-folder-of-images'],
+    faq: [
+      { q: 'Will one square crop work for every product?', a: 'Not always. Tall, wide, edge-positioned, or text-heavy products often need a different batch or manual source adjustment.' },
+      { q: 'Should square files replace the masters?', a: 'No. Keep them as destination-specific copies so future formats can be created from the original photography.' }
+    ],
+    lastmod: '2026-08-08'
   })
 ];

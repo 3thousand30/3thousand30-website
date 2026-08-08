@@ -34,25 +34,49 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://3thousand30.com/batchwatermark-image.html#webpage",
+        "url": "https://3thousand30.com/batchwatermark-image.html",
+        "name": "Batch Watermark Image — Batch Image Watermarker for Windows | 3thousand30",
+        "description": "A fully local Windows batch watermarker with text and logo layers, opacity, placement, tiling, preview, and controlled export.",
+        "breadcrumb": { "@id": "https://3thousand30.com/batchwatermark-image.html#breadcrumb" },
+        "mainEntity": { "@id": "https://3thousand30.com/batchwatermark-image.html#software" }
+      },
+      {
         "@type": "SoftwareApplication",
+        "@id": "https://3thousand30.com/batchwatermark-image.html#software",
         "name": "Batch Watermark Image",
         "description": "A fully local Windows batch watermarker with text and logo layers, opacity, placement, tiling, preview, and controlled export.",
         "url": "https://3thousand30.com/batchwatermark-image.html",
+        "mainEntityOfPage": { "@id": "https://3thousand30.com/batchwatermark-image.html#webpage" },
         "image": "https://3thousand30.com/Logos/BWI.webp",
+        "screenshot": ["https://3thousand30.com/screenshots/bwi/1.webp","https://3thousand30.com/screenshots/bwi/2.webp","https://3thousand30.com/screenshots/bwi/3.webp","https://3thousand30.com/screenshots/bwi/4.webp"],
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows",
+        "isAccessibleForFree": false,
+        "installUrl": "https://apps.microsoft.com/detail/9n3s7zrpxgph",
         "downloadUrl": "https://apps.microsoft.com/detail/9n3s7zrpxgph",
+        "sameAs": ["https://apps.microsoft.com/detail/9n3s7zrpxgph", "https://3thousand30.github.io/batchwatermarkimage-docs/"],
         "offers": {
           "@type": "Offer",
           "price": "3.74",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://apps.microsoft.com/detail/9n3s7zrpxgph"
+          "url": "https://apps.microsoft.com/detail/9n3s7zrpxgph",
+          "seller": { "@id": "https://3thousand30.com/#organization" }
         },
-        "publisher": { "@type": "Organization", "name": "3thousand30", "url": "https://3thousand30.com/" }
+        "publisher": { "@id": "https://3thousand30.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://3thousand30.com/#organization",
+        "name": "3thousand30",
+        "url": "https://3thousand30.com/",
+        "logo": { "@type": "ImageObject", "url": "https://3thousand30.com/3030-300x300.png" }
       },
       {
         "@type": "BreadcrumbList",
+        "@id": "https://3thousand30.com/batchwatermark-image.html#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
           { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
@@ -279,10 +303,26 @@
   </div>
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bwi" data-search="Add Watermarks Before Sharing Images Create a separate proof or preview folder with a visible mark before sending images to clients or collaborators. Social &amp; image production BWI">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bwi image-tools" data-search="Add a Logo Watermark to a Folder of Images Apply one consistently scaled and positioned logo to an image folder locally while retaining clean, untouched masters. Social &amp; image production BWI">
+  <div class="card-address">
+    <span>workflow://UC-27</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
+  </div>
+  <p class="eyebrow mb-2 mt-5">Social &amp; image production</p>
+  <h3 class="text-base font-normal leading-7 text-white">Add a Logo Watermark to a Folder of Images</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Apply one consistently scaled and positioned logo to an image folder locally while retaining clean, untouched masters.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BWI</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/add-a-logo-watermark-to-a-folder-of-images.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Add a Logo Watermark to a Folder of Images">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bwi image-tools" data-search="Add Watermarks Before Sharing Images Create a separate proof or preview folder with a visible mark before sending images to clients or collaborators. Social &amp; image production BWI">
   <div class="card-address">
     <span>workflow://UC-13</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>5 steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">Social &amp; image production</p>
   <h3 class="text-base font-normal leading-7 text-white">Add Watermarks Before Sharing Images</h3>
@@ -295,10 +335,10 @@
   </div>
 </article>
 
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bwi" data-search="Add Copyright Information to Images Apply a consistent visible creator, year, or rights notice across a published image collection. Social &amp; image production BWI">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bwi image-tools" data-search="Add Copyright Information to Images Apply a consistent visible creator, year, or rights notice across a published image collection. Social &amp; image production BWI">
   <div class="card-address">
     <span>workflow://UC-14</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>5 steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">Social &amp; image production</p>
   <h3 class="text-base font-normal leading-7 text-white">Add Copyright Information to Images</h3>
@@ -311,10 +351,10 @@
   </div>
 </article>
 
-<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bgt bgi bri bwi" data-search="Plan and Create Social Media Content in Batches Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies. Social &amp; image production BGT BGI BRI BWI">
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="social" data-categories="bgt bgi bri bwi image-tools" data-search="Plan and Create Social Media Content in Batches Build a reviewed campaign pack containing text, images, platform sizes, and optional marked preview copies. Social &amp; image production BGT BGI BRI BWI">
   <div class="card-address">
     <span>workflow://UC-2</span>
-    <span class="card-status"><i aria-hidden="true"></i>field tested</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
   </div>
   <p class="eyebrow mb-2 mt-5">Social &amp; image production</p>
   <h3 class="text-base font-normal leading-7 text-white">Plan and Create Social Media Content in Batches</h3>

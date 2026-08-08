@@ -43,7 +43,8 @@ async function auditAccessibility(page, label) {
   assert(await page.locator('[data-menu-toggle]').isVisible(), 'Mobile menu button is not visible at 390px.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Homepage has horizontal overflow at 390px.');
   assert((await page.locator('body').textContent()).includes('12'), 'Homepage product count is missing.');
-  assert((await page.locator('body').textContent()).includes('20'), 'Homepage use-case count is missing.');
+  assert((await page.locator('.home-console-footer').textContent()).replace(/\s+/g, ' ').includes('30 practical workflows'), 'Homepage use-case count is missing.');
+  assert(await page.locator('a[href="/use-cases/convert-markdown-files-to-pdf-in-bulk.html"]').count() >= 1, 'Homepage does not feature the new high-intent Markdown workflow.');
   await auditAccessibility(page, 'Homepage');
 
   await page.locator('#cookie-accept').click();
@@ -87,11 +88,19 @@ async function auditAccessibility(page, label) {
 
   await page.goto(`${baseUrl}/use-cases/`, { waitUntil: 'networkidle' });
   visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 20, `Use-case directory does not initially show 20 workflows (found ${visibleCount}).`);
+  assert(visibleCount === 30, `Use-case directory does not initially show 30 workflows (found ${visibleCount}).`);
+  assert((await page.locator('[data-catalog-item] h3').first().textContent()).trim() === 'Convert Markdown Files to PDF in Bulk', 'Use-case directory does not prioritize the new utility workflows.');
   await page.locator('[data-filter-group="kind"][data-filter-value="files"]').click();
   visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 3, `PDF and file workflow filter does not show 3 workflows (found ${visibleCount}).`);
+  assert(visibleCount === 7, `PDF and file workflow filter does not show 7 workflows (found ${visibleCount}).`);
   await page.locator('[data-filter-group="kind"][data-filter-value="all"]').click();
+  await page.locator('[data-filter-group="categories"][data-filter-value="pdf-tools"]').click();
+  visibleCount = await visibleCatalogItems(page);
+  assert(visibleCount === 12, `PDF tools filter does not show 12 workflows (found ${visibleCount}).`);
+  await page.locator('[data-filter-group="categories"][data-filter-value="bt"]').click();
+  visibleCount = await visibleCatalogItems(page);
+  assert(visibleCount === 3, `Translation filter does not show 3 workflows (found ${visibleCount}).`);
+  await page.locator('[data-filter-group="categories"][data-filter-value="all"]').click();
   await page.locator('[data-catalog-search]').fill('copyright');
   visibleCount = await visibleCatalogItems(page);
   assert(visibleCount === 1, `Use-case search does not isolate the copyright workflow (found ${visibleCount}).`);
@@ -105,6 +114,15 @@ async function auditAccessibility(page, label) {
   assert(!/6 August 2027|launch discount through/i.test(btpText), 'BTP contains an obsolete promotion end date.');
   assert(!/coming soon|certification|preparing for release/i.test(btpText), 'BTP contains pre-release wording.');
   assert(await page.locator(`a[href="https://apps.microsoft.com/detail/9NS1L0DK0FQL"]`).count() >= 1, 'BTP Store product-identity link is missing.');
+  const btpSchema = await page.locator('script[type="application/ld+json"]').first().evaluate((script) => JSON.parse(script.textContent));
+  const btpSchemaNodes = btpSchema['@graph'] || [];
+  const btpSoftware = btpSchemaNodes.find((node) => node['@type'] === 'SoftwareApplication');
+  const btpWebPage = btpSchemaNodes.find((node) => node['@type'] === 'WebPage');
+  assert(btpSoftware?.offers?.price === '3.74' && btpSoftware?.offers?.priceCurrency === 'USD', 'BTP SoftwareApplication Offer is incomplete.');
+  assert(btpSoftware?.installUrl === 'https://apps.microsoft.com/detail/9NS1L0DK0FQL', 'BTP SoftwareApplication Store identity is incomplete.');
+  assert(Array.isArray(btpSoftware?.screenshot) && btpSoftware.screenshot.length === 6, 'BTP SoftwareApplication screenshots are missing.');
+  assert(btpWebPage?.mainEntity?.['@id'] === btpSoftware?.['@id'], 'BTP WebPage and SoftwareApplication entities are not linked.');
+  assert(!btpSoftware?.aggregateRating && !btpSoftware?.review, 'BTP schema contains an unsupported rating or review.');
   const firstBtpScreenshot = page.locator('img[src^="/screenshots/btp/"]').first();
   await firstBtpScreenshot.scrollIntoViewIfNeeded();
   await firstBtpScreenshot.waitFor({ state: 'visible' });
@@ -121,6 +139,14 @@ async function auditAccessibility(page, label) {
   assert(await page.locator('a[href="/batch-text-to-pdf.html"]').count() >= 1, 'BTP use case does not link to the BTP page.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Use-case page has horizontal overflow at 390px.');
   await auditAccessibility(page, 'BTP use-case page');
+
+  await page.goto(`${baseUrl}/use-cases/convert-markdown-files-to-pdf-in-bulk.html`, { waitUntil: 'networkidle' });
+  assert(await page.locator('h1').textContent() === 'Convert Markdown Files to PDF in Bulk', 'New Markdown-to-PDF use-case heading is incorrect.');
+  assert(await page.title() === 'How to Convert Markdown Files to PDF in Bulk on Windows | 3thousand30', 'New Markdown-to-PDF page title is incorrect.');
+  assert(await page.locator('a[href="/batch-text-to-pdf.html"]').count() >= 1, 'New Markdown-to-PDF use case does not link to BTP.');
+  assert(await page.locator('#workflow li').count() === 6, 'New Markdown-to-PDF use case does not contain its complete workflow.');
+  assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'New Markdown-to-PDF page has horizontal overflow at 390px.');
+  await auditAccessibility(page, 'New Markdown-to-PDF use case');
 
   await page.goto(`${baseUrl}/privacy.html`, { waitUntil: 'networkidle' });
   await page.evaluate(() => { document.cookie = '_ga_QATEST=value; path=/'; });
@@ -156,7 +182,7 @@ async function auditAccessibility(page, label) {
     process.exit(1);
   }
 
-  console.log('Browser checks passed: mobile layout, filters, navigation, product pricing, assets, and analytics consent lifecycle.');
+  console.log('Browser checks passed: mobile layout, 30-workflow catalog, product pricing and schema, assets, and analytics consent lifecycle.');
 })().catch((error) => {
   console.error(error);
   process.exit(1);

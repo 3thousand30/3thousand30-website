@@ -8,6 +8,8 @@ analyticsPageType: use_case_index
 catalogKind: use-cases
 ---
 {% from "components/cards.njk" import useCaseCard %}
+{% set priorityUseCases = useCases | filterBySlugs(site.priorityUseCaseSlugs) %}
+{% set otherUseCases = useCases | excludeBySlugs(site.priorityUseCaseSlugs) %}
 
 <section class="site-shell py-12 sm:py-16">
   <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb"><a href="/" class="hover:text-retro-green">home</a> / <span class="text-gray-400">use cases</span></nav>
@@ -36,8 +38,9 @@ catalogKind: use-cases
           <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="all" aria-pressed="true">any product</button>
           <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bgt" aria-pressed="false">text AI</button>
           <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bgi" aria-pressed="false">image AI</button>
-          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="btp" aria-pressed="false">text to PDF</button>
-          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bwi" aria-pressed="false">watermark</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bt" aria-pressed="false">translation</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="pdf-tools" aria-pressed="false">PDF tools</button>
+          <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="image-tools" aria-pressed="false">image prep</button>
           <button type="button" class="filter-button" data-filter-group="categories" data-filter-value="bfo" aria-pressed="false">organise</button>
         </div>
       </div>
@@ -46,7 +49,8 @@ catalogKind: use-cases
   </div>
 
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-    {% for item in useCases %}{{ useCaseCard(item) }}{% endfor %}
+    {% for item in priorityUseCases %}{{ useCaseCard(item) }}{% endfor %}
+    {% for item in otherUseCases %}{{ useCaseCard(item) }}{% endfor %}
   </div>
   <div class="panel mt-8 p-8 text-center" data-empty-state hidden>
     <p class="text-sm text-gray-400">No workflow matches those filters.</p>

@@ -18,6 +18,12 @@ module.exports = function (eleventyConfig) {
     return slugs.map((slug) => items.find((item) => item.slug === slug)).filter(Boolean);
   });
 
+  eleventyConfig.addFilter('excludeBySlugs', function (items, slugs) {
+    if (!Array.isArray(items) || !Array.isArray(slugs)) return items || [];
+    const excluded = new Set(slugs);
+    return items.filter((item) => !excluded.has(item.slug));
+  });
+
   eleventyConfig.addTransform('trimTrailingWhitespace', function (content) {
     if (!this.page.outputPath || !/\.(?:html|xml|txt)$/.test(this.page.outputPath)) return content;
     return content.replace(/[ \t]+$/gm, '');
