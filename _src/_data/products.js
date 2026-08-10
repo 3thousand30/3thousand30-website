@@ -417,22 +417,22 @@ const products = [
     status: 'released',
     featured: true,
     tagline: 'Turn folders of Markdown, text, DOCX, and images into separate or combined PDFs.',
-    description: 'A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, combined output, and page numbering.',
-    intro: 'Batch Text to PDF converts a mixed folder into finished PDFs in one run. Create one PDF per source or a single ordered document, pair same-named text and images, choose page dimensions, and keep the conversion local.',
+    description: 'A local Windows batch PDF maker with flexible page sizes, Markdown rendering, multilingual colour emoji, image pairing, text-over-background pages, combined output, and page numbering.',
+    intro: 'Batch Text to PDF converts a mixed folder into finished PDFs in one run. Create one PDF per source or a single ordered document, pair same-named text and images inline, on separate pages, or with the image behind the text as a full-page background, and keep the conversion local.',
     logo: '/Logos/BTP.png',
     storeUrl: 'https://apps.microsoft.com/detail/9NS1L0DK0FQL',
     docsUrl: 'https://3thousand30.github.io/batchtexttopdf-docs/',
     privacyLabel: 'Fully local',
     privacyText: 'Core conversion runs on your PC. No account, upload, AI service, analytics, or telemetry is required.',
-    features: ['Convert Markdown, TXT, DOCX, JPG, PNG, WebP, and GIF sources', 'Create one PDF per source or one combined ordered PDF', 'Choose eight presets or custom page dimensions and margins', 'Add page numbers to individual or combined output', 'Auto-pair same-named text and image files', 'Preserve multilingual text and full-colour emoji'],
+    features: ['Convert Markdown, TXT, DOCX, JPG, PNG, WebP, and GIF sources', 'Create one PDF per source or one combined ordered PDF', 'Choose eight presets or custom page dimensions and margins', 'Add page numbers to individual or combined output', 'Auto-pair same-named text and images inline, on separate pages, or as full-page backgrounds', 'Preserve multilingual text and full-colour emoji'],
     audiences: ['Writers converting chapters or guides', 'Teachers creating worksheet and story packs', 'Publishers assembling illustrated drafts and small books'],
     screenshotItems: screenshots('btp', [
-      ['01-mixed-source-batch.png', 'Mixed Markdown, text, DOCX, and image sources in Batch Text to PDF', 'Convert mixed file types in one local run.'],
-      ['02-custom-page-size.png', 'Custom page dimensions and margins in Batch Text to PDF', 'Use book, document, square, or exact custom dimensions.'],
-      ['03-auto-pair-images.png', 'Same-named text and image pairing in Batch Text to PDF', 'Pair illustrations before or after matching text.'],
-      ['04-combined-document.png', 'Combined document setup in Batch Text to PDF', 'Turn an ordered folder into one page-numbered document.'],
-      ['05-completed-conversion.png', 'Completed Batch Text to PDF conversion', 'Review converted, skipped, renamed, and failed sources.'],
-      ['06-local-processing.png', 'Local-processing information in Batch Text to PDF', 'Keep document conversion on the PC.']
+      ['1. Convert whole folders at once.png', 'Batch Text to PDF ready to convert a folder containing Markdown, text, DOCX, and image files', 'Convert whole folders at once.'],
+      ['2. Control every page dimension.png', 'Custom page width, height, and margins in Batch Text to PDF', 'Control every page dimension.'],
+      ['3. Place text over images.png', 'Background image pairing selected in Batch Text to PDF for text over full-page images', 'Place text over images.'],
+      ['4. Build one ordered PDF.png', 'Combined PDF mode with US Trade size and page numbering in Batch Text to PDF', 'Build one ordered PDF.'],
+      ['5. See every conversion result.png', 'Completed Batch Text to PDF run showing four converted source files', 'See every conversion result.'],
+      ['6. Keep files on your device.png', 'Batch Text to PDF privacy information explaining that document conversion stays on the device', 'Keep files on your device.']
     ]),
     faq: [
       { q: 'Which source formats are supported?', a: 'Markdown, plain text, DOCX, JPG, JPEG, PNG, WebP, and GIF. Existing PDFs are skipped rather than reconverted.' },
@@ -442,7 +442,7 @@ const products = [
     ],
     relatedProducts: ['BMP', 'BSP', 'BGT'],
     relatedUseCases: ['convert-markdown-files-to-pdf-in-bulk', 'combine-markdown-chapters-into-one-book-pdf', 'batch-create-pdfs-from-text', 'create-a-colouring-book-for-children', 'create-a-poetry-book', 'create-short-stories-for-teaching'],
-    lastmod: '2026-08-08'
+    lastmod: '2026-08-09'
   },
   {
     code: 'KR',

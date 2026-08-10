@@ -30,7 +30,7 @@ module.exports = [
       { title: 'Generate a wider image set', body: 'In Batch Generate Image with any AI, set a reusable visual direction and an appropriate page ratio. Generate more candidates than the book needs so selection, not luck, controls the result.' },
       { title: 'Reject and sequence', body: 'Remove off-theme images, obvious artifacts, weak compositions, and repetitive scenes. Arrange the survivors so colour, subject, and mood change with intention.' },
       { title: 'Prepare the selected images for print', body: 'Use Batch Enhance Image only on the final shortlist. Check target pixel dimensions and inspect enlarged files closely; upscaling cannot repair a fundamentally poor source.' },
-      { title: 'Create and assemble the pages', body: 'Use Batch Text to PDF for text, image, or paired text-image pages. If sections were exported separately, use numbered filenames and Batch Merge PDFs to assemble the final order locally.' },
+      { title: 'Create and assemble the pages', body: 'Use Batch Text to PDF for text, image, or paired text-image pages. Choose Background placement when approved text should sit over a full-page visual. If sections were exported separately, use numbered filenames and Batch Merge PDFs to assemble the final order locally.' },
       { title: 'Proof a physical copy', body: 'Check margins, crop, colour, page order, and spine/cover requirements against the printer’s current specification. A digital PDF review does not replace a physical proof.' }
     ],
     review: ['Does the sequence feel like one object rather than a prompt dump?', 'Are weak hands, text artifacts, and near-duplicates removed?', 'Do the final pixel dimensions fit the printer’s specification?', 'Has a physical proof been checked before gifting or selling?'],
@@ -41,6 +41,7 @@ module.exports = [
       { label: 'People, Places & Perspective on Lulu', url: 'https://www.lulu.com/shop/proyogi-baba/people-places-perspective/paperback/product-yvr56g6.html?page=1&pageSize=4' }
     ],
     relatedUseCases: ['create-a-colouring-book-for-children', 'create-an-inspirational-family-book', 'enhance-images-for-printing'],
+    lastmod: '2026-08-09',
     faq: [
       { q: 'Do I need to be a designer?', a: 'You do not need a design title, but you do need judgment. Selection, sequencing, margins, and proofing determine whether the result feels deliberate.' },
       { q: 'Can I sell the finished book?', a: 'Potentially, if you have the necessary rights and the work meets the chosen platform’s current content and print requirements. Check those requirements before publication.' }
@@ -94,12 +95,13 @@ module.exports = [
       { title: 'Generate wording options', body: 'Use Batch Generate Text with any AI to create a small set of tones—formal, warm, playful, concise—while explicitly preserving the source facts. Select one before personalising names or guest groups.' },
       { title: 'Create the visual direction', body: 'Use Batch Generate Image with any AI for background or illustration options at the intended aspect ratio. Avoid asking the image model to render the final invitation text; add verified text during layout instead.' },
       { title: 'Review every visible detail', body: 'Check names, spelling, time zone, address, RSVP deadline, phone number, and links. Ask another person to read the final copy because familiarity hides mistakes.' },
-      { title: 'Export the finished invitation', body: 'Prepare the final text and image inputs, then use Batch Text to PDF for a consistent printable or shareable document. Test the PDF on a phone and, if printing, on paper.' }
+      { title: 'Export the finished invitation', body: 'Give the approved text and background image the same base filename, then use Background placement in Batch Text to PDF to put the verified text over the full-page visual. Test the PDF on a phone and, if printing, on paper.' }
     ],
     review: ['Are date, time, address, and RSVP details exact?', 'Does the tone fit the people receiving it?', 'Is text readable against the image?', 'Does the printed size match the planned envelope or paper?'],
     limitation: 'AI is useful for wording and visual exploration, but event facts must come from a confirmed human source. Generated text inside images is unreliable.',
     privacy: 'Generation requests go to the AI providers you select. Final PDF conversion and stored files remain local.',
     relatedUseCases: ['create-an-inspirational-family-book', 'create-posters-to-print-or-sell'],
+    lastmod: '2026-08-09',
     faq: [{ q: 'Can I create personalised variants?', a: 'Yes. Keep a master facts file and generate or edit variants from it, then verify every personalised name and instruction before sending.' }]
   }),
   useCase({
@@ -508,7 +510,7 @@ module.exports = [
       { title: 'Prepare the source folder', body: 'Place supported Markdown, TXT, DOCX, and image files directly inside one working folder. Use numbered filenames when combined output must follow a specific order.' },
       { title: 'Choose separate or combined output', body: 'Use per-file mode for individual handouts, notes, or client documents. Use combined mode for chapters, story pages, or one ordered report.' },
       { title: 'Set the page system', body: 'Choose a built-in document or book preset, or enter exact custom dimensions and margins. Decide whether page numbers belong in the output.' },
-      { title: 'Pair text and illustrations when useful', body: 'Give a text file and image the same base filename, then choose whether the image appears before or after the text and inline or on its own page.' },
+      { title: 'Pair text and illustrations when useful', body: 'Give a text file and image the same base filename, then place the image inline, on its own page before or after the text, or behind the text as a full-page background.' },
       { title: 'Run and inspect the conversion log', body: 'Review converted, skipped, renamed, and failed counts. Open the output folder and inspect multilingual text, emoji, image placement, and page breaks.' },
       { title: 'Correct the source, then rerun', body: 'Fix Markdown, filenames, page settings, or source text rather than patching every final PDF manually. Skip-existing support helps preserve approved outputs during a rerun.' }
     ],
@@ -516,7 +518,7 @@ module.exports = [
     limitation: 'DOCX conversion extracts paragraph text but does not reproduce Word styling, page layout, or embedded images. Animated GIFs become static image pages, and existing PDFs are skipped.',
     privacy: 'Core conversion is local and requires no AI service, upload, account, analytics, or telemetry.',
     relatedUseCases: ['convert-markdown-files-to-pdf-in-bulk', 'combine-markdown-chapters-into-one-book-pdf', 'merge-pdfs-without-using-the-internet'],
-    lastmod: '2026-08-08',
+    lastmod: '2026-08-09',
     faq: [
       { q: 'Can it preserve Markdown formatting?', a: 'Yes. It renders supported Markdown formatting and relative local images.' },
       { q: 'Can it combine the whole folder?', a: 'Yes. Combined mode processes supported source files in filename order.' }
@@ -804,7 +806,7 @@ module.exports = [
     steps: [
       { title: 'Freeze the chapter set', body: 'Copy approved chapters into a clean build folder. Remove notes and superseded drafts so the conversion cannot accidentally include them.' },
       { title: 'Encode order in the filenames', body: 'Use zero-padded names such as 01-title, 02-introduction, and 03-chapter-one. Combined output follows filename order, so ordering should be visible before the app opens.' },
-      { title: 'Prepare chapter illustrations', body: 'When a chapter needs a matching image, give the image and Markdown file the same base name and decide whether it belongs before or after the text, inline or on its own page.' },
+      { title: 'Prepare chapter illustrations', body: 'When a chapter needs a matching image, give the image and Markdown file the same base name. Place it inline, on its own page before or after the text, or behind the text as a full-page background when the artwork has enough clear space for readable copy.' },
       { title: 'Set one book page system', body: 'In Batch Text to PDF, choose the required preset or exact custom dimensions, margins, and page-number setting. Use the same system for the complete manuscript.' },
       { title: 'Create the combined document', body: 'Run combined mode and review converted, skipped, renamed, and failed items. If separately produced front matter or appendices must be added later, order those PDFs explicitly and combine them with Batch Merge PDFs.' },
       { title: 'Proof the document as a book', body: 'Check the title page, every chapter opening, image pairing, multilingual text, emoji, page-number continuity, blank pages, final page, and the printer or delivery specification.' }
@@ -815,9 +817,9 @@ module.exports = [
     relatedUseCases: ['convert-markdown-files-to-pdf-in-bulk', 'batch-create-pdfs-from-text', 'merge-pdfs-without-using-the-internet'],
     faq: [
       { q: 'How is chapter order determined?', a: 'Combined mode follows filename order. Zero-padded numeric prefixes make the intended sequence explicit and repeatable.' },
-      { q: 'Can chapter images be included?', a: 'Yes. Same-named text and image files can be paired with configurable placement in the combined output.' }
+      { q: 'Can chapter images be included?', a: 'Yes. Same-named text and image files can be paired inline, on separate pages, or with the image used as a full-page background behind the text.' }
     ],
-    lastmod: '2026-08-08'
+    lastmod: '2026-08-09'
   }),
   useCase({
     id: 31,
