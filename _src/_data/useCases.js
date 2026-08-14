@@ -1,6 +1,6 @@
 function useCase(data) {
   const productGroups = [];
-  if (data.products.some((code) => ['BTP', 'BMP', 'BSP'].includes(code))) productGroups.push('pdf-tools');
+  if (data.products.some((code) => ['BTP', 'BMP', 'BSP', 'BCP', 'BWP', 'BPP'].includes(code))) productGroups.push('pdf-tools');
   if (data.products.some((code) => ['BRI', 'BWI', 'BCI', 'BEI'].includes(code))) productGroups.push('image-tools');
 
   return Object.assign({
@@ -850,5 +850,155 @@ module.exports = [
       { q: 'Should square files replace the masters?', a: 'No. Keep them as destination-specific copies so future formats can be created from the original photography.' }
     ],
     lastmod: '2026-08-08'
+  }),
+  useCase({
+    id: 19,
+    slug: 'compress-pdfs-without-uploading-them',
+    title: 'Compress PDFs Without Uploading Them',
+    shortTitle: 'Private local PDF compression',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Reduce PDF file sizes on Windows while keeping private documents on the device and preserving the original files.',
+    scenario: 'A set of reports, statements, forms, or project documents is too large to email or store comfortably, but policy or common sense rules out sending the contents to an unknown browser service.',
+    outcome: 'A separate folder of validated, smaller-or-identical PDF copies with per-file size results and untouched source documents.',
+    products: ['BCP'],
+    inputs: ['PDF documents you are permitted to process', 'A protected source folder', 'A separate writable output folder', 'A decision about whether text, links, and forms must remain interactive'],
+    steps: [
+      { title: 'Protect the source set', body: 'Keep the source PDFs in their original folder and choose a different output location. Compression should create delivery copies, not redefine the archive by overwriting it.' },
+      { title: 'Run preflight before compression', body: 'Add the documents in Batch Compress PDF and review ready, encrypted, signed, and invalid results. Resolve malformed files separately and leave signed or encrypted sources unchanged.' },
+      { title: 'Choose Flatten or Smart', body: 'Use Flatten for the strongest size reduction in most cases, especially scanned or image-heavy PDFs. Use Smart when selectable text, links, forms, annotations, and document structure need to remain intact.' },
+      { title: 'Preview representative pages', body: 'Compare a text page, an image-heavy page, and any form or linked page. Use Split preview to check the Flatten trade-off or confirm that Smart preserved the structures you need.' },
+      { title: 'Process into the separate folder', body: 'Run the batch and review success, unchanged, skipped, warning, and failed results. Unchanged means the candidate was not smaller and the original bytes were retained.' },
+      { title: 'Open and compare the outputs', body: 'Check representative PDFs in the viewer your recipients use. Confirm page count, links, forms, searchability, and actual file sizes before deleting or moving anything.' }
+    ],
+    review: ['Did every intended file receive a clear result?', 'Are source files untouched?', 'Do page count and interactive structures still work?', 'Is each successful result smaller and visually acceptable?'],
+    limitation: 'Compression results depend on the source. PDFs already optimised or dominated by incompressible content may remain unchanged. Flatten often reduces scan-heavy documents but intentionally removes interactive structure.',
+    privacy: 'Discovery, preview, compression, validation, and saved outputs run locally. No document upload, account, analytics, or telemetry is required.',
+    relatedUseCases: ['reduce-scanned-pdfs-for-email-and-archiving', 'protect-pdf-deliverables-with-passwords', 'merge-pdfs-without-using-the-internet'],
+    faq: [
+      { q: 'Can the app ever make a PDF larger?', a: 'It may build a larger candidate internally, but that candidate is discarded. The saved output preserves the original bytes when no smaller valid result exists.' },
+      { q: 'Should I use Flatten for everything?', a: 'Use Flatten for the strongest reduction when page-image output is acceptable. Use Smart when selectable text, links, forms, annotations, tags, or signatures matter.' }
+    ],
+    lastmod: '2026-08-10'
+  }),
+  useCase({
+    id: 32,
+    slug: 'reduce-scanned-pdfs-for-email-and-archiving',
+    title: 'Reduce Scanned PDFs for Email and Archiving',
+    shortTitle: 'Reduce scanned PDF size',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Use Flatten to reduce scan-heavy PDFs, then compare readability and file size before email or archive use.',
+    scenario: 'Scanned receipts, correspondence, case files, or reference packs contain large JPEG images and exceed an email limit or consume unnecessary archive space.',
+    outcome: 'A reviewed set of scan-heavy PDF copies with documented before/after sizes and legible text, signatures, stamps, and small details.',
+    products: ['BCP'],
+    inputs: ['Scan-heavy PDFs', 'A representative sample containing fine print and handwriting', 'The recipient or archive size constraint', 'A separate destination folder'],
+    steps: [
+      { title: 'Identify scan-heavy candidates', body: 'Choose PDFs whose pages are mainly photographed or scanned images. Do not assume a large text-native PDF benefits from the same settings.' },
+      { title: 'Record the baseline', body: 'Note source sizes, page counts, and the practical email or archive target. Size reduction has meaning only relative to a real constraint.' },
+      { title: 'Test Flatten on a representative file', body: 'In Batch Compress PDF, select Flatten for the strongest reduction on scan-heavy PDFs. Preview pages containing fine print, handwriting, stamps, and low-contrast regions before running the full folder.' },
+      { title: 'Compare readability, not only percentage', body: 'Zoom to normal reading size and to the scale used for verification. Reject settings that blur account numbers, signatures, dates, diagrams, or evidentiary detail.' },
+      { title: 'Run and inspect the measured results', body: 'Process the compatible set, then compare input and output sizes. Investigate unchanged or unexpectedly large results instead of assuming every scan should shrink.' },
+      { title: 'Validate the delivery or archive copy', body: 'Open several outputs in the intended viewer, confirm page count and orientation, and keep the high-quality source archive when the reduced file is only a delivery derivative.' }
+    ],
+    review: ['Are fine print and handwriting still legible?', 'Are page order, rotation, and geometry unchanged?', 'Does the measured size meet the real constraint?', 'Are archival masters kept when reduced files are delivery copies?'],
+    limitation: 'Lossy image recompression can soften detail. It cannot recover a poor scan, and a reduced delivery copy may not satisfy archival or evidentiary retention requirements.',
+    privacy: 'Scans are decoded, compared, and written locally through the bundled PDF engines. Nothing is uploaded by the app.',
+    relatedUseCases: ['compress-pdfs-without-uploading-them', 'organise-and-prepare-a-working-file-collection'],
+    faq: [
+      { q: 'Will OCR text remain?', a: 'Flatten creates page-image copies and should not be used when OCR/searchability must remain intact. Use Smart for structure-preserving compression and verify searchability on representative outputs.' },
+      { q: 'Is the smallest file always best?', a: 'No. Readability and retention requirements matter more than a headline compression percentage.' }
+    ],
+    lastmod: '2026-08-10'
+  }),
+  useCase({
+    id: 33,
+    slug: 'add-watermarks-to-pdf-documents-in-batches',
+    title: 'Add Watermarks to PDF Documents in Batches',
+    shortTitle: 'Batch-watermark PDF documents',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Apply one reusable text, logo, or combined watermark across PDF sets while preserving separate clean masters.',
+    scenario: 'A document collection needs a consistent department name, ownership mark, distribution label, or logo before controlled sharing.',
+    outcome: 'A separate folder of consistently marked PDF copies with reviewed placement, page targeting, layering, and intact document structure.',
+    products: ['BWP'],
+    inputs: ['Approved clean-master PDFs', 'Exact watermark text and/or a PNG or JPEG logo', 'Placement, opacity, and page-range rules', 'A separate watermarked-output folder'],
+    steps: [
+      { title: 'Define what the mark communicates', body: 'Choose concise ownership, distribution, or status wording. Confirm the logo source and avoid using a watermark as a substitute for a legal notice that must remain fully readable.' },
+      { title: 'Protect the clean masters', body: 'Keep the approved PDFs unchanged and route marked copies to another folder. A reusable workflow depends on always being able to return to the clean source.' },
+      { title: 'Design one reusable mark', body: 'Choose Text, PNG/JPEG Image, or Combined in Batch Watermark PDF. Set opacity, rotation, scale, placement, edge margin, or tiling for the complete document set.' },
+      { title: 'Target pages and layer deliberately', body: 'Use `all` or an exact range such as `1,3-5`. Use Above content for dependable visibility; use Below content only after confirming page backgrounds do not hide it.' },
+      { title: 'Compare representative pages', body: 'Review portrait, landscape, rotated, cropped, and mixed-size pages in Original, Watermarked, and Split views. Check forms, links, and important page content.' },
+      { title: 'Run and audit the batch', body: 'Create validated output copies, investigate skips and failures, then open a distributed sample to verify mark consistency and retained interactivity.' }
+    ],
+    review: ['Is the mark readable without obscuring essential content?', 'Are only the intended pages marked?', 'Do rotation and mixed page sizes place it correctly?', 'Are clean masters separate and links/forms still functional?'],
+    limitation: 'A visible watermark communicates status or ownership but does not prevent screenshots, printing, editing, or deliberate removal. It is not encryption or DRM.',
+    privacy: 'PDFs, text, and watermark image files remain local. The app creates separate validated copies without a document upload.',
+    relatedUseCases: ['watermark-client-pdf-proofs-before-sharing', 'protect-pdf-deliverables-with-passwords', 'add-a-logo-watermark-to-a-folder-of-images'],
+    faq: [
+      { q: 'Does watermarking flatten the PDF?', a: 'The normal workflow adds reusable resources and content streams while preserving the existing document model.' },
+      { q: 'Can I use SVG logos?', a: 'Not in version 1.0. Use a correctly sized transparent PNG or a JPEG; SVG support is deferred.' }
+    ],
+    lastmod: '2026-08-10'
+  }),
+  useCase({
+    id: 34,
+    slug: 'watermark-client-pdf-proofs-before-sharing',
+    title: 'Watermark Client PDF Proofs Before Sharing',
+    shortTitle: 'Watermark client PDF proofs',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Create temporary DRAFT or PROOF copies for client review while keeping approved clean masters untouched.',
+    scenario: 'Designs, reports, catalogues, or manuscripts need client review before approval, and the shared files should be visibly distinguished from final deliverables.',
+    outcome: 'Clearly named proof PDFs carrying a consistent temporary status mark, with clean masters and final-delivery files kept separate.',
+    products: ['BWP'],
+    inputs: ['Clean review-ready PDF masters', 'Approved proof wording such as DRAFT or CLIENT PROOF', 'A client/project naming convention', 'A dedicated proof-output folder'],
+    steps: [
+      { title: 'Freeze the review source', body: 'Identify the exact version being sent for review and keep it in the clean-master folder. Do not watermark the only copy or continue editing an ambiguously named source.' },
+      { title: 'Choose unmistakable temporary wording', body: 'Use a short status such as CLIENT PROOF, DRAFT, or NOT FOR PRODUCTION. Include a project or date only when it will remain readable and useful.' },
+      { title: 'Design for review readability', body: 'Use Batch Watermark PDF to set a visible but not obstructive opacity, diagonal rotation, and centre or tiled placement. Avoid covering text that the client must approve.' },
+      { title: 'Preview difficult pages', body: 'Check dark artwork, blank pages, full-bleed pages, and pages with essential small text. Adjust colour, opacity, placement, or above/below layering as needed.' },
+      { title: 'Create and name the proof set', body: 'Write outputs to a project-specific proof folder. Include `proof` or a review round in filenames so nobody mistakes them for clean or approved files.' },
+      { title: 'Remove the mark only from approved delivery', body: 'After approval, return to the clean master and produce the final deliverable. Never try to remove a temporary mark from the proof as the final-production workflow.' }
+    ],
+    review: ['Does every shared file clearly say it is a proof?', 'Can the client still review all essential content?', 'Are review round and filename unambiguous?', 'Will the final file be regenerated from the clean master?'],
+    limitation: 'A proof watermark reduces accidental confusion; it cannot stop a recipient from capturing or reconstructing visible content and should not be treated as access control.',
+    privacy: 'Proof generation stays local. Sharing occurs only through the channel you choose after reviewing the watermarked copies.',
+    relatedUseCases: ['add-watermarks-to-pdf-documents-in-batches', 'protect-pdf-deliverables-with-passwords'],
+    faq: [
+      { q: 'Should I watermark the master file?', a: 'No. Keep a clean master and create a separate proof derivative so final delivery remains reproducible.' },
+      { q: 'Does a proof mark prevent unauthorized use?', a: 'No. It communicates status and discourages confusion, but it is not a technical access-control system.' }
+    ],
+    lastmod: '2026-08-10'
+  }),
+  useCase({
+    id: 35,
+    slug: 'protect-pdf-deliverables-with-passwords',
+    title: 'Protect PDF Deliverables With Passwords',
+    shortTitle: 'Protect PDF deliverables',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Lock a batch of PDF deliverables with one AES-256 password so nobody without it can open the content.',
+    scenario: 'Client reports, financial documents, manuscripts, or other deliverables need to be genuinely unreadable to anyone who does not have the password — not just politely asked not to print or copy them.',
+    outcome: 'Validated AES-256 protected copies that reject every password except the one you set, with untouched clean masters.',
+    products: ['BPP'],
+    inputs: ['Final clean PDF deliverables', 'A secure channel for sharing the password separately from the file', 'A password manager or other retention method', 'A separate output folder'],
+    steps: [
+      { title: 'Classify the delivery risk', body: 'Decide who is allowed to read the document at all. A password only protects content while it stays secret, so plan how you will share it before you run the batch.' },
+      { title: 'Protect the clean source', body: 'Keep the final clean PDF in a controlled master location and write encrypted copies to a separate delivery folder. Already-encrypted and signed files are skipped automatically and need a different workflow.' },
+      { title: 'Set one password', body: 'Enter a password and confirm it, or generate a strong one if you do not already have one. Save it to a trusted password manager before you close the app — it is never written to disk.' },
+      { title: 'Decide on metadata', body: 'Leave Encrypt metadata on if the title, author, and other document properties should also stay hidden without the password. Turn it off only if recipients need to identify files by their properties while browsing an unopened folder.' },
+      { title: 'Run and inspect verification', body: 'Batch Protect PDF encrypts with AES-256 and reopens each temporary output with the intended password and a known wrong one before promoting it, confirming the wrong password is actually rejected.' },
+      { title: 'Share the password separately', body: 'Send the protected PDF and its password through different channels. Record which version and password were delivered, and use Unprotect mode later if you ever need the content back without the lock.' }
+    ],
+    review: ['Does the intended password open the file and a wrong one fail?', 'Is the password stored securely, separately from the file itself?', 'Are clean masters untouched?', 'Is metadata encryption set the way you intended?'],
+    limitation: 'Encryption protects content only while the password stays secret. Once someone legitimately has both the file and the password, they can photograph, retype, or otherwise capture what they see — the same as with any file they are allowed to open.',
+    privacy: 'Encryption, password verification, and output creation run locally. Passwords are transient and are not stored in app preferences or logs.',
+    relatedUseCases: ['compress-pdfs-without-uploading-them', 'add-watermarks-to-pdf-documents-in-batches', 'watermark-client-pdf-proofs-before-sharing'],
+    faq: [
+      { q: 'Why one password instead of separate open and owner passwords?', a: 'Because that split let a "protected" file still be opened and read by anyone — the owner password only gated permission changes, not reading. One password that is actually required to open the file is the real protection.' },
+      { q: 'Can I remove the password later?', a: 'Yes — switch to Unprotect mode with the same password and the app decrypts the batch again, skipping any file that password does not open rather than stopping the run.' }
+    ],
+    lastmod: '2026-08-14'
   })
 ];

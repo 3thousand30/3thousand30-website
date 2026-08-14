@@ -42,9 +42,9 @@ async function auditAccessibility(page, label) {
   assert(!requests.some((url) => /googletagmanager\.com\/gtag|google-analytics\.com\/g\/collect/.test(url)), 'Google Analytics requested data before consent.');
   assert(await page.locator('[data-menu-toggle]').isVisible(), 'Mobile menu button is not visible at 390px.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Homepage has horizontal overflow at 390px.');
-  assert((await page.locator('body').textContent()).includes('12'), 'Homepage product count is missing.');
-  assert((await page.locator('.home-console-footer').textContent()).replace(/\s+/g, ' ').includes('30 practical workflows'), 'Homepage use-case count is missing.');
-  assert(await page.locator('a[href="/use-cases/convert-markdown-files-to-pdf-in-bulk.html"]').count() >= 1, 'Homepage does not feature the new high-intent Markdown workflow.');
+  assert((await page.locator('body').textContent()).includes('15'), 'Homepage product count is missing.');
+  assert((await page.locator('.home-console-footer').textContent()).replace(/\s+/g, ' ').includes('35 practical workflows'), 'Homepage use-case count is missing.');
+  assert(await page.locator('a[href="/use-cases/compress-pdfs-without-uploading-them.html"]').count() >= 1, 'Homepage does not feature the private PDF compression workflow.');
   await auditAccessibility(page, 'Homepage');
 
   await page.locator('#cookie-accept').click();
@@ -58,25 +58,26 @@ async function auditAccessibility(page, label) {
   assert(await page.evaluate(() => localStorage.getItem('cookie_consent')) === 'granted', 'Analytics consent did not persist across navigation.');
   assert(await page.locator('#cookie-banner').count() === 0, 'Consent banner returned after acceptance.');
   let visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 12, `Product directory does not initially show 12 products (found ${visibleCount}).`);
+  assert(visibleCount === 15, `Product directory does not initially show 15 products (found ${visibleCount}).`);
   const productCardLicenses = await page.locator('[data-catalog-item] .card-license').allTextContents();
-  assert(productCardLicenses.length === 12, `Product directory does not show a license label on every card (found ${productCardLicenses.length}).`);
+  assert(productCardLicenses.length === 15, `Product directory does not show a license label on every card (found ${productCardLicenses.length}).`);
   assert(productCardLicenses.every((label) => label.replace(/\s+/g, ' ').trim() === '// buy once'), 'Product cards do not use one consistent buy-once label.');
   const productCardCurrentPrices = await page.locator('[data-catalog-item] .card-price-values strong').allTextContents();
   const productCardOriginalPrices = await page.locator('[data-catalog-item] .card-price-values s').allTextContents();
   const productCardDiscounts = await page.locator('[data-catalog-item] .card-discount').allTextContents();
-  assert(productCardCurrentPrices.length === 12, `Product directory does not show a current price on every card (found ${productCardCurrentPrices.length}).`);
+  assert(productCardCurrentPrices.length === 15, `Product directory does not show a current price on every card (found ${productCardCurrentPrices.length}).`);
   assert(productCardCurrentPrices.filter((price) => price.trim() === '$14.99').length === 3, 'Product directory does not show the $14.99 US price on all three AI apps.');
   assert(productCardCurrentPrices.filter((price) => price.trim() === '$3.74').length === 9, 'Product directory does not show the $3.74 US price on all nine other products.');
+  assert(productCardCurrentPrices.filter((price) => price.trim() === '$4.99').length === 3, 'Product directory does not show the $4.99 recommended base price on all three PDF release candidates.');
   assert(productCardOriginalPrices.filter((price) => price.trim() === '$19.99').length === 3, 'Product directory AI original prices are incorrect.');
   assert(productCardOriginalPrices.filter((price) => price.trim() === '$4.99').length === 9, 'Product directory standard original prices are incorrect.');
-  assert(productCardDiscounts.every((discount) => discount.trim() === '-25%'), 'Product cards do not all show the current -25% Store discount.');
+  assert(productCardDiscounts.length === 12 && productCardDiscounts.every((discount) => discount.trim() === '-25%'), 'Discounted product cards do not consistently show the current -25% Store discount.');
   assert(await page.locator('[data-catalog-item] .card-status', { hasText: 'released' }).count() === 0, 'Product cards still show the redundant released status.');
   assert(await page.locator('[data-catalog-controls]').evaluate((element) => getComputedStyle(element).position) !== 'sticky', 'Product filters cover the catalog on mobile.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Product directory has horizontal overflow at 390px.');
   await page.locator('[data-filter-group="categories"][data-filter-value="pdf"]').click();
   visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 3, `PDF filter does not show exactly BMP, BSP, and BTP (found ${visibleCount}).`);
+  assert(visibleCount === 6, `PDF filter does not show BMP, BSP, BTP, BCP, BWP, and BPP (found ${visibleCount}).`);
   await page.locator('[data-filter-group="categories"][data-filter-value="all"]').click();
   await page.locator('[data-catalog-search]').fill('Key Rush');
   visibleCount = await visibleCatalogItems(page);
@@ -88,15 +89,15 @@ async function auditAccessibility(page, label) {
 
   await page.goto(`${baseUrl}/use-cases/`, { waitUntil: 'networkidle' });
   visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 30, `Use-case directory does not initially show 30 workflows (found ${visibleCount}).`);
-  assert((await page.locator('[data-catalog-item] h3').first().textContent()).trim() === 'Convert Markdown Files to PDF in Bulk', 'Use-case directory does not prioritize the new utility workflows.');
+  assert(visibleCount === 35, `Use-case directory does not initially show 35 workflows (found ${visibleCount}).`);
+  assert((await page.locator('[data-catalog-item] h3').first().textContent()).trim() === 'Compress PDFs Without Uploading Them', 'Use-case directory does not prioritize the new private PDF workflow.');
   await page.locator('[data-filter-group="kind"][data-filter-value="files"]').click();
   visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 7, `PDF and file workflow filter does not show 7 workflows (found ${visibleCount}).`);
+  assert(visibleCount === 12, `PDF and file workflow filter does not show 12 workflows (found ${visibleCount}).`);
   await page.locator('[data-filter-group="kind"][data-filter-value="all"]').click();
   await page.locator('[data-filter-group="categories"][data-filter-value="pdf-tools"]').click();
   visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 12, `PDF tools filter does not show 12 workflows (found ${visibleCount}).`);
+  assert(visibleCount === 17, `PDF tools filter does not show 17 workflows (found ${visibleCount}).`);
   await page.locator('[data-filter-group="categories"][data-filter-value="bt"]').click();
   visibleCount = await visibleCatalogItems(page);
   assert(visibleCount === 3, `Translation filter does not show 3 workflows (found ${visibleCount}).`);
@@ -148,6 +149,48 @@ async function auditAccessibility(page, label) {
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'New Markdown-to-PDF page has horizontal overflow at 390px.');
   await auditAccessibility(page, 'New Markdown-to-PDF use case');
 
+  const pdfReleaseCandidates = [
+    { code: 'BCP', slug: 'batch-compress-pdf', name: 'Batch Compress PDF', storeId: '9NNPJR6NP2S3', identity: '3thousand30.BatchCompressPDFs', screenshotFolder: 'bcp' },
+    { code: 'BWP', slug: 'batch-watermark-pdfs', name: 'Batch Watermark PDFs', storeId: '9N5C4HHWCR6R', identity: '3thousand30.BatchWatermarkPDFs', screenshotFolder: 'bwp' },
+    { code: 'BPP', slug: 'batch-protect-pdfs', name: 'Batch Protect PDFs', storeId: '9N16J4D2MDM1', identity: '3thousand30.BatchProtectPDFs', screenshotFolder: 'bpp' }
+  ];
+  for (const product of pdfReleaseCandidates) {
+    await page.goto(`${baseUrl}/${product.slug}.html`, { waitUntil: 'networkidle' });
+    const body = await page.locator('body').textContent();
+    assert(await page.locator('h1').textContent() === product.name, `${product.code} product heading is incorrect.`);
+    assert(body.includes('$4.99') && !body.includes('-0%'), `${product.code} recommended price presentation is incorrect.`);
+    assert(await page.locator(`a[href="https://apps.microsoft.com/detail/${product.storeId}"]`).count() >= 1, `${product.code} Store ID link is missing.`);
+    assert(body.includes('release candidate'), `${product.code} release-candidate disclosure is missing from the local page.`);
+    const schema = await page.locator('script[type="application/ld+json"]').first().evaluate((script) => JSON.parse(script.textContent));
+    const software = (schema['@graph'] || []).find((node) => node['@type'] === 'SoftwareApplication');
+    assert(software?.installUrl === `https://apps.microsoft.com/detail/${product.storeId}`, `${product.code} schema Store identity is incorrect.`);
+    assert(software?.offers?.price === '4.99', `${product.code} schema recommended price is incorrect.`);
+    assert(Array.isArray(software?.screenshot) && software.screenshot.length === 6, `${product.code} schema screenshots are incomplete.`);
+    const firstScreenshot = page.locator(`img[src^="/screenshots/${product.screenshotFolder}/"]`).first();
+    await firstScreenshot.scrollIntoViewIfNeeded();
+    await page.waitForFunction((folder) => { const image = document.querySelector(`img[src^="/screenshots/${folder}/"]`); return image && image.complete && image.naturalWidth > 0; }, product.screenshotFolder);
+    assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), `${product.code} page has horizontal overflow at 390px.`);
+    await auditAccessibility(page, `${product.code} product page`);
+  }
+
+  const newPdfWorkflows = [
+    ['compress-pdfs-without-uploading-them', 'Compress PDFs Without Uploading Them', '/batch-compress-pdf.html'],
+    ['reduce-scanned-pdfs-for-email-and-archiving', 'Reduce Scanned PDFs for Email and Archiving', '/batch-compress-pdf.html'],
+    ['add-watermarks-to-pdf-documents-in-batches', 'Add Watermarks to PDF Documents in Batches', '/batch-watermark-pdfs.html'],
+    ['watermark-client-pdf-proofs-before-sharing', 'Watermark Client PDF Proofs Before Sharing', '/batch-watermark-pdfs.html'],
+    ['protect-pdf-deliverables-with-passwords', 'Protect PDF Deliverables With Passwords', '/batch-protect-pdfs.html']
+  ];
+  for (const [slug, title, productUrl] of newPdfWorkflows) {
+    await page.goto(`${baseUrl}/use-cases/${slug}.html`, { waitUntil: 'networkidle' });
+    assert(await page.locator('h1').textContent() === title, `${slug} heading is incorrect.`);
+    assert(await page.locator(`a[href="${productUrl}"]`).count() >= 1, `${slug} does not link back to its product.`);
+    assert(await page.locator('#workflow li').count() === 6, `${slug} does not contain its complete six-step workflow.`);
+    assert(await page.locator('.faq-item').count() >= 2, `${slug} FAQ is incomplete.`);
+    assert(await page.locator('script[type="application/ld+json"]').count() >= 1, `${slug} structured data is missing.`);
+    assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), `${slug} has horizontal overflow at 390px.`);
+    await auditAccessibility(page, `${slug} use-case page`);
+  }
+
   await page.goto(`${baseUrl}/privacy.html`, { waitUntil: 'networkidle' });
   await page.evaluate(() => { document.cookie = '_ga_QATEST=value; path=/'; });
   await page.locator('[data-consent-deny]').click();
@@ -182,7 +225,7 @@ async function auditAccessibility(page, label) {
     process.exit(1);
   }
 
-  console.log('Browser checks passed: mobile layout, 30-workflow catalog, product pricing and schema, assets, and analytics consent lifecycle.');
+  console.log('Browser checks passed: mobile layout, 35-workflow catalog, 15-product pricing and schema, assets, and analytics consent lifecycle.');
 })().catch((error) => {
   console.error(error);
   process.exit(1);

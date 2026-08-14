@@ -3,9 +3,14 @@
   <div class="card-address">
     <span>app://{{ item.code | lower }}</span>
     <span class="card-price">
+      {% if item.price.discountPercent > 0 %}
       <span class="sr-only">US Store price ${{ item.price.current }}, {{ item.price.discountPercent }}% off the original ${{ item.price.original }}</span>
       <span class="card-discount" aria-hidden="true">-{{ item.price.discountPercent }}%</span>
       <span class="card-price-values" aria-hidden="true"><s>${{ item.price.original }}</s><strong>${{ item.price.current }}</strong></span>
+      {% else %}
+      <span class="sr-only">Recommended US Store price ${{ item.price.current }}</span>
+      <span class="card-price-values" aria-hidden="true"><strong>${{ item.price.current }}</strong></span>
+      {% endif %}
     </span>
   </div>
   <div class="mb-4 mt-5 flex items-start gap-4">

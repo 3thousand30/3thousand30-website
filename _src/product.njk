@@ -29,6 +29,7 @@ eleventyComputed:
         <span class="tag text-retro-amber">buy once</span>
         <span class="tag">{{ product.typeLabel }}</span>
         <span class="tag">Windows</span>
+        {% if product.status == 'release-candidate' %}<span class="tag">release candidate</span>{% endif %}
       </div>
       <h1 class="max-w-4xl text-4xl font-light leading-tight text-white sm:text-6xl">{{ product.name }}</h1>
       <p class="mt-6 max-w-3xl text-lg leading-8 text-retro-green">{{ product.tagline }}</p>
@@ -46,10 +47,12 @@ eleventyComputed:
           <dt class="text-gray-600">US Store price · buy once</dt>
           <dd class="mt-2 flex flex-wrap items-baseline gap-3">
             <strong class="text-2xl font-normal text-retro-green">${{ product.price.current }}</strong>
+            {% if product.price.discountPercent > 0 %}
             <span class="bg-retro-amber px-2 py-1 text-[10px] font-semibold text-black">-{{ product.price.discountPercent }}%</span>
             <s class="text-gray-600">${{ product.price.original }}</s>
+            {% endif %}
           </dd>
-          <dd class="mt-2 leading-5 text-gray-600">USD price shown. Microsoft Store applies regional pricing.</dd>
+          <dd class="mt-2 leading-5 text-gray-600">{% if product.status == 'release-candidate' %}Recommended base price before Store publication. {% endif %}USD price shown; Microsoft Store applies regional pricing.</dd>
         </div>
         <div class="border-b border-white/10 pb-4">
           <dt class="text-gray-600">privacy boundary</dt>
@@ -151,7 +154,7 @@ eleventyComputed:
     <div>
       <p class="eyebrow mb-3 text-retro-amber">ready_when_you_are</p>
       <h2 class="text-2xl font-light text-white">Own {{ product.shortName }} and keep the workflow.</h2>
-      <p class="mt-3 text-sm leading-6 text-gray-500">US Store price: <strong class="font-normal text-retro-green">${{ product.price.current }}</strong> <span class="text-retro-amber">(-{{ product.price.discountPercent }}%)</span>, normally <s>${{ product.price.original }}</s>. Regional pricing may differ.</p>
+      <p class="mt-3 text-sm leading-6 text-gray-500">{% if product.status == 'release-candidate' %}Recommended US base price{% else %}US Store price{% endif %}: <strong class="font-normal text-retro-green">${{ product.price.current }}</strong>{% if product.price.discountPercent > 0 %} <span class="text-retro-amber">(-{{ product.price.discountPercent }}%)</span>, normally <s>${{ product.price.original }}</s>{% endif %}. Regional pricing may differ.</p>
     </div>
     <a href="{{ product.storeUrl }}" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="{{ product.name }} Microsoft Store bottom CTA">open Microsoft Store →</a>
   </div>

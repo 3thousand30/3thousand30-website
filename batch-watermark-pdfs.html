@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en" class="bg-black">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Batch Watermark PDF — Add Text and Logo Marks Locally | 3thousand30</title>
+  <meta name="description" content="A local Windows batch watermarker for text, PNG, JPEG, combined marks, placement, opacity, rotation, edge margin, tiling, page ranges, and layering.">
+  <meta name="author" content="3thousand30">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://3thousand30.com/batch-watermark-pdfs.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="3thousand30">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://3thousand30.com/batch-watermark-pdfs.html">
+  <meta property="og:title" content="Batch Watermark PDF — Add Text and Logo Marks Locally | 3thousand30">
+  <meta property="og:description" content="A local Windows batch watermarker for text, PNG, JPEG, combined marks, placement, opacity, rotation, edge margin, tiling, page ranges, and layering.">
+  <meta property="og:image" content="https://3thousand30.com/Logos/BWP.png">
+  <meta property="og:image:alt" content="Batch Watermark PDF logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@3thousand30HQ">
+  <meta name="twitter:creator" content="@3thousand30HQ">
+  <meta name="twitter:title" content="Batch Watermark PDF — Add Text and Logo Marks Locally | 3thousand30">
+  <meta name="twitter:description" content="A local Windows batch watermarker for text, PNG, JPEG, combined marks, placement, opacity, rotation, edge margin, tiling, page ranges, and layering.">
+  <meta name="twitter:image" content="https://3thousand30.com/Logos/BWP.png">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://3thousand30.com/batch-watermark-pdfs.html#webpage",
+        "url": "https://3thousand30.com/batch-watermark-pdfs.html",
+        "name": "Batch Watermark PDF — Add Text and Logo Marks Locally | 3thousand30",
+        "description": "A local Windows batch watermarker for text, PNG, JPEG, combined marks, placement, opacity, rotation, edge margin, tiling, page ranges, and layering.",
+        "breadcrumb": { "@id": "https://3thousand30.com/batch-watermark-pdfs.html#breadcrumb" },
+        "mainEntity": { "@id": "https://3thousand30.com/batch-watermark-pdfs.html#software" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://3thousand30.com/batch-watermark-pdfs.html#software",
+        "name": "Batch Watermark PDF",
+        "description": "A local Windows batch watermarker for text, PNG, JPEG, combined marks, placement, opacity, rotation, edge margin, tiling, page ranges, and layering.",
+        "url": "https://3thousand30.com/batch-watermark-pdfs.html",
+        "mainEntityOfPage": { "@id": "https://3thousand30.com/batch-watermark-pdfs.html#webpage" },
+        "image": "https://3thousand30.com/Logos/BWP.png",
+        "screenshot": ["https://3thousand30.com/screenshots/bwp/1. Watermark PDF batches locally.png","https://3thousand30.com/screenshots/bwp/2. Add image watermarks precisely.png","https://3thousand30.com/screenshots/bwp/3. Review every processing result.png","https://3thousand30.com/screenshots/bwp/4. Preview and finish every batch.png"],
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows",
+        "isAccessibleForFree": false,
+        "installUrl": "https://apps.microsoft.com/detail/9N5C4HHWCR6R",
+        "downloadUrl": "https://apps.microsoft.com/detail/9N5C4HHWCR6R",
+        "sameAs": ["https://apps.microsoft.com/detail/9N5C4HHWCR6R", "https://3thousand30.github.io/batchwatermarkpdfs-docs/"],
+        "offers": {
+          "@type": "Offer",
+          "price": "4.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://apps.microsoft.com/detail/9N5C4HHWCR6R",
+          "seller": { "@id": "https://3thousand30.com/#organization" }
+        },
+        "publisher": { "@id": "https://3thousand30.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://3thousand30.com/#organization",
+        "name": "3thousand30",
+        "url": "https://3thousand30.com/",
+        "logo": { "@type": "ImageObject", "url": "https://3thousand30.com/3030-300x300.png" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://3thousand30.com/batch-watermark-pdfs.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
+          { "@type": "ListItem", "position": 3, "name": "Batch Watermark PDF", "item": "https://3thousand30.com/batch-watermark-pdfs.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Which image formats are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Version 1.0 supports PNG, JPG, and JPEG. SVG input is deferred." }
+        },{
+          "@type": "Question",
+          "name": "Does watermarking flatten the PDF?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The normal workflow adds page resources and content while preserving text, links, forms, annotations, and page geometry." }
+        },{
+          "@type": "Question",
+          "name": "Does a watermark prevent copying?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A watermark communicates ownership or status and discourages misuse, but it is not encryption or DRM." }
+        }]
+      }
+    ]
+  }
+  </script>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/tailwind.min.css">
+</head>
+<body class="min-h-screen overflow-x-hidden bg-black font-mono text-white antialiased" data-page-type="product">
+  <a href="#main-content" class="fixed left-4 top-4 z-[70] -translate-y-24 bg-retro-green px-4 py-3 text-xs font-semibold text-black transition-transform focus:translate-y-0">skip to content</a>
+  <div class="pointer-events-none fixed inset-0 z-10 opacity-[0.035]" aria-hidden="true" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,#00ff41 2px,#00ff41 3px)"></div>
+
+  <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
+  <div class="site-shell flex min-h-16 items-center justify-between gap-6">
+    <a href="/" class="site-brand flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
+      <img src="/3030-logo.webp" alt="" class="h-9 w-9 object-cover" width="36" height="36">
+      <span class="hidden sm:block"><b>3thousand30</b><small>independent signal</small></span>
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green text-retro-green" aria-current="page"><span aria-hidden="true">./</span>products</a>
+      <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>use cases</a>
+      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green text-gray-400"><span aria-hidden="true">./</span>manifesto</a>
+    </nav>
+
+    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true" data-menu-icon>☰</span>
+    </button>
+  </div>
+
+  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 md:hidden" aria-label="Mobile navigation" data-mobile-menu>
+    <div class="grid gap-2">
+      <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
+      <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
+      <a href="/manifesto.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">manifesto</a>
+      <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
+    </div>
+  </nav>
+</header>
+
+
+  <main id="main-content" class="relative z-20">
+
+
+
+
+<section class="site-shell py-10 sm:py-14">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-retro-green">home</a> /
+    <a href="/products/" class="hover:text-retro-green">products</a> /
+    <span class="text-gray-400">Batch Watermark PDF</span>
+  </nav>
+
+  <div class="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+    <div>
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="tag text-retro-amber">buy once</span>
+        <span class="tag">Local PDF utility</span>
+        <span class="tag">Windows</span>
+        <span class="tag">release candidate</span>
+      </div>
+      <h1 class="max-w-4xl text-4xl font-light leading-tight text-white sm:text-6xl">Batch Watermark PDF</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-retro-green">Add text, logo, or combined watermarks to PDF batches locally, with precise placement and a live preview.</p>
+      <p class="mt-5 max-w-3xl text-sm leading-7 text-gray-400">Batch Watermark PDF applies text, PNG, JPEG, or combined marks without turning ordinary outputs into page screenshots. Choose placement, rotation, opacity, edge margin, text colour, tiling, page ranges, and above- or below-content layering, then check the result in a live Original, Watermarked, or Split preview before running the batch.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://apps.microsoft.com/detail/9N5C4HHWCR6R" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="Batch Watermark PDF Microsoft Store">Microsoft Store →</a>
+        <a href="https://3thousand30.github.io/batchwatermarkpdfs-docs/" target="_blank" rel="noopener" class="button-secondary" data-analytics-event="outbound_click" data-analytics-name="Batch Watermark PDF documentation">documentation</a>
+      </div>
+    </div>
+
+    <aside class="panel-green p-6 reveal-item" data-reveal aria-label="Product facts">
+      <img src="/Logos/BWP.png" alt="Batch Watermark PDF logo" class="h-24 w-24 rounded-2xl object-cover" width="96" height="96">
+      <dl class="mt-6 space-y-5 text-xs">
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">US Store price · buy once</dt>
+          <dd class="mt-2 flex flex-wrap items-baseline gap-3">
+            <strong class="text-2xl font-normal text-retro-green">$4.99</strong>
+
+          </dd>
+          <dd class="mt-2 leading-5 text-gray-600">Recommended base price before Store publication. USD price shown; Microsoft Store applies regional pricing.</dd>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <dt class="text-gray-600">privacy boundary</dt>
+          <dd class="mt-1 text-retro-green">Fully local · clean masters stay clean</dd>
+        </div>
+        <div>
+          <dt class="text-gray-600">product code</dt>
+          <dd class="mt-1 text-white">BWP</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8">
+    <p class="eyebrow mb-3">what_it_does</p>
+    <h2 class="section-heading">A focused workflow, not a suite you have to rent.</h2>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Use text, PNG, JPEG, or combined watermarks</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Choose nine placements, rotation, opacity, and edge margin</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Set watermark text colour, size, and wording per batch</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Repeat marks in an adjustable tile pattern, or target precise page ranges</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Place marks above or below existing page content</p>
+    </div>
+
+    <div class="panel p-5 reveal-item" data-reveal>
+      <span class="text-retro-green" aria-hidden="true">›</span>
+      <p class="mt-3 text-sm leading-6 text-gray-300">Check results in a live Original, Watermarked, or Split preview</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="border-y border-white/10 bg-white/[0.015]">
+  <div class="site-shell py-12 sm:py-16">
+    <div class="mb-8">
+      <p class="eyebrow mb-3">inside_the_app</p>
+      <h2 class="section-heading">See the actual Windows workflow</h2>
+    </div>
+    <div class="grid gap-5 lg:grid-cols-2">
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bwp/1. Watermark PDF batches locally.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Text watermark and live preview controls in Batch Watermark PDF">
+          <img src="/screenshots/bwp/1. Watermark PDF batches locally.png" alt="Text watermark and live preview controls in Batch Watermark PDF" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Preview text watermarks before processing the full PDF batch.</figcaption>
+      </figure>
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bwp/2. Add image watermarks precisely.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Image watermark scale and placement controls in Batch Watermark PDF">
+          <img src="/screenshots/bwp/2. Add image watermarks precisely.png" alt="Image watermark scale and placement controls in Batch Watermark PDF" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Add logo watermarks with precise scale and placement control.</figcaption>
+      </figure>
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bwp/3. Review every processing result.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Generation log showing success, skip, and warning results in Batch Watermark PDF">
+          <img src="/screenshots/bwp/3. Review every processing result.png" alt="Generation log showing success, skip, and warning results in Batch Watermark PDF" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Review every success, skip, warning, and processing error.</figcaption>
+      </figure>
+
+      <figure class="panel overflow-hidden reveal-item" data-reveal>
+        <a href="/screenshots/bwp/4. Preview and finish every batch.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Completed batch with output folder access in Batch Watermark PDF">
+          <img src="/screenshots/bwp/4. Preview and finish every batch.png" alt="Completed batch with output folder access in Batch Watermark PDF" class="aspect-video w-full bg-[#090909] object-contain" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="border-t border-white/10 p-4 text-xs leading-5 text-gray-500">Finish the batch and open your validated PDF outputs.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="site-shell grid gap-6 py-12 sm:py-16 lg:grid-cols-2">
+  <div class="panel p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">who_it_is_for</p>
+    <ul class="space-y-4 text-sm leading-6 text-gray-400">
+      <li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Teams marking drafts and proofs before sharing</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>People applying a logo across document sets</span></li><li class="flex gap-3"><span class="text-retro-green" aria-hidden="true">✓</span><span>Anyone who needs consistent PDF status marks without an upload</span></li>
+    </ul>
+  </div>
+  <div class="panel-green p-6 sm:p-8 reveal-item" data-reveal>
+    <p class="eyebrow mb-4">privacy_and_control</p>
+    <h2 class="text-xl font-light text-white">Fully local · clean masters stay clean</h2>
+    <p class="mt-4 text-sm leading-7 text-gray-400">PDFs and watermark image files stay on the PC. Outputs are separate validated copies, so approved clean masters remain unchanged.</p>
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="mb-8 flex items-end justify-between gap-5">
+    <div>
+      <p class="eyebrow mb-3">use_it_for</p>
+      <h2 class="section-heading">Practical workflows</h2>
+    </div>
+    <a href="/use-cases/" class="text-link text-xs">all use cases →</a>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="bwp pdf-tools" data-search="Add Watermarks to PDF Documents in Batches Apply one reusable text, logo, or combined watermark across PDF sets while preserving separate clean masters. PDF &amp; file workflows BWP">
+  <div class="card-address">
+    <span>workflow://UC-33</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
+  </div>
+  <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
+  <h3 class="text-base font-normal leading-7 text-white">Add Watermarks to PDF Documents in Batches</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Apply one reusable text, logo, or combined watermark across PDF sets while preserving separate clean masters.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BWP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/add-watermarks-to-pdf-documents-in-batches.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Add Watermarks to PDF Documents in Batches">open workflow →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="files" data-categories="bwp pdf-tools" data-search="Watermark Client PDF Proofs Before Sharing Create temporary DRAFT or PROOF copies for client review while keeping approved clean masters untouched. PDF &amp; file workflows BWP">
+  <div class="card-address">
+    <span>workflow://UC-34</span>
+    <span class="card-status"><i aria-hidden="true"></i>6 steps</span>
+  </div>
+  <p class="eyebrow mb-2 mt-5">PDF &amp; file workflows</p>
+  <h3 class="text-base font-normal leading-7 text-white">Watermark Client PDF Proofs Before Sharing</h3>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">Create temporary DRAFT or PROOF copies for client review while keeping approved clean masters untouched.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">BWP</span>
+  </div>
+  <div class="mt-5 border-t border-white/10 pt-4 text-right text-xs">
+    <a href="/use-cases/watermark-client-pdf-proofs-before-sharing.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="use_case_click" data-analytics-name="Watermark Client PDF Proofs Before Sharing">open workflow →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+
+<section class="site-shell max-w-4xl py-12 sm:py-16">
+  <p class="eyebrow mb-3">faq</p>
+  <h2 class="section-heading mb-7">Straight answers</h2>
+  <div class="space-y-3">
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Which image formats are supported?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">Version 1.0 supports PNG, JPG, and JPEG. SVG input is deferred.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Does watermarking flatten the PDF?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. The normal workflow adds page resources and content while preserving text, links, forms, annotations, and page geometry.</p>
+    </details>
+
+    <details class="faq-item panel group">
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 p-5 text-sm text-white">
+        <span>Does a watermark prevent copying?</span><span class="text-retro-green transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="border-t border-white/10 px-5 py-5 text-sm leading-7 text-gray-400">No. A watermark communicates ownership or status and discourages misuse, but it is not encryption or DRM.</p>
+    </details>
+
+  </div>
+</section>
+
+
+<section class="site-shell py-12 sm:py-16">
+  <div class="panel-amber grid gap-7 p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+    <div>
+      <p class="eyebrow mb-3 text-retro-amber">ready_when_you_are</p>
+      <h2 class="text-2xl font-light text-white">Own Batch Watermark PDF and keep the workflow.</h2>
+      <p class="mt-3 text-sm leading-6 text-gray-500">Recommended US base price: <strong class="font-normal text-retro-green">$4.99</strong>. Regional pricing may differ.</p>
+    </div>
+    <a href="https://apps.microsoft.com/detail/9N5C4HHWCR6R" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="Batch Watermark PDF Microsoft Store bottom CTA">open Microsoft Store →</a>
+  </div>
+</section>
+
+
+<section class="site-shell pb-10 pt-6">
+  <p class="eyebrow mb-5">related_products</p>
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf files productivity" data-search="Batch Compress PDF A local Windows PDF compressor with Flatten for strong size reduction, Smart for structure-preserving compression, validated outputs, and a no-bloat guarantee. Local PDF utility pdf files productivity">
+  <div class="card-address">
+    <span>app://bcp</span>
+    <span class="card-price">
+
+      <span class="sr-only">Recommended US Store price $4.99</span>
+      <span class="card-price-values" aria-hidden="true"><strong>$4.99</strong></span>
+
+    </span>
+  </div>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BCP.png" alt="Batch Compress PDF logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local PDF utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Compress PDF</h3>
+    </div>
+  </div>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows PDF compressor with Flatten for strong size reduction, Smart for structure-preserving compression, validated outputs, and a no-bloat guarantee.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">pdf</span><span class="tag">files</span><span class="tag">productivity</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="card-license"><i>//</i> buy once</span>
+    <a href="/batch-compress-pdf.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Compress PDF">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="pdf files productivity" data-search="Batch Protect PDF A local Windows batch PDF protector: one password locks a batch of PDFs with AES-256 so nobody without it can open the content, and Unprotect mode removes that protection again given the password. Local PDF utility pdf files productivity">
+  <div class="card-address">
+    <span>app://bpp</span>
+    <span class="card-price">
+
+      <span class="sr-only">Recommended US Store price $4.99</span>
+      <span class="card-price-values" aria-hidden="true"><strong>$4.99</strong></span>
+
+    </span>
+  </div>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BPP.png" alt="Batch Protect PDF logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local PDF utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Protect PDF</h3>
+    </div>
+  </div>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A local Windows batch PDF protector: one password locks a batch of PDFs with AES-256 so nobody without it can open the content, and Unprotect mode removes that protection again given the password.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">pdf</span><span class="tag">files</span><span class="tag">productivity</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="card-license"><i>//</i> buy once</span>
+    <a href="/batch-protect-pdfs.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Protect PDF">view app →</a>
+  </div>
+</article>
+
+<article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="utility" data-categories="images social rights" data-search="Batch Watermark Image A fully local Windows batch watermarker with text and logo layers, opacity, placement, tiling, preview, and controlled export. Local utility images social rights">
+  <div class="card-address">
+    <span>app://bwi</span>
+    <span class="card-price">
+
+      <span class="sr-only">US Store price $3.74, 25% off the original $4.99</span>
+      <span class="card-discount" aria-hidden="true">-25%</span>
+      <span class="card-price-values" aria-hidden="true"><s>$4.99</s><strong>$3.74</strong></span>
+
+    </span>
+  </div>
+  <div class="mb-4 mt-5 flex items-start gap-4">
+    <img src="/Logos/BWI.webp" alt="Batch Watermark Image logo" class="product-mark" width="56" height="56" loading="lazy" decoding="async">
+    <div class="min-w-0 pt-0.5">
+      <p class="eyebrow mb-2">Local utility</p>
+      <h3 class="text-base font-normal leading-6 text-white">Batch Watermark Image</h3>
+    </div>
+  </div>
+  <p class="mt-3 flex-1 text-xs leading-6 text-gray-500">A fully local Windows batch watermarker with text and logo layers, opacity, placement, tiling, preview, and controlled export.</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    <span class="tag">images</span><span class="tag">social</span><span class="tag">rights</span>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs">
+    <span class="card-license"><i>//</i> buy once</span>
+    <a href="/batchwatermark-image.html" class="after:absolute after:inset-0 text-retro-green" data-analytics-event="product_click" data-analytics-name="Batch Watermark Image">view app →</a>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="relative z-20 mt-20 border-t border-white/10 bg-black">
+  <div class="site-shell grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
+    <div>
+      <p class="eyebrow mb-3">3thousand30</p>
+      <p class="max-w-xl text-sm leading-6 text-gray-500">Affordable, privacy-first, buy-once Windows tools for work worth keeping.</p>
+      <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-xs">
+        <a href="mailto:hello@3thousand30.com" class="text-link">hello@3thousand30.com</a>
+        <a href="https://x.com/3thousand30HQ" target="_blank" rel="noopener" class="text-link">@3thousand30HQ on X</a>
+      </div>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-3 text-xs text-gray-500 md:justify-end" aria-label="Footer navigation">
+      <a href="/products/" class="hover:text-white">products</a>
+      <a href="/use-cases/" class="hover:text-white">use cases</a>
+      <a href="/manifesto.html" class="hover:text-white">manifesto</a>
+      <a href="/privacy.html" class="hover:text-white">privacy</a>
+    </nav>
+  </div>
+</footer>
+
+
+  <script src="/site.js"></script>
+  <script src="/cookie-banner.js"></script>
+</body>
+</html>

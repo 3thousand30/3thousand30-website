@@ -21,20 +21,23 @@ const officialStoreTitles = new Map([
   ['9NVDT0TTN0WH', 'Batch Merge PDFs'],
   ['9MZKRHK6NRRS', 'Batch Split PDFs'],
   ['9NS1L0DK0FQL', 'Batch Text to PDF'],
+  ['9NNPJR6NP2S3', 'Batch Compress PDF'],
+  ['9N5C4HHWCR6R', 'Batch Watermark PDF'],
+  ['9N16J4D2MDM1', 'Batch Protect PDF'],
   ['9MW7722B1026', 'Key Rush']
 ]);
 
 const highIntentUseCaseSlugs = [
+  'compress-pdfs-without-uploading-them',
+  'reduce-scanned-pdfs-for-email-and-archiving',
+  'add-watermarks-to-pdf-documents-in-batches',
+  'watermark-client-pdf-proofs-before-sharing',
+  'protect-pdf-deliverables-with-passwords',
   'convert-markdown-files-to-pdf-in-bulk',
   'resize-hundreds-of-images-at-once',
   'translate-multiple-documents-with-ai',
   'generate-product-descriptions-from-csv-with-ai',
-  'split-multiple-pdfs-into-separate-pages',
-  'add-a-logo-watermark-to-a-folder-of-images',
-  'upscale-a-folder-of-images-offline',
-  'find-exact-duplicate-files-by-hash',
-  'combine-markdown-chapters-into-one-book-pdf',
-  'batch-crop-product-images-into-squares'
+  'split-multiple-pdfs-into-separate-pages'
 ];
 
 if (JSON.stringify(site.priorityUseCaseSlugs) !== JSON.stringify(highIntentUseCaseSlugs)) {
@@ -132,7 +135,8 @@ for (const product of products) {
   if (!product.seoTitle.startsWith(`${officialTitle} — `)) fail(`${product.code}: SEO title must begin with the exact Store title.`);
   if (!/^\d+\.\d{2}$/.test(product.price?.current)) fail(`${product.code}: current US price is missing or malformed.`);
   if (!/^\d+\.\d{2}$/.test(product.price?.original)) fail(`${product.code}: original US price is missing or malformed.`);
-  if (product.price?.discountPercent !== 25) fail(`${product.code}: expected a 25% Store discount.`);
+  const expectedDiscount = product.status === 'release-candidate' ? 0 : 25;
+  if (product.price?.discountPercent !== expectedDiscount) fail(`${product.code}: expected a ${expectedDiscount}% Store discount.`);
   if (product.price?.currency !== 'USD' || product.price?.region !== 'US') fail(`${product.code}: price must identify the US Store and USD.`);
 
   const generatedProductPage = path.join(root, product.url.slice(1));
@@ -141,8 +145,10 @@ for (const product of products) {
     if (!productHtml.includes(`<title>${product.seoTitle}</title>`)) fail(`${product.code}: generated page title does not match product SEO title.`);
     if (!productHtml.includes(`>${officialTitle}</h1>`)) fail(`${product.code}: generated h1 does not use the exact Store title.`);
     if (!productHtml.includes(`$${product.price.current}`)) fail(`${product.code}: generated page is missing the current US price.`);
-    if (!productHtml.includes(`$${product.price.original}`)) fail(`${product.code}: generated page is missing the original US price.`);
-    if (!productHtml.includes(`-${product.price.discountPercent}%`)) fail(`${product.code}: generated page is missing the Store discount.`);
+    if (product.price.discountPercent > 0 && !productHtml.includes(`$${product.price.original}`)) fail(`${product.code}: generated page is missing the original US price.`);
+    if (product.price.discountPercent > 0 && !productHtml.includes(`-${product.price.discountPercent}%`)) fail(`${product.code}: generated page is missing the Store discount.`);
+    if (product.price.discountPercent === 0 && /-0%/.test(productHtml)) fail(`${product.code}: generated page shows a false zero-percent promotion.`);
+    if (product.status === 'release-candidate' && (product.storeId !== storeId || !product.storeIdentity)) fail(`${product.code}: release-candidate Store identity metadata is incomplete.`);
     if (!productHtml.includes(`"priceCurrency": "${product.price.currency}"`)) fail(`${product.code}: generated SoftwareApplication offer is missing its price currency.`);
     if (/priceValidUntil/i.test(productHtml)) fail(`${product.code}: generated price offer must not publish an end date.`);
 
