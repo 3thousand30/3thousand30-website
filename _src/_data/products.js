@@ -550,9 +550,10 @@ const products = [
     features: ['Encrypt PDF strings and streams with AES-256', 'One password, confirmed, locks the whole batch', 'Generate a strong password securely', 'Optionally encrypt document metadata too', 'Unprotect mode removes existing protection given the password', 'Wrong-password files are skipped, not batch-aborting'],
     audiences: ['People sending confidential PDF deliverables', 'Teams who need a batch of PDFs genuinely unreadable without a shared password', 'Anyone protecting or unprotecting document batches without a web upload'],
     screenshotItems: screenshots('bpp', [
-      ['1. Generate a strong password.png', 'Secure password generation in Batch Protect PDF', 'Generate a strong password.'],
-      ['2. Unprotect PDFs in batches.png', 'Unprotect mode in Batch Protect PDF', 'Unprotect PDFs in batches.'],
-      ['3. Review every processing result.png', 'Completed and verified Batch Protect PDF results', 'Review every processing result.']
+      ['1. Protect all your PDFs at once.png', 'Batch Protect PDF preflight list and input folder', 'Protect all your PDFs at once.'],
+      ['2. Generate a secure password when needed.png', 'Secure password generation in Batch Protect PDF', 'Generate a secure password when needed.'],
+      ['3. Unprotect PDFs in batches.png', 'Unprotect mode in Batch Protect PDF', 'Unprotect PDFs in batches.'],
+      ['4. Review every processing result.png', 'Completed and verified Batch Protect PDF results', 'Review every processing result.']
     ]),
     faq: [
       { q: 'What encryption does the app use?', a: 'It creates AES-256 PDF encryption using the modern V5/revision 6 security handler.' },
