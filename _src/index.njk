@@ -27,11 +27,12 @@ pageType: home
     <div class="home-console-grid">
       <div class="home-hero-copy">
         <p class="terminal-prompt"><span>root@3030</span>:~$ reject --dependency</p>
-        <p class="home-kicker">build for 3030 — not for next quarter</p>
-        <h1>Useful Windows tools.<span>No software rent.</span></h1>
+        <p class="home-kicker">principles that still matter in 3030</p>
+        <h1>Useful Windows apps.<span>No software rent.</span></h1>
         <p class="home-deck">Buy once. Keep your files. Choose your AI provider when a workflow needs one. Build without handing your work—or your judgment—to another black box.</p>
         <div class="home-actions">
           <a href="/products/" class="button-primary" data-analytics-event="product_catalog_click">browse products →</a>
+          <a href="/games/" class="button-secondary" data-analytics-event="game_catalog_click">explore games</a>
           <a href="/use-cases/" class="button-secondary" data-analytics-event="use_case_catalog_click">explore workflows</a>
         </div>
       </div>
@@ -43,7 +44,7 @@ pageType: home
         <p class="home-doctrine-answer">Our answer: <strong>capability.</strong></p>
         <ul>
           <li><span>01</span> people are capable</li>
-          <li><span>02</span> tools should increase freedom</li>
+          <li><span>02</span> products should increase freedom</li>
           <li><span>03</span> privacy is a principle</li>
           <li><span>04</span> AI does not replace taste</li>
         </ul>
@@ -52,7 +53,7 @@ pageType: home
     </div>
 
     <div class="home-console-footer">
-      <span><b>{{ products.length }}</b> Windows tools</span>
+      <span><b>{{ products.length }}</b> Windows apps</span>
       <span><b>{{ useCases.length }}</b> practical workflows</span>
       <span><b>local-first</b> where possible</span>
       <span><b>BYO AI</b> where needed</span>
@@ -68,13 +69,27 @@ pageType: home
   </div>
 </section>
 
+<section class="site-shell">
+  <div class="home-play-rail">
+    <img src="/Logos/CWAI.png" alt="Chess with any AI" class="home-play-mark" width="64" height="64" loading="lazy" decoding="async">
+    <div>
+      <p class="eyebrow mb-2">beyond_apps</p>
+      <p class="text-sm leading-6 text-gray-300">We make games, too: focused play for skill, strategy, and more control over the product you own.</p>
+    </div>
+    <a href="/games/" class="text-link text-xs">explore games →</a>
+  </div>
+</section>
+
 <section class="site-shell py-16 sm:py-24">
   <div class="mb-9 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
     <div>
-      <p class="eyebrow mb-3">selected_tools</p>
-      <h2 class="section-heading">Start with the job in front of you</h2>
+      <p class="eyebrow mb-3">apps_at_a_glance</p>
+      <h2 class="section-heading">Start with the app in front of you</h2>
     </div>
-    <a href="/products/" class="text-link text-xs">all {{ products.length }} products →</a>
+    <div class="flex flex-wrap gap-x-5 gap-y-2 text-xs">
+      <a href="/products/" class="text-link">all tools →</a>
+      <a href="/games/" class="text-link">all games →</a>
+    </div>
   </div>
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
     {% for item in featuredProducts %}{{ productCard(item) }}{% endfor %}
@@ -104,5 +119,28 @@ pageType: home
       <p class="mt-4 max-w-3xl text-sm leading-7 text-gray-400">That means transparent providers, local files, reasonable prices, honest limits, and products that keep working without a monthly gate.</p>
     </div>
     <a href="/manifesto.html" class="button-secondary">read the manifesto →</a>
+  </div>
+</section>
+
+<section class="site-shell pb-16 sm:pb-24">
+  <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+      <p class="eyebrow mb-3">independent_works</p>
+      <h2 class="section-heading">Things made with a point of view.</h2>
+    </div>
+    <a href="/works/" class="text-link text-xs">see all works →</a>
+  </div>
+  <div class="grid gap-4 sm:grid-cols-2">
+    {% for work in works %}
+    <a href="/works/?focus={{ work.slug }}" class="work-preview group" data-analytics-event="works_click" data-analytics-name="{{ work.title }} homepage work">
+      <div class="work-preview-image">
+        {% if work.image %}<img src="{{ work.image }}" alt="{{ work.imageAlt }}" class="work-cover" loading="lazy" decoding="async">{% else %}<span class="work-monogram">{{ work.monogram }}</span>{% endif %}
+      </div>
+      <div class="min-w-0 p-5">
+        <p class="eyebrow mb-2">{{ work.type }}</p>
+        <h3 class="text-lg font-normal leading-6 text-white group-hover:text-retro-green">{{ work.title }}</h3>
+      </div>
+    </a>
+    {% endfor %}
   </div>
 </section>

@@ -24,7 +24,8 @@ const officialStoreTitles = new Map([
   ['9NNPJR6NP2S3', 'Batch Compress PDF'],
   ['9N5C4HHWCR6R', 'Batch Watermark PDF'],
   ['9N16J4D2MDM1', 'Batch Protect PDF'],
-  ['9MW7722B1026', 'Key Rush']
+  ['9MW7722B1026', 'Key Rush'],
+  ['9PG2KT0L8FQS', 'Chess with any AI']
 ]);
 
 const highIntentUseCaseSlugs = [
@@ -182,7 +183,7 @@ if (softwareSchemaCount !== products.length) {
 }
 
 const htmlFiles = walk(root).filter((file) => file.endsWith('.html'));
-const expectedHtmlCount = 1 + 2 + products.length + useCases.length + 3;
+const expectedHtmlCount = site.staticPages.length + products.length + useCases.length + 1;
 if (htmlFiles.length !== expectedHtmlCount) {
   fail(`Expected ${expectedHtmlCount} generated HTML files, found ${htmlFiles.length}.`);
 }
@@ -232,11 +233,7 @@ const sitemapPath = path.join(root, 'sitemap.xml');
 const sitemap = fs.readFileSync(sitemapPath, 'utf8');
 const sitemapUrls = Array.from(sitemap.matchAll(/<loc>(.*?)<\/loc>/g), (match) => match[1]);
 const expectedSitemapUrls = [
-  'https://3thousand30.com/',
-  'https://3thousand30.com/products/',
-  'https://3thousand30.com/use-cases/',
-  'https://3thousand30.com/manifesto.html',
-  'https://3thousand30.com/privacy.html',
+  ...site.staticPages.map((item) => `https://3thousand30.com${item.url}`),
   ...products.map((product) => `https://3thousand30.com${product.url}`),
   ...useCases.map((useCase) => `https://3thousand30.com${useCase.url}`)
 ];

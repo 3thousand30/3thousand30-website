@@ -1,27 +1,29 @@
 <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur" data-site-header>
-  <div class="site-shell flex min-h-16 items-center justify-between gap-6">
+  <div class="site-shell flex min-h-16 items-center justify-between gap-4">
     <a href="/" class="site-brand flex items-center gap-3 text-sm text-white transition-colors hover:text-retro-green" aria-label="3thousand30 home">
       <img src="/3030-logo.webp" alt="" class="h-9 w-9 object-cover" width="36" height="36">
       <span class="hidden sm:block"><b>3thousand30</b><small>independent signal</small></span>
     </a>
 
-    <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
-      <a href="/products/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'product' or catalogKind == 'products' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'product' or catalogKind == 'products' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>products</a>
+    <nav class="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
+      <a href="/products/" class="text-xs transition-colors hover:text-retro-green {% if catalogKind == 'products' or (pageType == 'product' and product.type != 'game') %}text-retro-green{% else %}text-gray-400{% endif %}"{% if catalogKind == 'products' or (pageType == 'product' and product.type != 'game') %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>products</a>
+      <a href="/games/" class="text-xs transition-colors hover:text-retro-green {% if catalogKind == 'games' or (pageType == 'product' and product.type == 'game') %}text-retro-green{% else %}text-gray-400{% endif %}"{% if catalogKind == 'games' or (pageType == 'product' and product.type == 'game') %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>games</a>
       <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'use_case' or catalogKind == 'use-cases' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'use_case' or catalogKind == 'use-cases' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>use cases</a>
-      <a href="/manifesto.html" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'manifesto' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'manifesto' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>manifesto</a>
+      <a href="/works/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'works' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'works' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>works</a>
     </nav>
 
-    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green md:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+    <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green lg:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
       <span class="sr-only">Open navigation</span>
       <span aria-hidden="true" data-menu-icon>☰</span>
     </button>
   </div>
 
-  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 md:hidden" aria-label="Mobile navigation" data-mobile-menu>
+  <nav id="mobile-navigation" class="site-shell hidden border-t border-white/10 py-4 lg:hidden" aria-label="Mobile navigation" data-mobile-menu>
     <div class="grid gap-2">
       <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
+      <a href="/games/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">games</a>
       <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
-      <a href="/manifesto.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">manifesto</a>
+      <a href="/works/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">works</a>
       <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
     </div>
   </nav>

@@ -3,16 +3,30 @@
 
   <url>
     <loc>https://3thousand30.com/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://3thousand30.com/products/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://3thousand30.com/games/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://3thousand30.com/works/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
@@ -142,6 +156,13 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://3thousand30.com/chess-with-any-ai.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 
   <url>
     <loc>https://3thousand30.com/use-cases/create-a-photobook-with-ai-for-gifting.html</loc>
@@ -193,6 +214,13 @@
   </url>
 
   <url>
+    <loc>https://3thousand30.com/use-cases/create-posters-to-print-or-sell.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://3thousand30.com/use-cases/create-song-lyrics-for-inspiration.html</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -201,13 +229,6 @@
 
   <url>
     <loc>https://3thousand30.com/use-cases/batch-create-images-for-social-media.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://3thousand30.com/use-cases/create-posters-to-print-or-sell.html</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

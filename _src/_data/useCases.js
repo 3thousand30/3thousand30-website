@@ -7,6 +7,7 @@ function useCase(data) {
     status: 'published',
     lastmod: '2026-08-07',
     proofLinks: [],
+    relatedWorks: [],
     relatedUseCases: [],
     faq: []
   }, data, { productGroups, url: `/use-cases/${data.slug}.html` });
@@ -159,26 +160,27 @@ module.exports = [
   useCase({
     id: 6,
     slug: 'create-short-stories-for-teaching',
-    title: 'Create Short Stories for Teaching',
-    shortTitle: 'Teaching story set',
+    title: 'Create Young-Reader Stories for Teaching',
+    shortTitle: 'Young-reader story edition',
     category: 'books',
     categoryLabel: 'Books & publishing',
-    summary: 'Create a themed set of age-appropriate stories and illustrations, then turn them into classroom or home-learning PDFs.',
-    scenario: 'A parent or teacher needs several short stories that reinforce a vocabulary list, social lesson, historical topic, or reading level.',
-    outcome: 'A reviewed pack of short stories, optional illustrations, and printable PDFs matched to a clearly stated learner level.',
-    products: ['BGT', 'BGI', 'BTP', 'BMP', 'BSP'],
-    inputs: ['Learner age and reading level', 'Learning objective and required vocabulary', 'Length and content boundaries', 'Review criteria for accuracy and safety'],
+    summary: 'Develop and review a young-reader story edition, then prepare it in more than one language for home or classroom use.',
+    scenario: 'Milo Goes to School shows the kind of project a parent, teacher, or independent publisher may need: a warm, age-appropriate story set supporting early reading, vocabulary, discussion, and a child’s first experiences of school or friendship.',
+    outcome: 'A reviewed English story edition, a carefully checked German edition, and an assembled PDF suitable for sharing, print proofing, or classroom use.',
+    products: ['BGT', 'BT', 'BTP', 'BMP'],
+    inputs: ['Learner age, reading level, and emotional boundaries', 'Learning objective and useful vocabulary', 'A source-language story brief and character notes', 'A glossary for names and recurring terms', 'Review criteria for accuracy, safety, and readability'],
     steps: [
-      { title: 'Define the learning objective', body: 'Write what the learner should understand or practise after reading. Include vocabulary, reading length, cultural context, and topics that must be avoided.' },
-      { title: 'Generate a small pilot set', body: 'Use Batch Generate Text with any AI to draft two or three stories first. Check reading level, repetition, facts, and whether the lesson is actually present before expanding the batch.' },
-      { title: 'Review as an educator', body: 'Correct inaccuracies, stereotypes, unsafe advice, and language that is too difficult or too simplistic. AI-generated educational content needs subject-matter review.' },
-      { title: 'Create optional illustrations', body: 'Use Batch Generate Image with any AI and a stable child-appropriate direction. Check every visual for relevance, safety, accidental text, and character inconsistency.' },
-      { title: 'Produce the PDF set', body: 'Use Batch Text to PDF for separate story PDFs or one combined class pack. Use Batch Merge PDFs when separately exported sections need assembly, and Batch Split PDFs when a combined pack must later become individual handouts.' },
-      { title: 'Test with one learner', body: 'Observe where the reader hesitates or misunderstands. Revise the source text, then regenerate or rebuild only the affected material.' }
+      { title: 'Define the reader and the lesson', body: 'Write the reader age, reading level, vocabulary, emotional boundaries, and what the child should understand or practise after reading. Keep the brief specific enough that warmth does not become vague instruction.' },
+      { title: 'Draft a small English pilot', body: 'Use Batch Generate Text with any AI to explore a few story directions before creating the edition. Check rhythm, repetition, dialogue, character continuity, and whether the intended lesson is felt rather than announced.' },
+      { title: 'Review as an educator or parent', body: 'Correct inaccuracies, stereotypes, unsafe advice, and language that is too difficult or too simplistic. A young-reader story needs an informed adult’s judgment before it becomes teaching material.' },
+      { title: 'Translate with a controlled glossary', body: 'Use Batch Translate Text with any AI for a German working edition, keeping names and recurring terms consistent through a prepared glossary. Review the translation for natural child-friendly language, not just literal correspondence.' },
+      { title: 'Build the page system', body: 'Use Batch Text to PDF to create text-only pages, image-only pages, or paired text-and-image pages from approved story material and illustrations. Keep page size, margins, and sequencing consistent across both language editions.' },
+      { title: 'Assemble and test the edition', body: 'Use Batch Merge PDFs to bring approved story pages, cover material, and any teaching notes into the finished order. Test it with one learner, notice where they hesitate or misunderstand, then revise the source rather than patching around the problem.' }
     ],
-    review: ['Does the story meet the stated learning objective?', 'Are facts checked by a qualified person?', 'Is the reading level genuinely appropriate?', 'Are illustrations safe and relevant?'],
-    limitation: 'Generated stories can contain subtle factual errors, stereotypes, or age-inappropriate material. A teacher or informed adult must review before use.',
-    privacy: 'Avoid including identifiable learner data in prompts. Generation goes to the selected providers; PDF assembly stays local.',
+    review: ['Does the story meet the stated learning objective without becoming preachy?', 'Are names, facts, and recurring terms consistent in both languages?', 'Is the reading level genuinely appropriate?', 'Do text, illustrations, and page breaks support rather than interrupt reading?'],
+    limitation: 'Generated stories and translations can contain subtle factual errors, awkward phrasing, stereotypes, or age-inappropriate material. A teacher, parent, editor, or informed adult must review before use.',
+    privacy: 'Avoid including identifiable learner data in prompts. Drafting and translation go to the selected providers; PDF creation, merging, and saved files remain local.',
+    relatedWorks: ['milo-goes-to-school'],
     relatedUseCases: ['create-a-colouring-book-for-children', 'batch-create-pdfs-from-text', 'merge-pdfs-without-using-the-internet'],
     faq: [{ q: 'Can this replace curriculum material?', a: 'No. Treat it as draft or supplementary material that needs review against the curriculum and the learner’s actual needs.' }]
   }),
@@ -207,6 +209,32 @@ module.exports = [
     privacy: 'Text and image requests go to the providers selected in the generative apps. PDF conversion and merging remain local.',
     relatedUseCases: ['create-song-lyrics-for-inspiration', 'batch-create-pdfs-from-text', 'create-posters-to-print-or-sell'],
     faq: [{ q: 'Can I publish AI-assisted poetry?', a: 'Rules differ by platform and jurisdiction. Check the current requirements, retain your process notes, avoid protected imitation, and describe the work honestly.' }]
+  }),
+  useCase({
+    id: 10,
+    slug: 'create-posters-to-print-or-sell',
+    title: 'Create Posters to Print or Sell',
+    shortTitle: 'Poster collection workflow',
+    category: 'books',
+    categoryLabel: 'Books & publishing',
+    summary: 'Generate a themed poster collection, prepare selected artwork for target sizes, and create marked previews without damaging the masters.',
+    scenario: 'An artist or small seller wants a focused poster series for home printing, a market stall, or an online storefront.',
+    outcome: 'A small, coherent collection of high-resolution poster masters, print proofs, and separate web-preview files.',
+    products: ['BGI', 'BEI', 'BRI', 'BWI'],
+    inputs: ['Theme and audience', 'Target print sizes and aspect ratios', 'A rights-safe visual direction', 'Printer and storefront specifications'],
+    steps: [
+      { title: 'Design the collection before the posters', body: 'Choose the number of pieces, shared visual rules, intended room or customer, and target aspect ratios. A series needs variation and a recognizable identity.' },
+      { title: 'Generate at the right shape', body: 'In Batch Generate Image with any AI, choose the closest available ratio and a reusable visual direction. Do not rely on generated lettering for final poster typography.' },
+      { title: 'Select for a physical object', body: 'Reject images that only look good as thumbnails. Inspect edges, fine detail, faces, and negative space at full size.' },
+      { title: 'Prepare print masters', body: 'Use Batch Enhance Image on the selected files and check the required pixel dimensions for each final size. Keep a separate master for every aspect ratio rather than stretching one file.' },
+      { title: 'Create storefront previews', body: 'Use Batch Resize Image for lighter web copies and Batch Watermark Image for visible preview marks when useful. Keep the clean print files offline and separate.' },
+      { title: 'Proof and list honestly', body: 'Order or make a test print, verify crop and colour, and ensure the listing describes the actual size, medium, and fulfilment method.' }
+    ],
+    review: ['Does the set feel like a collection?', 'Are print dimensions sufficient?', 'Has generated text been replaced with verified typography?', 'Are web previews separate from clean masters?'],
+    limitation: 'Upscaling cannot guarantee sharp large-format prints, and screen colour does not guarantee printer colour. A physical proof remains necessary.',
+    privacy: 'Generation goes to the image provider you choose. Enhancement, resizing, watermarking, and saved files stay local.',
+    relatedUseCases: ['enhance-images-for-printing', 'add-watermarks-before-sharing-images', 'compress-images-to-save-storage-space'],
+    faq: [{ q: 'Can one square image become every poster size?', a: 'Not cleanly. Different aspect ratios need deliberate crops or separately composed masters.' }]
   }),
   useCase({
     id: 8,
@@ -258,32 +286,6 @@ module.exports = [
     privacy: 'Generation requests go to the provider selected in Batch Generate Image with any AI. Resizing and stored files remain local.',
     relatedUseCases: ['mass-create-social-media-content', 'resize-images-for-different-social-platforms', 'add-copyright-information-to-images'],
     faq: [{ q: 'Should I generate directly at every platform size?', a: 'Usually it is cleaner to select one strong master set first, then create channel variants with a controlled resize and crop pass.' }]
-  }),
-  useCase({
-    id: 10,
-    slug: 'create-posters-to-print-or-sell',
-    title: 'Create Posters to Print or Sell',
-    shortTitle: 'Poster collection workflow',
-    category: 'books',
-    categoryLabel: 'Books & publishing',
-    summary: 'Generate a themed poster collection, prepare selected artwork for target sizes, and create marked previews without damaging the masters.',
-    scenario: 'An artist or small seller wants a focused poster series for home printing, a market stall, or an online storefront.',
-    outcome: 'A small, coherent collection of high-resolution poster masters, print proofs, and separate web-preview files.',
-    products: ['BGI', 'BEI', 'BRI', 'BWI'],
-    inputs: ['Theme and audience', 'Target print sizes and aspect ratios', 'A rights-safe visual direction', 'Printer and storefront specifications'],
-    steps: [
-      { title: 'Design the collection before the posters', body: 'Choose the number of pieces, shared visual rules, intended room or customer, and target aspect ratios. A series needs variation and a recognizable identity.' },
-      { title: 'Generate at the right shape', body: 'In Batch Generate Image with any AI, choose the closest available ratio and a reusable visual direction. Do not rely on generated lettering for final poster typography.' },
-      { title: 'Select for a physical object', body: 'Reject images that only look good as thumbnails. Inspect edges, fine detail, faces, and negative space at full size.' },
-      { title: 'Prepare print masters', body: 'Use Batch Enhance Image on the selected files and check the required pixel dimensions for each final size. Keep a separate master for every aspect ratio rather than stretching one file.' },
-      { title: 'Create storefront previews', body: 'Use Batch Resize Image for lighter web copies and Batch Watermark Image for visible preview marks when useful. Keep the clean print files offline and separate.' },
-      { title: 'Proof and list honestly', body: 'Order or make a test print, verify crop and colour, and ensure the listing describes the actual size, medium, and fulfilment method.' }
-    ],
-    review: ['Does the set feel like a collection?', 'Are print dimensions sufficient?', 'Has generated text been replaced with verified typography?', 'Are web previews separate from clean masters?'],
-    limitation: 'Upscaling cannot guarantee sharp large-format prints, and screen colour does not guarantee printer colour. A physical proof remains necessary.',
-    privacy: 'Generation goes to the image provider you choose. Enhancement, resizing, watermarking, and saved files stay local.',
-    relatedUseCases: ['enhance-images-for-printing', 'add-watermarks-before-sharing-images', 'compress-images-to-save-storage-space'],
-    faq: [{ q: 'Can one square image become every poster size?', a: 'Not cleanly. Different aspect ratios need deliberate crops or separately composed masters.' }]
   }),
   useCase({
     id: 11,

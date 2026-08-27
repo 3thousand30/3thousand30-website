@@ -1,0 +1,58 @@
+---
+layout: layouts/base.njk
+permalink: games/index.html
+title: "Buy-Once Windows Games for Skill, Strategy, and Private Play | 3thousand30"
+description: "Browse buy-once Windows games from 3thousand30: focused desktop play for skill, strategy, local control, and no subscription gate."
+pageType: catalog
+analyticsPageType: game_index
+catalogKind: games
+---
+{% from "components/cards.njk" import productCard %}
+{% set games = products | productsForCollection('games') %}
+
+<section class="site-shell py-12 sm:py-16">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb"><a href="/" class="hover:text-retro-green">home</a> / <span class="text-gray-400">games</span></nav>
+  <div class="max-w-4xl">
+    <p class="eyebrow mb-4">{{ games.length }} games</p>
+    <h1 class="text-4xl font-light leading-tight text-white sm:text-6xl">Play with skill, control, and your own copy.</h1>
+    <p class="mt-6 max-w-3xl text-base leading-8 text-gray-400">These are self-contained Windows games: focused play, local progress where possible, and no subscription gate. For work tools, <a href="/products/" class="text-link">browse products →</a></p>
+  </div>
+</section>
+
+<section class="site-shell pb-20" data-filter-catalog>
+  <div class="z-30 -mx-2 mb-8 border-y border-white/10 bg-black/95 px-2 py-5 backdrop-blur lg:sticky lg:top-16" data-catalog-controls>
+    <div class="grid gap-4 lg:grid-cols-[minmax(240px,1fr)_minmax(180px,.65fr)_minmax(180px,.65fr)] lg:items-end">
+      <div>
+        <label for="game-search" class="mb-2 block text-[11px] uppercase tracking-[0.14em] text-gray-500">Search games</label>
+        <input id="game-search" type="search" class="min-h-11 w-full border border-white/20 bg-black px-4 text-sm text-white placeholder:text-gray-700 focus:border-retro-green" placeholder="chess, typing, strategy…" data-catalog-search>
+      </div>
+      <div>
+        <label for="game-category" class="mb-2 block text-[11px] uppercase tracking-[0.14em] text-gray-500">Game category</label>
+        <select id="game-category" class="filter-select" data-filter-group="category">
+          <option value="all">All games</option>
+          <option value="board">Board</option>
+          <option value="typing">Typing</option>
+        </select>
+      </div>
+      <div>
+        <label for="game-focus" class="mb-2 block text-[11px] uppercase tracking-[0.14em] text-gray-500">Focus</label>
+        <select id="game-focus" class="filter-select" data-filter-group="focus">
+          <option value="all">Any focus</option>
+          <option value="ai">AI play</option>
+          <option value="strategy">Strategy</option>
+          <option value="arcade">Arcade</option>
+          <option value="offline">Offline</option>
+        </select>
+      </div>
+    </div>
+    <p class="mt-4 text-[11px] text-gray-600" data-result-count aria-live="polite">{{ games.length }} results</p>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    {% for item in games %}{{ productCard(item) }}{% endfor %}
+  </div>
+  <div class="panel mt-8 p-8 text-center" data-empty-state hidden>
+    <p class="text-sm text-gray-400">No game matches that search.</p>
+    <p class="mt-2 text-xs text-gray-600">Try a broader term or another game type.</p>
+  </div>
+</section>

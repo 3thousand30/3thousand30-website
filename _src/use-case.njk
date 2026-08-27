@@ -13,6 +13,7 @@ eleventyComputed:
 {% from "components/cards.njk" import useCaseCard %}
 {% set workflowProducts = products | filterByCodes(useCase.products) %}
 {% set related = useCases | filterBySlugs(useCase.relatedUseCases) %}
+{% set relatedWorks = works | filterWorksBySlugs(useCase.relatedWorks) %}
 
 <section class="site-shell py-10 sm:py-14">
   <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb">
@@ -68,6 +69,7 @@ eleventyComputed:
       <a href="#review" class="hover:text-retro-green">Review checklist</a>
       <a href="#limits" class="hover:text-retro-green">Limits & privacy</a>
       {% if useCase.proofLinks.length %}<a href="#example" class="hover:text-retro-green">Public example</a>{% endif %}
+      {% if relatedWorks.length %}<a href="#made-work" class="hover:text-retro-green">Made with this workflow</a>{% endif %}
       {% if useCase.faq.length %}<a href="#faq" class="hover:text-retro-green">FAQ</a>{% endif %}
     </nav>
   </aside>
@@ -126,6 +128,28 @@ eleventyComputed:
       <h2 class="section-heading">A real output from this kind of workflow</h2>
       <div class="mt-6 grid gap-3">
         {% for link in useCase.proofLinks %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="panel flex min-h-14 items-center justify-between gap-5 p-5 text-sm text-retro-amber transition-colors hover:border-retro-amber hover:text-white" data-analytics-event="outbound_click"><span>{{ link.label }}</span><span aria-hidden="true">↗</span></a>{% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if relatedWorks.length %}
+    <section id="made-work" class="scroll-mt-24 pt-14">
+      <p class="eyebrow mb-3">made_with_this_workflow</p>
+      <h2 class="section-heading">A finished Work, not just a generated output</h2>
+      <div class="mt-6 grid gap-4">
+        {% for work in relatedWorks %}
+        <a href="/works/?focus={{ work.slug }}" class="work-preview group" data-analytics-event="works_click" data-analytics-name="{{ work.title }} from {{ useCase.title }}">
+          <div class="work-preview-image">
+            {% if work.image %}<img src="{{ work.image }}" alt="{{ work.imageAlt }}" class="work-cover" loading="lazy" decoding="async">{% else %}<span class="work-monogram">{{ work.monogram }}</span>{% endif %}
+          </div>
+          <div class="min-w-0 p-5">
+            <p class="eyebrow mb-2">{{ work.type }}</p>
+            <h3 class="text-lg font-normal leading-6 text-white group-hover:text-retro-green">{{ work.title }}</h3>
+            <p class="mt-3 text-sm leading-6 text-gray-400">{{ work.description }}</p>
+            <span class="mt-4 inline-block text-link text-xs">view in Works →</span>
+          </div>
+        </a>
+        {% endfor %}
       </div>
     </section>
     {% endif %}

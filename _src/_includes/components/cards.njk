@@ -1,7 +1,7 @@
 {% macro productCard(item, useCaseCount=0) %}
 <article class="catalog-card reveal-item" data-reveal data-catalog-item data-kind="{{ item.type }}" data-categories="{{ item.categories | join(' ') }}" data-search="{{ item.name }} {{ item.description }} {{ item.typeLabel }} {{ item.categories | join(' ') }}">
   <div class="card-address">
-    <span>app://{{ item.code | lower }}</span>
+    <span class="card-identity"><span class="card-kind {% if item.type == 'game' %}card-kind--game{% else %}card-kind--tool{% endif %}"><img src="{% if item.type == 'game' %}/Logos/category-game.svg{% else %}/Logos/category-tool.svg{% endif %}" class="card-kind-icon" alt="" aria-hidden="true">{% if item.type == 'game' %}game{% else %}tool{% endif %}</span><span>app://{{ item.code | lower }}</span></span>
     <span class="card-price">
       {% if item.price.discountPercent > 0 %}
       <span class="sr-only">US Store price ${{ item.price.current }}, {{ item.price.discountPercent }}% off the original ${{ item.price.original }}</span>

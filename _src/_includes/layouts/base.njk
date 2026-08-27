@@ -79,7 +79,7 @@
         "@id": {{ (site.url + product.url + "#breadcrumb") | json | safe }},
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3thousand30.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://3thousand30.com/products/" },
+          { "@type": "ListItem", "position": 2, "name": {% if product.type == "game" %}"Games"{% else %}"Products"{% endif %}, "item": {% if product.type == "game" %}"https://3thousand30.com/games/"{% else %}"https://3thousand30.com/products/"{% endif %} },
           { "@type": "ListItem", "position": 3, "name": {{ product.name | json | safe }}, "item": {{ (site.url + product.url) | json | safe }} }
         ]
       }{% if product.faq.length %},

@@ -24,6 +24,18 @@ module.exports = function (eleventyConfig) {
     return items.filter((item) => !excluded.has(item.slug));
   });
 
+  eleventyConfig.addFilter('productsForCollection', function (items, collection) {
+    if (!Array.isArray(items)) return [];
+    if (collection === 'games') return items.filter((item) => item.type === 'game');
+    if (collection === 'products') return items.filter((item) => item.type !== 'game');
+    return items;
+  });
+
+  eleventyConfig.addFilter('filterWorksBySlugs', function (items, slugs) {
+    if (!Array.isArray(items) || !Array.isArray(slugs)) return [];
+    return slugs.map((slug) => items.find((item) => item.slug === slug)).filter(Boolean);
+  });
+
   eleventyConfig.addTransform('trimTrailingWhitespace', function (content) {
     if (!this.page.outputPath || !/\.(?:html|xml|txt)$/.test(this.page.outputPath)) return content;
     return content.replace(/[ \t]+$/gm, '');

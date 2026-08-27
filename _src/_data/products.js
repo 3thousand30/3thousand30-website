@@ -23,7 +23,8 @@ const usdPrices = {
   BCP: { current: '3.74', original: '4.99', discountPercent: 25 },
   BWP: { current: '3.74', original: '4.99', discountPercent: 25 },
   BPP: { current: '3.74', original: '4.99', discountPercent: 25 },
-  KR: { current: '3.74', original: '4.99', discountPercent: 25 }
+  KR: { current: '3.74', original: '4.99', discountPercent: 25 },
+  CWAI: { current: '11.24', original: '14.99', discountPercent: 25 }
 };
 
 const products = [
@@ -573,7 +574,7 @@ const products = [
     shortName: 'Key Rush',
     type: 'game',
     typeLabel: 'Offline game',
-    categories: ['game', 'typing', 'offline'],
+    categories: ['game', 'typing', 'arcade', 'offline'],
     status: 'released',
     featured: true,
     tagline: 'A Windows typing game staged like a live breach console.',
@@ -602,6 +603,56 @@ const products = [
     relatedProducts: ['BGT', 'BFO'],
     relatedUseCases: [],
     lastmod: '2026-08-08'
+  },
+  {
+    code: 'CWAI',
+    slug: 'chess-with-any-ai',
+    url: '/chess-with-any-ai.html',
+    name: 'Chess with any AI',
+    seoTitle: 'Chess with any AI — Play AI Chess on Windows | 3thousand30',
+    shortName: 'Chess with any AI',
+    type: 'game',
+    typeLabel: 'AI chess game',
+    categories: ['game', 'board', 'strategy', 'ai'],
+    status: 'released',
+    featured: true,
+    tagline: 'A private desktop chessboard for human duels, model trials, and beautiful game review.',
+    description: 'Play chess on Windows against one AI profile, watch two AI profiles play, or keep a local human match archive with replay and shareable result cards.',
+    intro: 'Chess with any AI is a focused desktop board for people who want to play people or their own AI profiles without handing their game history to another platform. Add AI profiles from the providers you already use, choose the matchup and clock, then replay, export, or share the finished game.',
+    logo: '/Logos/CWAI.png',
+    storeId: '9PG2KT0L8FQS',
+    storeIdentity: '3thousand30.ChesswithanyAI',
+    storeUrl: 'https://apps.microsoft.com/detail/9PG2KT0L8FQS',
+    docsUrl: 'https://3thousand30.github.io/chesswithanyAI-docs/',
+    privacyLabel: 'Local profiles · bring your own AI key',
+    privacyText: 'Human profiles, saved games, board settings, and result cards stay on the PC. AI keys are protected locally; when an AI seat plays, the board request is sent only to the provider you selected.',
+    features: [
+      'Play human vs human, human vs AI, or AI vs AI',
+      'Save AI profiles for compatible providers and models',
+      'Validate every AI move against the local chess rules',
+      'Choose untimed, 10-minute, 5-minute, or 3 + 2 clocks',
+      'Replay saved games move by move, with keyboard controls',
+      'Export the moves or share a board-aware result card'
+    ],
+    audiences: [
+      'Chess players who want to test their own AI profiles at the board',
+      'Friends sharing a local human match without an account',
+      'People who want to preserve, replay, and share games from one desktop app'
+    ],
+    screenshotItems: screenshots('cwai', [
+      ['01-home-new-game.png', 'Chess with any AI home screen with a Persian-inspired chess scene', 'Start a board, browse saved games, or change the experience.'],
+      ['02-match-setup-human-v-ai.png', 'Match setup for a human versus AI game in Chess with any AI', 'Choose the matchup, seats, profiles, and clock before the first move.'],
+      ['03-live-human-v-ai.png', 'Live Chess with any AI board during a human versus AI game', 'Keep both players, clocks, and the game state clear around the board.'],
+      ['04-game-complete-share.png', 'Chess with any AI game completion screen with a shareable result card', 'Review the result, replay the game, or save a board-aware share card.']
+    ]),
+    faq: [
+      { q: 'Does the app include AI usage?', a: 'No. Add an AI profile with a provider and model you already use. You pay that provider directly for any AI usage.' },
+      { q: 'Can I play without an AI key?', a: 'Yes. Human versus human games do not need a provider or an API key.' },
+      { q: 'Are AI moves trusted blindly?', a: 'No. The app checks AI moves against its local chess rules before applying them to the board.' }
+    ],
+    relatedProducts: ['KR', 'BGT'],
+    relatedUseCases: [],
+    lastmod: '2026-08-27'
   }
 ];
 

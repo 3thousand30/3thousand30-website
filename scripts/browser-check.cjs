@@ -42,7 +42,7 @@ async function auditAccessibility(page, label) {
   assert(!requests.some((url) => /googletagmanager\.com\/gtag|google-analytics\.com\/g\/collect/.test(url)), 'Google Analytics requested data before consent.');
   assert(await page.locator('[data-menu-toggle]').isVisible(), 'Mobile menu button is not visible at 390px.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Homepage has horizontal overflow at 390px.');
-  assert((await page.locator('body').textContent()).includes('15'), 'Homepage product count is missing.');
+  assert((await page.locator('body').textContent()).includes('16'), 'Homepage app count is missing.');
   assert((await page.locator('.home-console-footer').textContent()).replace(/\s+/g, ' ').includes('35 practical workflows'), 'Homepage use-case count is missing.');
   assert(await page.locator('a[href="/use-cases/compress-pdfs-without-uploading-them.html"]').count() >= 1, 'Homepage does not feature the private PDF compression workflow.');
   await auditAccessibility(page, 'Homepage');
@@ -58,20 +58,20 @@ async function auditAccessibility(page, label) {
   assert(await page.evaluate(() => localStorage.getItem('cookie_consent')) === 'granted', 'Analytics consent did not persist across navigation.');
   assert(await page.locator('#cookie-banner').count() === 0, 'Consent banner returned after acceptance.');
   let visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 15, `Product directory does not initially show 15 products (found ${visibleCount}).`);
+  assert(visibleCount === 14, `Product directory does not initially show 14 tools (found ${visibleCount}).`);
   const productCardLicenses = await page.locator('[data-catalog-item] .card-license').allTextContents();
-  assert(productCardLicenses.length === 15, `Product directory does not show a license label on every card (found ${productCardLicenses.length}).`);
+  assert(productCardLicenses.length === 14, `Product directory does not show a license label on every card (found ${productCardLicenses.length}).`);
   assert(productCardLicenses.every((label) => label.replace(/\s+/g, ' ').trim() === '// buy once'), 'Product cards do not use one consistent buy-once label.');
   const productCardCurrentPrices = await page.locator('[data-catalog-item] .card-price-values strong').allTextContents();
   const productCardOriginalPrices = await page.locator('[data-catalog-item] .card-price-values s').allTextContents();
   const productCardDiscounts = await page.locator('[data-catalog-item] .card-discount').allTextContents();
-  assert(productCardCurrentPrices.length === 15, `Product directory does not show a current price on every card (found ${productCardCurrentPrices.length}).`);
+  assert(productCardCurrentPrices.length === 14, `Product directory does not show a current price on every card (found ${productCardCurrentPrices.length}).`);
   assert(productCardCurrentPrices.filter((price) => price.trim() === '$14.99').length === 3, 'Product directory does not show the $14.99 US price on all three AI apps.');
-  assert(productCardCurrentPrices.filter((price) => price.trim() === '$3.74').length === 9, 'Product directory does not show the $3.74 US price on all nine other products.');
-  assert(productCardCurrentPrices.filter((price) => price.trim() === '$4.99').length === 3, 'Product directory does not show the $4.99 recommended base price on all three PDF release candidates.');
+  assert(productCardCurrentPrices.filter((price) => price.trim() === '$3.74').length === 11, 'Product directory does not show the $3.74 US price on all eleven standard tools.');
+  assert(productCardCurrentPrices.filter((price) => price.trim() === '$4.99').length === 0, 'Product directory unexpectedly shows a $4.99 release-candidate price.');
   assert(productCardOriginalPrices.filter((price) => price.trim() === '$19.99').length === 3, 'Product directory AI original prices are incorrect.');
-  assert(productCardOriginalPrices.filter((price) => price.trim() === '$4.99').length === 9, 'Product directory standard original prices are incorrect.');
-  assert(productCardDiscounts.length === 12 && productCardDiscounts.every((discount) => discount.trim() === '-25%'), 'Discounted product cards do not consistently show the current -25% Store discount.');
+  assert(productCardOriginalPrices.filter((price) => price.trim() === '$4.99').length === 11, 'Product directory standard original prices are incorrect.');
+  assert(productCardDiscounts.length === 14 && productCardDiscounts.every((discount) => discount.trim() === '-25%'), 'Discounted product cards do not consistently show the current -25% Store discount.');
   assert(await page.locator('[data-catalog-item] .card-status', { hasText: 'released' }).count() === 0, 'Product cards still show the redundant released status.');
   assert(await page.locator('[data-catalog-controls]').evaluate((element) => getComputedStyle(element).position) !== 'sticky', 'Product filters cover the catalog on mobile.');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'Product directory has horizontal overflow at 390px.');
@@ -79,13 +79,22 @@ async function auditAccessibility(page, label) {
   visibleCount = await visibleCatalogItems(page);
   assert(visibleCount === 6, `PDF filter does not show BMP, BSP, BTP, BCP, BWP, and BPP (found ${visibleCount}).`);
   await page.locator('[data-filter-group="categories"][data-filter-value="all"]').click();
-  await page.locator('[data-catalog-search]').fill('Key Rush');
+  await page.locator('[data-catalog-search]').fill('Batch Generate Text');
   visibleCount = await visibleCatalogItems(page);
-  assert(visibleCount === 1, `Product search does not isolate Key Rush (found ${visibleCount}).`);
+  assert(visibleCount === 1, `Product search does not isolate Batch Generate Text (found ${visibleCount}).`);
   await page.locator('[data-menu-toggle]').click();
   assert(await page.locator('[data-mobile-menu]').isVisible(), 'Mobile navigation does not open.');
   assert(await page.locator('[data-menu-toggle]').getAttribute('aria-expanded') === 'true', 'Mobile navigation does not update aria-expanded.');
   await auditAccessibility(page, 'Product directory');
+
+  await page.goto(`${baseUrl}/games/`, { waitUntil: 'networkidle' });
+  assert(await visibleCatalogItems(page) === 2, 'Games directory does not show both games.');
+  await page.loc('[data-catalog-search]').fill('Chess');
+  assert(await visibleCatalogItems(page) === 1, 'Games search does not isolate Chess with any AI.');
+  await page.loc('[data-catalog-search]').fill('');
+  await page.loc('#game-category').selectOption('typing');
+  assert(await visibleCatalogItems(page) === 1, 'Games category filter does not isolate Key Rush.');
+  await auditAccessibility(page, 'Games directory');
 
   await page.goto(`${baseUrl}/use-cases/`, { waitUntil: 'networkidle' });
   visibleCount = await visibleCatalogItems(page);
@@ -225,7 +234,7 @@ async function auditAccessibility(page, label) {
     process.exit(1);
   }
 
-  console.log('Browser checks passed: mobile layout, 35-workflow catalog, 15-product pricing and schema, assets, and analytics consent lifecycle.');
+  console.log('Browser checks passed: mobile layout, tool and game catalogs, 35-workflow catalog, pricing and schema, assets, and analytics consent lifecycle.');
 })().catch((error) => {
   console.error(error);
   process.exit(1);

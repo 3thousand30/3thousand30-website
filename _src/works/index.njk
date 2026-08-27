@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+permalink: works/index.html
+title: Works — Books, Photography, and Editions | 3thousand30
+description: Books, photography, and other independent works from 3thousand30, shaped with care, curation, and human judgment.
+pageType: works
+analyticsPageType: works_index
+---
+{% set productByCode = products %}
+
+<section class="site-shell py-12 sm:py-16">
+  <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb"><a href="/" class="hover:text-retro-green">home</a> / <span class="text-gray-400">works</span></nav>
+  <div class="max-w-3xl">
+    <p class="eyebrow mb-4">independent_works</p>
+    <h1 class="text-3xl font-light leading-tight text-white sm:text-5xl">Things made with taste, care, and a point of view.</h1>
+    <p class="mt-6 max-w-3xl text-base leading-8 text-gray-400">Software can help with the work, but it cannot replace the decisions that make something worth sharing. These books and editions reflect the same values as our products: ownership, curation, quality, and creative freedom.</p>
+  </div>
+</section>
+
+<section class="site-shell pb-20">
+  <div class="grid gap-5">
+    {% for work in works %}
+    {% set madeWithProducts = productByCode | filterByCodes(work.madeWith) %}
+    <article id="{{ work.slug }}" class="work-card scroll-mt-24" data-work-slug="{{ work.slug }}">
+      <div class="work-thumbnail">
+        {% if work.image %}
+        <img src="{{ work.image }}" alt="{{ work.imageAlt }}" class="work-cover" loading="lazy" decoding="async">
+        {% else %}
+        <div class="work-monogram" aria-label="{{ work.title }} artwork coming soon">{{ work.monogram }}</div>
+        {% endif %}
+      </div>
+      <div class="min-w-0 p-5 sm:p-7">
+        <p class="eyebrow mb-2">{{ work.type }}</p>
+        <h2 class="text-2xl font-light leading-tight text-white sm:text-3xl">{{ work.title }}</h2>
+        <p class="mt-4 max-w-3xl text-sm leading-7 text-gray-400">{{ work.description }}</p>
+        <div class="mt-5 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs text-gray-500">
+          <span class="uppercase tracking-[0.12em] text-gray-600">Made with</span>
+          {% for product in madeWithProducts %}<a href="{{ product.url }}" class="text-link">{{ product.code }}</a>{% if not loop.last %}<span aria-hidden="true">·</span>{% endif %}{% endfor %}
+        </div>
+        {% if work.links.length %}
+        <div class="mt-6 flex flex-wrap gap-3">
+          {% for link in work.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="button-secondary" data-analytics-event="outbound_click" data-analytics-name="{{ work.title }} {{ link.label }}">{{ link.label }} ↗</a>{% endfor %}
+        </div>
+        {% else %}
+        <p class="mt-6 text-xs leading-6 text-gray-600">English and German editions will be linked here soon.</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

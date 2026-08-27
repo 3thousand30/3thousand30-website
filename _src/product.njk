@@ -15,11 +15,18 @@ eleventyComputed:
 {% from "components/cards.njk" import productCard, useCaseCard %}
 {% set relatedProducts = products | filterByCodes(product.relatedProducts) %}
 {% set relatedUseCases = useCases | filterBySlugs(product.relatedUseCases) %}
+{% if product.type == 'game' %}
+{% set collectionUrl = '/games/' %}
+{% set collectionLabel = 'games' %}
+{% else %}
+{% set collectionUrl = '/products/' %}
+{% set collectionLabel = 'products' %}
+{% endif %}
 
 <section class="site-shell py-10 sm:py-14">
   <nav class="mb-8 text-[11px] text-gray-600" aria-label="Breadcrumb">
     <a href="/" class="hover:text-retro-green">home</a> /
-    <a href="/products/" class="hover:text-retro-green">products</a> /
+    <a href="{{ collectionUrl }}" class="hover:text-retro-green">{{ collectionLabel }}</a> /
     <span class="text-gray-400">{{ product.shortName }}</span>
   </nav>
 

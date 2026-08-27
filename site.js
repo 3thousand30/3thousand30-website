@@ -46,19 +46,23 @@
       if (empty) empty.hidden = visible !== 0;
     }
 
-    filters.forEach(function (button) {
-      var group = button.getAttribute('data-filter-group');
-      if (!state[group] && button.getAttribute('aria-pressed') === 'true') {
-        state[group] = button.getAttribute('data-filter-value');
+    filters.forEach(function (control) {
+      var group = control.getAttribute('data-filter-group');
+      var isSelect = control.tagName === 'SELECT';
+      if (!state[group] && (isSelect || control.getAttribute('aria-pressed') === 'true')) {
+        state[group] = isSelect ? control.value : control.getAttribute('data-filter-value');
       }
-      button.addEventListener('click', function () {
-        var value = button.getAttribute('data-filter-value');
+
+      control.addEventListener(isSelect ? 'change' : 'click', function () {
+        var value = isSelect ? control.value : control.getAttribute('data-filter-value');
         state[group] = value;
-        filters.filter(function (candidate) {
-          return candidate.getAttribute('data-filter-group') === group;
-        }).forEach(function (candidate) {
-          candidate.setAttribute('aria-pressed', String(candidate === button));
-        });
+        if (!isSelect) {
+          filters.filter(function (candidate) {
+            return candidate.getAttribute('data-filter-group') === group;
+          }).forEach(function (candidate) {
+            candidate.setAttribute('aria-pressed', String(candidate === control));
+          });
+        }
         applyFilters();
       });
     });
@@ -82,6 +86,17 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     items.forEach(function (item) { observer.observe(item); });
+  }
+
+  function initWorkFocus() {
+    var focus = new URLSearchParams(window.location.search).get('focus');
+    if (!focus) return;
+    var target = document.querySelector('[data-work-slug="' + focus.replace(/[^a-z0-9-]/gi, '') + '"]');
+    if (!target) return;
+    target.classList.add('work-focused');
+    window.setTimeout(function () {
+      target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+    }, 30);
   }
 
   function updateConsentUI() {
@@ -111,6 +126,7 @@
     initMenu();
     Array.prototype.forEach.call(document.querySelectorAll('[data-filter-catalog]'), initCatalog);
     initReveal();
+    initWorkFocus();
     initConsentControls();
   }
 
