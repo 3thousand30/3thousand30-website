@@ -37,10 +37,6 @@ module.exports = [
     review: ['Does the sequence feel like one object rather than a prompt dump?', 'Are weak hands, text artifacts, and near-duplicates removed?', 'Do the final pixel dimensions fit the printer’s specification?', 'Has a physical proof been checked before gifting or selling?'],
     limitation: 'AI generation does not guarantee character consistency, printable detail, or correct typography. Human selection, layout work, and printer-specific proofing remain essential.',
     privacy: 'Image prompts go to the AI provider selected in Batch Generate Image with any AI. Enhancement, PDF conversion, merging, and the saved outputs run locally.',
-    proofLinks: [
-      { label: 'People, Places & Perspective on Amazon', url: 'https://www.amazon.com/dp/B0GWVL1D6R' },
-      { label: 'People, Places & Perspective on Lulu', url: 'https://www.lulu.com/shop/proyogi-baba/people-places-perspective/paperback/product-yvr56g6.html?page=1&pageSize=4' }
-    ],
     relatedWorks: ['people-places-perspective'],
     relatedUseCases: ['create-a-colouring-book-for-children', 'create-an-inspirational-family-book', 'enhance-images-for-printing'],
     lastmod: '2026-08-27',
