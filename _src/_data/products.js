@@ -640,10 +640,10 @@ const products = [
       'People who want to preserve, replay, and share games from one desktop app'
     ],
     screenshotItems: screenshots('cwai', [
-      ['01-home-new-game.png', 'Chess with any AI home screen with a Persian-inspired chess scene', 'Start a board, browse saved games, or change the experience.'],
-      ['02-match-setup-human-v-ai.png', 'Match setup for a human versus AI game in Chess with any AI', 'Choose the matchup, seats, profiles, and clock before the first move.'],
-      ['03-live-human-v-ai.png', 'Live Chess with any AI board during a human versus AI game', 'Keep both players, clocks, and the game state clear around the board.'],
-      ['04-game-complete-share.png', 'Chess with any AI game completion screen with a shareable result card', 'Review the result, replay the game, or save a board-aware share card.']
+      ['01-home-new-game.webp', 'Chess with any AI home screen with a Persian-inspired chess scene', 'Start a board, browse saved games, or change the experience.'],
+      ['02-match-setup-human-v-ai.webp', 'Match setup for a human versus AI game in Chess with any AI', 'Choose the matchup, seats, profiles, and clock before the first move.'],
+      ['03-live-human-v-ai.webp', 'Live Chess with any AI board during a human versus AI game', 'Keep both players, clocks, and the game state clear around the board.'],
+      ['04-game-complete-share.webp', 'Chess with any AI game completion screen with a shareable result card', 'Review the result, replay the game, or save a board-aware share card.']
     ]),
     faq: [
       { q: 'Does the app include AI usage?', a: 'No. Add an AI profile with a provider and model you already use. You pay that provider directly for any AI usage.' },
