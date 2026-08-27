@@ -41,8 +41,9 @@ module.exports = [
       { label: 'People, Places & Perspective on Amazon', url: 'https://www.amazon.com/dp/B0GWVL1D6R' },
       { label: 'People, Places & Perspective on Lulu', url: 'https://www.lulu.com/shop/proyogi-baba/people-places-perspective/paperback/product-yvr56g6.html?page=1&pageSize=4' }
     ],
+    relatedWorks: ['people-places-perspective'],
     relatedUseCases: ['create-a-colouring-book-for-children', 'create-an-inspirational-family-book', 'enhance-images-for-printing'],
-    lastmod: '2026-08-09',
+    lastmod: '2026-08-27',
     faq: [
       { q: 'Do I need to be a designer?', a: 'You do not need a design title, but you do need judgment. Selection, sequencing, margins, and proofing determine whether the result feels deliberate.' },
       { q: 'Can I sell the finished book?', a: 'Potentially, if you have the necessary rights and the work meets the chosen platform’s current content and print requirements. Check those requirements before publication.' }
