@@ -183,7 +183,7 @@ if (softwareSchemaCount !== products.length) {
 }
 
 const htmlFiles = walk(root).filter((file) => file.endsWith('.html'));
-const expectedHtmlCount = site.staticPages.length + (site.hiddenStaticPages || []).length + products.length + useCases.length + 1;
+const expectedHtmlCount = site.staticPages.length + products.length + useCases.length + 1;
 if (htmlFiles.length !== expectedHtmlCount) {
   fail(`Expected ${expectedHtmlCount} generated HTML files, found ${htmlFiles.length}.`);
 }

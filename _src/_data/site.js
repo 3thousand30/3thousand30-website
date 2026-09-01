@@ -36,8 +36,5 @@ module.exports = {
     { url: '/use-cases/', lastmod: '2026-08-10', priority: '0.9' },
     { url: '/manifesto.html', lastmod: '2026-08-07', priority: '0.5' },
     { url: '/privacy.html', lastmod: '2026-08-07', priority: '0.4' }
-  ],
-  hiddenStaticPages: [
-    { url: '/file-transfer.html' }
   ]
 };
