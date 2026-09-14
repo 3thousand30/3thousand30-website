@@ -71,6 +71,66 @@
     applyFilters();
   }
 
+  function initShareControls() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-share-button]'), function (button) {
+      var originalLabel = button.textContent.trim();
+      var status = document.getElementById(button.getAttribute('aria-describedby'));
+
+      function showCopied() {
+        button.textContent = 'link copied';
+        if (status) status.textContent = 'Link copied to clipboard.';
+        window.setTimeout(function () {
+          button.textContent = originalLabel;
+        }, 2200);
+      }
+
+      function copyLink() {
+        var url = window.location.href;
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(url).then(showCopied);
+        }
+
+        var field = document.createElement('textarea');
+        field.value = url;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        var copied = document.execCommand('copy');
+        document.body.removeChild(field);
+        if (copied) {
+          showCopied();
+          return Promise.resolve();
+        }
+        return Promise.reject(new Error('Clipboard access was unavailable.'));
+      }
+
+      button.addEventListener('click', function () {
+        var description = document.querySelector('meta[name="description"]');
+        var shareData = {
+          title: document.title,
+          text: description ? description.getAttribute('content') : '',
+          url: window.location.href
+        };
+
+        if (navigator.share) {
+          navigator.share(shareData).catch(function (error) {
+            if (error && error.name === 'AbortError') return;
+            copyLink().catch(function () {
+              if (status) status.textContent = 'Could not copy the link. Select it from your browser address bar.';
+            });
+          });
+          return;
+        }
+
+        copyLink().catch(function () {
+          if (status) status.textContent = 'Could not copy the link. Select it from your browser address bar.';
+        });
+      });
+    });
+  }
+
   function initReveal() {
     var items = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
     if (!items.length || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -125,6 +185,7 @@
   function init() {
     initMenu();
     Array.prototype.forEach.call(document.querySelectorAll('[data-filter-catalog]'), initCatalog);
+    initShareControls();
     initReveal();
     initWorkFocus();
     initConsentControls();
