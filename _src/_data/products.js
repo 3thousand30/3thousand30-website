@@ -125,7 +125,7 @@ const products = [
     seoTitle: 'Background Music Generator with any AI — AI Music Maker for Windows | 3thousand30',
     shortName: 'Background Music Generator with any AI',
     type: 'ai',
-    typeLabel: 'AI music',
+    typeLabel: 'AI creation',
     categories: ['music', 'video', 'social'],
     status: 'released',
     featured: true,
