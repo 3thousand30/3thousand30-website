@@ -165,8 +165,7 @@ eleventyComputed:
     </div>
     <div class="flex flex-wrap gap-3">
       <a href="{{ product.storeUrl }}" target="_blank" rel="noopener" class="button-primary" data-analytics-event="store_click" data-analytics-name="{{ product.name }} Microsoft Store bottom CTA">open Microsoft Store →</a>
-      <button type="button" class="button-secondary" data-share-button aria-describedby="product-share-status" data-analytics-event="share_click" data-analytics-name="{{ product.name }}">share app</button>
-      <span id="product-share-status" class="sr-only" aria-live="polite"></span>
+      <button type="button" class="button-secondary" data-share-button aria-controls="share-dialog" aria-haspopup="dialog" data-analytics-event="share_click" data-analytics-name="{{ product.name }}">share app</button>
     </div>
   </div>
 </section>

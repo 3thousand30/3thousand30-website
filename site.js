@@ -72,61 +72,90 @@
   }
 
   function initShareControls() {
-    Array.prototype.forEach.call(document.querySelectorAll('[data-share-button]'), function (button) {
-      var originalLabel = button.textContent.trim();
-      var status = document.getElementById(button.getAttribute('aria-describedby'));
+    var dialog = document.querySelector('[data-share-dialog]');
+    if (!dialog) return;
 
-      function showCopied() {
-        button.textContent = 'link copied';
-        if (status) status.textContent = 'Link copied to clipboard.';
-        window.setTimeout(function () {
-          button.textContent = originalLabel;
-        }, 2200);
-      }
+    var closeButton = dialog.querySelector('[data-share-close]');
+    var copyButton = dialog.querySelector('[data-share-copy]');
+    var nativeButton = dialog.querySelector('[data-share-native]');
+    var status = dialog.querySelector('[data-share-status]');
+    var shareData;
 
-      function copyLink() {
-        var url = window.location.href;
-        if (navigator.clipboard && window.isSecureContext) {
-          return navigator.clipboard.writeText(url).then(showCopied);
-        }
+    function currentShareData() {
+      var canonical = document.querySelector('link[rel="canonical"]');
+      var description = document.querySelector('meta[name="description"]');
+      var heading = document.querySelector('h1');
+      var title = heading ? heading.textContent.trim() : document.title;
+      return {
+        title: title,
+        text: description ? description.getAttribute('content') : '',
+        url: canonical ? canonical.href : window.location.href
+      };
+    }
 
-        var field = document.createElement('textarea');
-        field.value = url;
-        field.setAttribute('readonly', '');
-        field.style.position = 'fixed';
-        field.style.opacity = '0';
-        document.body.appendChild(field);
-        field.select();
-        var copied = document.execCommand('copy');
-        document.body.removeChild(field);
-        if (copied) {
-          showCopied();
-          return Promise.resolve();
-        }
-        return Promise.reject(new Error('Clipboard access was unavailable.'));
-      }
+    function setStatus(message) {
+      if (status) status.textContent = message;
+    }
 
-      button.addEventListener('click', function () {
-        var description = document.querySelector('meta[name="description"]');
-        var shareData = {
-          title: document.title,
-          text: description ? description.getAttribute('content') : '',
-          url: window.location.href
-        };
+    function closeDialog() {
+      if (dialog.open) dialog.close();
+    }
 
-        if (navigator.share) {
-          navigator.share(shareData).catch(function (error) {
-            if (error && error.name === 'AbortError') return;
-            copyLink().catch(function () {
-              if (status) status.textContent = 'Could not copy the link. Select it from your browser address bar.';
-            });
-          });
-          return;
-        }
-
-        copyLink().catch(function () {
-          if (status) status.textContent = 'Could not copy the link. Select it from your browser address bar.';
+    function copyLink() {
+      var url = shareData.url;
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(url).then(function () {
+          setStatus('Link copied to clipboard.');
         });
+      }
+
+      var field = document.createElement('textarea');
+      field.value = url;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      var copied = document.execCommand('copy');
+      document.body.removeChild(field);
+      if (copied) {
+        setStatus('Link copied to clipboard.');
+        return Promise.resolve();
+      }
+      return Promise.reject(new Error('Clipboard access was unavailable.'));
+    }
+
+    function prepareDialog() {
+      shareData = currentShareData();
+      var message = shareData.title + '\n' + shareData.url;
+      dialog.querySelector('[data-share-x]').href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(shareData.title) + '&url=' + encodeURIComponent(shareData.url);
+      dialog.querySelector('[data-share-reddit]').href = 'https://www.reddit.com/submit?url=' + encodeURIComponent(shareData.url) + '&title=' + encodeURIComponent(shareData.title);
+      dialog.querySelector('[data-share-whatsapp]').href = 'https://wa.me/?text=' + encodeURIComponent(message);
+      dialog.querySelector('[data-share-email]').href = 'mailto:?subject=' + encodeURIComponent(shareData.title) + '&body=' + encodeURIComponent(message);
+      setStatus('');
+      nativeButton.hidden = !navigator.share;
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('[data-share-button]'), function (button) {
+      button.addEventListener('click', function () {
+        prepareDialog();
+        if (typeof dialog.showModal === 'function') dialog.showModal();
+        else dialog.setAttribute('open', '');
+      });
+    });
+
+    closeButton.addEventListener('click', closeDialog);
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) closeDialog();
+    });
+    copyButton.addEventListener('click', function () {
+      copyLink().catch(function () {
+        setStatus('Could not copy the link. Select it from your browser address bar.');
+      });
+    });
+    nativeButton.addEventListener('click', function () {
+      navigator.share(shareData).then(closeDialog).catch(function (error) {
+        if (!error || error.name !== 'AbortError') setStatus('Could not open the system share options.');
       });
     });
   }

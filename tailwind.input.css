@@ -78,6 +78,20 @@
     border-color: rgba(168, 168, 168, 0.32);
   }
 
+  .share-dialog {
+    width: min(calc(100vw - 2rem), 34rem);
+    margin: auto;
+    border: 1px solid rgba(0, 255, 65, 0.28);
+    background: #050505;
+    color: #f8f8f8;
+    box-shadow: 0 0 48px rgba(0, 255, 65, 0.1);
+  }
+
+  .share-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(4px);
+  }
+
   .text-link {
     @apply text-retro-amber underline decoration-dotted underline-offset-4 transition-colors hover:text-white;
   }

@@ -278,8 +278,7 @@
       <p class="text-sm leading-6 text-gray-400">Share this workflow with someone preparing the same kind of work.</p>
     </div>
     <div class="flex items-center gap-3">
-      <button type="button" class="button-secondary" data-share-button aria-describedby="workflow-share-status" data-analytics-event="share_click" data-analytics-name="Create Song Lyrics for Inspiration">share workflow</button>
-      <span id="workflow-share-status" class="sr-only" aria-live="polite"></span>
+      <button type="button" class="button-secondary" data-share-button aria-controls="share-dialog" aria-haspopup="dialog" data-analytics-event="share_click" data-analytics-name="Create Song Lyrics for Inspiration">share workflow</button>
     </div>
   </div>
 </section>
@@ -331,6 +330,29 @@
 
 
   </main>
+  <dialog id="share-dialog" class="share-dialog" data-share-dialog aria-labelledby="share-dialog-title">
+    <div class="p-6 sm:p-8">
+      <div class="flex items-start justify-between gap-5">
+        <div>
+          <p class="eyebrow mb-3">share</p>
+          <h2 id="share-dialog-title" class="text-xl font-light text-white">Pass this page on</h2>
+          <p class="mt-3 text-sm leading-6 text-gray-400">Choose where to share it.</p>
+        </div>
+        <button type="button" class="text-2xl leading-none text-gray-500 transition-colors hover:text-white" data-share-close aria-label="Close share options">×</button>
+      </div>
+      <div class="mt-7 grid gap-3 sm:grid-cols-2">
+        <a class="button-secondary" data-share-x target="_blank" rel="noopener">share on X ↗</a>
+        <a class="button-secondary" data-share-reddit target="_blank" rel="noopener">share on Reddit ↗</a>
+        <a class="button-secondary" data-share-whatsapp target="_blank" rel="noopener">share on WhatsApp ↗</a>
+        <a class="button-secondary" data-share-email>share by email</a>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-3">
+        <button type="button" class="button-primary" data-share-copy>copy link</button>
+        <button type="button" class="button-secondary" data-share-native hidden>more sharing options</button>
+      </div>
+      <p class="mt-4 min-h-5 text-xs text-gray-500" data-share-status aria-live="polite"></p>
+    </div>
+  </dialog>
 
   <footer class="relative z-20 mt-14 border-t border-white/10 bg-black">
   <div class="site-shell grid gap-5 py-6 md:grid-cols-[1fr_auto] md:items-center">
