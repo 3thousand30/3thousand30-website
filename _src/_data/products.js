@@ -11,6 +11,7 @@ function screenshots(folder, files) {
 const usdPrices = {
   BGT: { current: '14.99', original: '19.99', discountPercent: 25 },
   BGI: { current: '14.99', original: '19.99', discountPercent: 25 },
+  BMG: { current: '14.99', original: '19.99', discountPercent: 25 },
   BT: { current: '14.99', original: '19.99', discountPercent: 25 },
   BFO: { current: '3.74', original: '4.99', discountPercent: 25 },
   BEI: { current: '3.74', original: '4.99', discountPercent: 25 },
@@ -115,6 +116,55 @@ const products = [
     relatedProducts: ['BGT', 'BEI', 'BRI'],
     relatedUseCases: ['create-a-photobook-with-ai-for-gifting', 'batch-create-images-for-social-media', 'create-a-colouring-book-for-children', 'create-posters-to-print-or-sell'],
     lastmod: '2026-08-08'
+  },
+  {
+    code: 'BMG',
+    slug: 'background-music-generator',
+    url: '/background-music-generator.html',
+    name: 'Background Music Generator with any AI',
+    seoTitle: 'Background Music Generator with any AI — AI Music Maker for Windows | 3thousand30',
+    shortName: 'Background Music Generator with any AI',
+    type: 'ai',
+    typeLabel: 'AI music',
+    categories: ['music', 'video', 'social'],
+    status: 'released',
+    featured: true,
+    tagline: 'Make a background-music track for the video, podcast, product demo, or focus session in front of you.',
+    description: 'Create one background-music track at a time on Windows with your own AI provider, reusable music personas, editable job templates, in-app playback, and local MP3 or WAV output.',
+    intro: 'Background Music Generator with any AI keeps music creation focused on the project at hand. Choose the provider and model, start from a reusable direction for the job, shape the track, listen in the app, and keep the result on your PC.',
+    logo: '/Logos/BMG.png',
+    storeUrl: 'https://apps.microsoft.com/detail/9P6KHZWC9HNR',
+    docsUrl: 'https://3thousand30.github.io/backgroundmusicgenerator-docs/',
+    privacyLabel: 'BYO key · local outputs',
+    privacyText: 'Your chosen provider receives the music-generation request. API keys are encrypted locally for your Windows account, and generated tracks are saved to your PC rather than a 3thousand30 cloud.',
+    features: [
+      'Make one background-music track for a video, podcast, product demo, documentary, or focus session',
+      'Save named Music API Profiles for the providers and models you use',
+      'Reuse music personas to keep a familiar direction across recurring work',
+      'Start from editable templates for product demos, podcast intros, documentaries, focus content, and creator videos',
+      'Set duration, mood, genre, tempo, instruments, loop ending, format, and output folder',
+      'Listen to the returned track in the app, then open its local folder'
+    ],
+    audiences: [
+      'Video creators who need music that supports a voiceover or story',
+      'Podcasters and small businesses making intros, demos, and spoken content',
+      'Creators who want provider choice without another music-generation subscription'
+    ],
+    screenshotItems: screenshots('bmg', [
+      ['1.png', 'Background Music Generator music persona selection', 'Choose a reusable music direction.'],
+      ['2.png', 'Music API Profiles in Background Music Generator', 'Store multiple music API profiles.'],
+      ['3.png', 'Background Music Generator output controls', 'Tune the music for the job.'],
+      ['4.png', 'Completed track playback in Background Music Generator', 'Listen before you leave the app.'],
+      ['5.png', 'Instrument picker in Background Music Generator', 'Choose instruments for your track.']
+    ]),
+    faq: [
+      { q: 'Does it include music-generation credits?', a: 'No. You bring your own provider key, choose the model, and pay the provider directly.' },
+      { q: 'Can I listen before leaving the app?', a: 'Yes. When a provider returns a playable track, you can listen to it in the app and open the local output folder.' },
+      { q: 'Where are generated tracks saved?', a: 'Tracks are saved locally in the folder you choose. The default location is your Windows Music folder.' }
+    ],
+    relatedProducts: ['BGT', 'BGI', 'BT'],
+    relatedUseCases: [],
+    lastmod: '2026-09-15'
   },
   {
     code: 'BT',

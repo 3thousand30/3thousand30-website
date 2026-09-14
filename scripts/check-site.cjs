@@ -18,6 +18,7 @@ const officialStoreTitles = new Map([
   ['9PB3Q7K9FVZQ', 'Batch File Organiser'],
   ['9N3B1B8DT39F', 'Batch Generate Text with any AI'],
   ['9PFR4V6827XQ', 'Batch Generate Image with any AI'],
+  ['9P6KHZWC9HNR', 'Background Music Generator with any AI'],
   ['9NVDT0TTN0WH', 'Batch Merge PDFs'],
   ['9MZKRHK6NRRS', 'Batch Split PDFs'],
   ['9NS1L0DK0FQL', 'Batch Text to PDF'],
