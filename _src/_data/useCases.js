@@ -999,5 +999,35 @@ module.exports = [
       { q: 'Can I remove the password later?', a: 'Yes — switch to Unprotect mode with the same password and the app decrypts the batch again, skipping any file that password does not open rather than stopping the run.' }
     ],
     lastmod: '2026-08-14'
+  }),
+  useCase({
+    id: 36,
+    slug: 'prepare-a-narration-video-script-and-background-music',
+    title: 'Prepare a Narration Video Script and Background Music',
+    shortTitle: 'Narration video audio pack',
+    category: 'social',
+    categoryLabel: 'Video & audio creation',
+    summary: 'Prepare a reviewed narration script and a purpose-built background-music track before moving into the video edit.',
+    scenario: 'You are making an explainer, product story, documentary-style clip, or faceless narration video. The voiceover needs a clear structure, while the music needs to support the words without turning the edit into a search through random stock loops.',
+    outcome: 'A fact-checked narration script, a locally saved MP3 or WAV background track, and clear timing notes ready for recording and assembly in the video editor you use.',
+    products: ['BGT', 'BMG'],
+    inputs: ['A one-sentence viewer promise and target audience', 'Confirmed facts, source links, and any claims that need checking', 'A target narration length or rough cut duration', 'The desired emotional movement from opening to ending', 'A separate project folder for scripts, music versions, and the eventual video edit'],
+    steps: [
+      { title: 'Define the cut before writing the script', body: 'Decide what the viewer should understand or feel by the end, then outline the opening hook, key beats, call to action, and any planned pauses. A narration script is written for breath, emphasis, and pictures—not for a page.' },
+      { title: 'Draft and approve the narration', body: 'Use Batch Generate Text with any AI to explore a few structured script directions from your source material. Choose one, fact-check every claim, and read it aloud at a natural pace before treating its duration as real.' },
+      { title: 'Turn the cut into a music brief', body: 'In Background Music Generator with any AI, choose a reusable music persona and a template suited to the job, then describe the role the track should play. State that it is background music, whether vocals are unwanted, where narration needs space, and how the energy should move.' },
+      { title: 'Set the track controls for this edit', body: 'Use the Output controls to set the target duration, mood, genre, tempo, instruments, loop-friendly ending, and MP3 or WAV format. These current-track settings take priority over the template defaults, while the template direction and rules still guide the request.' },
+      { title: 'Generate and audition against spoken words', body: 'Listen to each returned track beside a rough narration recording, not in isolation. Reject music that crowds consonants, competes with the hook, changes mood at the wrong moment, or leaves an unusable ending.' },
+      { title: 'Package the approved assets for the edit', body: 'Save the final script, chosen track, provider/model note, actual returned duration, and any fade or loop instruction in one project folder. Record narration and assemble the visuals in your preferred video editor; these apps prepare the audio assets, not the finished video.' }
+    ],
+    review: ['Are every factual claim, name, and call to action in the script checked against a source?', 'Does the read-aloud duration fit the planned cut with room for pauses?', 'Does the music leave the narration intelligible at the intended listening level?', 'Is the returned track duration and ending usable rather than merely the requested setting?', 'Do the chosen provider’s current commercial-use terms fit the planned publication?'],
+    limitation: 'This workflow prepares the script and music assets; it does not record the narration, clear rights, mix the final audio, or assemble a finished video. Music providers can also return a duration or structure that differs from the request, so the actual file must be checked before editing around it.',
+    privacy: 'The script material and music brief are sent only to the external AI providers you choose. Batch Generate Text and Background Music Generator save their outputs locally; API keys are stored locally for the Windows account rather than in a 3thousand30 cloud.',
+    relatedUseCases: ['mass-create-social-media-content', 'batch-create-images-for-social-media', 'generate-product-descriptions-from-csv-with-ai'],
+    faq: [
+      { q: 'Does Background Music Generator create the narration or the video?', a: 'No. It creates the background-music track. Record or create the narration and assemble the video in the tools you choose.' },
+      { q: 'Will the generated music always match the requested duration?', a: 'No. Provider and model behaviour varies. Use the requested duration as a direction, then check the actual returned track before timing the final edit.' }
+    ],
+    lastmod: '2026-09-15'
   })
 ];
