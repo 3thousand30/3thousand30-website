@@ -25,6 +25,7 @@ const officialStoreTitles = new Map([
   ['9NNPJR6NP2S3', 'Batch Compress PDF'],
   ['9N5C4HHWCR6R', 'Batch Watermark PDF'],
   ['9N16J4D2MDM1', 'Batch Protect PDF'],
+  ['9N4L59QNL7P2', 'Personal Workspace'],
   ['9MW7722B1026', 'Key Rush'],
   ['9PG2KT0L8FQS', 'Chess with any AI']
 ]);

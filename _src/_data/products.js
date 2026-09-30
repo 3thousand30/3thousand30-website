@@ -25,7 +25,8 @@ const usdPrices = {
   BWP: { current: '3.74', original: '4.99', discountPercent: 25 },
   BPP: { current: '3.74', original: '4.99', discountPercent: 25 },
   KR: { current: '3.74', original: '4.99', discountPercent: 25 },
-  CWAI: { current: '11.24', original: '14.99', discountPercent: 25 }
+  CWAI: { current: '11.24', original: '14.99', discountPercent: 25 },
+  PW: { current: '7.49', original: '9.99', discountPercent: 25 }
 };
 
 const products = [
@@ -614,6 +615,60 @@ const products = [
     relatedProducts: ['BCP', 'BWP', 'BSP'],
     relatedUseCases: ['protect-pdf-deliverables-with-passwords'],
     lastmod: '2026-08-14'
+  },
+  {
+    code: 'PW',
+    slug: 'personal-workspace',
+    url: '/personal-workspace.html',
+    name: 'Personal Workspace',
+    seoTitle: 'Personal Workspace — Private Local Notes for Windows | 3thousand30',
+    shortName: 'Personal Workspace',
+    type: 'utility',
+    typeLabel: 'Private local workspace',
+    categories: ['productivity', 'notes', 'files', 'privacy'],
+    status: 'released',
+    featured: true,
+    tagline: 'Keep notes, plans, tables, files, and templates in folders you own.',
+    description: 'A private Windows workspace for local notes, tasks, tables, files, and templates. Password-protect content and temporarily share an unlocked page with your phone on the same Wi-Fi, without an account or cloud service.',
+    intro: 'Personal Workspace gives you a capable private place for notes, plans, reference material, and working files without turning personal information into another online service. Choose a folder, make it your workspace, and keep the pages and attachments there as ordinary files you control.',
+    logo: '/Logos/PW.png',
+    storeId: '9N4L59QNL7P2',
+    storeIdentity: '3Thousand30.PersonalMarkdownWorkspace',
+    storeUrl: 'https://apps.microsoft.com/detail/9N4L59QNL7P2',
+    docsUrl: 'https://3thousand30.github.io/personal-workspace-docs/',
+    privacyLabel: 'Local folders · optional page protection',
+    privacyText: 'Pages, images, and attachments stay in workspace folders you choose. Password protection and temporary phone transfer do not require an account, cloud service, analytics, or telemetry.',
+    features: [
+      'Keep pages, images, and attachments in real folders you choose',
+      'Organize parent and child pages in a clear local workspace tree',
+      'Write with tasks, callouts, links, images, attachments, and tables',
+      'Start recurring work from reusable personal templates',
+      'Import CSV data, sort and filter tables, then export it again',
+      'Search locally and keep separate workspaces for different parts of life or work',
+      'Password-protect a page or an entire workspace',
+      'Export a page as PDF or hand an unlocked page to your phone on the same Wi-Fi'
+    ],
+    audiences: [
+      'People who want their notes and working material in ordinary local folders',
+      'Anyone balancing plans, personal reference material, files, and structured tables',
+      'People who need private pages without moving their workspace to another online service'
+    ],
+    screenshotItems: screenshots('pw', [
+      ['1. Your workspace stays in folders you own.png', 'Personal Workspace page tree and local Life workspace', 'Keep your workspace in folders you own.'],
+      ['2. Write rich notes in a private workspace.png', 'Rich note editing in Personal Workspace', 'Write structured notes your way.'],
+      ['3. Turn CSV into a sortable working table.png', 'Sortable table in Personal Workspace', 'Plan and track with working tables.'],
+      ['4. Start from a useful personal template.png', 'New page templates in Personal Workspace', 'Start a page from a useful template.'],
+      ['5. Lock a private page when you leave.png', 'Password protection dialog in Personal Workspace', 'Protect private pages with a password.'],
+      ['6. Move a file to your phone locally.png', 'Phone transfer QR code in Personal Workspace', 'Send a page to your phone on the same Wi-Fi.']
+    ]),
+    faq: [
+      { q: 'Where does my workspace live?', a: 'In the folder you choose. Pages, images, and attachments remain ordinary files and folders that you can open, move, or back up outside the app.' },
+      { q: 'Does Personal Workspace need an account or cloud sync?', a: 'No. It works with local workspace folders and does not require an account, cloud service, analytics, or telemetry.' },
+      { q: 'How does phone transfer work?', a: 'Create a temporary QR transfer for an unlocked page, open it from a phone on the same Wi-Fi network, and send the edited page or an attachment back to the PC.' }
+    ],
+    relatedProducts: ['BFO', 'BPP', 'BGT'],
+    relatedUseCases: [],
+    lastmod: '2026-09-30'
   },
   {
     code: 'KR',
