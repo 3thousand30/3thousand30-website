@@ -2,7 +2,7 @@ function useCase(data) {
   const productGroups = [];
   if (data.products.some((code) => ['BTP', 'BMP', 'BSP', 'BCP', 'BWP', 'BPP'].includes(code))) productGroups.push('pdf-tools');
   if (data.products.some((code) => ['BRI', 'BWI', 'BCI', 'BEI'].includes(code))) productGroups.push('image-tools');
-  if (data.products.includes('BCV')) productGroups.push('video-tools');
+  if (data.products.some((code) => ['BCV', 'BWV'].includes(code))) productGroups.push('video-tools');
 
   return Object.assign({
     status: 'published',
@@ -1058,6 +1058,35 @@ module.exports = [
     faq: [
       { q: 'Should I use MP4 or WebM?', a: 'Use MP4 for broad compatibility with players and recipients. Use WebM when you specifically need a web-focused VP9/Opus delivery format and have confirmed the destination supports it.' },
       { q: 'Can I delete the originals after compression?', a: 'Only after independently deciding that the compressed copies meet your retention and quality needs. The safer normal workflow is to retain the original source footage.' }
+    ],
+    lastmod: '2026-10-21'
+  }),
+  useCase({
+    id: 38,
+    slug: 'watermark-video-proof-copies-before-client-review',
+    title: 'Watermark Video Proof Copies Before Client Review',
+    shortTitle: 'Watermark client video proofs',
+    category: 'files',
+    categoryLabel: 'Video & file workflows',
+    summary: 'Prepare clearly marked video proof copies for client review while keeping clean source footage separate and local.',
+    scenario: 'You need to send a collection of edits, selects, or work-in-progress videos for review, but the clean files should not circulate as unmarked deliverables.',
+    outcome: 'A separate folder of review-ready MP4 copies with consistent text or logo ownership marks, an intentional placement or movement path, and untouched source videos.',
+    products: ['BWV'],
+    inputs: ['A folder of videos ready for review', 'Approved watermark text, logo, or both', 'A separate output folder for proof copies', 'A representative video that shows the brightest, darkest, or busiest footage in the set'],
+    steps: [
+      { title: 'Separate the review set from the masters', body: 'Put only the clips intended for review in the selected input folder. Keep camera originals, project files, and clean masters outside the proof output so they remain unmarked and easy to identify.' },
+      { title: 'Choose a visible but reviewable mark', body: 'Add a client name, project notice, copyright line, logo, or a combination. Set opacity, text size, and edge margin so the mark is noticeable without covering the details the reviewer needs to judge.' },
+      { title: 'Set the placement for the review purpose', body: 'Use a fixed corner, edge, or centre when a consistent brand mark is enough. For proof copies that should be harder to crop consistently, choose movement: horizontal keeps the selected row, vertical keeps its column, and diagonal begins at the selected anchor.' },
+      { title: 'Preview a representative frame', body: 'Use the Original, Watermarked, or Split preview to inspect the current text and logo against real footage. Check light scenes, dark scenes, and any footage with subtitles or lower-thirds before processing the complete folder.' },
+      { title: 'Create safe review copies', body: 'Choose a separate output folder and a clear suffix such as _review or _proof. Enable skip-existing for a deliberate rerun so an existing review copy stays in place until you intentionally replace it.' },
+      { title: 'Review the delivered folder', body: 'Open several outputs from different parts of the batch. Confirm the mark is readable, source videos remain untouched, filenames make the review status obvious, and every recipient receives only the intended copies.' }
+    ],
+    review: ['Are clean masters outside the review folder?', 'Is the watermark visible without blocking essential review detail?', 'Does the selected position or movement path match the purpose of the proof?', 'Are the output suffix and folder clear enough to prevent accidental delivery of clean files?', 'Have representative output videos been played before sending?'],
+    limitation: 'A visible watermark is a practical deterrent and ownership signal, not access control, encryption, or a guarantee against copying. Keep masters private and use appropriate contracts or delivery controls when they are needed.',
+    privacy: 'Batch Watermark Video performs frame previewing, watermark rendering, and MP4 output creation locally with its bundled FFmpeg engine. Video and logo files are not uploaded to a 3thousand30 service.',
+    faq: [
+      { q: 'Should I use a fixed or moving watermark for review copies?', a: 'Use fixed placement for predictable branded review copies. Choose a moving path when reducing a consistent crop is more important; always test a representative output before sending a full batch.' },
+      { q: 'Can I use a client-specific proof notice?', a: 'Yes. Add the client or project name as text, use an approved logo, or combine both before creating the separate review folder.' }
     ],
     lastmod: '2026-10-21'
   })

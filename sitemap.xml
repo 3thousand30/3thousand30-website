@@ -122,6 +122,13 @@
   </url>
 
   <url>
+    <loc>https://3thousand30.com/batchwatermark-video.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://3thousand30.com/batch-merge-pdfs.html</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -439,6 +446,13 @@
 
   <url>
     <loc>https://3thousand30.com/use-cases/compress-a-folder-of-videos-before-sharing.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://3thousand30.com/use-cases/watermark-video-proof-copies-before-client-review.html</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
