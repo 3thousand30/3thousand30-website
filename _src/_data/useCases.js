@@ -2,7 +2,7 @@ function useCase(data) {
   const productGroups = [];
   if (data.products.some((code) => ['BTP', 'BMP', 'BSP', 'BCP', 'BWP', 'BPP'].includes(code))) productGroups.push('pdf-tools');
   if (data.products.some((code) => ['BRI', 'BWI', 'BCI', 'BEI'].includes(code))) productGroups.push('image-tools');
-  if (data.products.some((code) => ['BCV', 'BWV'].includes(code))) productGroups.push('video-tools');
+  if (data.products.some((code) => ['BCV', 'BWV', 'BRV'].includes(code))) productGroups.push('video-tools');
 
   return Object.assign({
     status: 'published',
@@ -1060,6 +1060,33 @@ module.exports = [
       { q: 'Can I delete the originals after compression?', a: 'Only after independently deciding that the compressed copies meet your retention and quality needs. The safer normal workflow is to retain the original source footage.' }
     ],
     lastmod: '2026-10-21'
+  }),
+  useCase({
+    id: 39,
+    slug: 'resize-videos-for-social-media-platforms',
+    title: 'Resize Videos for Different Social Platforms',
+    shortTitle: 'Platform-specific video sizes',
+    category: 'social',
+    categoryLabel: 'Social & video production',
+    summary: 'Turn one approved video set into vertical, square, and landscape delivery copies without recreating the resize decision for every clip.',
+    scenario: 'A campaign has approved source videos, but the publishing plan needs a mix of vertical short-form posts, square previews, and landscape uploads.',
+    outcome: 'Clearly named platform-ready MP4 folders created locally from protected source videos, with framing checked before the full batch runs.',
+    products: [],
+    inputs: ['Approved source videos', 'Current platform dimension requirements', 'A decision about full-frame bars or crop-to-fill framing', 'Destination folder names for each channel version'],
+    steps: [
+      { title: 'Verify the actual destination requirements', body: 'Social platform recommendations and placements change. Confirm the dimensions and orientation for the format you are publishing before choosing a preset or building delivery folders.' },
+      { title: 'Protect the approved source set', body: 'Keep the clean, approved source videos in one folder. Create each channel version from that source set rather than resizing a previously resized delivery copy.' },
+      { title: 'Choose one platform shape at a time', body: 'In Batch Resize Video, select a social preset or enter exact even-pixel dimensions. Use a clear destination folder and suffix such as _vertical, _square, or _landscape.' },
+      { title: 'Decide how framing should behave', body: 'Use Fit within when the complete source frame matters and letterboxing is acceptable. Use Crop to fill when the destination must fill the frame, then choose the crop focus nearest the subject, product, or on-screen text.' },
+      { title: 'Preview representative footage', body: 'Compare Original, Resized, and Split frame previews. Test portrait, landscape, text-heavy, and edge-positioned subjects; a single easy clip is not enough to validate a batch crop rule.' },
+      { title: 'Process and check the delivery folders', body: 'Run one platform batch, play a representative set of outputs, then check that filenames, aspect ratios, and output folders are unambiguous before uploading to the chosen platform.' }
+    ],
+    review: ['Were the current destination dimensions verified?', 'Did each delivery version start from the protected source set?', 'Does Fit within or Crop to fill match the publishing need?', 'Were edge-positioned subjects and on-screen text checked?', 'Are platform output folders and filename suffixes clear?'],
+    limitation: 'A batch crop rule cannot understand the important subject in every shot. Clips with different compositions may need a separate crop focus, a different output version, or manual editing.',
+    privacy: 'Batch Resize Video creates frame previews and resized MP4 copies locally with bundled FFmpeg. Video files are not uploaded to a 3thousand30 service.',
+    relatedUseCases: ['mass-create-social-media-content', 'resize-images-for-different-social-platforms', 'compress-a-folder-of-videos-before-sharing'],
+    lastmod: '2026-10-22',
+    faq: [{ q: 'Should I use Fit within or Crop to fill for social video?', a: 'Use Fit within when every part of the source frame must remain visible. Use Crop to fill when the platform frame must be completely filled, then preview the selected crop focus on representative footage.' }]
   }),
   useCase({
     id: 38,
