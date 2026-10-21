@@ -2,6 +2,7 @@ function useCase(data) {
   const productGroups = [];
   if (data.products.some((code) => ['BTP', 'BMP', 'BSP', 'BCP', 'BWP', 'BPP'].includes(code))) productGroups.push('pdf-tools');
   if (data.products.some((code) => ['BRI', 'BWI', 'BCI', 'BEI'].includes(code))) productGroups.push('image-tools');
+  if (data.products.includes('BCV')) productGroups.push('video-tools');
 
   return Object.assign({
     status: 'published',
@@ -1029,5 +1030,35 @@ module.exports = [
       { q: 'Will the generated music always match the requested duration?', a: 'No. Provider and model behaviour varies. Use the requested duration as a direction, then check the actual returned track before timing the final edit.' }
     ],
     lastmod: '2026-09-15'
+  }),
+  useCase({
+    id: 37,
+    slug: 'compress-a-folder-of-videos-before-sharing',
+    title: 'Compress a Folder of Videos Before Sharing',
+    shortTitle: 'Compress a video delivery folder',
+    category: 'files',
+    categoryLabel: 'Video & file workflows',
+    summary: 'Create smaller, reviewed MP4 or WebM copies from a video folder while keeping the source footage untouched and local.',
+    scenario: 'A camera, screen-recording, or finished-edit folder is too large to share, upload, or retain as a convenient delivery copy. The source footage still needs to remain available at its original quality.',
+    outcome: 'A separate folder of playback-checked video copies with measured total space saved, a deliberate output format, and the original footage preserved.',
+    products: ['BCV'],
+    inputs: ['A clean source video folder', 'The destination: sharing, upload, web delivery, or a lighter archive copy', 'A representative video with the detail and audio that matter most', 'A separate output folder'],
+    steps: [
+      { title: 'Measure and protect the source set', body: 'Note the folder size, file count, important formats, and largest files. Keep the source footage unchanged and treat the compressed videos as delivery or storage copies.' },
+      { title: 'Choose the destination format deliberately', body: 'Use MP4 when broad player compatibility matters. Use WebM only when the destination supports it and its web-focused VP9/Opus output suits the job.' },
+      { title: 'Start with a reviewable quality setting', body: 'In Batch Compress Video, begin with the balanced CRF setting and the default encoding speed, then choose an audio bitrate appropriate for speech, music, or ambient sound. Smaller settings are not automatically better.' },
+      { title: 'Test one representative video first', body: 'Create a copy of a detailed, fast-moving, dark, or text-heavy video. Watch it in the intended player, listen for audio damage, and compare it with the source before committing to the folder.' },
+      { title: 'Set the output boundary and run the batch', body: 'Choose a separate destination, filename suffix, and skip-existing behaviour. Remove metadata only when the new copies should omit titles, location/device data, timestamps, and chapters.' },
+      { title: 'Review the completed delivery set', body: 'Check original size, final size, and total space saved. Open samples from across the batch, then share or upload only after confirming playback, picture, audio, naming, and destination-folder contents.' }
+    ],
+    review: ['Are original videos separate and unchanged?', 'Does the selected MP4 or WebM format work in the destination?', 'Do representative videos retain acceptable picture and audio quality?', 'Are metadata removal and filename choices intentional?', 'Was the total size reduction measured before delivery?'],
+    limitation: 'Video re-encoding is lossy and can trade detail, motion handling, audio quality, and encoding time for smaller files. This workflow does not edit, crop, or repair footage; inspect representative results before using an aggressive setting broadly.',
+    privacy: 'Video files stay on the Windows PC. Batch Compress Video uses its bundled FFmpeg engine to create local output copies and does not upload the folder to a 3thousand30 service.',
+    relatedUseCases: ['prepare-a-narration-video-script-and-background-music', 'compress-images-to-save-storage-space'],
+    faq: [
+      { q: 'Should I use MP4 or WebM?', a: 'Use MP4 for broad compatibility with players and recipients. Use WebM when you specifically need a web-focused VP9/Opus delivery format and have confirmed the destination supports it.' },
+      { q: 'Can I delete the originals after compression?', a: 'Only after independently deciding that the compressed copies meet your retention and quality needs. The safer normal workflow is to retain the original source footage.' }
+    ],
+    lastmod: '2026-10-21'
   })
 ];

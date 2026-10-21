@@ -13,6 +13,7 @@ const officialStoreTitles = new Map([
   ['9N75DWR9X2S7', 'Batch Translate Text with any AI'],
   ['9N3S7ZRPXGPH', 'Batch Watermark Image'],
   ['9N1DBC2G87HT', 'Batch Compress Image'],
+  ['9MXZ6FLXKHJF', 'Batch Compress Video'],
   ['9PPKDVXPTLV0', 'Batch Resize Image'],
   ['9N2VHG38SS00', 'Batch Enhance Image'],
   ['9PB3Q7K9FVZQ', 'Batch File Organiser'],
