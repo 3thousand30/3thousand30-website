@@ -1064,29 +1064,34 @@ module.exports = [
   useCase({
     id: 39,
     slug: 'resize-videos-for-social-media-platforms',
-    title: 'Resize Videos for Different Social Platforms',
-    shortTitle: 'Platform-specific video sizes',
+    title: 'Prepare Videos for Social Media Platforms',
+    shortTitle: 'Social-ready video versions',
     category: 'social',
     categoryLabel: 'Social & video production',
-    summary: 'Turn one approved video set into vertical, square, and landscape delivery copies without recreating the resize decision for every clip.',
-    scenario: 'A campaign has approved source videos, but the publishing plan needs a mix of vertical short-form posts, square previews, and landscape uploads.',
-    outcome: 'Clearly named platform-ready MP4 folders created locally from protected source videos, with framing checked before the full batch runs.',
-    products: [],
-    inputs: ['Approved source videos', 'Current platform dimension requirements', 'A decision about full-frame bars or crop-to-fill framing', 'Destination folder names for each channel version'],
+    summary: 'Turn one approved video set into vertical, square, and landscape delivery copies, with optional ownership marks and smaller sharing files, without recreating the workflow for every clip.',
+    scenario: 'A campaign has approved source videos, but the publishing plan needs a mix of vertical short-form posts, square previews, landscape uploads, and clearly branded review or delivery copies.',
+    outcome: 'Clearly named, platform-ready MP4 folders created locally from protected source videos, with framing checked before the full batch runs and optional watermarking or compression applied only to the delivery copies.',
+    products: ['BRV', 'BWV', 'BCV'],
+    inputs: ['Approved source videos', 'Current platform dimension requirements', 'A decision about full-frame bars or crop-to-fill framing', 'Approved watermark text or logo when ownership marks are needed', 'Destination folder names for each channel version'],
     steps: [
       { title: 'Verify the actual destination requirements', body: 'Social platform recommendations and placements change. Confirm the dimensions and orientation for the format you are publishing before choosing a preset or building delivery folders.' },
       { title: 'Protect the approved source set', body: 'Keep the clean, approved source videos in one folder. Create each channel version from that source set rather than resizing a previously resized delivery copy.' },
       { title: 'Choose one platform shape at a time', body: 'In Batch Resize Video, select a social preset or enter exact even-pixel dimensions. Use a clear destination folder and suffix such as _vertical, _square, or _landscape.' },
       { title: 'Decide how framing should behave', body: 'Use Fit within when the complete source frame matters and letterboxing is acceptable. Use Crop to fill when the destination must fill the frame, then choose the crop focus nearest the subject, product, or on-screen text.' },
       { title: 'Preview representative footage', body: 'Compare Original, Resized, and Split frame previews. Test portrait, landscape, text-heavy, and edge-positioned subjects; a single easy clip is not enough to validate a batch crop rule.' },
-      { title: 'Process and check the delivery folders', body: 'Run one platform batch, play a representative set of outputs, then check that filenames, aspect ratios, and output folders are unambiguous before uploading to the chosen platform.' }
+      { title: 'Add ownership marks only to the copies when needed', body: 'For client proofs, creator attribution, or branded delivery copies, use Batch Watermark Video on a resized output folder. Add text, a logo, or both, choose a fixed or moving path, and preview the mark against a real frame. Keep the clean source set and clean platform version separate.' },
+      { title: 'Compress a sharing copy when the destination needs it', body: 'If an upload limit, transfer, or archive requires a smaller file, run Batch Compress Video on the final delivery folder. Choose MP4 for broad compatibility, preview a representative result, and use the space-saved summary to confirm the trade-off.' },
+      { title: 'Process and check the delivery folders', body: 'Run one platform batch, play a representative set of outputs, then check that filenames, aspect ratios, output folders, marks, and file sizes are unambiguous before uploading to the chosen platform.' }
     ],
-    review: ['Were the current destination dimensions verified?', 'Did each delivery version start from the protected source set?', 'Does Fit within or Crop to fill match the publishing need?', 'Were edge-positioned subjects and on-screen text checked?', 'Are platform output folders and filename suffixes clear?'],
-    limitation: 'A batch crop rule cannot understand the important subject in every shot. Clips with different compositions may need a separate crop focus, a different output version, or manual editing.',
-    privacy: 'Batch Resize Video creates frame previews and resized MP4 copies locally with bundled FFmpeg. Video files are not uploaded to a 3thousand30 service.',
+    review: ['Were the current destination dimensions verified?', 'Did each delivery version start from the protected source set?', 'Does Fit within or Crop to fill match the publishing need?', 'Were edge-positioned subjects and on-screen text checked?', 'If marked, is the watermark visible without blocking essential content?', 'Are platform output folders, filename suffixes, and file sizes clear?'],
+    limitation: 'A batch crop rule cannot understand the important subject in every shot, and a batch watermark cannot respond to every scene. Clips with different compositions may need a separate crop focus, a different output version, or manual editing.',
+    privacy: 'Batch Resize Video, Batch Watermark Video, and Batch Compress Video perform local previewing, rendering, and output creation with bundled FFmpeg. Video and logo files are not uploaded to a 3thousand30 service.',
     relatedUseCases: ['mass-create-social-media-content', 'resize-images-for-different-social-platforms', 'compress-a-folder-of-videos-before-sharing'],
     lastmod: '2026-10-22',
-    faq: [{ q: 'Should I use Fit within or Crop to fill for social video?', a: 'Use Fit within when every part of the source frame must remain visible. Use Crop to fill when the platform frame must be completely filled, then preview the selected crop focus on representative footage.' }]
+    faq: [
+      { q: 'Should I use Fit within or Crop to fill for social video?', a: 'Use Fit within when every part of the source frame must remain visible. Use Crop to fill when the platform frame must be completely filled, then preview the selected crop focus on representative footage.' },
+      { q: 'When should I watermark or compress?', a: 'Resize first. Add a watermark to a separate delivery or review copy when an ownership mark is useful, then compress only if the destination needs a smaller file. Keep the approved source videos untouched.' }
+    ]
   }),
   useCase({
     id: 38,

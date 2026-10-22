@@ -20,6 +20,7 @@ const usdPrices = {
   BCI: { current: '3.74', original: '4.99', discountPercent: 25 },
   BCV: { current: '9.99', original: '13.32', discountPercent: 25 },
   BWV: { current: '9.99', original: '13.32', discountPercent: 25 },
+  BRV: { current: '9.99', original: '13.32', discountPercent: 25 },
   BMP: { current: '3.74', original: '4.99', discountPercent: 25 },
   BSP: { current: '3.74', original: '4.99', discountPercent: 25 },
   BTP: { current: '3.74', original: '4.99', discountPercent: 25 },
@@ -429,7 +430,7 @@ const products = [
       { q: 'Is video compression lossless?', a: 'No. Re-encoding is lossy, so test a representative output and check the picture and audio before processing an important complete folder.' }
     ],
     relatedProducts: ['BCI', 'BRI', 'BFO'],
-    relatedUseCases: ['compress-a-folder-of-videos-before-sharing'],
+    relatedUseCases: ['compress-a-folder-of-videos-before-sharing', 'resize-videos-for-social-media-platforms'],
     lastmod: '2026-10-21'
   },
   {
@@ -471,8 +472,50 @@ const products = [
       { q: 'Can I add both text and a logo?', a: 'Yes. Use either mark alone or combine text and a supported PNG, JPG, JPEG, or WebP logo.' }
     ],
     relatedProducts: ['BWI', 'BCV', 'BRI'],
-    relatedUseCases: ['watermark-video-proof-copies-before-client-review'],
+    relatedUseCases: ['watermark-video-proof-copies-before-client-review', 'resize-videos-for-social-media-platforms'],
     lastmod: '2026-10-21'
+  },
+  {
+    code: 'BRV',
+    slug: 'batchresize-video',
+    url: '/batchresize-video.html',
+    name: 'Batch Resize Video',
+    seoTitle: 'Batch Resize Video — Local Video Resizer for Windows | 3thousand30',
+    shortName: 'Batch Resize Video',
+    type: 'utility',
+    typeLabel: 'Local video utility',
+    categories: ['video', 'social', 'editing'],
+    status: 'released',
+    featured: false,
+    tagline: 'Resize whole video folders locally with platform presets and framing control.',
+    description: 'A local Windows batch video resizer with exact dimensions, social-media presets, crop or fit framing, real-frame preview, and safe MP4 copies.',
+    intro: 'Batch Resize Video creates the shape each delivery needs without uploading footage or resizing clips one by one. Choose exact dimensions or a platform preset, decide whether to preserve the whole frame or crop it to fill, preview a real frame, then create separate MP4 copies.',
+    logo: '/Logos/BRV.jpg',
+    storeId: '9NM4PKDTHCBL',
+    storeIdentity: '3thousand30.BatchResizeVideo',
+    storeUrl: 'https://apps.microsoft.com/detail/9NM4PKDTHCBL',
+    docsUrl: 'https://3thousand30.github.io/batchresizevideo-docs/',
+    privacyLabel: 'Fully local',
+    privacyText: 'Video decoding, real-frame previews, crop rendering, and output creation run on the PC with the bundled FFmpeg engine. Source videos are not uploaded to a 3thousand30 service.',
+    features: [
+      'Resize a whole folder of common video files in one batch',
+      'Enter exact even-pixel dimensions or choose social-media and common video-size presets',
+      'Use Fit within to keep the full frame or Crop to fill for edge-to-edge output',
+      'Choose a nine-point crop focus or draw a locked-aspect crop frame on a real preview',
+      'Compare Original, Resized, and Split real-frame views before starting',
+      'Choose CRF quality, encoding speed, audio bitrate, output folder, suffix, and skip-existing behavior',
+      'Create broadly compatible H.264/AAC MP4 copies while keeping originals separate'
+    ],
+    audiences: ['Creators preparing vertical, square, and landscape versions from one approved video set', 'Social teams packaging recurring platform delivery folders', 'Editors who need predictable crop framing without uploading footage'],
+    screenshotItems: [],
+    faq: [
+      { q: 'Does resizing improve a smaller source video?', a: 'No. A larger output frame can meet a delivery requirement, but it does not create new visual detail in smaller source footage.' },
+      { q: 'Should I use Fit within or Crop to fill?', a: 'Use Fit within when every part of the original frame must remain visible. Use Crop to fill when the target frame must be completely filled, then inspect the real-frame preview.' },
+      { q: 'Are source videos changed?', a: 'No. Batch Resize Video writes separate MP4 copies to the output folder you choose.' }
+    ],
+    relatedProducts: ['BWV', 'BCV', 'BRI'],
+    relatedUseCases: ['resize-videos-for-social-media-platforms'],
+    lastmod: '2026-10-22'
   },
   {
     code: 'BMP',
