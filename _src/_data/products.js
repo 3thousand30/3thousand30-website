@@ -798,7 +798,11 @@ const products = [
       'Teams preparing review-ready or routine internal document copies',
       'Anyone who wants local PDF handling instead of browser-based file uploads'
     ],
-    screenshotItems: [],
+    screenshotItems: screenshots('besp', [
+      ['1. Apply a signature across a PDF batch.png', 'Batch eSign PDF placement controls and preview', 'Place a signature consistently across a PDF batch.'],
+      ['2. Draw, type, or upload a signature.png', 'Create a reusable signature in Batch eSign PDF', 'Create a reusable signature by drawing, typing, or uploading it.'],
+      ['3. Sign PDFs with a Windows certificate.png', 'USB Token certificate-signing workflow in Batch eSign PDF', 'Choose a Windows certificate for digital PDF signing.']
+    ]),
     faq: [
       { q: 'Are my originals changed?', a: 'No. Batch eSign PDF creates separate output copies and keeps source documents unchanged.' },
       { q: 'Is a visual signature the same as a digital certificate signature?', a: 'No. A drawn, typed, or image signature is a visible mark. Certificate signing is a separate cryptographic workflow that requires a compatible RSA certificate with an available private key in the Windows certificate store.' },
