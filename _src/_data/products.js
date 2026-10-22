@@ -424,7 +424,11 @@ const products = [
       'See original size, final size, and total space saved when the batch finishes'
     ],
     audiences: ['Creators preparing video folders for sharing or upload', 'People making smaller copies of camera or screen-recording footage', 'Teams producing compatible MP4 or WebM delivery files'],
-    screenshotItems: [],
+    screenshotItems: screenshots('bcv', [
+      ['1. Compress video folders locally.png', 'Batch Compress Video input folder, compression controls, and output setup', 'Compress a complete video folder locally.'],
+      ['2. See exactly how much you saved.png', 'Batch Compress Video completed batch with original size, final size, and total space saved', 'See exactly how much space the batch saved.'],
+      ['3. Start with built-in guidance.png', 'Batch Compress Video getting-started guidance', 'Start with built-in guidance before processing an important folder.']
+    ]),
     faq: [
       { q: 'Are my original videos changed?', a: 'No. Choose a separate destination folder for the compressed copies; the source files stay untouched.' },
       { q: 'Which output format should I choose?', a: 'Choose MP4 for broad playback compatibility. Choose WebM when web-focused VP9/Opus delivery is the better fit for the destination.' },
@@ -466,7 +470,13 @@ const products = [
       'Keep originals separate with output folders, filename suffixes, and skip-existing support'
     ],
     audiences: ['Editors sharing proof cuts with clients or collaborators', 'Production teams preparing branded review copies', 'Anyone who needs visible ownership marks without uploading footage to a service'],
-    screenshotItems: [],
+    screenshotItems: screenshots('bwv', [
+      ['1. Watermark a video folder with text.png', 'Batch Watermark Video text watermark controls and real-frame preview', 'Watermark a video folder with text.'],
+      ['2. Add or remove a logo watermark.png', 'Batch Watermark Video logo selection and removal controls', 'Add or remove a logo watermark.'],
+      ['3. Choose a moving watermark path.png', 'Batch Watermark Video motion path controls with a real-frame preview', 'Choose a moving watermark path for proof copies.'],
+      ['4. Track watermarking progress.png', 'Batch Watermark Video batch progress and cancel control', 'Track watermarking progress across the folder.'],
+      ['5. Review completed watermark copies.png', 'Batch Watermark Video completed output summary and open-output action', 'Review the completed watermark copies.']
+    ]),
     faq: [
       { q: 'Are source videos changed?', a: 'No. Batch Watermark Video creates new MP4 copies in a separate output folder and leaves the source files untouched.' },
       { q: 'Can a watermark move during the video?', a: 'Yes. Choose a horizontal, vertical, diagonal, or varied-position path. The selected placement sets the start and, where applicable, the moving row or column.' },
@@ -508,7 +518,13 @@ const products = [
       'Create broadly compatible H.264/AAC MP4 copies while keeping originals separate'
     ],
     audiences: ['Creators preparing vertical, square, and landscape versions from one approved video set', 'Social teams packaging recurring platform delivery folders', 'Editors who need predictable crop framing without uploading footage'],
-    screenshotItems: [],
+    screenshotItems: screenshots('brv', [
+      ['1. Resize a video folder with exact dimensions.png', 'Batch Resize Video exact dimensions and preset controls', 'Resize a video folder with exact dimensions.'],
+      ['2. Choose crop focus for an edge-to-edge resize.png', 'Batch Resize Video crop focus controls and real-frame preview', 'Choose crop focus for an edge-to-edge resize.'],
+      ['3. Compare original and resized frames.png', 'Batch Resize Video Original, Resized, and Split preview comparison', 'Compare original and resized frames before processing.'],
+      ['4. Track resize progress.png', 'Batch Resize Video batch progress and cancel control', 'Track resize progress across the folder.'],
+      ['5. Review completed resized copies.png', 'Batch Resize Video completed output summary and open-output action', 'Review the completed resized copies.']
+    ]),
     faq: [
       { q: 'Does resizing improve a smaller source video?', a: 'No. A larger output frame can meet a delivery requirement, but it does not create new visual detail in smaller source footage.' },
       { q: 'Should I use Fit within or Crop to fill?', a: 'Use Fit within when every part of the original frame must remain visible. Use Crop to fill when the target frame must be completely filled, then inspect the real-frame preview.' },
@@ -763,7 +779,7 @@ const products = [
     intro: 'Batch eSign PDF is for repeating a clear signing step across similarly laid-out documents without uploading the files or touching the originals. Create a reusable visual signature, position it once, inspect the preview, then make separate signed copies of the complete folder. A compatible RSA certificate in the Windows certificate store can also be used for the app’s certificate-signing workflow.',
     logo: '/Logos/BeSP.jpg',
     storeId: '9PL9P5D26FH6',
-    storeIdentity: '3thousand30.BatchSignPDF',
+    storeIdentity: '3thousand30.BatcheSignPDF',
     storeUrl: 'https://apps.microsoft.com/detail/9PL9P5D26FH6',
     docsUrl: 'https://3thousand30.github.io/batchesignpdf-docs/',
     privacyLabel: 'Fully local · originals stay separate',
