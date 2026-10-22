@@ -1,6 +1,6 @@
 function useCase(data) {
   const productGroups = [];
-  if (data.products.some((code) => ['BTP', 'BMP', 'BSP', 'BCP', 'BWP', 'BPP'].includes(code))) productGroups.push('pdf-tools');
+  if (data.products.some((code) => ['BTP', 'BMP', 'BSP', 'BCP', 'BWP', 'BPP', 'BESP'].includes(code))) productGroups.push('pdf-tools');
   if (data.products.some((code) => ['BRI', 'BWI', 'BCI', 'BEI'].includes(code))) productGroups.push('image-tools');
   if (data.products.some((code) => ['BCV', 'BWV', 'BRV'].includes(code))) productGroups.push('video-tools');
 
@@ -1121,5 +1121,35 @@ module.exports = [
       { q: 'Can I use a client-specific proof notice?', a: 'Yes. Add the client or project name as text, use an approved logo, or combine both before creating the separate review folder.' }
     ],
     lastmod: '2026-10-21'
+  }),
+  useCase({
+    id: 40,
+    slug: 'apply-consistent-visual-signatures-to-pdf-batches',
+    title: 'Apply Consistent Visual Signatures to PDF Batches',
+    shortTitle: 'Sign routine PDF batches',
+    category: 'files',
+    categoryLabel: 'PDF & file workflows',
+    summary: 'Create separate signed copies of similarly laid-out PDFs with one reviewed visual signature placement, while keeping the source documents local and unchanged.',
+    scenario: 'A recurring approval, acknowledgement, or internal paperwork process produces a set of PDFs that need the same visible signature in the same place. Signing each file one by one is slow, while sending the documents to an online service is not appropriate for the content.',
+    outcome: 'A separate output folder of clearly named PDF copies with a consistent visible signature, an audit CSV, and untouched source documents.',
+    products: ['BESP'],
+    inputs: ['A folder of similarly laid-out PDFs', 'A drawn, typed, or image signature that you are authorised to apply', 'A representative PDF for position review', 'A separate output folder'],
+    steps: [
+      { title: 'Confirm the signature type you actually need', body: 'Use a visual signature for routine internal approvals or workflows where a visible mark is sufficient. If a recipient requires a cryptographic certificate signature, confirm the required certificate, timestamp, and validation rules before using any batch workflow.' },
+      { title: 'Protect the source set', body: 'Keep original PDFs in a clean source folder and choose a separate output folder for signed copies. Do not use the output folder as the next batch input.' },
+      { title: 'Create one reusable signature profile', body: 'Draw, type, or upload the approved signature. Name it clearly so the same profile can be reused without guessing which mark belongs to which workflow.' },
+      { title: 'Set the page and placement once', body: 'Choose the target page, anchor position, size, and fine offsets. This workflow is most reliable when the PDFs share the same page geometry and layout.' },
+      { title: 'Preview a representative document', body: 'Inspect the first or most typical PDF before running the full set. Check that the signature is legible, not clipped, and does not cover dates, totals, conditions, or content that needs to remain visible.' },
+      { title: 'Run and review the separate copies', body: 'Process the batch, open several results, and inspect the signing-report.csv. Keep the originals unchanged and distribute only the reviewed output copies.' }
+    ],
+    review: ['Are the source PDFs preserved outside the output folder?', 'Does the visible mark land correctly on representative layouts?', 'Is the signature readable without obscuring important document content?', 'Are output filenames and the audit report clear enough for the workflow?', 'Was a cryptographic certificate signature required instead of a visual mark?'],
+    limitation: 'A visual signature is not a cryptographic digital signature and does not by itself prove signer identity or detect later document changes. Use a suitable certificate-backed, timestamped, and policy-compliant signing process when that assurance is required.',
+    privacy: 'Batch eSign PDF reads the PDFs you choose, renders previews, writes signed output copies, and creates its audit report locally. It does not upload the documents to a 3thousand30 service.',
+    relatedUseCases: ['protect-pdf-deliverables-with-passwords', 'watermark-client-pdf-proofs-before-sharing', 'compress-pdfs-without-uploading-them'],
+    faq: [
+      { q: 'Can I use different layouts in one batch?', a: 'You can, but a single fixed placement is best for similarly laid-out documents. Split different page sizes or layouts into separate batches and preview each one.' },
+      { q: 'Can I use this as a legal digital-signature service?', a: 'Not for a workflow that specifically requires certificate validation, trusted timestamps, or long-term validation data. Confirm the recipient or regulator requirements before signing.' }
+    ],
+    lastmod: '2026-10-22'
   })
 ];

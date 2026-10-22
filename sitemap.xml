@@ -178,6 +178,13 @@
   </url>
 
   <url>
+    <loc>https://3thousand30.com/batch-sign-pdf.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://3thousand30.com/personal-workspace.html</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -468,6 +475,13 @@
   <url>
     <loc>https://3thousand30.com/use-cases/watermark-video-proof-copies-before-client-review.html</loc>
     <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://3thousand30.com/use-cases/apply-consistent-visual-signatures-to-pdf-batches.html</loc>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

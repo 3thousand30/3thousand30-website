@@ -27,6 +27,7 @@ const usdPrices = {
   BCP: { current: '3.74', original: '4.99', discountPercent: 25 },
   BWP: { current: '3.74', original: '4.99', discountPercent: 25 },
   BPP: { current: '3.74', original: '4.99', discountPercent: 25 },
+  BESP: { current: '3.75', original: '5.00', discountPercent: 25 },
   KR: { current: '3.74', original: '4.99', discountPercent: 25 },
   CWAI: { current: '11.24', original: '14.99', discountPercent: 25 },
   PW: { current: '7.49', original: '9.99', discountPercent: 25 }
@@ -744,6 +745,52 @@ const products = [
     relatedProducts: ['BCP', 'BWP', 'BSP'],
     relatedUseCases: ['protect-pdf-deliverables-with-passwords'],
     lastmod: '2026-08-14'
+  },
+  {
+    code: 'BESP',
+    slug: 'batch-sign-pdf',
+    url: '/batch-sign-pdf.html',
+    name: 'Batch eSign PDF',
+    seoTitle: 'Batch eSign PDF — Sign PDF Batches Locally on Windows | 3thousand30',
+    shortName: 'Batch eSign PDF',
+    type: 'utility',
+    typeLabel: 'Local PDF utility',
+    categories: ['pdf', 'files', 'productivity'],
+    status: 'released',
+    featured: false,
+    tagline: 'Sign a complete PDF folder locally with reusable visual signatures and a deliberate review step.',
+    description: 'A local Windows batch PDF signing app for applying drawn, typed, or image signatures consistently across a document set, with live placement preview and separate safe outputs.',
+    intro: 'Batch eSign PDF is for repeating a clear signing step across similarly laid-out documents without uploading the files or touching the originals. Create a reusable visual signature, position it once, inspect the preview, then make separate signed copies of the complete folder. A compatible RSA certificate in the Windows certificate store can also be used for the app’s certificate-signing workflow.',
+    logo: '/Logos/BeSP.jpg',
+    storeId: '9PL9P5D26FH6',
+    storeIdentity: '3thousand30.BatchSignPDF',
+    storeUrl: 'https://apps.microsoft.com/detail/9PL9P5D26FH6',
+    docsUrl: 'https://3thousand30.github.io/batchesignpdf-docs/',
+    privacyLabel: 'Fully local · originals stay separate',
+    privacyText: 'PDF selection, signature creation, previewing, signing, reports, and output creation stay on the Windows PC. No account, document upload, analytics, or telemetry is required.',
+    features: [
+      'Draw, type, or upload a signature and save it as a reusable profile',
+      'Apply one visual signature consistently across a folder of similarly laid-out PDFs',
+      'Choose page, anchor position, size, and fine offset before processing',
+      'Use the live placement preview to check a representative PDF first',
+      'Write safe signed copies to a separate folder with collision-safe names',
+      'Receive a signing-report.csv audit trail alongside every completed batch',
+      'Use the compatible Windows RSA certificate workflow when a cryptographic signature is required'
+    ],
+    audiences: [
+      'People applying a consistent approval or acknowledgement signature across PDF sets',
+      'Teams preparing review-ready or routine internal document copies',
+      'Anyone who wants local PDF handling instead of browser-based file uploads'
+    ],
+    screenshotItems: [],
+    faq: [
+      { q: 'Are my originals changed?', a: 'No. Batch eSign PDF creates separate output copies and keeps source documents unchanged.' },
+      { q: 'Is a visual signature the same as a digital certificate signature?', a: 'No. A drawn, typed, or image signature is a visible mark. Certificate signing is a separate cryptographic workflow that requires a compatible RSA certificate with an available private key in the Windows certificate store.' },
+      { q: 'Does certificate signing add a trusted timestamp or long-term validation data?', a: 'No. If a timestamp or embedded revocation evidence is required for your legal, regulatory, or retention workflow, use a specialised signing process that provides it.' }
+    ],
+    relatedProducts: ['BPP', 'BWP', 'BCP'],
+    relatedUseCases: ['apply-consistent-visual-signatures-to-pdf-batches'],
+    lastmod: '2026-10-22'
   },
   {
     code: 'PW',
