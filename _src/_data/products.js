@@ -148,7 +148,8 @@ const products = [
       'Reuse music personas to keep a familiar direction across recurring work',
       'Start from editable templates for product demos, podcast intros, documentaries, focus content, and creator videos',
       'Set duration, mood, genre, tempo, instruments, loop ending, format, and output folder',
-      'Listen to the returned track in the app, then open its local folder'
+      'Add title, contributing artist, album, and track number to MP3 or WAV files',
+      'See generation progress, cancel in the app, and listen to the returned track before opening its local folder'
     ],
     audiences: [
       'Video creators who need music that supports a voiceover or story',
@@ -160,7 +161,8 @@ const products = [
       ['2.png', 'Music API Profiles in Background Music Generator', 'Store multiple music API profiles.'],
       ['3.png', 'Background Music Generator output controls', 'Tune the music for the job.'],
       ['4.png', 'Completed track playback in Background Music Generator', 'Listen before you leave the app.'],
-      ['5.png', 'Instrument picker in Background Music Generator', 'Choose instruments for your track.']
+      ['5.png', 'Instrument picker in Background Music Generator', 'Choose instruments for your track.'],
+      ['6.png', 'Generation progress and cancel control in Background Music Generator', 'Follow progress and cancel a generation.']
     ]),
     faq: [
       { q: 'Does it include music-generation credits?', a: 'No. You bring your own provider key, choose the model, and pay the provider directly.' },
@@ -169,7 +171,7 @@ const products = [
     ],
     relatedProducts: ['BGT', 'BGI', 'BT'],
     relatedUseCases: [],
-    lastmod: '2026-09-15'
+    lastmod: '2026-11-04'
   },
   {
     code: 'BT',
