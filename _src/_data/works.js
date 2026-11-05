@@ -21,8 +21,8 @@ module.exports = [
     description: 'A reflective photography book about the people, places, and quieter moments that stay with us.',
     madeWith: ['BGI', 'BEI', 'BTP', 'BMP'],
     links: [
-      { label: 'Amazon US', url: 'https://www.amazon.com/People-Places-Perspective-Proyogi-Baba/dp/B0GWVL1D6R' },
-      { label: 'Lulu paperback', url: 'https://www.lulu.com/shop/proyogi-baba/people-places-perspective/paperback/product-yvr56g6.html?page=1&pageSize=4' }
+      { label: 'Amazon new edition', url: 'https://www.amazon.com/dp/B0HQC7HYCM' },
+      { label: 'Amazon Kindle', url: 'https://www.amazon.com/dp/B0HQ8R1GVH' }
     ]
   }
 ];
