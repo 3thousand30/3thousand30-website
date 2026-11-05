@@ -9,7 +9,7 @@
       <a href="/products/" class="text-xs transition-colors hover:text-retro-green {% if catalogKind == 'products' or (pageType == 'product' and product.type != 'game') %}text-retro-green{% else %}text-gray-400{% endif %}"{% if catalogKind == 'products' or (pageType == 'product' and product.type != 'game') %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>products</a>
       <a href="/games/" class="text-xs transition-colors hover:text-retro-green {% if catalogKind == 'games' or (pageType == 'product' and product.type == 'game') %}text-retro-green{% else %}text-gray-400{% endif %}"{% if catalogKind == 'games' or (pageType == 'product' and product.type == 'game') %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>games</a>
       <a href="/use-cases/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'use_case' or catalogKind == 'use-cases' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'use_case' or catalogKind == 'use-cases' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>use cases</a>
-      <a href="/works/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'works' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'works' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>works</a>
+      <a href="/showcase/" class="text-xs transition-colors hover:text-retro-green {% if pageType == 'works' or pageType == 'album' %}text-retro-green{% else %}text-gray-400{% endif %}"{% if pageType == 'works' or pageType == 'album' %} aria-current="page"{% endif %}><span aria-hidden="true">./</span>showcase</a>
     </nav>
 
     <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center border border-white/20 text-retro-green lg:hidden" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
@@ -23,7 +23,7 @@
       <a href="/products/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">products</a>
       <a href="/games/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">games</a>
       <a href="/use-cases/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">use cases</a>
-      <a href="/works/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">works</a>
+      <a href="/showcase/" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">showcase</a>
       <a href="/privacy.html" class="min-h-11 px-2 py-3 text-sm text-gray-300 hover:text-retro-green">privacy</a>
     </div>
   </nav>

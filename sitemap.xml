@@ -23,8 +23,15 @@
   </url>
 
   <url>
-    <loc>https://3thousand30.com/works/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <loc>https://3thousand30.com/showcase/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://3thousand30.com/showcase/moods/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

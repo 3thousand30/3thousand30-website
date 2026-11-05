@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+permalink: showcase/moods/index.html
+title: Moods — Instrumental Background Music | 3thousand30
+description: "Listen to and download Moods by Proyogi Baba: 27 instrumental tracks across nine emotions, created for stories and video."
+pageType: album
+image: /works/moods-cover.png
+imageAlt: Moods album cover
+---
+<section class="site-shell py-10 sm:py-14">
+  <nav class="mb-8 text-xs text-gray-500" aria-label="Breadcrumb"><a href="/" class="text-link">home</a> / <a href="/showcase/" class="text-link">showcase</a> / moods</nav>
+  <div class="grid items-center gap-8 sm:grid-cols-[15rem_minmax(0,1fr)]">
+    <img src="/works/moods-cover.png" alt="Moods album cover" width="1254" height="1254" class="w-full max-w-[15rem] border border-white/10">
+    <div>
+      <p class="eyebrow mb-3">instrumental album · proyogi baba</p>
+      <h1 class="text-4xl font-light text-white sm:text-5xl">Moods</h1>
+      <p class="mt-4 max-w-2xl text-sm leading-7 text-gray-400">27 instrumental tracks across nine emotions, made for stories, videos and creative projects.</p>
+      <div class="mt-6 flex flex-wrap gap-3"><a href="{{ moods.download }}" class="button-primary">Download the album ↓</a></div>
+      <p class="mt-4 text-xs leading-6 text-gray-500">MP3 · ZIP includes the license · Music: <a href="https://creativecommons.org/licenses/by/4.0/" class="text-link">CC BY 4.0</a> · AI-generated with Lyria 3.5, curated by Proyogi Baba.</p>
+    </div>
+  </div>
+</section>
+
+<div class="moods-player sticky top-16 z-40 border-y border-white/10 bg-black/95 backdrop-blur" data-moods-player>
+  <div class="site-shell grid gap-2 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(18rem,1.3fr)] sm:items-center sm:gap-5">
+    <div class="min-w-0"><p class="eyebrow text-retro-green">now playing</p><p class="truncate text-sm text-white" data-now-playing aria-live="polite">Select a track below</p></div>
+    <audio controls preload="none" class="h-10 w-full" aria-label="Moods audio player" data-audio></audio>
+    <p class="text-xs text-red-300 sm:col-span-2" data-player-error role="status" hidden>Playback failed. Please try again.</p>
+  </div>
+</div>
+
+<section class="site-shell pb-20 pt-12" aria-labelledby="tracks-heading">
+  <h2 id="tracks-heading" class="section-heading">Explore the moods</h2>
+  <p class="mt-3 text-sm text-gray-400">Choose a track to listen. The player stays with you as you scroll.</p>
+  <div class="mt-8 grid gap-6 lg:grid-cols-2">
+    {% for group in moods.groups %}
+    <section class="border border-white/10 bg-white/[0.02] p-5 sm:p-6" aria-labelledby="mood-{{ loop.index }}">
+      <h3 id="mood-{{ loop.index }}" class="text-xl text-white">{{ group.mood }}</h3>
+      <ol class="mt-4 divide-y divide-white/10">
+        {% for track in group.tracks %}
+        <li><button type="button" class="flex min-h-14 w-full items-center gap-4 py-2 text-left text-sm text-gray-300 hover:text-retro-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-retro-green" data-track-url="{{ track.url }}" data-track-title="{{ track.title }}" aria-label="Play {{ track.title }}" aria-pressed="false"><span class="flex h-9 w-9 shrink-0 items-center justify-center border border-white/20 text-retro-green" data-track-icon aria-hidden="true">▶</span><span class="text-xs text-gray-600">{{ track.id }}</span><span>{{ track.title }}</span></button></li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+<script src="/moods-player.js" defer></script>

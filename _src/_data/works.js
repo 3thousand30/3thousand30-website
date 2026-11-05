@@ -1,5 +1,15 @@
 module.exports = [
   {
+    slug: 'moods',
+    title: 'Moods',
+    type: 'Instrumental album · 27 tracks',
+    image: '/works/moods-cover.png',
+    imageAlt: 'Moods album cover',
+    description: 'Nine emotions, 27 instrumental tracks. Background music for stories, videos and creative projects.',
+    madeWith: ['BMG'],
+    links: [{ label: 'Listen & download', url: '/showcase/moods/', internal: true }]
+  },
+  {
     slug: 'milo-goes-to-school',
     title: 'Milo Goes to School: Little Big Adventures',
     type: 'Children’s book',
