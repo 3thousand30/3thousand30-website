@@ -31,14 +31,14 @@ imageAlt: Moods album cover
 
 <section class="site-shell pb-20 pt-12" aria-labelledby="tracks-heading">
   <h2 id="tracks-heading" class="section-heading">Explore the moods</h2>
-  <p class="mt-3 text-sm text-gray-400">Choose a track to listen. The player stays with you as you scroll.</p>
+  <p class="mt-3 text-sm text-gray-400">Choose a track to listen or download its MP3. The player stays with you as you scroll.</p>
   <div class="mt-8 grid gap-6 lg:grid-cols-2">
     {% for group in moods.groups %}
     <section class="border border-white/10 bg-white/[0.02] p-5 sm:p-6" aria-labelledby="mood-{{ loop.index }}">
       <h3 id="mood-{{ loop.index }}" class="text-xl text-white">{{ group.mood }}</h3>
       <ol class="mt-4 divide-y divide-white/10">
         {% for track in group.tracks %}
-        <li><button type="button" class="flex min-h-14 w-full items-center gap-4 py-2 text-left text-sm text-gray-300 hover:text-retro-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-retro-green" data-track-url="{{ track.url }}" data-track-title="{{ track.title }}" aria-label="Play {{ track.title }}" aria-pressed="false"><span class="flex h-9 w-9 shrink-0 items-center justify-center border border-white/20 text-retro-green" data-track-icon aria-hidden="true">▶</span><span class="text-xs text-gray-600">{{ track.id }}</span><span>{{ track.title }}</span></button></li>
+        <li class="flex items-center gap-2"><button type="button" class="flex min-h-14 min-w-0 flex-1 items-center gap-3 py-2 text-left text-sm text-gray-300 hover:text-retro-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-retro-green" data-track-url="{{ track.url }}" data-track-title="{{ track.title }}" aria-label="Play {{ track.title }}" aria-pressed="false"><span class="flex h-9 w-9 shrink-0 items-center justify-center border border-white/20 text-retro-green" data-track-icon aria-hidden="true">▶</span><span class="text-xs text-gray-600">{{ track.id }}</span><span>{{ track.title }}</span></button><a href="{{ track.url }}" class="shrink-0 px-2 py-3 text-xs text-gray-400 hover:text-retro-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-retro-green" aria-label="Download {{ track.title }} as MP3" data-track-download>Download ↓</a></li>
         {% endfor %}
       </ol>
     </section>

@@ -10,6 +10,7 @@ const assert = require('node:assert/strict');
     }
     await page.goto('http://127.0.0.1:4173/showcase/moods/');
     assert.equal(await page.locator('[data-track-url]').count(), 27);
+    assert.equal(await page.locator('[data-track-download]').count(), 27);
     assert.equal(await page.locator('section[aria-labelledby^="mood-"]').count(), 9);
     await page.locator('[data-track-url]').first().click();
     await page.waitForFunction(() => document.querySelector('[data-audio]').currentTime > 0, null, { timeout: 20000 });
@@ -18,6 +19,13 @@ const assert = require('node:assert/strict');
     await page.waitForFunction(() => document.querySelector('[data-now-playing]').textContent === 'Love - Tender Reverie');
     await page.locator('[data-track-url]').nth(1).click();
     assert.equal(await page.locator('[data-audio]').evaluate(audio => audio.paused), true);
+    if (!process.env.MOODS_TEST_TRACK) {
+      const pendingDownload = page.waitForEvent('download');
+      await page.locator('[data-track-download]').first().click();
+      const download = await pendingDownload;
+      assert.equal(download.suggestedFilename(), 'moods-01.mp3');
+      assert.equal(await download.failure(), null);
+    }
     await page.evaluate(() => window.scrollTo(0, 1000));
     const top = await page.locator('[data-moods-player]').evaluate(el => Math.round(el.getBoundingClientRect().top));
     assert.equal(top, 64);
